@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace PMSX.Access {
     public class Patient {
@@ -23,6 +22,7 @@ namespace PMSX.Access {
             string query = @"
                 select *
                 from pmsx_patient
+				order by patient_name
             ";
 
             foreach (DataRow row in Database.Instance.Excute(query).Rows) {

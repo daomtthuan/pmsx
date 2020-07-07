@@ -66,8 +66,12 @@ namespace PMSX.View.Form {
             AddUserControl(Controller.Role.Instance.View);
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+        private void SessionButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             AddUserControl(Controller.Session.Instance.View);
+        }
+
+        private void BiopsyButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            AddUserControl(Controller.Biopsy.Instance.View);
         }
     }
 }

@@ -81,22 +81,24 @@ namespace PMSX.View.UserControl.View {
         }
 
         private void Role_Load(object sender, EventArgs e) {
-            List<Model.Role> data = Controller.Role.Instance.GetList();
+            List<Model.Role> data = Controller.Role.Instance.GetList();            
 
-            ((RoleTable)rolePanel.Controls[0]).LoadData(data);
+            if (data.Count > 0) {
+                ((RoleTable)rolePanel.Controls[0]).LoadData(data);
 
-            roleLookUpEdit.Properties.DataSource = data;
-            roleLookUpEdit.Properties.PopulateColumns();
-            roleLookUpEdit.Properties.DisplayMember = "Name";
-            roleLookUpEdit.Properties.ValueMember = "Id";
-            roleLookUpEdit.Properties.Columns["Id"].Visible = false;
-            roleLookUpEdit.Properties.Columns["Name"].Caption = "Tên";
-            roleLookUpEdit.Properties.Columns["Comment"].Caption = "Ghi chú";
-            roleLookUpEdit.Properties.Columns["State"].Caption = "Trạng thái";
-            roleLookUpEdit.Properties.Columns["CreateDatetime"].Caption = "Ngày tạo";
-            roleLookUpEdit.Properties.Columns["UpdateDatetime"].Caption = "Ngày sửa";
+                roleLookUpEdit.Properties.DataSource = data;
+                roleLookUpEdit.Properties.PopulateColumns();
+                roleLookUpEdit.Properties.DisplayMember = "Name";
+                roleLookUpEdit.Properties.ValueMember = "Id";
+                roleLookUpEdit.Properties.Columns["Id"].Visible = false;
+                roleLookUpEdit.Properties.Columns["Name"].Caption = "Tên";
+                roleLookUpEdit.Properties.Columns["Comment"].Caption = "Ghi chú";
+                roleLookUpEdit.Properties.Columns["State"].Caption = "Trạng thái";
+                roleLookUpEdit.Properties.Columns["CreateDatetime"].Caption = "Ngày tạo";
+                roleLookUpEdit.Properties.Columns["UpdateDatetime"].Caption = "Ngày sửa";
 
-            roleLookUpEdit.EditValue = data[0].Id;
+                roleLookUpEdit.EditValue = data[0].Id;
+            }
 
         }
 

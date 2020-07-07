@@ -33,6 +33,7 @@ namespace PMSX.Access {
                 from pmsx_session
 	                join pmsx_staff as technician on session_technicianId = technician.staff_id
 	                join pmsx_staff as doctor on session_doctorId = doctor.staff_id
+				order by session_name
             ";
 
             foreach (DataRow row in Database.Instance.Excute(query).Rows) {
@@ -59,6 +60,7 @@ namespace PMSX.Access {
 	                join pmsx_staff as technician on session_technicianId = technician.staff_id
 	                join pmsx_staff as doctor on session_doctorId = doctor.staff_id
                 where session_state = @state
+				order by session_name
             ";
 
             SqlParameter[] parameters = {

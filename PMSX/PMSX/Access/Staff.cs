@@ -23,6 +23,7 @@ namespace PMSX.Access {
             string query = @"
                 select *
                 from pmsx_staff
+				order by staff_name
             ";
 
             foreach (DataRow row in Database.Instance.Excute(query).Rows) {
@@ -39,6 +40,7 @@ namespace PMSX.Access {
                 select *
                 from pmsx_staff
                 where staff_username = @username
+				order by staff_name
             ";
 
             SqlParameter[] parameters = {
@@ -61,6 +63,7 @@ namespace PMSX.Access {
                 from pmsx_staff
 	                join pmsx_staffRole on staff_id = staffRole_staffId
                 where staffRole_roleId = @roleId
+				order by staff_name
             ";
 
             SqlParameter[] parameters = {

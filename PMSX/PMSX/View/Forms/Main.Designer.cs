@@ -51,8 +51,8 @@
             this.staffButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.patientButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.roleButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.sessionButtonItem = new DevExpress.XtraBars.BarButtonItem();
+            this.biopsyButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.resultButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.managerPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.personnelManagerPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -72,8 +72,8 @@
             this.staffButtonItem,
             this.patientButtonItem,
             this.roleButtonItem,
-            this.barButtonItem1,
-            this.barButtonItem2,
+            this.sessionButtonItem,
+            this.biopsyButtonItem,
             this.resultButtonItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 8;
@@ -176,36 +176,37 @@
             this.roleButtonItem.SuperTip = superToolTip3;
             this.roleButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RoleButtonItem_ItemClick);
             // 
-            // barButtonItem1
+            // sessionButtonItem
             // 
-            this.barButtonItem1.Caption = "Phiên làm việc";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem1.ImageOptions.SvgImage = global::PMSX.Properties.Resources.bo_audit_changehistory;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.sessionButtonItem.Caption = "Phiên làm việc";
+            this.sessionButtonItem.Id = 5;
+            this.sessionButtonItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.sessionButtonItem.ImageOptions.SvgImage = global::PMSX.Properties.Resources.bo_audit_changehistory;
+            this.sessionButtonItem.Name = "sessionButtonItem";
+            this.sessionButtonItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             toolTipTitleItem4.Text = "Nhân sự";
             toolTipItem4.LeftIndent = 6;
             toolTipItem4.Text = "Quản lý phiên làm việc";
             superToolTip4.Items.Add(toolTipTitleItem4);
             superToolTip4.Items.Add(toolTipItem4);
-            this.barButtonItem1.SuperTip = superToolTip4;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.sessionButtonItem.SuperTip = superToolTip4;
+            this.sessionButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SessionButtonItem_ItemClick);
             // 
-            // barButtonItem2
+            // biopsyButtonItem
             // 
-            this.barButtonItem2.Caption = "Sinh khiết";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.barButtonItem2.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.biopsyButtonItem.Caption = "Sinh thiết";
+            this.biopsyButtonItem.Id = 6;
+            this.biopsyButtonItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.biopsyButtonItem.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
+            this.biopsyButtonItem.Name = "biopsyButtonItem";
             toolTipTitleItem5.Text = "Phòng khám";
             toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "Quản lý mẫu sinh khiết";
+            toolTipItem5.Text = "Quản lý mẫu sinh thiết";
             superToolTip5.Items.Add(toolTipTitleItem5);
             superToolTip5.Items.Add(toolTipItem5);
-            this.barButtonItem2.SuperTip = superToolTip5;
+            this.biopsyButtonItem.SuperTip = superToolTip5;
+            this.biopsyButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyButtonItem_ItemClick);
             // 
             // resultButtonItem
             // 
@@ -233,14 +234,14 @@
             // 
             this.personnelManagerPageGroup.ItemLinks.Add(this.staffButtonItem);
             this.personnelManagerPageGroup.ItemLinks.Add(this.roleButtonItem);
-            this.personnelManagerPageGroup.ItemLinks.Add(this.barButtonItem1);
+            this.personnelManagerPageGroup.ItemLinks.Add(this.sessionButtonItem);
             this.personnelManagerPageGroup.Name = "personnelManagerPageGroup";
             this.personnelManagerPageGroup.Text = "Nhân sự";
             // 
             // clinicPageGroup
             // 
             this.clinicPageGroup.ItemLinks.Add(this.patientButtonItem);
-            this.clinicPageGroup.ItemLinks.Add(this.barButtonItem2);
+            this.clinicPageGroup.ItemLinks.Add(this.biopsyButtonItem);
             this.clinicPageGroup.ItemLinks.Add(this.resultButtonItem);
             this.clinicPageGroup.Name = "clinicPageGroup";
             this.clinicPageGroup.Text = "Phòng khám";
@@ -274,8 +275,8 @@
         private DevExpress.XtraBars.BarButtonItem staffButtonItem;
         private DevExpress.XtraBars.BarButtonItem patientButtonItem;
         private DevExpress.XtraBars.BarButtonItem roleButtonItem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem sessionButtonItem;
+        private DevExpress.XtraBars.BarButtonItem biopsyButtonItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup clinicPageGroup;
         private DevExpress.XtraBars.BarButtonItem resultButtonItem;
         private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace PMSX.Access {
     public class Role {
@@ -23,6 +22,7 @@ namespace PMSX.Access {
             string query = @"
                 select *
                 from pmsx_role
+				order by role_name
             ";
 
 
