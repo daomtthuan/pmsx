@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.View {
     public partial class Patient : XtraUserControl {
-
         private class PatientTable : TableView {
             protected override void OnInit() {
                 titleLabel.Text = "Danh sách bệnh nhân";

@@ -21,11 +21,12 @@ namespace PMSX.View.Form {
             sessionLookUpEdit.Properties.DisplayMember = "Name";
             sessionLookUpEdit.Properties.ValueMember = "Id";
             sessionLookUpEdit.Properties.Columns["Id"].Visible = false;
-            sessionLookUpEdit.Properties.Columns["State"].Visible = false;
             sessionLookUpEdit.Properties.Columns["Name"].Caption = "Tên";
             sessionLookUpEdit.Properties.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
             sessionLookUpEdit.Properties.Columns["DoctorName"].Caption = "Bác sĩ";
             sessionLookUpEdit.Properties.Columns["Comment"].Caption = "Ghi chú";
+            sessionLookUpEdit.Properties.Columns["State"].Caption = "Trạng thái";
+            sessionLookUpEdit.Properties.Columns["State"].Visible = false;
             sessionLookUpEdit.Properties.Columns["CreateDatetime"].Caption = "Ngày tạo";
             sessionLookUpEdit.Properties.Columns["UpdateDatetime"].Caption = "Ngày sửa";
         }

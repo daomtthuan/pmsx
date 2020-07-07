@@ -126,6 +126,12 @@
     <Compile Include="View\UserControl\View\Role.Designer.cs">
       <DependentUpon>Role.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl\View\Session.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\View\Session.Designer.cs">
+      <DependentUpon>Session.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl\View\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>

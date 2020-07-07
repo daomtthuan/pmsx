@@ -3,20 +3,21 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.View {
-    public partial class Staff : XtraUserControl {
-        private class StaffTable : TableView {
+    public partial class Session : XtraUserControl {
+        private class SessionTable : TableView {
             protected override void OnInit() {
-                titleLabel.Text = "Danh sách nhân viên";
+                titleLabel.Text = "Danh sách phiên làm việc";
             }
 
             protected override void OnLoad() {
-                gridControl.DataSource = Controller.Staff.Instance.GetList();
+                gridControl.DataSource = Controller.Session.Instance.GetList();
                 gridView.PopulateColumns();
                 gridView.Columns["Id"].Visible = false;
-                gridView.Columns["Username"].Caption = "Tên";
-                gridView.Columns["Password"].Caption = "Mật khẩu";
-                gridView.Columns["Password"].Visible = false;
                 gridView.Columns["Name"].Caption = "Tên";
+                gridView.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
+                gridView.Columns["DoctorName"].Caption = "Bác sĩ";
+                gridView.Columns["Comment"].Caption = "Ghi chú";
+                gridView.Columns["State"].Visible = true;
                 gridView.Columns["State"].Caption = "Trạng thái";
                 gridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
                 gridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
@@ -35,9 +36,9 @@ namespace PMSX.View.UserControl.View {
             }
         }
 
-        public Staff() {
+        public Session() {
             InitializeComponent();
-            Controls.Add(new StaffTable() {
+            Controls.Add(new SessionTable() {
                 Dock = DockStyle.Fill
             });
         }
