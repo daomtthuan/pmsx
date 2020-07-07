@@ -15,8 +15,8 @@ namespace PMSX.View.Form {
             CancelButton = closeButton;
         }
 
-        private void Session_Load(object sender, EventArgs e) {
-            sessionLookUpEdit.Properties.DataSource = Controller.Session.Instance.Get(1);
+        private void SelectSession_Load(object sender, EventArgs e) {
+            sessionLookUpEdit.Properties.DataSource = Controller.Session.Instance.GetListByState(1);
             sessionLookUpEdit.Properties.PopulateColumns();
             sessionLookUpEdit.Properties.DisplayMember = "Name";
             sessionLookUpEdit.Properties.ValueMember = "Id";

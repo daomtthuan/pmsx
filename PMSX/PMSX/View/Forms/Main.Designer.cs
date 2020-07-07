@@ -57,7 +57,6 @@
             this.managerPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.personnelManagerPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.clinicPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -82,7 +81,6 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.managerPage});
             this.ribbon.Size = new System.Drawing.Size(1406, 195);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // backstageViewControl1
             // 
@@ -246,25 +244,16 @@
             this.clinicPageGroup.Name = "clinicPageGroup";
             this.clinicPageGroup.Text = "Phòng khám";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 804);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1406, 31);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 835);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbon);
             this.Name = "Main";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StatusBar = this.ribbonStatusBar;
             this.Text = "PMSX";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
@@ -281,7 +270,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage managerPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup personnelManagerPageGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem staffButtonItem;
         private DevExpress.XtraBars.BarButtonItem patientButtonItem;
         private DevExpress.XtraBars.BarButtonItem roleButtonItem;

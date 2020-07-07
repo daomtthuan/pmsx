@@ -6,12 +6,12 @@ namespace PMSX.View.UserControl.View {
     public partial class Patient : XtraUserControl {
 
         private class PatientTable : TableView {
-            protected override void Init() {
+            protected override void OnInit() {
                 titleLabel.Text = "Danh sách bệnh nhân";
             }
 
-            protected override void View_Load(object sender, EventArgs e) {
-                gridControl.DataSource = Controller.Patient.Instance.Get();
+            protected override void OnLoad() {
+                gridControl.DataSource = Controller.Patient.Instance.GetList();
                 gridView.PopulateColumns();
                 gridView.Columns["Id"].Visible = false;
                 gridView.Columns["Name"].Caption = "Tên";
@@ -24,15 +24,15 @@ namespace PMSX.View.UserControl.View {
 
             }
 
-            protected override void InsertButton_Click(object sender, EventArgs e) {
+            protected override void OnInsert() {
                 throw new NotImplementedException();
             }
 
-            protected override void UpdateButton_Click(object sender, EventArgs e) {
+            protected override void OnUpdate() {
                 throw new NotImplementedException();
             }
 
-            protected override void DeleteButton_Click(object sender, EventArgs e) {
+            protected override void OnDelete() {
                 throw new NotImplementedException();
             }
         }

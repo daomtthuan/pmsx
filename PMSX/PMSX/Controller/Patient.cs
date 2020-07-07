@@ -22,8 +22,8 @@ namespace PMSX.Controller {
             private set => instance = value;
         }
 
-        public List<Model.Patient> Get() {
-            return Access.Patient.Instance.Select();
+        public List<Model.Patient> GetList() {
+            return Access.Patient.Instance.SelectAll();
         }
     }
 }

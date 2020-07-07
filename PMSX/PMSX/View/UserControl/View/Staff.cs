@@ -6,12 +6,12 @@ namespace PMSX.View.UserControl.View {
     public partial class Staff : DevExpress.XtraEditors.XtraUserControl {
 
         private class StaffTable : TableView {
-            protected override void Init() {
+            protected override void OnInit() {
                 titleLabel.Text = "Danh sách nhân viên";
             }
 
-            protected override void View_Load(object sender, EventArgs e) {
-                gridControl.DataSource = Controller.Staff.Instance.Get();
+            protected override void OnLoad() {
+                gridControl.DataSource = Controller.Staff.Instance.GetList();
                 gridView.PopulateColumns();
                 gridView.Columns["Id"].Visible = false;
                 gridView.Columns["Username"].Caption = "Tên";
@@ -21,18 +21,17 @@ namespace PMSX.View.UserControl.View {
                 gridView.Columns["State"].Caption = "Trạng thái";
                 gridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
                 gridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-
             }
 
-            protected override void InsertButton_Click(object sender, EventArgs e) {
+            protected override void OnInsert() {
                 throw new NotImplementedException();
             }
 
-            protected override void UpdateButton_Click(object sender, EventArgs e) {
+            protected override void OnUpdate() {
                 throw new NotImplementedException();
             }
 
-            protected override void DeleteButton_Click(object sender, EventArgs e) {
+            protected override void OnDelete() {
                 throw new NotImplementedException();
             }
         }

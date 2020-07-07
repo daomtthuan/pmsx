@@ -23,7 +23,7 @@ namespace PMSX.Controller {
         }
 
         public Model.Staff Auth(string username, string password) {
-            List<Model.Staff> staffs = Access.Staff.Instance.Select(username);
+            List<Model.Staff> staffs = Access.Staff.Instance.SelectByUsername(username);
             if (staffs.Count != 1) {
                 return null;
             }
@@ -35,8 +35,12 @@ namespace PMSX.Controller {
             return staffs[0];
         }
 
-        public List<Model.Staff> Get() {
-            return Access.Staff.Instance.Select();
+        public List<Model.Staff> GetList() {
+            return Access.Staff.Instance.SelectAll();
+        }
+
+        public List<Model.Staff> GetListByRoleId(string roleId) {
+            return Access.Staff.Instance.SelectByRoleId(roleId);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace PMSX.Access {
 
         private Staff() { }
 
-
         public static Staff Instance {
             get {
                 if (instance == null)
@@ -18,26 +17,23 @@ namespace PMSX.Access {
             private set => instance = value;
         }
 
-        public List<Model.Staff> Select() {
-            List<Model.Staff> staffs = new List<Model.Staff>();
+        public List<Model.Staff> SelectAll() {
+            List<Model.Staff> data = new List<Model.Staff>();
 
             string query = @"
                 select *
                 from pmsx_staff
             ";
 
-            SqlParameter[] parameters = {};
-
-
-            foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-                staffs.Add(new Model.Staff(row));
+            foreach (DataRow row in Database.Instance.Excute(query).Rows) {
+                data.Add(new Model.Staff(row));
             }
 
-            return staffs;
+            return data;
         }
 
-        public List<Model.Staff> Select(string username) {
-            List<Model.Staff> staffs = new List<Model.Staff>();
+        public List<Model.Staff> SelectByUsername(string username) {
+            List<Model.Staff> data = new List<Model.Staff>();
 
             string query = @"
                 select *
@@ -51,10 +47,32 @@ namespace PMSX.Access {
 
 
             foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-                staffs.Add(new Model.Staff(row));
+                data.Add(new Model.Staff(row));
             }
 
-            return staffs;
+            return data;
+        }
+
+        public List<Model.Staff> SelectByRoleId(string roleId) {
+            List<Model.Staff> data = new List<Model.Staff>();
+
+            string query = @"
+                select pmsx_staff.*
+                from pmsx_staff
+	                join pmsx_staffRole on staff_id = staffRole_staffId
+                where staffRole_roleId = @roleId
+            ";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@roleId", roleId)
+            };
+
+
+            foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
+                data.Add(new Model.Staff(row));
+            }
+
+            return data;
         }
     }
 }

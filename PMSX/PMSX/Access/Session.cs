@@ -17,8 +17,8 @@ namespace PMSX.Access {
             private set => instance = value;
         }
 
-        public List<Model.Session> Select(int state) {
-            List<Model.Session> sessions = new List<Model.Session>();
+        public List<Model.Session> SelectByState(int state) {
+            List<Model.Session> data = new List<Model.Session>();
 
             string query = @"
                 select
@@ -31,8 +31,8 @@ namespace PMSX.Access {
 	                session_createDatetime,
 	                session_updateDatetime
                 from pmsx_session
-	                join pmsx_staff as technician on pmsx_session.session_technicianId = technician.staff_id
-	                join pmsx_staff as doctor on pmsx_session.session_doctorId = doctor.staff_id
+	                join pmsx_staff as technician on session_technicianId = technician.staff_id
+	                join pmsx_staff as doctor on session_doctorId = doctor.staff_id
                 where session_state = @state
             ";
 
@@ -42,10 +42,10 @@ namespace PMSX.Access {
 
 
             foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-                sessions.Add(new Model.Session(row));
+                data.Add(new Model.Session(row));
             }
 
-            return sessions;
+            return data;
         }
     }
 }

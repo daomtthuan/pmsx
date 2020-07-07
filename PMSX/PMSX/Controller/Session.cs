@@ -15,8 +15,8 @@ namespace PMSX.Controller {
             private set => instance = value;
         }
 
-        public List<Model.Session> Get(int state) {
-            return Access.Session.Instance.Select(state);
+        public List<Model.Session> GetListByState(int state) {
+            return Access.Session.Instance.SelectByState(state);
         }
     }
 }

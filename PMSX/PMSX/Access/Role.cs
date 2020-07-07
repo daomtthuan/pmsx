@@ -3,30 +3,31 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Access {
-    public class Patient {
-        private static Patient instance;
+    public class Role {
+        private static Role instance;
 
-        private Patient() { }
+        private Role() { }
 
-        public static Patient Instance {
+        public static Role Instance {
             get {
                 if (instance == null)
-                    instance = new Patient();
+                    instance = new Role();
                 return instance;
             }
             private set => instance = value;
         }
 
-        public List<Model.Patient> SelectAll() {
-            List<Model.Patient> data = new List<Model.Patient>();
+        public List<Model.Role> SelectAll() {
+            List<Model.Role> data = new List<Model.Role>();
 
             string query = @"
                 select *
-                from pmsx_patient
+                from pmsx_role
             ";
 
+
             foreach (DataRow row in Database.Instance.Excute(query).Rows) {
-                data.Add(new Model.Patient(row));
+                data.Add(new Model.Role(row));
             }
 
             return data;

@@ -247,7 +247,7 @@
             this.Name = "SelectSession";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PMSX - Chọn phiên làm việc";
-            this.Load += new System.EventHandler(this.Session_Load);
+            this.Load += new System.EventHandler(this.SelectSession_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

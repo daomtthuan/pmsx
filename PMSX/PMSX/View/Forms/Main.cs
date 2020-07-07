@@ -63,7 +63,7 @@ namespace PMSX.View.Form {
         }
 
         private void RoleButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-           
+            AddUserControl(Controller.Role.Instance.View);
         }
     }
 }

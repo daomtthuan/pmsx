@@ -21,16 +21,17 @@ namespace PMSX.Access {
             private set => instance = value;
         }
 
-        public DataTable Excute(string query, SqlParameter[] parameters) {
+        public DataTable Excute(string query, SqlParameter[] parameters = null) {
             DataTable data = new DataTable();
-
             using (SqlConnection connection = new SqlConnection(connectionString)) {
                 try {
                     connection.Open();
                     using (SqlCommand command = connection.CreateCommand()) {
                         command.CommandText = query;
-                        foreach (SqlParameter parameter in parameters) {
-                            command.Parameters.Add(parameter);
+                        if (parameters != null) {
+                            foreach (SqlParameter parameter in parameters) {
+                                command.Parameters.Add(parameter);
+                            }
                         }
                         using (SqlDataReader reader = command.ExecuteReader()) {
                             data.Load(reader);
