@@ -27,7 +27,7 @@ namespace PMSX.View.Form.Insert {
         XtraMessageBox.Show("Không thể thêm.\nTất cả nhân viên đã có quyền này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         Close();
       } else {
-        staffSelect.Properties.DataSource = data.Select(item => new {
+        this.staffSelect.Properties.DataSource = data.Select(item => new {
           item.Id,
           item.Username,
           item.Name,
