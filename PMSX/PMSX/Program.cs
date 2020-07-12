@@ -10,7 +10,7 @@ namespace PMSX {
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() {           
+        public static void Main() {
             CultureInfo culture = CultureInfo.CreateSpecificCulture("vi-VN");
             Thread.CurrentThread.CurrentUICulture = culture;
             Thread.CurrentThread.CurrentCulture = culture;

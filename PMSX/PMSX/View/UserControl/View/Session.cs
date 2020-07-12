@@ -1,46 +1,64 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.View {
-    public partial class Session : XtraUserControl {
-        private class SessionTable : TableView {
-            protected override void OnInit() {
-                titleLabel.Text = "Danh sách phiên làm việc";
-            }
+  public partial class Session : XtraUserControl {
+    private class SessionTable : Layout.Table {
+      protected override void OnInit() {
+        TitleLabel.Text = "Danh sách phiên làm việc";
+      }
 
-            protected override void OnLoad() {
-                gridControl.DataSource = Controller.Session.Instance.GetList();
-                gridView.PopulateColumns();
-                gridView.Columns["Id"].Visible = false;
-                gridView.Columns["Name"].Caption = "Tên";
-                gridView.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
-                gridView.Columns["DoctorName"].Caption = "Bác sĩ";
-                gridView.Columns["Comment"].Caption = "Ghi chú";
-                gridView.Columns["State"].Visible = true;
-                gridView.Columns["State"].Caption = "Trạng thái";
-                gridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-                gridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-            }
+      protected override void OnLoad() {
+        GridControl.DataSource = Controller.Session.Instance.SelectAll().Select(item => new {
+          item.Id,
+          item.Name,
+          TechnicianName = item.GetTechnician().Name,
+          DoctorName = item.GetDoctor().Name,
+          item.CreateDatetime,
+          item.UpdateDatetime,
+          State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
+        });
+        GridView.PopulateColumns();
+        GridView.Columns["Id"].Caption = "Mã định danh";
+        GridView.Columns["Id"].Visible = false;
+        GridView.Columns["Name"].Caption = "Tên";
+        GridView.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
+        GridView.Columns["DoctorName"].Caption = "Bác sĩ";
+        GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
+        GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
+        GridView.Columns["State"].Caption = "Trạng thái";
+      }
 
-            protected override void OnInsert() {
-                throw new NotImplementedException();
-            }
+      protected override void OnInsert() {
+        new Form.Insert.Session().ShowDialog();
+        OnLoad();
+      }
 
-            protected override void OnUpdate() {
-                throw new NotImplementedException();
-            }
+      protected override void OnUpdate() {
+        throw new NotImplementedException();
+      }
 
-            protected override void OnDelete() {
-                throw new NotImplementedException();
-            }
+      protected override void OnDisabled() {
+        throw new NotImplementedException();
+      }
+
+      protected override void RowStyle(RowStyleEventArgs e) {
+        if (e.RowHandle >= 0) {
+          if (GridView.GetRowCellValue(e.RowHandle, "State").ToString() == "Vô hiệu hoá") {
+            e.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+          }
         }
-
-        public Session() {
-            InitializeComponent();
-            Controls.Add(new SessionTable() {
-                Dock = DockStyle.Fill
-            });
-        }
+      }
     }
+
+    public Session() {
+      InitializeComponent();
+      Controls.Add(new SessionTable() {
+        Dock = DockStyle.Fill
+      });
+    }
+  }
 }

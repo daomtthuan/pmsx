@@ -1,45 +1,67 @@
 ﻿using DevExpress.XtraEditors;
-using System;
+using DevExpress.XtraGrid.Views.Grid;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.View {
-    public partial class Staff : XtraUserControl {
-        private class StaffTable : TableView {
-            protected override void OnInit() {
-                titleLabel.Text = "Danh sách nhân viên";
-            }
+  public partial class Staff : XtraUserControl {
+    private class StaffTable : Layout.Table {
+      private List<Model.Staff> data;
 
-            protected override void OnLoad() {
-                gridControl.DataSource = Controller.Staff.Instance.GetList();
-                gridView.PopulateColumns();
-                gridView.Columns["Id"].Visible = false;
-                gridView.Columns["Username"].Caption = "Tên";
-                gridView.Columns["Password"].Caption = "Mật khẩu";
-                gridView.Columns["Password"].Visible = false;
-                gridView.Columns["Name"].Caption = "Tên";
-                gridView.Columns["State"].Caption = "Trạng thái";
-                gridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-                gridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-            }
+      protected override void OnInit() {
+        TitleLabel.Text = "Danh sách nhân viên";
+      }
 
-            protected override void OnInsert() {
-                throw new NotImplementedException();
-            }
+      protected override void OnLoad() {
+        data = Controller.Staff.Instance.SelectAll();
+        GridControl.DataSource = data.Select(item => new {
+          item.Id,
+          item.Username,
+          item.Name,
+          item.CreateDatetime,
+          item.UpdateDatetime,
+          State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
+        });
+        GridView.PopulateColumns();
+        GridView.Columns["Id"].Caption = "Mã định danh";
+        GridView.Columns["Id"].Visible = false;
+        GridView.Columns["Username"].Caption = "Tên đăng nhập";
+        GridView.Columns["Name"].Caption = "Tên";
+        GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
+        GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
+        GridView.Columns["State"].Caption = "Trạng thái";
+      }
 
-            protected override void OnUpdate() {
-                throw new NotImplementedException();
-            }
+      protected override void OnInsert() {
+        new Form.Insert.Staff().ShowDialog();
+        OnLoad();
+      }
 
-            protected override void OnDelete() {
-                throw new NotImplementedException();
-            }
+      protected override void OnUpdate() {
+        new Form.Update.Staff(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        OnLoad();
+      }
+
+      protected override void OnDisabled() {
+        Controller.Staff.Instance.Disabled(SelectedId);
+        OnLoad();
+      }
+
+      protected override void RowStyle(RowStyleEventArgs e) {
+        if (e.RowHandle >= 0) {
+          if (GridView.GetRowCellValue(e.RowHandle, "State").ToString() == "Vô hiệu hoá") {
+            e.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+          }
         }
-
-        public Staff() {
-            InitializeComponent();
-            Controls.Add(new StaffTable() {
-                Dock = DockStyle.Fill
-            });
-        }
+      }
     }
+
+    public Staff() {
+      InitializeComponent();
+      Controls.Add(new StaffTable() {
+        Dock = DockStyle.Fill
+      });
+    }
+  }
 }

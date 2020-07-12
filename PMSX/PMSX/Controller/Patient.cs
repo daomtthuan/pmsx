@@ -1,29 +1,67 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using PMSX.Utils;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-    public class Patient {
-        private static Patient instance;        
+  public class Patient {
+    private static Patient instance;
 
-        private Patient() {
-            View = new View.UserControl.View.Patient() {
-                Dock = DockStyle.Fill
-            };
-        }
+    private Patient() { }
 
-        public View.UserControl.View.Patient View { get; set; }
-
-        public static Patient Instance {
-            get {
-                if (instance == null)
-                    instance = new Patient();
-                return instance;
-            }
-            private set => instance = value;
-        }
-
-        public List<Model.Patient> GetList() {
-            return Access.Patient.Instance.SelectAll();
-        }
+    public static Patient Instance {
+      get {
+        if (instance == null)
+          instance = new Patient();
+        return instance;
+      }
+      private set => instance = value;
     }
+
+    public List<Model.Patient> SelectAll(int state = -1) {
+      List<Model.Patient> data = new List<Model.Patient>();
+
+      string query = @"
+                select *
+                from pmsx_patient
+                where
+                    (@state = -1 or patient_state = @state)
+				order by patient_name
+            ";
+
+      SqlParameter[] parameters = {
+                new SqlParameter("@state", state)
+            };
+
+      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
+        data.Add(new Model.Patient(row));
+      }
+
+      return data;
+    }
+
+    public List<Model.Patient> SelectById(string id, int state = -1) {
+      List<Model.Patient> data = new List<Model.Patient>();
+      string query = @"
+                select *
+                from pmsx_patient
+                where
+                    (@state = -1 or patient_state = @state) and
+                    patient_id = @id
+                order by patient_name
+            ";
+
+      SqlParameter[] parameters = {
+                new SqlParameter("@id", id),
+                new SqlParameter("@state", state)
+            };
+
+
+      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
+        data.Add(new Model.Patient(row));
+      }
+
+      return data;
+    }
+  }
 }

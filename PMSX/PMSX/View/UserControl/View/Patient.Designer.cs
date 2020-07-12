@@ -30,7 +30,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Patient";
-            this.Size = new System.Drawing.Size(216, 181);
             this.ResumeLayout(false);
 
         }
