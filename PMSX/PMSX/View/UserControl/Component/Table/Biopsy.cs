@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.View {
+namespace PMSX.View.UserControl.Component.Table {
   public partial class Biopsy : XtraUserControl {
     private class BiopsyTable : Layout.Table {
       protected override void OnInit() {

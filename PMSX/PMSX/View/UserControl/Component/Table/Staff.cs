@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.View {
-  public partial class Role : XtraUserControl {
-    private class RoleTable : Layout.Table {
-      private List<Model.Role> data;
+namespace PMSX.View.UserControl.Component.Table {
+  public partial class Staff : XtraUserControl {
+    private class StaffTable : Layout.Table {
+      private List<Model.Staff> data;
 
       protected override void OnInit() {
-        TitleLabel.Text = "Danh sách quyền";
+        TitleLabel.Text = "Danh sách nhân viên";
       }
 
       protected override void OnLoad() {
-        data = Controller.Role.Instance.SelectAll();
+        data = Controller.Staff.Instance.SelectAll();
         GridControl.DataSource = data.Select(item => new {
           item.Id,
+          item.Username,
           item.Name,
           item.CreateDatetime,
           item.UpdateDatetime,
@@ -25,6 +26,7 @@ namespace PMSX.View.UserControl.View {
         GridView.PopulateColumns();
         GridView.Columns["Id"].Caption = "Mã định danh";
         GridView.Columns["Id"].Visible = false;
+        GridView.Columns["Username"].Caption = "Tên đăng nhập";
         GridView.Columns["Name"].Caption = "Tên";
         GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
         GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
@@ -32,17 +34,17 @@ namespace PMSX.View.UserControl.View {
       }
 
       protected override void OnInsert() {
-        new Form.Insert.Role().ShowDialog();
+        new Form.Insert.Staff().ShowDialog();
         OnLoad();
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Role(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        new Form.Update.Staff(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
-        Controller.Role.Instance.Disabled(SelectedId);
+        Controller.Staff.Instance.Disabled(SelectedId);
         OnLoad();
       }
 
@@ -55,10 +57,9 @@ namespace PMSX.View.UserControl.View {
       }
     }
 
-    public Role() {
+    public Staff() {
       InitializeComponent();
-
-      Controls.Add(new RoleTable() {
+      Controls.Add(new StaffTable() {
         Dock = DockStyle.Fill
       });
     }

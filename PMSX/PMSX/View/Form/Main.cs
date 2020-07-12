@@ -44,7 +44,7 @@ namespace PMSX.View.Form {
     }
 
     private async void Main_Load(object sender, System.EventArgs e) {
-      await Task.Delay(1500);
+      await Task.Delay(2000);
 
       loginForm.ShowDialog();
 
@@ -73,37 +73,37 @@ namespace PMSX.View.Form {
     }
 
     private void StaffButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Staff() {
+      AddUserControl(new UserControl.Component.Table.Staff() {
         Dock = DockStyle.Fill
       });
     }
 
     private void RoleButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Role() {
+      AddUserControl(new UserControl.Component.Table.Role() {
         Dock = DockStyle.Fill
       });
     }
 
     private void PermissionButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Permission() {
+      AddUserControl(new UserControl.Component.Table.Permission() {
         Dock = DockStyle.Fill
       });
     }
 
     private void PatientButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Patient() {
+      AddUserControl(new UserControl.Component.Table.Patient() {
         Dock = DockStyle.Fill
       });
     }
 
     private void SessionButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Session() {
+      AddUserControl(new UserControl.Component.Table.Session() {
         Dock = DockStyle.Fill
       });
     }
 
     private void BiopsyButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.View.Biopsy() {
+      AddUserControl(new UserControl.Component.Table.Biopsy() {
         Dock = DockStyle.Fill
       });
     }

@@ -17,6 +17,10 @@ namespace PMSX.View.Form {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+
+      brandPanel.Controls.Add(new UserControl.Component.Brand() {
+        Dock = DockStyle.Fill
+      });
     }
 
     private void SelectSession_Load(object sender, EventArgs e) {

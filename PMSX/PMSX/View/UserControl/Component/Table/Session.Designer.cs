@@ -1,5 +1,5 @@
-﻿namespace PMSX.View.UserControl.View {
-    partial class Staff {
+﻿namespace PMSX.View.UserControl.Component.Table {
+    partial class Session {
         /// <summary> 
         /// Required designer variable.
         /// </summary>

@@ -1,5 +1,5 @@
-﻿namespace PMSX.View.UserControl.View {
-    partial class Patient {
+﻿namespace PMSX.View.UserControl.Component.Table {
+    partial class Staff {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,15 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.SuspendLayout();
-            // 
-            // Patient
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Patient";
-            this.ResumeLayout(false);
-
         }
 
         #endregion

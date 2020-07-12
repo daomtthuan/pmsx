@@ -1,5 +1,5 @@
-﻿namespace PMSX.View.UserControl.View {
-    partial class Role {
+﻿namespace PMSX.View.UserControl.Component.Table {
+    partial class Patient {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -25,12 +25,13 @@
         private void InitializeComponent() {
             this.SuspendLayout();
             // 
-            // Role
+            // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Role";
+            this.Name = "Patient";
             this.ResumeLayout(false);
+
         }
 
         #endregion

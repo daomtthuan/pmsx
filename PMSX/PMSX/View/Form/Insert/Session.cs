@@ -76,7 +76,7 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
-      Controller.Session.Instance.Insert();
+      //Controller.Session.Instance.Insert();
       Close();
     }
   }

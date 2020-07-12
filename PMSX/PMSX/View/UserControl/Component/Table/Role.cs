@@ -1,22 +1,23 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.View {
-  public partial class Session : XtraUserControl {
-    private class SessionTable : Layout.Table {
+namespace PMSX.View.UserControl.Component.Table {
+  public partial class Role : XtraUserControl {
+    private class RoleTable : Layout.Table {
+      private List<Model.Role> data;
+
       protected override void OnInit() {
-        TitleLabel.Text = "Danh sách phiên làm việc";
+        TitleLabel.Text = "Danh sách quyền";
       }
 
       protected override void OnLoad() {
-        GridControl.DataSource = Controller.Session.Instance.SelectAll().Select(item => new {
+        data = Controller.Role.Instance.SelectAll();
+        GridControl.DataSource = data.Select(item => new {
           item.Id,
           item.Name,
-          TechnicianName = item.GetTechnician().Name,
-          DoctorName = item.GetDoctor().Name,
           item.CreateDatetime,
           item.UpdateDatetime,
           State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
@@ -25,24 +26,24 @@ namespace PMSX.View.UserControl.View {
         GridView.Columns["Id"].Caption = "Mã định danh";
         GridView.Columns["Id"].Visible = false;
         GridView.Columns["Name"].Caption = "Tên";
-        GridView.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
-        GridView.Columns["DoctorName"].Caption = "Bác sĩ";
         GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
         GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
         GridView.Columns["State"].Caption = "Trạng thái";
       }
 
       protected override void OnInsert() {
-        new Form.Insert.Session().ShowDialog();
+        new Form.Insert.Role().ShowDialog();
         OnLoad();
       }
 
       protected override void OnUpdate() {
-        throw new NotImplementedException();
+        new Form.Update.Role(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        OnLoad();
       }
 
       protected override void OnDisabled() {
-        throw new NotImplementedException();
+        Controller.Role.Instance.Disabled(SelectedId);
+        OnLoad();
       }
 
       protected override void RowStyle(RowStyleEventArgs e) {
@@ -54,9 +55,10 @@ namespace PMSX.View.UserControl.View {
       }
     }
 
-    public Session() {
+    public Role() {
       InitializeComponent();
-      Controls.Add(new SessionTable() {
+
+      Controls.Add(new RoleTable() {
         Dock = DockStyle.Fill
       });
     }

@@ -47,7 +47,7 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
-      Controller.Permission.Instance.Insert(staffSelect.GetColumnValue("Id").ToString(), data.Id, commentInput.Text);
+      Controller.Permission.Instance.Insert(staffSelect.EditValue.ToString(), data.Id, commentInput.Text);
       Close();
     }
   }

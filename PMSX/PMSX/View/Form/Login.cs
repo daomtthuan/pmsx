@@ -14,6 +14,10 @@ namespace PMSX.View.Form {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+
+      brandPanel.Controls.Add(new UserControl.Component.Brand() {
+        Dock = DockStyle.Fill
+      });
     }
 
     private void LoginButton_Click(object sender, EventArgs e) {
@@ -40,7 +44,7 @@ namespace PMSX.View.Form {
     private void Login_Load(object sender, EventArgs e) {
       usernameInput.Text = "daomtthuan";
       passwordInput.Text = "1";
-      //LoginButton_Click(sender, e);
+      LoginButton_Click(sender, e);
     }
   }
 }

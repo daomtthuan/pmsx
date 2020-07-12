@@ -87,7 +87,7 @@
       this.insertButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.insertButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.insertButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_addcircled;
-      this.insertButton.Location = new System.Drawing.Point(497, 12);
+      this.insertButton.Location = new System.Drawing.Point(415, 12);
       this.insertButton.Name = "insertButton";
       this.insertButton.Padding = new System.Windows.Forms.Padding(5);
       this.insertButton.Size = new System.Drawing.Size(91, 40);
@@ -101,7 +101,7 @@
       this.updateButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.updateButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.updateButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_edit;
-      this.updateButton.Location = new System.Drawing.Point(310, 12);
+      this.updateButton.Location = new System.Drawing.Point(510, 12);
       this.updateButton.Name = "updateButton";
       this.updateButton.Padding = new System.Windows.Forms.Padding(5);
       this.updateButton.Size = new System.Drawing.Size(78, 40);
@@ -132,7 +132,7 @@
       this.detailsButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.detailsButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.detailsButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_zoom;
-      this.detailsButton.Location = new System.Drawing.Point(392, 12);
+      this.detailsButton.Location = new System.Drawing.Point(310, 12);
       this.detailsButton.Name = "detailsButton";
       this.detailsButton.Padding = new System.Windows.Forms.Padding(5);
       this.detailsButton.Size = new System.Drawing.Size(101, 40);
@@ -149,9 +149,9 @@
             this.gridControlLayout,
             this.titleLabel,
             this.deleteButtonLayout,
+            this.updateButtonLayout,
             this.insertButtonLayout,
-            this.detailsButtonLayout,
-            this.updateButtonLayout});
+            this.detailsButtonLayout});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(738, 700);
       this.Root.TextVisible = false;
@@ -198,7 +198,7 @@
       // insertButtonLayout
       // 
       this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(485, 0);
+      this.insertButtonLayout.Location = new System.Drawing.Point(403, 0);
       this.insertButtonLayout.MaxSize = new System.Drawing.Size(95, 44);
       this.insertButtonLayout.MinSize = new System.Drawing.Size(95, 44);
       this.insertButtonLayout.Name = "insertButtonLayout";
@@ -210,7 +210,7 @@
       // detailsButtonLayout
       // 
       this.detailsButtonLayout.Control = this.detailsButton;
-      this.detailsButtonLayout.Location = new System.Drawing.Point(380, 0);
+      this.detailsButtonLayout.Location = new System.Drawing.Point(298, 0);
       this.detailsButtonLayout.MaxSize = new System.Drawing.Size(105, 0);
       this.detailsButtonLayout.MinSize = new System.Drawing.Size(105, 42);
       this.detailsButtonLayout.Name = "detailsButtonLayout";
@@ -222,7 +222,7 @@
       // updateButtonLayout
       // 
       this.updateButtonLayout.Control = this.updateButton;
-      this.updateButtonLayout.Location = new System.Drawing.Point(298, 0);
+      this.updateButtonLayout.Location = new System.Drawing.Point(498, 0);
       this.updateButtonLayout.MaxSize = new System.Drawing.Size(82, 0);
       this.updateButtonLayout.MinSize = new System.Drawing.Size(82, 42);
       this.updateButtonLayout.Name = "updateButtonLayout";

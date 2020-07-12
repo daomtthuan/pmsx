@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.View {
+namespace PMSX.View.UserControl.Component.Table {
   public partial class Patient : XtraUserControl {
     private class PatientTable : Layout.Table {
       protected override void OnInit() {

@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.View {
+namespace PMSX.View.UserControl.Component.Table {
   public partial class Permission : DevExpress.XtraEditors.XtraUserControl {
     private class PermissionTable : Layout.Table {
       private List<Model.Permission> data;

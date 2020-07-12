@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.UserControl.View {
+﻿namespace PMSX.View.UserControl.Component.Table {
     partial class Permission {
         /// <summary> 
         /// Required designer variable.
