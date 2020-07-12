@@ -1,34 +1,34 @@
 ﻿namespace PMSX.View.Form.Insert {
-    partial class Session {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+  partial class Session {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing) {
+      if (disposing && (components != null)) {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        #region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent() {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
       this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.technicianSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.doctorSelect = new DevExpress.XtraEditors.LookUpEdit();
-      this.technicianSelect1 = new DevExpress.XtraEditors.DateEdit();
+      this.nameSelect = new DevExpress.XtraEditors.DateEdit();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.technicianSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
@@ -42,8 +42,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.doctorSelect.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect1.Properties.CalendarTimeProperties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect1.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.nameSelect.Properties.CalendarTimeProperties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.nameSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
@@ -61,7 +61,7 @@
       this.layoutControl.Controls.Add(this.technicianSelect);
       this.layoutControl.Controls.Add(this.commentInput);
       this.layoutControl.Controls.Add(this.doctorSelect);
-      this.layoutControl.Controls.Add(this.technicianSelect1);
+      this.layoutControl.Controls.Add(this.nameSelect);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
@@ -115,25 +115,26 @@
       this.doctorSelect.StyleController = this.layoutControl;
       this.doctorSelect.TabIndex = 4;
       // 
-      // technicianSelect1
+      // nameSelect
       // 
-      this.technicianSelect1.EditValue = null;
-      this.technicianSelect1.Location = new System.Drawing.Point(12, 71);
-      this.technicianSelect1.Name = "technicianSelect1";
-      this.technicianSelect1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.nameSelect.EditValue = null;
+      this.nameSelect.Location = new System.Drawing.Point(12, 71);
+      this.nameSelect.Name = "nameSelect";
+      this.nameSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.technicianSelect1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.nameSelect.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.technicianSelect1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-      this.technicianSelect1.Properties.DisplayFormat.FormatString = "";
-      this.technicianSelect1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-      this.technicianSelect1.Properties.EditFormat.FormatString = "";
-      this.technicianSelect1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-      this.technicianSelect1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-      this.technicianSelect1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-      this.technicianSelect1.Size = new System.Drawing.Size(476, 28);
-      this.technicianSelect1.StyleController = this.layoutControl;
-      this.technicianSelect1.TabIndex = 4;
+      this.nameSelect.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+      this.nameSelect.Properties.DisplayFormat.FormatString = "";
+      this.nameSelect.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+      this.nameSelect.Properties.EditFormat.FormatString = "";
+      this.nameSelect.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+      this.nameSelect.Properties.Mask.UseMaskAsDisplayFormat = true;
+      this.nameSelect.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+      this.nameSelect.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+      this.nameSelect.Size = new System.Drawing.Size(476, 28);
+      this.nameSelect.StyleController = this.layoutControl;
+      this.nameSelect.TabIndex = 4;
       // 
       // Root
       // 
@@ -223,7 +224,7 @@
       // 
       // nameSelectLayout
       // 
-      this.nameSelectLayout.Control = this.technicianSelect1;
+      this.nameSelectLayout.Control = this.nameSelect;
       this.nameSelectLayout.CustomizationFormText = "Kỹ thuật viên";
       this.nameSelectLayout.Location = new System.Drawing.Point(0, 35);
       this.nameSelectLayout.Name = "nameSelectLayout";
@@ -252,8 +253,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.doctorSelect.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect1.Properties.CalendarTimeProperties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect1.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.nameSelect.Properties.CalendarTimeProperties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.nameSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
@@ -264,23 +265,23 @@
       ((System.ComponentModel.ISupportInitialize)(this.nameSelectLayout)).EndInit();
       this.ResumeLayout(false);
 
-        }
-
-        #endregion
-
-        private DevExpress.XtraLayout.LayoutControl layoutControl;
-        private DevExpress.XtraEditors.SimpleButton insertButton;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem technicianSelectLayout;
-        private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
-        private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
-        private DevExpress.XtraEditors.LookUpEdit technicianSelect;
-        private DevExpress.XtraEditors.MemoEdit commentInput;
-        private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
-        private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
-        private DevExpress.XtraEditors.LookUpEdit doctorSelect;
-        private DevExpress.XtraLayout.LayoutControlItem doctorSelectLayout;
-        private DevExpress.XtraEditors.DateEdit technicianSelect1;
-        private DevExpress.XtraLayout.LayoutControlItem nameSelectLayout;
     }
+
+    #endregion
+
+    private DevExpress.XtraLayout.LayoutControl layoutControl;
+    private DevExpress.XtraEditors.SimpleButton insertButton;
+    private DevExpress.XtraLayout.LayoutControlGroup Root;
+    private DevExpress.XtraLayout.LayoutControlItem technicianSelectLayout;
+    private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
+    private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
+    private DevExpress.XtraEditors.LookUpEdit technicianSelect;
+    private DevExpress.XtraEditors.MemoEdit commentInput;
+    private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
+    private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
+    private DevExpress.XtraEditors.LookUpEdit doctorSelect;
+    private DevExpress.XtraLayout.LayoutControlItem doctorSelectLayout;
+    private DevExpress.XtraEditors.DateEdit nameSelect;
+    private DevExpress.XtraLayout.LayoutControlItem nameSelectLayout;
+  }
 }

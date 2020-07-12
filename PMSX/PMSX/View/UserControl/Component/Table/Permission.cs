@@ -1,38 +1,43 @@
 ﻿using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Permission : DevExpress.XtraEditors.XtraUserControl {
     private class PermissionTable : Layout.Table {
-      private List<Model.Permission> data;
-
-      public Model.Role SelectRole { get; set; }
+      private List<Model.Permission> permissions;
+      private string roleId;
+      private string roleName;
 
       protected override void OnInsert() {
-        new Form.Insert.Permission(SelectRole).ShowDialog();
-        LoadData(SelectRole);
+        List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId, 1);
+        if (staffs.Count == 0) {
+          Util.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");    
+        } else {
+          new Form.Insert.Permission(roleId, staffs).ShowDialog();
+          LoadData(roleId, roleName);
+        }        
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Permission(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
-        LoadData(SelectRole);
+        new Form.Update.Permission(permissions.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        LoadData(roleId, roleName);
       }
 
       protected override void OnDisabled() {
         Controller.Permission.Instance.Disabled(SelectedId);
-        LoadData(SelectRole);
+        LoadData(roleId, roleName);
       }
 
-      public void LoadData(Model.Role role) {
-        SelectRole = role;
-        data = Controller.Permission.Instance.SelectByRoleId(role.Id);
+      public void LoadData(string roleId, string roleName) {
+        this.roleId = roleId;
+        this.roleName = roleName;
+        permissions = Controller.Permission.Instance.SelectByRoleId(roleId);
 
-        TitleLabel.Text = "Danh sách nhân viên có quyền " + role.Name;
-        GridControl.DataSource = data.Select(item => {
+        TitleLabel.Text = "Danh sách nhân viên có quyền " + roleName;
+        GridControl.DataSource = permissions.Select(item => {
           Model.Staff staff = Controller.Staff.Instance.SelectById(item.StaffId)[0];
           return new {
             item.Id,
@@ -61,7 +66,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
     }
 
-    private List<Model.Role> data;
+    private List<Model.Role> roles;
 
     public Permission() {
       InitializeComponent();
@@ -71,10 +76,10 @@ namespace PMSX.View.UserControl.Component.Table {
     }
 
     private void Permission_Load(object sender, EventArgs e) {
-      data = Controller.Role.Instance.SelectAll();
+      roles = Controller.Role.Instance.SelectAll();
 
-      if (data.Count > 0) {
-        roleSelect.Properties.DataSource = data.Select(item => new {
+      if (roles.Count > 0) {
+        roleSelect.Properties.DataSource = roles.Select(item => new {
           item.Id,
           item.Name,
           item.CreateDatetime,
@@ -91,12 +96,12 @@ namespace PMSX.View.UserControl.Component.Table {
         roleSelect.Properties.Columns["UpdateDatetime"].Caption = "Ngày sửa";
         roleSelect.Properties.Columns["State"].Caption = "Trạng thái";
 
-        roleSelect.EditValue = data[0].Id;
+        roleSelect.EditValue = roles[0].Id;
       }
     }
 
     private void RoleSelect_EditValueChanged(object sender, EventArgs e) {
-      ((PermissionTable)permissionPanel.Controls[0]).LoadData(data.Where(item => item.Id == roleSelect.GetColumnValue("Id").ToString()).First());
+      ((PermissionTable)permissionPanel.Controls[0]).LoadData(roleSelect.EditValue.ToString(), roleSelect.Text);
     }
   }
 }

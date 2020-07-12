@@ -3,7 +3,6 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using System;
-using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Layout {
   public abstract partial class Table : XtraUserControl {
@@ -30,7 +29,7 @@ namespace PMSX.View.UserControl.Layout {
     protected virtual void RowStyle(RowStyleEventArgs e) { }
 
     private void DetailsButton_Click(object sender, EventArgs e) {
-      XtraMessageBox.Show("Sẽ có vào phiên bản kế tiếp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      Util.MessageBox.Instance.Info("Sẽ có vào phiên bản kế tiếp");
     }
 
     private void View_Load(object sender, EventArgs e) {

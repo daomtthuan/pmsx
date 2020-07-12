@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace PMSX.Utils {
+namespace PMSX.Util {
   public class Database {
     private static Database instance;
     private readonly string connectionString;
@@ -21,7 +22,7 @@ namespace PMSX.Utils {
     }
 
     public DataTable Excute(string query, SqlParameter[] parameters = null) {
-      DataTable data = new DataTable();
+      DataTable table = new DataTable();
       using (SqlConnection connection = new SqlConnection(connectionString)) {
         try {
           connection.Open();
@@ -33,21 +34,25 @@ namespace PMSX.Utils {
               }
             }
             using (SqlDataReader reader = command.ExecuteReader()) {
-              data.Load(reader);
+              table.Load(reader);
               reader.Close();
             }
           }
           connection.Close();
         } catch (Exception e) {
+          if (connection.State != ConnectionState.Closed) {
+            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            connection.Close();
+          } else {
+            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+          }
+          Application.Exit();
+#if DEBUG
           throw e;
-          //XtraMessageBox.Show("Kết nối cơ sở dữ liệu thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          //if (connection.State != ConnectionState.Closed) {
-          //    connection.Close();
-          //}
-          //Application.Exit();
+#endif
         }
       }
-      return data;
+      return table;
     }
 
     public void ExcuteNon(string query, SqlParameter[] parameters = null) {
@@ -65,18 +70,22 @@ namespace PMSX.Utils {
           }
           connection.Close();
         } catch (Exception e) {
+          if (connection.State != ConnectionState.Closed) {
+            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            connection.Close();
+          } else {
+            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+          }
+          Application.Exit();
+#if DEBUG
           throw e;
-          //XtraMessageBox.Show("Kết nối cơ sở dữ liệu thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          //if (connection.State != ConnectionState.Closed) {
-          //    connection.Close();
-          //}
-          //Application.Exit();
+#endif
         }
       }
     }
 
     public object ExecuteScalar(string query, SqlParameter[] parameters = null) {
-      object data = null;
+      object result = null;
       using (SqlConnection connection = new SqlConnection(connectionString)) {
         try {
           connection.Open();
@@ -87,19 +96,23 @@ namespace PMSX.Utils {
                 command.Parameters.Add(parameter);
               }
             }
-            data = command.ExecuteScalar();
+            result = command.ExecuteScalar();
           }
           connection.Close();
         } catch (Exception e) {
+          if (connection.State != ConnectionState.Closed) {
+            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            connection.Close();
+          } else {
+            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+          }
+          Application.Exit();
+#if DEBUG
           throw e;
-          //XtraMessageBox.Show("Kết nối cơ sở dữ liệu thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          //if (connection.State != ConnectionState.Closed) {
-          //    connection.Close();
-          //}
-          //Application.Exit();
+#endif
         }
       }
-      return data;
+      return result;
     }
   }
 }

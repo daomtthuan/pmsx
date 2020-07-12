@@ -1,5 +1,4 @@
-﻿using PMSX.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -19,49 +18,49 @@ namespace PMSX.Controller {
     }
 
     public List<Model.MacroGroup> SelectAll(int state = -1) {
-      List<Model.MacroGroup> data = new List<Model.MacroGroup>();
+      List<Model.MacroGroup> macroGroups = new List<Model.MacroGroup>();
 
       string query = @"
-			    select *
-                from pmsx_macroGroup
-                where
-                    (@state = -1 or macroGroup_state = @state)
-                order by macroGroup_code
-            ";
+        select *
+        from pmsx_macroGroup
+        where
+          (@state = -1 or macroGroup_state = @state)
+        order by macroGroup_code
+      ";
 
       SqlParameter[] parameters = {
-                new SqlParameter("@state", state)
-            };
+        new SqlParameter("@state", state)
+      };
 
-      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-        data.Add(new Model.MacroGroup(row));
+      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+        macroGroups.Add(new Model.MacroGroup(row));
       }
 
-      return data;
+      return macroGroups;
     }
 
     public List<Model.MacroGroup> SelectById(string id, int state = -1) {
-      List<Model.MacroGroup> data = new List<Model.MacroGroup>();
+      List<Model.MacroGroup> macroGroups = new List<Model.MacroGroup>();
 
       string query = @"
-			    select *
-                from pmsx_macroGroup
-				where
-                    (@state = -1 or macroGroup_state = @state) and
-                    macroGroup_id = @id
-                order by macroGroup_code
-            ";
+        select *
+        from pmsx_macroGroup
+        where
+          (@state = -1 or macroGroup_state = @state) and
+          macroGroup_id = @id
+        order by macroGroup_code
+      ";
 
       SqlParameter[] parameters = {
-                new SqlParameter("@id", id),
-                new SqlParameter("@state", state)
-            };
+        new SqlParameter("@id", id),
+        new SqlParameter("@state", state)
+      };
 
-      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-        data.Add(new Model.MacroGroup(row));
+      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+        macroGroups.Add(new Model.MacroGroup(row));
       }
 
-      return data;
+      return macroGroups;
     }
   }
 }

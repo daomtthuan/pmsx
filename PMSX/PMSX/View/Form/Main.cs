@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using PMSX.Properties;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +14,7 @@ namespace PMSX.View.Form {
       InitializeComponent();
       Display = false;
 
-      Icon = Resources.icon;
+      Icon = Properties.Resources.icon;
 
       panelControl = new PanelControl() {
         Dock = DockStyle.Fill

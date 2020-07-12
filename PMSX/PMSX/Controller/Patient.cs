@@ -1,5 +1,4 @@
-﻿using PMSX.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -19,49 +18,49 @@ namespace PMSX.Controller {
     }
 
     public List<Model.Patient> SelectAll(int state = -1) {
-      List<Model.Patient> data = new List<Model.Patient>();
+      List<Model.Patient> patients = new List<Model.Patient>();
 
       string query = @"
-                select *
-                from pmsx_patient
-                where
-                    (@state = -1 or patient_state = @state)
-				order by patient_name
-            ";
+        select *
+        from pmsx_patient
+        where
+          (@state = -1 or patient_state = @state)
+        order by patient_name
+      ";
 
       SqlParameter[] parameters = {
-                new SqlParameter("@state", state)
-            };
+        new SqlParameter("@state", state)
+      };
 
-      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-        data.Add(new Model.Patient(row));
+      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+        patients.Add(new Model.Patient(row));
       }
 
-      return data;
+      return patients;
     }
 
     public List<Model.Patient> SelectById(string id, int state = -1) {
-      List<Model.Patient> data = new List<Model.Patient>();
+      List<Model.Patient> patients = new List<Model.Patient>();
       string query = @"
-                select *
-                from pmsx_patient
-                where
-                    (@state = -1 or patient_state = @state) and
-                    patient_id = @id
-                order by patient_name
-            ";
+        select *
+        from pmsx_patient
+        where
+          (@state = -1 or patient_state = @state) and
+          patient_id = @id
+        order by patient_name
+      ";
 
       SqlParameter[] parameters = {
-                new SqlParameter("@id", id),
-                new SqlParameter("@state", state)
-            };
+        new SqlParameter("@id", id),
+        new SqlParameter("@state", state)
+      };
 
 
-      foreach (DataRow row in Database.Instance.Excute(query, parameters).Rows) {
-        data.Add(new Model.Patient(row));
+      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+        patients.Add(new Model.Patient(row));
       }
 
-      return data;
+      return patients;
     }
   }
 }

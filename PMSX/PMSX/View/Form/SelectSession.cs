@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using PMSX.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +6,12 @@ using System.Windows.Forms;
 
 namespace PMSX.View.Form {
   public partial class SelectSession : XtraForm {
-    private List<Model.Session> data;
+    private List<Model.Session> sessions;
 
     public SelectSession() {
       InitializeComponent();
 
-      Icon = Resources.icon;
+      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
@@ -24,9 +23,9 @@ namespace PMSX.View.Form {
     }
 
     private void SelectSession_Load(object sender, EventArgs e) {
-      data = Controller.Session.Instance.SelectAll(1);
-      if (data.Count > 0) {
-        sessionSelect.Properties.DataSource = data.Select(item => new {
+      sessions = Controller.Session.Instance.SelectAll(1);
+      if (sessions.Count > 0) {
+        sessionSelect.Properties.DataSource = sessions.Select(item => new {
           item.Id,
           item.Name,
           TechnicianName = item.GetTechnician().Name,
@@ -46,7 +45,7 @@ namespace PMSX.View.Form {
     }
 
     private void StartButton_Click(object sender, EventArgs e) {
-      Controller.Main.Instance.Session = data.Where(item => item.Id == sessionSelect.EditValue.ToString()).First();
+      Controller.Main.Instance.Session = sessions.Where(item => item.Id == sessionSelect.EditValue.ToString()).First();
       Close();
     }
   }

@@ -7,15 +7,15 @@ using System.Windows.Forms;
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Staff : XtraUserControl {
     private class StaffTable : Layout.Table {
-      private List<Model.Staff> data;
+      private List<Model.Staff> staffs;
 
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhân viên";
       }
 
       protected override void OnLoad() {
-        data = Controller.Staff.Instance.SelectAll();
-        GridControl.DataSource = data.Select(item => new {
+        staffs = Controller.Staff.Instance.SelectAll();
+        GridControl.DataSource = staffs.Select(item => new {
           item.Id,
           item.Username,
           item.Name,
@@ -39,7 +39,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Staff(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        new Form.Update.Staff(staffs.Where(item => item.Id == SelectedId).First()).ShowDialog();
         OnLoad();
       }
 

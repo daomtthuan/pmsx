@@ -21,6 +21,7 @@ namespace PMSX {
       Application.SetCompatibleTextRenderingDefault(false);
 
       BonusSkins.Register();
+
       Application.Run(new View.Form.Main());
     }
   }

@@ -7,15 +7,15 @@ using System.Windows.Forms;
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Role : XtraUserControl {
     private class RoleTable : Layout.Table {
-      private List<Model.Role> data;
+      private List<Model.Role> roles;
 
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách quyền";
       }
 
       protected override void OnLoad() {
-        data = Controller.Role.Instance.SelectAll();
-        GridControl.DataSource = data.Select(item => new {
+        roles = Controller.Role.Instance.SelectAll();
+        GridControl.DataSource = roles.Select(item => new {
           item.Id,
           item.Name,
           item.CreateDatetime,
@@ -37,7 +37,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Role(data.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        new Form.Update.Role(roles.Where(item => item.Id == SelectedId).First()).ShowDialog();
         OnLoad();
       }
 

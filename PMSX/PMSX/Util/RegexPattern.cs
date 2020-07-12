@@ -1,4 +1,4 @@
-﻿namespace PMSX.Utils {
+﻿namespace PMSX.Util {
   public static class RegexPattern {
     public const string username = "^[a-z0-9_]+$";
     public const string code = "^\\w+$";
