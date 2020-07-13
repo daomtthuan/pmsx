@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
@@ -25,28 +25,32 @@ namespace PMSX.View.Form {
     private void SelectSession_Load(object sender, EventArgs e) {
       sessions = Controller.Session.Instance.SelectAll(1);
       if (sessions.Count > 0) {
-        sessionSelect.Properties.DataSource = sessions.Select(item => new {
-          item.Id,
-          item.Name,
-          TechnicianName = item.GetTechnician().Name,
-          DoctorName = item.GetDoctor().Name,
-        });
+        sessionSelect.Properties.DataSource = sessions;
         sessionSelect.Properties.PopulateColumns();
-        sessionSelect.Properties.DisplayMember = "Name";
-        sessionSelect.Properties.ValueMember = "Id";
-        sessionSelect.Properties.Columns["Id"].Caption = "Mã định danh";
-        sessionSelect.Properties.Columns["Id"].Visible = false;
-        sessionSelect.Properties.Columns["Name"].Caption = "Tên";
-        sessionSelect.Properties.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
-        sessionSelect.Properties.Columns["DoctorName"].Caption = "Bác sĩ";
 
+        foreach (LookUpColumnInfo column in sessionSelect.Properties.Columns) {
+          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
+          column.Visible =
+            column.FieldName == "Name" ||
+            column.FieldName == "TechnicianName" ||
+            column.FieldName == "DoctorName";
+        }
+
+        sessionSelect.Properties.ValueMember = "Id";
+        sessionSelect.Properties.DisplayMember = "Name";
         sessionSelect.ItemIndex = 0;
       }
     }
 
     private void StartButton_Click(object sender, EventArgs e) {
-      Controller.Main.Instance.Session = sessions.Where(item => item.Id == sessionSelect.EditValue.ToString()).First();
+      Controller.Main.Instance.Session = (Model.Session)sessionSelect.GetSelectedDataRow();
       Close();
+    }
+
+    private void SelectSession_FormClosing(object sender, FormClosingEventArgs e) {
+      if (Controller.Main.Instance.Session == null) {
+        Application.Exit();
+      }
     }
   }
 }

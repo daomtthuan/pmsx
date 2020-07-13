@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model {
   public class Staff {
+    private readonly int state;
+
     public Staff(DataRow row) {
       Id = row["staff_id"].ToString();
       Username = row["staff_username"].ToString();
@@ -10,7 +11,7 @@ namespace PMSX.Model {
       Name = row["staff_name"].ToString();
 
       Comment = row["staff_comment"].ToString();
-      State = (int)row["staff_state"];
+      state = (int)row["staff_state"];
 
       CreateStaffId = row["staff_createStaffId"].ToString();
       CreateDatetime = row["staff_createDatetime"].ToString();
@@ -25,7 +26,7 @@ namespace PMSX.Model {
     public string Name { get; private set; }
 
     public string Comment { get; private set; }
-    public int State { get; private set; }
+    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }
@@ -33,20 +34,8 @@ namespace PMSX.Model {
     public string UpdateStaffId { get; private set; }
     public string UpdateDatetime { get; private set; }
 
-    public Staff GetCreateStaff() {
-      return Controller.Staff.Instance.SelectById(CreateStaffId)[0];
-    }
-
-    public Staff GetUpdateStaff() {
-      List<Staff> staffs = Controller.Staff.Instance.SelectById(UpdateStaffId);
-      if (staffs.Count != 1) {
-        return null;
-      }
-      return staffs[0];
-    }
-
-    public List<Role> GetRoles() {
-      return Controller.Role.Instance.SelectByStaffId(Id);
+    public int GetStateNumber() {
+      return state;
     }
   }
 }

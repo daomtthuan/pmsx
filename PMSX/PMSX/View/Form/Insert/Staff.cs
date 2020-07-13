@@ -8,6 +8,7 @@ namespace PMSX.View.Form.Insert {
     public Staff() {
       InitializeComponent();
 
+      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
@@ -17,13 +18,13 @@ namespace PMSX.View.Form.Insert {
 
     private void InsertButton_Click(object sender, EventArgs e) {
       if (usernameInput.Text.Length == 0 || nameInput.Text.Length == 0) {
-        Util.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Regex.IsMatch(usernameInput.Text, Util.RegexPattern.username) || usernameInput.Text.Length < 4) {
-        Util.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập không hợp lệ.\nChỉ gồm chữ, số và dấu gạch dưới, tối thiểu 4 ký tự.");
-      } else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.name)) {
-        Util.MessageBox.Instance.Warning("Thêm không thành công.\nTên nhân viên không hợp lệ.");
+        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+      } else if (!Regex.IsMatch(usernameInput.Text, Util.RegexPattern.Instance.Username) || usernameInput.Text.Length < 4) {
+        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập không hợp lệ.\nChỉ gồm chữ, số và dấu gạch dưới, tối thiểu 4 ký tự.");
+      } else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
+        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên nhân viên không hợp lệ.");
       } else if (!Controller.Staff.Instance.InsertWithDefaultPassword(usernameInput.Text, nameInput.Text, commentInput.Text)) {
-        Util.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập đã tồn tại.");
+        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập đã tồn tại.");
       } else {
         Close();
       }

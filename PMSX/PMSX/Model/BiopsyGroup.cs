@@ -3,13 +3,15 @@ using System.Data;
 
 namespace PMSX.Model {
   public class BiopsyGroup {
+    private readonly int state;
+
     public BiopsyGroup(DataRow row) {
       Id = row["biopsyGroup_id"].ToString();
       Code = row["biopsyGroup_code"].ToString();
       NumberBiopsy = (long)row["biopsyGroup_numberBiopsy"];
 
       Comment = row["biopsyGroup_comment"].ToString();
-      State = (int)row["biopsyGroup_state"];
+      state = (int)row["biopsyGroup_state"];
 
       CreateStaffId = row["biopsyGroup_createStaffId"].ToString();
       CreateDatetime = row["biopsyGroup_createDatetime"].ToString();
@@ -23,7 +25,7 @@ namespace PMSX.Model {
     public long NumberBiopsy { get; private set; }
 
     public string Comment { get; private set; }
-    public int State { get; private set; }
+    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }
@@ -31,20 +33,8 @@ namespace PMSX.Model {
     public string UpdateStaffId { get; private set; }
     public string UpdateDatetime { get; private set; }
 
-    public Staff GetCreateStaff() {
-      return Controller.Staff.Instance.SelectById(CreateStaffId)[0];
-    }
-
-    public Staff GetUpdateStaff() {
-      List<Staff> staffs = Controller.Staff.Instance.SelectById(UpdateStaffId);
-      if (staffs.Count != 1) {
-        return null;
-      }
-      return staffs[0];
-    }
-
-    public List<Biopsy> GetBiopsies() {
-      return Controller.Biopsy.Instance.SelectByGroupId(Id);
+    public int GetStateNumber() {
+      return state;
     }
   }
 }

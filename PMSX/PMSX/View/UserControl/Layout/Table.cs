@@ -1,4 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.Utils.Svg;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
@@ -14,7 +17,6 @@ namespace PMSX.View.UserControl.Layout {
     protected GridControl GridControl { get => gridControl; }
     protected GridView GridView { get => gridView; }
     protected SimpleLabelItem TitleLabel { get => titleLabel; }
-    protected string SelectedId { get => GridView.GetRowCellValue(GridView.GetSelectedRows()[0], "Id").ToString(); }
 
     protected virtual void OnInit() { }
 
@@ -26,14 +28,16 @@ namespace PMSX.View.UserControl.Layout {
 
     protected abstract void OnDisabled();
 
-    protected virtual void RowStyle(RowStyleEventArgs e) { }
-
-    private void DetailsButton_Click(object sender, EventArgs e) {
-      Util.MessageBox.Instance.Info("Sẽ có vào phiên bản kế tiếp");
+    protected object GetSelectedRow() {
+      return GridView.GetRow(GridView.GetSelectedRows()[0]);
     }
 
     private void View_Load(object sender, EventArgs e) {
       OnLoad();
+    }
+
+    private void DetailsButton_Click(object sender, EventArgs e) {
+      Util.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
@@ -47,10 +51,6 @@ namespace PMSX.View.UserControl.Layout {
 
     private void DisabledButton_Click(object sender, EventArgs e) {
       OnDisabled();
-    }
-
-    private void GridView_RowStyle(object sender, RowStyleEventArgs e) {
-      RowStyle(e);
     }
   }
 }

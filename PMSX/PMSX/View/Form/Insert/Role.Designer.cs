@@ -73,9 +73,10 @@
       // 
       this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.insertButton.Appearance.Options.UseBackColor = true;
-      this.insertButton.Location = new System.Drawing.Point(12, 329);
+      this.insertButton.Location = new System.Drawing.Point(12, 328);
       this.insertButton.Name = "insertButton";
-      this.insertButton.Size = new System.Drawing.Size(476, 35);
+      this.insertButton.Padding = new System.Windows.Forms.Padding(5);
+      this.insertButton.Size = new System.Drawing.Size(476, 36);
       this.insertButton.StyleController = this.layoutControl;
       this.insertButton.TabIndex = 6;
       this.insertButton.Text = "Thêm";
@@ -86,7 +87,7 @@
       this.commentInput.Location = new System.Drawing.Point(12, 172);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(476, 143);
+      this.commentInput.Size = new System.Drawing.Size(476, 142);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
@@ -112,17 +113,14 @@
       this.nameInputLayout.Size = new System.Drawing.Size(480, 56);
       this.nameInputLayout.Text = "Tên";
       this.nameInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.nameInputLayout.TextSize = new System.Drawing.Size(198, 21);
+      this.nameInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // insertButtonLayout
       // 
       this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(0, 307);
-      this.insertButtonLayout.MaxSize = new System.Drawing.Size(0, 49);
-      this.insertButtonLayout.MinSize = new System.Drawing.Size(112, 49);
+      this.insertButtonLayout.Location = new System.Drawing.Point(0, 306);
       this.insertButtonLayout.Name = "insertButtonLayout";
-      this.insertButtonLayout.Size = new System.Drawing.Size(480, 49);
-      this.insertButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.insertButtonLayout.Size = new System.Drawing.Size(480, 50);
       this.insertButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.insertButtonLayout.TextVisible = false;
@@ -130,36 +128,36 @@
       // requiredLabel
       // 
       this.requiredLabel.AllowHotTrack = false;
-      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.requiredLabel.Location = new System.Drawing.Point(0, 0);
       this.requiredLabel.Name = "requiredLabel";
       this.requiredLabel.Size = new System.Drawing.Size(480, 35);
       this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
       this.requiredLabel.Text = "Thông tin bắt buộc";
-      this.requiredLabel.TextSize = new System.Drawing.Size(198, 21);
+      this.requiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // notRequiredLabel
       // 
       this.notRequiredLabel.AllowHotTrack = false;
-      this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+      this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.notRequiredLabel.Location = new System.Drawing.Point(0, 91);
       this.notRequiredLabel.Name = "notRequiredLabel";
       this.notRequiredLabel.Size = new System.Drawing.Size(480, 45);
       this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
       this.notRequiredLabel.Text = "Thông tin không bắt buộc";
-      this.notRequiredLabel.TextSize = new System.Drawing.Size(198, 21);
+      this.notRequiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
       this.commentInputLayout.Location = new System.Drawing.Point(0, 136);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(480, 171);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 170);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.commentInputLayout.TextSize = new System.Drawing.Size(198, 21);
+      this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // Role
       // 

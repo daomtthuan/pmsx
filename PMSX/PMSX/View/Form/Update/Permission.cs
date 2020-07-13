@@ -10,13 +10,14 @@ namespace PMSX.View.Form.Update {
       InitializeComponent();
       this.permissions = permissions;
 
+      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      stateRadio.EditValue = permissions.State;
+      stateRadio.EditValue = permissions.GetStateNumber();
       commentInput.Text = permissions.Comment;
     }
 

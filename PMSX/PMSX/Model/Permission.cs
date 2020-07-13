@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model {
   public class Permission {
+    private readonly int state;
+
     public Permission(DataRow row) {
       Id = row["permission_id"].ToString();
       StaffId = row["permission_staffId"].ToString();
+      StaffUsername = row["staff_username"].ToString();
+      StaffName = row["staff_name"].ToString();
       RoleId = row["permission_roleId"].ToString();
 
       Comment = row["permission_comment"].ToString();
-      State = (int)row["permission_state"];
+      state = (int)row["permission_state"];
 
       CreateStaffId = row["permission_createStaffId"].ToString();
       CreateDatetime = row["permission_createDatetime"].ToString();
@@ -20,10 +23,12 @@ namespace PMSX.Model {
 
     public string Id { get; private set; }
     public string StaffId { get; private set; }
+    public string StaffUsername { get; private set; }
+    public string StaffName { get; private set; }
     public string RoleId { get; private set; }
 
     public string Comment { get; private set; }
-    public int State { get; private set; }
+    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }
@@ -31,24 +36,8 @@ namespace PMSX.Model {
     public string UpdateStaffId { get; private set; }
     public string UpdateDatetime { get; private set; }
 
-    public Staff GetCreateStaff() {
-      return Controller.Staff.Instance.SelectById(CreateStaffId)[0];
-    }
-
-    public Staff GetUpdateStaff() {
-      List<Staff> staffs = Controller.Staff.Instance.SelectById(UpdateStaffId);
-      if (staffs.Count != 1) {
-        return null;
-      }
-      return staffs[0];
-    }
-
-    public Staff GetStaff() {
-      return Controller.Staff.Instance.SelectById(StaffId)[0];
-    }
-
-    public Role GetRole() {
-      return Controller.Role.Instance.SelectById(RoleId)[0];
+    public int GetStateNumber() {
+      return state;
     }
   }
 }

@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
@@ -15,20 +15,19 @@ namespace PMSX.View.UserControl.Component.Table {
 
       protected override void OnLoad() {
         roles = Controller.Role.Instance.SelectAll();
-        GridControl.DataSource = roles.Select(item => new {
-          item.Id,
-          item.Name,
-          item.CreateDatetime,
-          item.UpdateDatetime,
-          State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
-        });
+        GridControl.DataSource = roles;
         GridView.PopulateColumns();
-        GridView.Columns["Id"].Caption = "Mã định danh";
-        GridView.Columns["Id"].Visible = false;
-        GridView.Columns["Name"].Caption = "Tên";
-        GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-        GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-        GridView.Columns["State"].Caption = "Trạng thái";
+
+        foreach (GridColumn column in GridView.Columns) {
+          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
+          column.Visible =
+            column.FieldName == "Name" ||
+            column.FieldName == "TechnicianName" ||
+            column.FieldName == "DoctorName" ||
+            column.FieldName == "State" ||
+            column.FieldName == "CreateDatetime" ||
+            column.FieldName == "UpdateDatetime";
+        }
       }
 
       protected override void OnInsert() {
@@ -37,21 +36,13 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Role(roles.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        new Form.Update.Role((Model.Role)GetSelectedRow()).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
-        Controller.Role.Instance.Disabled(SelectedId);
+        Controller.Role.Instance.Disabled(((Model.Role)GetSelectedRow()).Id);
         OnLoad();
-      }
-
-      protected override void RowStyle(RowStyleEventArgs e) {
-        if (e.RowHandle >= 0) {
-          if (GridView.GetRowCellValue(e.RowHandle, "State").ToString() == "Vô hiệu hoá") {
-            e.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-          }
-        }
       }
     }
 

@@ -21,7 +21,10 @@ namespace PMSX.Controller {
       List<Model.Permission> permissions = new List<Model.Permission>();
 
       string query = @"
-        select pmsx_permission.* 
+        select
+          pmsx_permission.*,
+          staff_username,
+          staff_name
         from pmsx_permission
 	        join pmsx_staff on permission_staffId = staff_id
         where

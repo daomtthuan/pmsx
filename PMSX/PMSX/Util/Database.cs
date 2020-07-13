@@ -1,7 +1,5 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace PMSX.Util {
   public class Database {
@@ -39,16 +37,17 @@ namespace PMSX.Util {
             }
           }
           connection.Close();
-        } catch (Exception e) {
+        } catch (SqlException e) {
           if (connection.State != ConnectionState.Closed) {
-            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();
           } else {
-            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
           }
-          Application.Exit();
 #if DEBUG
           throw e;
+#else
+          Environment.Exit(e.Number);
 #endif
         }
       }
@@ -69,16 +68,17 @@ namespace PMSX.Util {
             command.ExecuteNonQuery();
           }
           connection.Close();
-        } catch (Exception e) {
+        } catch (SqlException e) {
           if (connection.State != ConnectionState.Closed) {
-            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();
           } else {
-            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
           }
-          Application.Exit();
 #if DEBUG
           throw e;
+#else
+          Environment.Exit(e.Number);
 #endif
         }
       }
@@ -99,16 +99,17 @@ namespace PMSX.Util {
             result = command.ExecuteScalar();
           }
           connection.Close();
-        } catch (Exception e) {
+        } catch (SqlException e) {
           if (connection.State != ConnectionState.Closed) {
-            MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();
           } else {
-            MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
+            View.MessageBox.Instance.Error("Kết nối cơ sở dữ liệu thất bại.");
           }
-          Application.Exit();
 #if DEBUG
           throw e;
+#else
+          Environment.Exit(e.Number);
 #endif
         }
       }

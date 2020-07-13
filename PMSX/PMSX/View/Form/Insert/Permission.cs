@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace PMSX.View.Form.Insert {
     public Permission(string roleId, List<Model.Staff> staffs) {
       InitializeComponent();
 
+      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
@@ -23,26 +25,19 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void Permission_Load(object sender, EventArgs e) {
-      staffSelect.Properties.DataSource = staffs.Select(item => new {
-        item.Id,
-        item.Username,
-        item.Name,
-        State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
-      });
+      staffSelect.Properties.DataSource = staffs;
       staffSelect.Properties.PopulateColumns();
-      staffSelect.Properties.DisplayMember = "Name";
-      staffSelect.Properties.ValueMember = "Id";
-      staffSelect.Properties.Columns["Id"].Caption = "Mã định danh";
-      staffSelect.Properties.Columns["Id"].Visible = false;
-      staffSelect.Properties.Columns["Username"].Caption = "Tên đăng nhập";
-      staffSelect.Properties.Columns["Name"].Caption = "Tên";
-      staffSelect.Properties.Columns["State"].Caption = "Trạng thái";
+
+      foreach (LookUpColumnInfo column in staffSelect.Properties.Columns) {
+        column.Caption = Util.Locale.Instance.Caption[column.FieldName];
+      }
 
       staffSelect.ItemIndex = 0;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
       Controller.Permission.Instance.Insert(staffSelect.EditValue.ToString(), roleId, commentInput.Text);
+      DialogResult = DialogResult.OK;
       Close();
     }
   }

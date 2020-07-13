@@ -321,4 +321,3 @@ insert into pmsx_biopsy(biopsy_id, biopsy_code, biopsy_groupId, biopsy_patientId
 insert into pmsx_biopsy(biopsy_id, biopsy_code, biopsy_groupId, biopsy_patientId, biopsy_segment, biopsy_grossStaffId, biopsy_createStaffId) values ('09FAF08C-0419-4AAD-9EF2-2A5D31B95944', 6, '2183CCCB-0A65-407C-AE93-CE9CF37B5499', '1A1D1307-A471-4752-B492-3E2DF431B0BA', 1, '73F2B296-EBDC-4434-892C-983E46F7CCF3', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_biopsy(biopsy_id, biopsy_code, biopsy_groupId, biopsy_patientId, biopsy_segment, biopsy_grossStaffId, biopsy_createStaffId) values ('8B77B18F-1ABE-4D5C-AF0E-6AA9628C01A9', 3, '2183CCCB-0A65-407C-AE93-CE9CF37B5499', '54C1D24B-4D38-4B99-B973-5B0D2204800A', 1, '6DDAA669-7F0E-46CC-8271-88633C859FFC', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
-					

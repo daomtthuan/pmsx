@@ -1,42 +1,42 @@
 ﻿namespace PMSX.View.Form.Insert {
-  partial class Session {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
+    partial class Session {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing) {
-      if (disposing && (components != null)) {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    #region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent() {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-      this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.technicianSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.doctorSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.nameSelect = new DevExpress.XtraEditors.DateEdit();
+      this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.technicianSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.doctorSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.nameSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).BeginInit();
@@ -49,40 +49,27 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.doctorSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
       // 
       this.layoutControl.AllowCustomization = false;
-      this.layoutControl.Controls.Add(this.insertButton);
       this.layoutControl.Controls.Add(this.technicianSelect);
       this.layoutControl.Controls.Add(this.commentInput);
       this.layoutControl.Controls.Add(this.doctorSelect);
       this.layoutControl.Controls.Add(this.nameSelect);
+      this.layoutControl.Controls.Add(this.insertButton);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
       this.layoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(997, 232, 650, 400);
       this.layoutControl.Root = this.Root;
-      this.layoutControl.Size = new System.Drawing.Size(500, 489);
-      this.layoutControl.TabIndex = 1;
+      this.layoutControl.Size = new System.Drawing.Size(500, 523);
+      this.layoutControl.TabIndex = 2;
       this.layoutControl.Text = "layoutControl";
-      // 
-      // insertButton
-      // 
-      this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-      this.insertButton.Appearance.Options.UseBackColor = true;
-      this.insertButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.insertButton.Location = new System.Drawing.Point(12, 442);
-      this.insertButton.Name = "insertButton";
-      this.insertButton.Size = new System.Drawing.Size(476, 35);
-      this.insertButton.StyleController = this.layoutControl;
-      this.insertButton.TabIndex = 6;
-      this.insertButton.Text = "Thêm";
-      this.insertButton.Click += new System.EventHandler(this.InsertButton_Click);
       // 
       // technicianSelect
       // 
@@ -100,7 +87,7 @@
       this.commentInput.Location = new System.Drawing.Point(12, 286);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(476, 142);
+      this.commentInput.Size = new System.Drawing.Size(476, 175);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
@@ -136,6 +123,19 @@
       this.nameSelect.StyleController = this.layoutControl;
       this.nameSelect.TabIndex = 4;
       // 
+      // insertButton
+      // 
+      this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+      this.insertButton.Appearance.Options.UseBackColor = true;
+      this.insertButton.Location = new System.Drawing.Point(12, 475);
+      this.insertButton.Name = "insertButton";
+      this.insertButton.Padding = new System.Windows.Forms.Padding(5);
+      this.insertButton.Size = new System.Drawing.Size(476, 36);
+      this.insertButton.StyleController = this.layoutControl;
+      this.insertButton.TabIndex = 8;
+      this.insertButton.Text = "Thêm";
+      this.insertButton.Click += new System.EventHandler(this.InsertButton_Click);
+      // 
       // Root
       // 
       this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -145,11 +145,11 @@
             this.requiredLabel,
             this.notRequiredLabel,
             this.commentInputLayout,
-            this.insertButtonLayout,
             this.doctorSelectLayout,
-            this.nameSelectLayout});
+            this.nameSelectLayout,
+            this.insertButtonLayout});
       this.Root.Name = "Root";
-      this.Root.Size = new System.Drawing.Size(500, 489);
+      this.Root.Size = new System.Drawing.Size(500, 523);
       this.Root.TextVisible = false;
       // 
       // technicianSelectLayout
@@ -193,23 +193,10 @@
       this.commentInputLayout.CustomizationFormText = "Ghi chú";
       this.commentInputLayout.Location = new System.Drawing.Point(0, 250);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(480, 170);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 203);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
-      // 
-      // insertButtonLayout
-      // 
-      this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(0, 420);
-      this.insertButtonLayout.MaxSize = new System.Drawing.Size(0, 49);
-      this.insertButtonLayout.MinSize = new System.Drawing.Size(112, 49);
-      this.insertButtonLayout.Name = "insertButtonLayout";
-      this.insertButtonLayout.Size = new System.Drawing.Size(480, 49);
-      this.insertButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-      this.insertButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
-      this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
-      this.insertButtonLayout.TextVisible = false;
       // 
       // doctorSelectLayout
       // 
@@ -233,21 +220,29 @@
       this.nameSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.nameSelectLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
+      // insertButtonLayout
+      // 
+      this.insertButtonLayout.Control = this.insertButton;
+      this.insertButtonLayout.Location = new System.Drawing.Point(0, 453);
+      this.insertButtonLayout.Name = "insertButtonLayout";
+      this.insertButtonLayout.Size = new System.Drawing.Size(480, 50);
+      this.insertButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
+      this.insertButtonLayout.Text = "Thêm";
+      this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
+      this.insertButtonLayout.TextVisible = false;
+      // 
       // Session
       // 
-      this.AcceptButton = this.insertButton;
-      this.Appearance.Options.UseFont = true;
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.ClientSize = new System.Drawing.Size(500, 489);
+      this.ClientSize = new System.Drawing.Size(500, 523);
       this.Controls.Add(this.layoutControl);
-      this.Font = new System.Drawing.Font("Nunito", 12F);
       this.MaximizeBox = false;
       this.Name = "Session";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm phiên làm việc";
-      this.Load += new System.EventHandler(this.Permission_Load);
+      this.Text = "PMSX - Thêm quyền";
+      this.Load += new System.EventHandler(this.Session_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).EndInit();
@@ -260,28 +255,28 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.doctorSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       this.ResumeLayout(false);
 
-    }
+        }
 
     #endregion
 
     private DevExpress.XtraLayout.LayoutControl layoutControl;
-    private DevExpress.XtraEditors.SimpleButton insertButton;
-    private DevExpress.XtraLayout.LayoutControlGroup Root;
-    private DevExpress.XtraLayout.LayoutControlItem technicianSelectLayout;
-    private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
-    private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
     private DevExpress.XtraEditors.LookUpEdit technicianSelect;
     private DevExpress.XtraEditors.MemoEdit commentInput;
+    private DevExpress.XtraEditors.LookUpEdit doctorSelect;
+    private DevExpress.XtraEditors.DateEdit nameSelect;
+    private DevExpress.XtraLayout.LayoutControlGroup Root;
+    private DevExpress.XtraLayout.LayoutControlItem technicianSelectLayout;
+    private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
     private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
     private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
-    private DevExpress.XtraEditors.LookUpEdit doctorSelect;
     private DevExpress.XtraLayout.LayoutControlItem doctorSelectLayout;
-    private DevExpress.XtraEditors.DateEdit nameSelect;
     private DevExpress.XtraLayout.LayoutControlItem nameSelectLayout;
+    private DevExpress.XtraEditors.SimpleButton insertButton;
+    private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
   }
 }

@@ -34,9 +34,9 @@
       this.gridControlLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.titleLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.deleteButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.updateButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.detailsButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.updateButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
@@ -45,17 +45,17 @@
       ((System.ComponentModel.ISupportInitialize)(this.gridControlLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.titleLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.deleteButtonLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.detailsButtonLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // gridControl
       // 
-      this.gridControl.Location = new System.Drawing.Point(12, 66);
+      this.gridControl.Location = new System.Drawing.Point(12, 72);
       this.gridControl.MainView = this.gridView;
       this.gridControl.Name = "gridControl";
-      this.gridControl.Size = new System.Drawing.Size(714, 622);
+      this.gridControl.Size = new System.Drawing.Size(714, 616);
       this.gridControl.TabIndex = 0;
       this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -64,7 +64,6 @@
       // 
       this.gridView.GridControl = this.gridControl;
       this.gridView.Name = "gridView";
-      this.gridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.GridView_RowStyle);
       // 
       // layoutControl
       // 
@@ -87,10 +86,10 @@
       this.insertButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.insertButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.insertButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_addcircled;
-      this.insertButton.Location = new System.Drawing.Point(415, 12);
+      this.insertButton.Location = new System.Drawing.Point(299, 12);
       this.insertButton.Name = "insertButton";
       this.insertButton.Padding = new System.Windows.Forms.Padding(5);
-      this.insertButton.Size = new System.Drawing.Size(91, 40);
+      this.insertButton.Size = new System.Drawing.Size(140, 46);
       this.insertButton.StyleController = this.layoutControl;
       this.insertButton.TabIndex = 3;
       this.insertButton.Text = "Thêm";
@@ -101,10 +100,10 @@
       this.updateButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.updateButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.updateButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_edit;
-      this.updateButton.Location = new System.Drawing.Point(510, 12);
+      this.updateButton.Location = new System.Drawing.Point(443, 12);
       this.updateButton.Name = "updateButton";
       this.updateButton.Padding = new System.Windows.Forms.Padding(5);
-      this.updateButton.Size = new System.Drawing.Size(78, 40);
+      this.updateButton.Size = new System.Drawing.Size(139, 46);
       this.updateButton.StyleController = this.layoutControl;
       this.updateButton.TabIndex = 4;
       this.updateButton.Text = "Sửa";
@@ -118,10 +117,10 @@
       this.disabledButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.disabledButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.disabledButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_deletecircled;
-      this.disabledButton.Location = new System.Drawing.Point(592, 12);
+      this.disabledButton.Location = new System.Drawing.Point(586, 12);
       this.disabledButton.Name = "disabledButton";
       this.disabledButton.Padding = new System.Windows.Forms.Padding(5);
-      this.disabledButton.Size = new System.Drawing.Size(134, 40);
+      this.disabledButton.Size = new System.Drawing.Size(140, 46);
       this.disabledButton.StyleController = this.layoutControl;
       this.disabledButton.TabIndex = 5;
       this.disabledButton.Text = "Vô hiệu hoá";
@@ -132,10 +131,10 @@
       this.detailsButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.detailsButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
       this.detailsButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.actions_zoom;
-      this.detailsButton.Location = new System.Drawing.Point(310, 12);
+      this.detailsButton.Location = new System.Drawing.Point(156, 12);
       this.detailsButton.Name = "detailsButton";
       this.detailsButton.Padding = new System.Windows.Forms.Padding(5);
-      this.detailsButton.Size = new System.Drawing.Size(101, 40);
+      this.detailsButton.Size = new System.Drawing.Size(139, 46);
       this.detailsButton.StyleController = this.layoutControl;
       this.detailsButton.TabIndex = 6;
       this.detailsButton.Text = "Chi tiết";
@@ -159,11 +158,9 @@
       // gridControlLayout
       // 
       this.gridControlLayout.Control = this.gridControl;
-      this.gridControlLayout.Location = new System.Drawing.Point(0, 44);
-      this.gridControlLayout.MinSize = new System.Drawing.Size(104, 34);
+      this.gridControlLayout.Location = new System.Drawing.Point(0, 50);
       this.gridControlLayout.Name = "gridControlLayout";
-      this.gridControlLayout.Size = new System.Drawing.Size(718, 636);
-      this.gridControlLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.gridControlLayout.Size = new System.Drawing.Size(718, 630);
       this.gridControlLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.gridControlLayout.TextSize = new System.Drawing.Size(0, 0);
       this.gridControlLayout.TextVisible = false;
@@ -176,33 +173,43 @@
       this.titleLabel.AppearanceItemCaption.Options.UseFont = true;
       this.titleLabel.AppearanceItemCaption.Options.UseForeColor = true;
       this.titleLabel.Location = new System.Drawing.Point(0, 0);
-      this.titleLabel.MinSize = new System.Drawing.Size(94, 29);
       this.titleLabel.Name = "titleLabel";
-      this.titleLabel.Size = new System.Drawing.Size(298, 44);
-      this.titleLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.titleLabel.Size = new System.Drawing.Size(144, 50);
       this.titleLabel.Text = " ";
       this.titleLabel.TextSize = new System.Drawing.Size(5, 25);
       // 
       // deleteButtonLayout
       // 
       this.deleteButtonLayout.Control = this.disabledButton;
-      this.deleteButtonLayout.Location = new System.Drawing.Point(580, 0);
-      this.deleteButtonLayout.MaxSize = new System.Drawing.Size(138, 0);
-      this.deleteButtonLayout.MinSize = new System.Drawing.Size(138, 42);
+      this.deleteButtonLayout.Location = new System.Drawing.Point(574, 0);
+      this.deleteButtonLayout.MaxSize = new System.Drawing.Size(144, 50);
+      this.deleteButtonLayout.MinSize = new System.Drawing.Size(144, 50);
       this.deleteButtonLayout.Name = "deleteButtonLayout";
-      this.deleteButtonLayout.Size = new System.Drawing.Size(138, 44);
+      this.deleteButtonLayout.Size = new System.Drawing.Size(144, 50);
       this.deleteButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.deleteButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.deleteButtonLayout.TextVisible = false;
       // 
+      // updateButtonLayout
+      // 
+      this.updateButtonLayout.Control = this.updateButton;
+      this.updateButtonLayout.Location = new System.Drawing.Point(431, 0);
+      this.updateButtonLayout.MaxSize = new System.Drawing.Size(143, 50);
+      this.updateButtonLayout.MinSize = new System.Drawing.Size(143, 50);
+      this.updateButtonLayout.Name = "updateButtonLayout";
+      this.updateButtonLayout.Size = new System.Drawing.Size(143, 50);
+      this.updateButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.updateButtonLayout.TextSize = new System.Drawing.Size(0, 0);
+      this.updateButtonLayout.TextVisible = false;
+      // 
       // insertButtonLayout
       // 
       this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(403, 0);
-      this.insertButtonLayout.MaxSize = new System.Drawing.Size(95, 44);
-      this.insertButtonLayout.MinSize = new System.Drawing.Size(95, 44);
+      this.insertButtonLayout.Location = new System.Drawing.Point(287, 0);
+      this.insertButtonLayout.MaxSize = new System.Drawing.Size(144, 50);
+      this.insertButtonLayout.MinSize = new System.Drawing.Size(144, 50);
       this.insertButtonLayout.Name = "insertButtonLayout";
-      this.insertButtonLayout.Size = new System.Drawing.Size(95, 44);
+      this.insertButtonLayout.Size = new System.Drawing.Size(144, 50);
       this.insertButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.insertButtonLayout.TextVisible = false;
@@ -210,26 +217,14 @@
       // detailsButtonLayout
       // 
       this.detailsButtonLayout.Control = this.detailsButton;
-      this.detailsButtonLayout.Location = new System.Drawing.Point(298, 0);
-      this.detailsButtonLayout.MaxSize = new System.Drawing.Size(105, 0);
-      this.detailsButtonLayout.MinSize = new System.Drawing.Size(105, 42);
+      this.detailsButtonLayout.Location = new System.Drawing.Point(144, 0);
+      this.detailsButtonLayout.MaxSize = new System.Drawing.Size(143, 50);
+      this.detailsButtonLayout.MinSize = new System.Drawing.Size(143, 50);
       this.detailsButtonLayout.Name = "detailsButtonLayout";
-      this.detailsButtonLayout.Size = new System.Drawing.Size(105, 44);
+      this.detailsButtonLayout.Size = new System.Drawing.Size(143, 50);
       this.detailsButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.detailsButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.detailsButtonLayout.TextVisible = false;
-      // 
-      // updateButtonLayout
-      // 
-      this.updateButtonLayout.Control = this.updateButton;
-      this.updateButtonLayout.Location = new System.Drawing.Point(498, 0);
-      this.updateButtonLayout.MaxSize = new System.Drawing.Size(82, 0);
-      this.updateButtonLayout.MinSize = new System.Drawing.Size(82, 42);
-      this.updateButtonLayout.Name = "updateButtonLayout";
-      this.updateButtonLayout.Size = new System.Drawing.Size(82, 44);
-      this.updateButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-      this.updateButtonLayout.TextSize = new System.Drawing.Size(0, 0);
-      this.updateButtonLayout.TextVisible = false;
       // 
       // Table
       // 
@@ -247,9 +242,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.gridControlLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.titleLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.deleteButtonLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.detailsButtonLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).EndInit();
       this.ResumeLayout(false);
 
         }

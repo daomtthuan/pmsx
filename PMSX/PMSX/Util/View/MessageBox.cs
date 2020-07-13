@@ -1,11 +1,11 @@
 ﻿using DevExpress.XtraEditors;
 using System.Windows.Forms;
 
-namespace PMSX.Util {
+namespace PMSX.Util.View {
   public class MessageBox {
     private static MessageBox instance;
 
-    private MessageBox() { }
+    private MessageBox() {}
 
     public static MessageBox Instance {
       get {
@@ -24,7 +24,7 @@ namespace PMSX.Util {
       return XtraMessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    public DialogResult Info(string message) {
+    public DialogResult Information(string message) {
       return XtraMessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
   }

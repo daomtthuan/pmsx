@@ -22,8 +22,13 @@ namespace PMSX.Controller {
       List<Model.Session> sessions = new List<Model.Session>();
 
       string query = @"
-        select *
+        select
+          pmsx_session.*,
+          technician.staff_name as session_technicianName,
+          doctor.staff_name as session_doctorName
         from pmsx_session
+          join pmsx_staff as technician on session_technicianId = technician.staff_id
+          join pmsx_staff as doctor on session_doctorId = doctor.staff_id
         where
           (@state = -1 or session_state = @state)
         order by session_name desc
@@ -44,8 +49,13 @@ namespace PMSX.Controller {
       List<Model.Session> sessions = new List<Model.Session>();
 
       string query = @"
-        select *
+        select
+          pmsx_session.*,
+          technician.staff_name as session_technicianName,
+          doctor.staff_name as session_doctorName
         from pmsx_session
+          join pmsx_staff as technician on session_technicianId = technician.staff_id
+          join pmsx_staff as doctor on session_doctorId = doctor.staff_id
         where                    
           (@state = -1 or session_state = @state) and
           session_id = @id
@@ -68,8 +78,13 @@ namespace PMSX.Controller {
       List<Model.Session> sessions = new List<Model.Session>();
 
       string query = @"
-        select *
+        select
+          pmsx_session.*,
+          technician.staff_name as session_technicianName,
+          doctor.staff_name as session_doctorName
         from pmsx_session
+          join pmsx_staff as technician on session_technicianId = technician.staff_id
+          join pmsx_staff as doctor on session_doctorId = doctor.staff_id
         where                    
           (@state = -1 or session_state = @state) and
           convert(date, session_name) = convert(date, @name)
@@ -115,6 +130,41 @@ namespace PMSX.Controller {
         new SqlParameter("@doctorId", doctorId),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
+      };
+
+      Util.Database.Instance.ExcuteNon(query, parameters);
+      return true;
+    }
+
+    public bool Update(string id, DateTime name, string technicianId, string doctorId, string comment, int state) {
+      List<Model.Session> sessions = SelectByName(name);
+      if (sessions.Count > 0) {
+        if (sessions[0].Id != id) {
+          return false;
+        }
+      }
+
+      string query = @"
+        update pmsx_session
+        set 
+          session_name = convert(date, @name),
+          session_technicianId = @technicianId,
+          session_doctorId = @doctorId,
+          session_comment = @comment,
+          session_state = @state,
+          session_updateStaffId = @updateStaffId,
+          session_updateDatetime = getdate()
+        where session_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@name", name),
+        new SqlParameter("@technicianId", technicianId),
+        new SqlParameter("@doctorId", doctorId),
+        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
+        new SqlParameter("@state", state),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
       Util.Database.Instance.ExcuteNon(query, parameters);

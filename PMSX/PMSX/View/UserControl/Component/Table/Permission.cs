@@ -1,7 +1,8 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
@@ -12,9 +13,9 @@ namespace PMSX.View.UserControl.Component.Table {
       private string roleName;
 
       protected override void OnInsert() {
-        List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId, 1);
+        List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId);
         if (staffs.Count == 0) {
-          Util.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");    
+          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");    
         } else {
           new Form.Insert.Permission(roleId, staffs).ShowDialog();
           LoadData(roleId, roleName);
@@ -22,12 +23,12 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Permission(permissions.Where(item => item.Id == SelectedId).First()).ShowDialog();
+        new Form.Update.Permission((Model.Permission)GetSelectedRow()).ShowDialog();
         LoadData(roleId, roleName);
       }
 
       protected override void OnDisabled() {
-        Controller.Permission.Instance.Disabled(SelectedId);
+        Controller.Permission.Instance.Disabled(((Model.Permission)GetSelectedRow()).Id);
         LoadData(roleId, roleName);
       }
 
@@ -37,31 +38,16 @@ namespace PMSX.View.UserControl.Component.Table {
         permissions = Controller.Permission.Instance.SelectByRoleId(roleId);
 
         TitleLabel.Text = "Danh sách nhân viên có quyền " + roleName;
-        GridControl.DataSource = permissions.Select(item => {
-          Model.Staff staff = Controller.Staff.Instance.SelectById(item.StaffId)[0];
-          return new {
-            item.Id,
-            StaffUsername = staff.Username,
-            StaffName = staff.Name,
-            item.CreateDatetime,
-            item.UpdateDatetime,
-            State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
-          };
-        });
+        GridControl.DataSource = permissions;
         GridView.PopulateColumns();
-        GridView.Columns["Id"].Visible = false;
-        GridView.Columns["StaffUsername"].Caption = "Tên đăng nhập";
-        GridView.Columns["StaffName"].Caption = "Tên";
-        GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-        GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-        GridView.Columns["State"].Caption = "Trạng thái";
-      }
 
-      protected override void RowStyle(RowStyleEventArgs e) {
-        if (e.RowHandle >= 0) {
-          if (GridView.GetRowCellValue(e.RowHandle, "State").ToString() == "Vô hiệu hoá") {
-            e.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-          }
+        foreach (GridColumn column in GridView.Columns) {
+          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
+          column.Visible =
+            column.FieldName == "StaffUsername" ||
+            column.FieldName == "StaffName" ||
+            column.FieldName == "CreateDatetime" ||
+            column.FieldName == "UpdateDatetime";
         }
       }
     }
@@ -79,23 +65,20 @@ namespace PMSX.View.UserControl.Component.Table {
       roles = Controller.Role.Instance.SelectAll();
 
       if (roles.Count > 0) {
-        roleSelect.Properties.DataSource = roles.Select(item => new {
-          item.Id,
-          item.Name,
-          item.CreateDatetime,
-          item.UpdateDatetime,
-          State = item.State == 0 ? "Vô hiệu hoá" : "Kích hoạt"
-        });
+        roleSelect.Properties.DataSource = roles;
         roleSelect.Properties.PopulateColumns();
-        roleSelect.Properties.DisplayMember = "Name";
-        roleSelect.Properties.ValueMember = "Id";
-        roleSelect.Properties.Columns["Id"].Caption = "Mã định danh";
-        roleSelect.Properties.Columns["Id"].Visible = false;
-        roleSelect.Properties.Columns["Name"].Caption = "Tên";
-        roleSelect.Properties.Columns["CreateDatetime"].Caption = "Ngày tạo";
-        roleSelect.Properties.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-        roleSelect.Properties.Columns["State"].Caption = "Trạng thái";
 
+        foreach (LookUpColumnInfo column in roleSelect.Properties.Columns) {
+          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
+          column.Visible =
+            column.FieldName == "Name" ||
+            column.FieldName == "CreateDatetime" ||
+            column.FieldName == "UpdateDatetime" ||
+            column.FieldName == "State";
+        }
+
+        roleSelect.Properties.ValueMember = "Id";
+        roleSelect.Properties.DisplayMember = "Name";
         roleSelect.EditValue = roles[0].Id;
       }
     }

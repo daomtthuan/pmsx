@@ -25,25 +25,18 @@
         private void InitializeComponent() {
       DevExpress.XtraSplashScreen.SplashScreenManager splashScreen = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PMSX.View.Form.Loading), true, true, true);
       DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
       DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.backstageView = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -61,7 +54,7 @@
       this.permissionButton = new DevExpress.XtraBars.BarButtonItem();
       this.adminPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
       this.personnelPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.personnelGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.workGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.clinicPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.clinicGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -154,10 +147,7 @@
       this.staffButton.Name = "staffButton";
       this.staffButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-      toolTipTitleItem1.Text = "Nhân sự";
-      toolTipItem1.LeftIndent = 6;
       toolTipItem1.Text = "Quản lý nhân viên";
-      superToolTip1.Items.Add(toolTipTitleItem1);
       superToolTip1.Items.Add(toolTipItem1);
       this.staffButton.SuperTip = superToolTip1;
       this.staffButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.StaffButton_Click);
@@ -169,10 +159,7 @@
       this.patientButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.patientButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.travel_rest;
       this.patientButton.Name = "patientButton";
-      toolTipTitleItem2.Text = "Phòng khám";
-      toolTipItem2.LeftIndent = 6;
       toolTipItem2.Text = "Quản lý bệnh nhân";
-      superToolTip2.Items.Add(toolTipTitleItem2);
       superToolTip2.Items.Add(toolTipItem2);
       this.patientButton.SuperTip = superToolTip2;
       this.patientButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PatientButton_Click);
@@ -186,10 +173,7 @@
       this.roleButton.Name = "roleButton";
       this.roleButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-      toolTipTitleItem3.Text = "Nhân sự";
-      toolTipItem3.LeftIndent = 6;
       toolTipItem3.Text = "Quản lý quyền truy cập nhân viên";
-      superToolTip3.Items.Add(toolTipTitleItem3);
       superToolTip3.Items.Add(toolTipItem3);
       this.roleButton.SuperTip = superToolTip3;
       this.roleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RoleButton_Click);
@@ -203,10 +187,7 @@
       this.sessionButton.Name = "sessionButton";
       this.sessionButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-      toolTipTitleItem4.Text = "Nhân sự";
-      toolTipItem4.LeftIndent = 6;
       toolTipItem4.Text = "Quản lý phiên làm việc";
-      superToolTip4.Items.Add(toolTipTitleItem4);
       superToolTip4.Items.Add(toolTipItem4);
       this.sessionButton.SuperTip = superToolTip4;
       this.sessionButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SessionButton_Click);
@@ -218,10 +199,7 @@
       this.biopsyButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.biopsyButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
       this.biopsyButton.Name = "biopsyButton";
-      toolTipTitleItem5.Text = "Phòng khám";
-      toolTipItem5.LeftIndent = 6;
       toolTipItem5.Text = "Quản lý mẫu sinh thiết";
-      superToolTip5.Items.Add(toolTipTitleItem5);
       superToolTip5.Items.Add(toolTipItem5);
       this.biopsyButton.SuperTip = superToolTip5;
       this.biopsyButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyButton_Click);
@@ -233,10 +211,7 @@
       this.resultButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.resultButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
       this.resultButton.Name = "resultButton";
-      toolTipTitleItem6.Text = "Phòng khám";
-      toolTipItem6.LeftIndent = 6;
       toolTipItem6.Text = "Quản lý kết quả chuẩn đoán xét nghiệm";
-      superToolTip6.Items.Add(toolTipTitleItem6);
       superToolTip6.Items.Add(toolTipItem6);
       this.resultButton.SuperTip = superToolTip6;
       // 
@@ -247,10 +222,7 @@
       this.permissionButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.permissionButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.bo_user;
       this.permissionButton.Name = "permissionButton";
-      toolTipTitleItem7.Text = "Nhân sự";
-      toolTipItem7.LeftIndent = 6;
       toolTipItem7.Text = "Phân quyền truy cập cho nhân viên";
-      superToolTip7.Items.Add(toolTipTitleItem7);
       superToolTip7.Items.Add(toolTipItem7);
       this.permissionButton.SuperTip = superToolTip7;
       this.permissionButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PermissionButton_ItemClick);
@@ -266,18 +238,18 @@
       // personnelPage
       // 
       this.personnelPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.personnelGroup,
+            this.accountGroup,
             this.workGroup});
       this.personnelPage.Name = "personnelPage";
       this.personnelPage.Text = "Nhân sự";
       // 
-      // personnelGroup
+      // accountGroup
       // 
-      this.personnelGroup.ItemLinks.Add(this.staffButton);
-      this.personnelGroup.ItemLinks.Add(this.roleButton);
-      this.personnelGroup.ItemLinks.Add(this.permissionButton);
-      this.personnelGroup.Name = "personnelGroup";
-      this.personnelGroup.Text = "Nhân sự";
+      this.accountGroup.ItemLinks.Add(this.staffButton);
+      this.accountGroup.ItemLinks.Add(this.roleButton);
+      this.accountGroup.ItemLinks.Add(this.permissionButton);
+      this.accountGroup.Name = "accountGroup";
+      this.accountGroup.Text = "Tài khoản";
       // 
       // workGroup
       // 
@@ -342,7 +314,7 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage personnelPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup personnelGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
         private DevExpress.XtraBars.BarButtonItem staffButton;
         private DevExpress.XtraBars.BarButtonItem patientButton;
         private DevExpress.XtraBars.BarButtonItem roleButton;
