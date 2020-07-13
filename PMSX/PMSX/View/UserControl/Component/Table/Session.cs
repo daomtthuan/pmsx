@@ -1,7 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Grid;
-using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -13,21 +10,9 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnLoad() {
-        List<Model.Session> sessions = Controller.Session.Instance.SelectAll();
-        GridControl.DataSource = sessions;
-        GridView.PopulateColumns();
-
-        foreach (GridColumn column in GridView.Columns) {
-          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
-          column.Visible =
-            column.FieldName == "Name" ||
-            column.FieldName == "State" ||
-            column.FieldName == "TechnicianName" ||
-            column.FieldName == "DoctorName" ||
-            column.FieldName == "State" ||
-            column.FieldName == "CreateDatetime" ||
-            column.FieldName == "UpdateDatetime";
-        }
+        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Session.Instance.SelectAll(), new[] {
+          "Name", "State", "TechnicianName", "DoctorName", "State", "CreateDatetime", "UpdateDatetime"
+        });
       }
 
       protected override void OnInsert() {
@@ -46,7 +31,7 @@ namespace PMSX.View.UserControl.Component.Table {
               List<Model.Staff> doctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
               if (doctors.Count == 0) {
                 Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
-              } else {                
+              } else {
                 new Form.Insert.Session(technicians, doctors).ShowDialog();
                 OnLoad();
               }
@@ -77,11 +62,12 @@ namespace PMSX.View.UserControl.Component.Table {
               }
             }
           }
-        }        
+        }
       }
 
       protected override void OnDisabled() {
-        throw new NotImplementedException();
+        Controller.Session.Instance.Disable(((Model.Session)GetSelectedRow()).Id);
+        OnLoad();
       }
     }
 

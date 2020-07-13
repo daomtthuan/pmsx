@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,14 +54,19 @@ namespace PMSX.View.Form {
         if (Controller.Main.Instance.Roles.Where(item => item.Name == "Quản trị viên").Count() != 1) {
           adminPageGroup.Dispose();
 
-          SelectSession selectSessionForm = new SelectSession();
-          selectSessionForm.ShowDialog();
+          List<Model.Session> sessions = Controller.Session.Instance.SelectAll(1);
+          if (sessions.Count == 0) {
+            Util.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
+            Application.Exit();
+          } else {
+            SelectSession selectSessionForm = new SelectSession(sessions);
+            selectSessionForm.ShowDialog();
+            Display = true;
+          }
         } else {
-
+          Display = true;
         }
       }
-
-      Display = true;
     }
 
     private void ExitButton_Click(object sender, BackstageViewItemEventArgs e) {

@@ -286,7 +286,7 @@ insert into pmsx_permission(permission_staffId, permission_roleId, permission_cr
 go
 
 insert into pmsx_session(session_id, session_name, session_technicianId, session_doctorId, session_createStaffId) values('629D7368-8431-421B-8720-9BC0B89A4E60', '2020-7-11', '73F2B296-EBDC-4434-892C-983E46F7CCF3', '6DDAA669-7F0E-46CC-8271-88633C859FFC', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_session(session_id, session_name, session_technicianId, session_doctorId, session_createStaffId) values('2E851378-1E4D-41E0-B736-A5DD6EF72147', '2020-7-10','E226DC82-6028-413E-B0B0-EEA3E62219D2', '999A21D1-B792-4033-BCA9-6838F8A7311A', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_session(session_id, session_name, session_technicianId, session_doctorId, session_createStaffId) values('2E851378-1E4D-41E0-B736-A5DD6EF72147', '2020-7-10','E226DC82-6028-413E-B0B0-EEA3E62219D2', 'AEF97B23-9C18-4F6F-922E-9768BA930068', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_session(session_id, session_name, session_technicianId, session_doctorId, session_createStaffId) values('8CF9811C-8D66-4DC1-A42F-85B2A44089E5', '2020-7-9','E226DC82-6028-413E-B0B0-EEA3E62219D2', '6DDAA669-7F0E-46CC-8271-88633C859FFC', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
 

@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Macro {
+  public class Macro : Interface.Model {
     private readonly int state;
 
     public Macro(DataRow row) {

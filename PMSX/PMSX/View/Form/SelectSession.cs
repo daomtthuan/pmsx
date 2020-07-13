@@ -1,14 +1,13 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
   public partial class SelectSession : XtraForm {
-    private List<Model.Session> sessions;
+    private readonly List<Model.Session> sessions;
 
-    public SelectSession() {
+    public SelectSession(List<Model.Session> sessions) {
       InitializeComponent();
 
       Icon = Properties.Resources.icon;
@@ -20,26 +19,12 @@ namespace PMSX.View.Form {
       brandPanel.Controls.Add(new UserControl.Component.Brand() {
         Dock = DockStyle.Fill
       });
+
+      this.sessions = sessions;
     }
 
     private void SelectSession_Load(object sender, EventArgs e) {
-      sessions = Controller.Session.Instance.SelectAll(1);
-      if (sessions.Count > 0) {
-        sessionSelect.Properties.DataSource = sessions;
-        sessionSelect.Properties.PopulateColumns();
-
-        foreach (LookUpColumnInfo column in sessionSelect.Properties.Columns) {
-          column.Caption = Util.Locale.Instance.Caption[column.FieldName];
-          column.Visible =
-            column.FieldName == "Name" ||
-            column.FieldName == "TechnicianName" ||
-            column.FieldName == "DoctorName";
-        }
-
-        sessionSelect.Properties.ValueMember = "Id";
-        sessionSelect.Properties.DisplayMember = "Name";
-        sessionSelect.ItemIndex = 0;
-      }
+      Util.View.Grid.Instance.Load(sessionSelect, sessions, new[] { "Name", "TechnicianName", "DoctorName" }, "Id", "Name");
     }
 
     private void StartButton_Click(object sender, EventArgs e) {

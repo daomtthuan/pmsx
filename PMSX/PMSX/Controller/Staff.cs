@@ -243,7 +243,7 @@ namespace PMSX.Controller {
       Util.Database.Instance.ExcuteNon(query, parameters);
     }
 
-    public void Disabled(string id) {
+    public void Disable(string id) {
       string query = @"
         update pmsx_staff
         set

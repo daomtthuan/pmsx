@@ -170,5 +170,23 @@ namespace PMSX.Controller {
       Util.Database.Instance.ExcuteNon(query, parameters);
       return true;
     }
+
+    public void Disable(string id) {
+      string query = @"
+        update pmsx_session
+        set
+          session_state = 0,
+          session_updateStaffId = @updateStaffId,
+          session_updateDatetime = getdate()  
+        where session_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Util.Database.Instance.ExcuteNon(query, parameters);
+    }
   }
 }

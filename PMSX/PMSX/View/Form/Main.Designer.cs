@@ -1,29 +1,28 @@
 ﻿namespace PMSX.View.Form {
-    partial class Main {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+  partial class Main {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing) {
+      if (disposing && (components != null)) {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        #region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent() {
-      DevExpress.XtraSplashScreen.SplashScreenManager splashScreen = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PMSX.View.Form.Loading), true, true, true);
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent() {
       DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
@@ -38,6 +37,7 @@
       DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::PMSX.View.Form.Loading), true, true, true);
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.backstageView = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
       this.aboutBackstage = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -65,10 +65,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // splashScreen
-      // 
-      splashScreen.ClosingDelay = 1000;
       // 
       // ribbon
       // 
@@ -290,6 +286,10 @@
       this.ribbonPageGroup1.Name = "ribbonPageGroup1";
       this.ribbonPageGroup1.Text = "ribbonPageGroup1";
       // 
+      // splashScreenManager
+      // 
+      splashScreenManager.ClosingDelay = 1000;
+      // 
       // Main
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -308,32 +308,32 @@
       this.ResumeLayout(false);
       this.PerformLayout();
 
-        }
-
-        #endregion
-
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage personnelPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
-        private DevExpress.XtraBars.BarButtonItem staffButton;
-        private DevExpress.XtraBars.BarButtonItem patientButton;
-        private DevExpress.XtraBars.BarButtonItem roleButton;
-        private DevExpress.XtraBars.BarButtonItem sessionButton;
-        private DevExpress.XtraBars.BarButtonItem biopsyButton;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup clinicGroup;
-        private DevExpress.XtraBars.BarButtonItem resultButton;
-        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageView;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl aboutBackstage;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem aboutButtonBackstage;
-        private DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator separatorBackstage;
-        private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem logoutButton;
-        private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem exitButton;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory adminPageGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonPage clinicPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pathologyGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup workGroup;
-        private DevExpress.XtraBars.BarButtonItem permissionButton;
     }
+
+    #endregion
+
+    private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
+    private DevExpress.XtraBars.Ribbon.RibbonPage personnelPage;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
+    private DevExpress.XtraBars.BarButtonItem staffButton;
+    private DevExpress.XtraBars.BarButtonItem patientButton;
+    private DevExpress.XtraBars.BarButtonItem roleButton;
+    private DevExpress.XtraBars.BarButtonItem sessionButton;
+    private DevExpress.XtraBars.BarButtonItem biopsyButton;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup clinicGroup;
+    private DevExpress.XtraBars.BarButtonItem resultButton;
+    private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageView;
+    private DevExpress.XtraBars.Ribbon.BackstageViewClientControl aboutBackstage;
+    private DevExpress.XtraBars.Ribbon.BackstageViewTabItem aboutButtonBackstage;
+    private DevExpress.XtraBars.Ribbon.BackstageViewItemSeparator separatorBackstage;
+    private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem logoutButton;
+    private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem exitButton;
+    private DevExpress.XtraBars.Ribbon.RibbonPageCategory adminPageGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPage clinicPage;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup pathologyGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup workGroup;
+    private DevExpress.XtraBars.BarButtonItem permissionButton;
+  }
 }

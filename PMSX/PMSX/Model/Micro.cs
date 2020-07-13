@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Micro {
+  public class Micro : Interface.Model {
     private readonly int state;
 
     public Micro(DataRow row) {

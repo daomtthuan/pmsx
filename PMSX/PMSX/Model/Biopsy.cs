@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Biopsy {
+  public class Biopsy : Interface.Model {
     private readonly int state;
 
     public Biopsy(DataRow row) {

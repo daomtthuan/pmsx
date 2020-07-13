@@ -25,6 +25,8 @@ namespace PMSX.Util {
         { "StaffUsername", "Tên đăng nhập nhân viên" },
         { "StaffName", "Tên nhân viên" },
         { "RoleId", "Mã định danh quyền truy cập" },
+        { "YearsOld", "Tuổi" },
+        { "Address", "Địa chỉ" },
       };
     }
 

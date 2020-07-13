@@ -5,7 +5,7 @@ namespace PMSX.Util.View {
   public class MessageBox {
     private static MessageBox instance;
 
-    private MessageBox() {}
+    private MessageBox() { }
 
     public static MessageBox Instance {
       get {

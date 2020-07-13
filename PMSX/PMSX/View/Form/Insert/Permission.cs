@@ -1,8 +1,6 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Insert {
@@ -25,14 +23,7 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void Permission_Load(object sender, EventArgs e) {
-      staffSelect.Properties.DataSource = staffs;
-      staffSelect.Properties.PopulateColumns();
-
-      foreach (LookUpColumnInfo column in staffSelect.Properties.Columns) {
-        column.Caption = Util.Locale.Instance.Caption[column.FieldName];
-      }
-
-      staffSelect.ItemIndex = 0;
+      Util.View.Grid.Instance.Load(staffSelect, staffs, new[] { "Username", "Name", "State" }, "Id", "Name");
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

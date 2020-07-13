@@ -172,7 +172,7 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Disabled(string id) {
+    public void Disable(string id) {
       string query = @"
         update pmsx_role
         set

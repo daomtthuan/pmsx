@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 
 namespace PMSX.View.UserControl.Component {
-  public partial class Brand : DevExpress.XtraEditors.XtraUserControl {
+  public partial class Brand : XtraUserControl {
     public Brand() {
       InitializeComponent();
     }

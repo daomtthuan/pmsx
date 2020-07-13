@@ -2,7 +2,7 @@
 using System.Data;
 
 namespace PMSX.Model {
-  public class Session {
+  public class Session : Interface.Model {
     private readonly int state;
 
     public Session(DataRow row) {

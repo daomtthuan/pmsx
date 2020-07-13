@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Role {
+  public class Role : Interface.Model {
     private readonly int state;
 
     public Role(DataRow row) {

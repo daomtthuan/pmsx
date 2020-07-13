@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Permission {
+  public class Permission : Interface.Model {
     private readonly int state;
 
     public Permission(DataRow row) {

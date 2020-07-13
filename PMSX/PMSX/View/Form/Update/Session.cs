@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -22,40 +21,14 @@ namespace PMSX.View.Form.Update {
 
       this.session = session;
       this.technicians = technicians;
-      this.doctors = doctors;      
+      this.doctors = doctors;
     }
 
     private void Session_Load(object sender, EventArgs e) {
-      technicianSelect.Properties.DataSource = technicians;
-      technicianSelect.Properties.PopulateColumns();
-
-      doctorSelect.Properties.DataSource = doctors;
-      doctorSelect.Properties.PopulateColumns();
-
-      foreach (LookUpColumnInfo column in technicianSelect.Properties.Columns) {
-        column.Caption = Util.Locale.Instance.Caption[column.FieldName];
-        column.Visible =
-          column.FieldName == "Username" ||
-          column.FieldName == "Name" ||
-          column.FieldName == "State";
-      }
-
-      foreach (LookUpColumnInfo column in doctorSelect.Properties.Columns) {
-        column.Caption = Util.Locale.Instance.Caption[column.FieldName];
-        column.Visible =
-          column.FieldName == "Username" ||
-          column.FieldName == "Name" ||
-          column.FieldName == "State";
-      }
-
-      technicianSelect.Properties.ValueMember = "Id";
-      technicianSelect.Properties.DisplayMember = "Name";
-      doctorSelect.Properties.ValueMember = "Id";
-      doctorSelect.Properties.DisplayMember = "Name";
+      Util.View.Grid.Instance.Load(technicianSelect, technicians, new[] { "Username", "Name", "State" }, "Id", "Name", session.TechnicianId);
+      Util.View.Grid.Instance.Load(doctorSelect, doctors, new[] { "Username", "Name", "State" }, "Id", "Name", session.DoctorId);
 
       nameSelect.EditValue = DateTime.Parse(session.Name);
-      technicianSelect.EditValue = session.TechnicianId;
-      doctorSelect.EditValue = session.DoctorId;
       stateRadio.EditValue = session.GetStateNumber();
     }
 

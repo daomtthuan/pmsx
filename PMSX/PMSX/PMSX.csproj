@@ -94,6 +94,7 @@
     <Compile Include="Controller\Session.cs" />
     <Compile Include="Controller\Staff.cs" />
     <Compile Include="Controller\Main.cs" />
+    <Compile Include="Interface\Model.cs" />
     <Compile Include="Model\Biopsy.cs" />
     <Compile Include="Model\BiopsyGroup.cs" />
     <Compile Include="Model\Micro.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Database.cs" />
     <Compile Include="Util\Locale.cs" />
+    <Compile Include="Util\View\Grid.cs" />
     <Compile Include="Util\View\MessageBox.cs" />
     <Compile Include="Util\RegexPattern.cs" />
     <Compile Include="View\Form\Insert\Session.cs">

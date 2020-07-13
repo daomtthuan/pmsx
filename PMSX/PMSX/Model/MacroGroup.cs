@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model {
-  public class MicroGroup {
+  public class MicroGroup : Interface.Model {
     private readonly int state;
 
     public MicroGroup(DataRow row) {

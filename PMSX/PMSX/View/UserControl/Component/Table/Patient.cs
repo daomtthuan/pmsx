@@ -10,17 +10,9 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnLoad() {
-        GridControl.DataSource = Controller.Patient.Instance.SelectAll();
-        GridView.PopulateColumns();
-        GridView.Columns["Id"].Visible = false;
-        GridView.Columns["Name"].Caption = "Tên";
-        GridView.Columns["Year"].Caption = "Năm sinh";
-        GridView.Columns["Address"].Caption = "Địa chỉ";
-        GridView.Columns["Comment"].Caption = "Ghi chú";
-        GridView.Columns["State"].Caption = "Trạng thái";
-        GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-        GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
-
+        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Patient.Instance.SelectAll(), new[] {
+          "Name", "Year", "Address", "State", "CreateDatetime", "UpdateDatetime"
+        });
       }
 
       protected override void OnInsert() {
