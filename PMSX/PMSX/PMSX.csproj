@@ -174,6 +174,12 @@
     <Compile Include="View\Form\SelectSession.Designer.cs">
       <DependentUpon>SelectSession.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form\Update\Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\Update\Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form\Update\Permission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,10 @@
       <DependentUpon>SelectSession.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Update\Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Update\Permission.resx">
       <DependentUpon>Permission.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -368,7 +378,6 @@
     <None Include="Resources\bo_user.svg" />
     <None Include="Resources\actions_zoom.svg" />
     <None Include="Resources\charttype_polarline.svg" />
-    <None Include="Resources\charttype_polarline1.svg" />
     <Content Include="Resources\icon.ico" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\showallfieldresults.svg" />

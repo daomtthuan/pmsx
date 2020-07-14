@@ -16,15 +16,18 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnInsert() {
-        throw new NotImplementedException();
+        new Form.Insert.Patient().ShowDialog();
+        OnLoad();
       }
 
       protected override void OnUpdate() {
-        throw new NotImplementedException();
+        new Form.Update.Patient((Model.Patient)GetSelectedRow()).ShowDialog();
+        OnLoad();
       }
 
       protected override void OnDisabled() {
-        throw new NotImplementedException();
+        Controller.Patient.Instance.Disable(((Model.Patient)GetSelectedRow()).Id);
+        OnLoad();
       }
     }
 

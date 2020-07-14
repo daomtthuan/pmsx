@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
+  using BCrypt.Net;
+
   public class Staff {
     private static Staff instance;
 
@@ -24,7 +26,7 @@ namespace PMSX.Controller {
         return null;
       }
 
-      if (!BCrypt.Net.BCrypt.Verify(password, staffs[0].Password)) {
+      if (!BCrypt.Verify(password, staffs[0].Password)) {
         return null;
       }
 
@@ -154,39 +156,6 @@ namespace PMSX.Controller {
       return staffs;
     }
 
-    public bool InsertWithDefaultPassword(string username, string name, string comment) {
-      if (SelectByUsername(username).Count > 0) {
-        return false;
-      }
-
-      string query = @"
-        insert into pmsx_staff(
-          staff_username,
-          staff_password,
-          staff_name,
-          staff_comment,
-          staff_createStaffId
-        ) values(
-          @username,
-          @password,
-          @name,
-          @comment,
-          @createStaffId
-        )
-      ";
-
-      SqlParameter[] parameters = {
-        new SqlParameter("@username", username),
-        new SqlParameter("@password", BCrypt.Net.BCrypt.HashPassword("staff@pmxs")),
-        new SqlParameter("@name", name),
-        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
-        new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
-      };
-
-      Util.Database.Instance.ExcuteNon(query, parameters);
-      return true;
-    }
-
     public bool Insert(string username, string password, string name, string comment) {
       if (SelectByUsername(username).Count > 0) {
         return false;
@@ -210,7 +179,7 @@ namespace PMSX.Controller {
 
       SqlParameter[] parameters = {
         new SqlParameter("@username", username),
-        new SqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
+        new SqlParameter("@password", BCrypt.HashPassword(password)),
         new SqlParameter("@name", name),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
@@ -218,6 +187,10 @@ namespace PMSX.Controller {
 
       Util.Database.Instance.ExcuteNon(query, parameters);
       return true;
+    }
+
+    public bool InsertWithDefaultPassword(string username, string name, string comment) {
+      return Insert(username, BCrypt.HashPassword("staff@pmxs"), name, comment);
     }
 
     public void Update(string id, string name, string comment, int state) {
