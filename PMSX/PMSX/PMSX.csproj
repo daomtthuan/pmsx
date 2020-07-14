@@ -234,6 +234,12 @@
     <Compile Include="View\UserControl\Component\Table\Session.Designer.cs">
       <DependentUpon>Session.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl\Component\Table\BiopsyGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Table\BiopsyGroup.Designer.cs">
+      <DependentUpon>BiopsyGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl\Component\Table\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>

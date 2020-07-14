@@ -112,5 +112,11 @@ namespace PMSX.View.Form {
         Dock = DockStyle.Fill
       });
     }
+
+    private void BiopsyGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
+      AddUserControl(new UserControl.Component.Table.BiopsyGroup() {
+        Dock = DockStyle.Fill
+      });
+    }
   }
 }
