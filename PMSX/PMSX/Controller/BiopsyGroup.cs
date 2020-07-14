@@ -25,7 +25,7 @@ namespace PMSX.Controller {
         from pmsx_biopsyGroup
         where
           (@state = -1 or biopsyGroup_state = @state)
-        order by biopsyGroup_code
+        order by biopsyGroup_code desc
       ";
 
       SqlParameter[] parameters = {
@@ -47,7 +47,7 @@ namespace PMSX.Controller {
         where
           (@state = -1 or biopsyGroup_state = @state) and
           biopsyGroup_id = @id
-        order by biopsyGroup_code
+        order by biopsyGroup_code desc
       ";
 
       SqlParameter[] parameters = {
@@ -71,7 +71,7 @@ namespace PMSX.Controller {
         where
           (@state = -1 or biopsyGroup_state = @state) and
           biopsyGroup_code = @code
-        order by biopsyGroup_code
+        order by biopsyGroup_code desc
       ";
 
       SqlParameter[] parameters = {

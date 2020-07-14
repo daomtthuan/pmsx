@@ -237,7 +237,7 @@ go
 
 create table pmsx_image(
 	image_id uniqueidentifier not null primary key default newid(),
-	image_diagnoseName nvarchar(100) not null,	
+	image_diagnoseType nvarchar(100) not null,	
 	image_diagnoseId uniqueidentifier not null,
 	image_path nvarchar(500) not null,	
 	image_caption nvarchar(500),

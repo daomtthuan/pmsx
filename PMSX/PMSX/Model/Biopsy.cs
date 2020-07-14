@@ -8,7 +8,6 @@ namespace PMSX.Model {
       Id = row["biopsy_id"].ToString();
       Code = row["biopsy_code"].ToString();
       BiopsyGroupId = row["biopsy_groupId"].ToString();
-      DiagnoseType = row["biopsy_diagnoseType"].ToString();
       PatientId = row["biopsy_patientId"].ToString();
       SessionId = row["biopsy_sessionId"].ToString();
       GrossStaffId = row["biopsy_grossStaffId"].ToString();

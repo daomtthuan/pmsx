@@ -5,46 +5,43 @@ using System.Windows.Forms;
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Biopsy : XtraUserControl {
     private class BiopsyTable : Layout.Table {
-      protected override void OnInit() {
-        TitleLabel.Text = "Danh sách mẫu sinh thiết";
+      private string groupId;
+      private string groupName;
+
+      protected override void OnInsert() {       
       }
 
-      protected override void OnLoad() {
-        //GridControl.DataSource = Controller.Biopsy.Instance.GetList();
-        //GridView.PopulateColumns();
-        //GridView.Columns["Id"].Visible = false;
-        //GridView.Columns["FullCode"].Caption = "Mã số";
-        //GridView.Columns["PatientName"].Caption = "Bệnh nhân";
-        //GridView.Columns["TechnicianName"].Caption = "Kỹ thuật viên";
-        //GridView.Columns["DoctorName"].Caption = "Bác sĩ";
-        //GridView.Columns["GrossStaffName"].Caption = "Nhân viên gọt";
-        //GridView.Columns["NumberSegment"].Caption = "Số phân thùy";
-        //GridView.Columns["GrossDatetime"].Caption = "Ngày cắt";
-        //GridView.Columns["CollectDatetime"].Caption = "Ngày thu thập";
-        //GridView.Columns["Comment"].Caption = "Ghi chú";
-        //GridView.Columns["State"].Caption = "Trạng thái";
-        //GridView.Columns["CreateDatetime"].Caption = "Ngày tạo";
-        //GridView.Columns["UpdateDatetime"].Caption = "Ngày sửa";
+      protected override void OnUpdate() {       
       }
 
-      protected override void OnInsert() {
-        throw new NotImplementedException();
+      protected override void OnDisabled() {        
       }
 
-      protected override void OnUpdate() {
-        throw new NotImplementedException();
-      }
+      public void LoadData(string groupId, string groupName) {
+        this.groupId = groupId;
+        this.groupName = groupName;
 
-      protected override void OnDisabled() {
-        throw new NotImplementedException();
+        TitleLabel.Text = "Danh sách mẫu sinh thiết thuộc nhóm " + groupName;
+
+        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Biopsy.Instance.SelectByGroupId(groupId), new[] {
+          "Code", "State", "CreateDatetime", "UpdateDatetime"
+        });
       }
     }
 
     public Biopsy() {
       InitializeComponent();
-      Controls.Add(new BiopsyTable() {
+      biopsyPanel.Controls.Add(new BiopsyTable() {
         Dock = DockStyle.Fill
       });
+    }
+
+    private void Biopsy_Load(object sender, EventArgs e) {
+      Util.View.Grid.Instance.Load(biopsyGroupSelect, Controller.BiopsyGroup.Instance.SelectAll(), new[] { "Code", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Code");
+    }
+
+    private void BiopsyGroupSelect_EditValueChanged(object sender, EventArgs e) {
+      ((BiopsyTable)biopsyPanel.Controls[0]).LoadData(biopsyGroupSelect.EditValue.ToString(), biopsyGroupSelect.Text);
     }
   }
 }

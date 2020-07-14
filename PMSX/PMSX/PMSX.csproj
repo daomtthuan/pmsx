@@ -435,6 +435,9 @@
       <DependentUpon>Brand.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\Component\Table\Biopsy.resx">
+      <DependentUpon>Biopsy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl\Component\Table\Macro.resx">
       <DependentUpon>Macro.cs</DependentUpon>
       <SubType>Designer</SubType>
