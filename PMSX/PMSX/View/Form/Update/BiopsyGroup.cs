@@ -5,8 +5,11 @@ using System.Windows.Forms;
 
 namespace PMSX.View.Form.Update {
   public partial class BiopsyGroup : XtraForm {
-    public BiopsyGroup() {
+    private readonly Model.BiopsyGroup biopsyGroup;
+
+    public BiopsyGroup(Model.BiopsyGroup biopsyGroup) {
       InitializeComponent();
+      this.biopsyGroup = biopsyGroup;
 
       DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
@@ -14,17 +17,19 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+
+      codeInput.Text = biopsyGroup.Code;
+      stateRadio.EditValue = biopsyGroup.GetStateNumber();
+      commentInput.Text = biopsyGroup.Comment;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
-      if (usernameInput.Text.Length == 0 || nameInput.Text.Length == 0) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Regex.IsMatch(usernameInput.Text, Util.RegexPattern.Instance.Username) || usernameInput.Text.Length < 4) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập không hợp lệ.\nChỉ gồm chữ, số và dấu gạch dưới, tối thiểu 4 ký tự.");
-      } else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên nhân viên không hợp lệ.");
-      } else if (!Controller.Staff.Instance.InsertWithDefaultPassword(usernameInput.Text, nameInput.Text, commentInput.Text)) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập đã tồn tại.");
+      if (codeInput.Text.Length == 0) {
+        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+      } else if (!Regex.IsMatch(codeInput.Text, Util.RegexPattern.Instance.Code)) {
+        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số không hợp lệ.");
+      } else if (!Controller.BiopsyGroup.Instance.Update(biopsyGroup.Id, codeInput.Text, commentInput.Text, (int)stateRadio.EditValue) {
+        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số đã tồn tại.");
       } else {
         Close();
       }

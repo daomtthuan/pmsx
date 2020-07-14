@@ -15,17 +15,17 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnInsert() {
-        new Form.Insert.Staff().ShowDialog();
+        new Form.Insert.BiopsyGroup().ShowDialog();
         OnLoad();
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Staff((Model.Staff)GetSelectedRow()).ShowDialog();
+        new Form.Update.BiopsyGroup((Model.BiopsyGroup)GetSelectedRow()).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
-        Controller.Staff.Instance.Disable(((Model.Staff)GetSelectedRow()).Id);
+        Controller.BiopsyGroup.Instance.Disable(((Model.BiopsyGroup)GetSelectedRow()).Id);
         OnLoad();
       }
     }

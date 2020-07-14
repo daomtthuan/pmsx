@@ -31,7 +31,7 @@ namespace PMSX.View.Form.Insert {
 
     private void InsertButton_Click(object sender, EventArgs e) {
       if (!Controller.Session.Instance.Insert(nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text)) {
-        Util.View.MessageBox.Instance.Warning("Không thể thêm.\nTên phiên làm việc đã tồn tại.");
+        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
         DialogResult = DialogResult.OK;
         Close();

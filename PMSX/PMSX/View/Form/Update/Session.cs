@@ -34,7 +34,7 @@ namespace PMSX.View.Form.Update {
 
     private void UpdateButton_Click(object sender, EventArgs e) {
       if (!Controller.Session.Instance.Update(session.Id, nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text, (int)stateRadio.EditValue)) {
-        Util.View.MessageBox.Instance.Warning("Không thể sửa.\nTên phiên làm việc đã tồn tại.");
+        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
         DialogResult = DialogResult.OK;
         Close();
