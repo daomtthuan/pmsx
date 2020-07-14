@@ -28,6 +28,15 @@ namespace PMSX.Util {
         { "YearsOld", "Tuổi" },
         { "Address", "Địa chỉ" },
         { "Code", "Mã số" },
+        { "NumberBiopsy", "Số mẫu sinh thiết" },
+        { "GroupId", "Mã định danh nhóm" },
+        { "DiagnoseType", "Loại chẩn đoán" },
+        { "PatientId", "Mã định danh bệnh nhân" },
+        { "SessionId", "Mã định danh phiên làm việc" },
+        { "GrossStaffId", "Mã định danh nhân viên gọt" },
+        { "Segment", "Số mảnh" },
+        { "GrossDatetime", "Ngày gọt" },
+        { "CollectDatetime", "Ngày thu thập" },
       };
     }
 
