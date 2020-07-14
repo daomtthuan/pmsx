@@ -133,12 +133,14 @@ namespace PMSX.View.Form {
 
     private void MacroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
       AddUserControl(new UserControl.Component.Table.MacroGroup() {
-        Dock = DockStyle.Fill
+      Dock = DockStyle.Fill
       });
     }
 
     private void MacroButton_ItemClick(object sender, ItemClickEventArgs e) {
-
+      AddUserControl(new UserControl.Component.Table.Macro() {
+      Dock = DockStyle.Fill
+      });
     }
 
     private void MicroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {

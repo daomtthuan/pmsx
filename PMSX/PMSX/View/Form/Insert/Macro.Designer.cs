@@ -178,7 +178,7 @@
       this.nameInputLayout1.TextLocation = DevExpress.Utils.Locations.Top;
       this.nameInputLayout1.TextSize = new System.Drawing.Size(180, 25);
       // 
-      // MacroGroup
+      // Macro
       // 
       this.AcceptButton = this.insertButton;
       this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -188,8 +188,9 @@
       this.Controls.Add(this.layoutControl);
       this.Margin = new System.Windows.Forms.Padding(4);
       this.MaximizeBox = false;
-      this.Name = "MacroGroup";
+      this.Name = "Macro";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.Text = "PMSX - Đại thể";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();

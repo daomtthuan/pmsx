@@ -5,55 +5,41 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Macro : XtraUserControl {
-    private class PermissionTable : Layout.Table {
-      private string roleId;
-      private string roleName;
+    private class MacroTable : Layout.Table {
+      protected override void OnInit() {
+        TitleLabel.Text = "Danh sách đại thể";
+      }
+
+      protected override void OnLoad() {
+        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.MacroGroup.Instance.SelectAll(), new[] {
+          "Code", "Description"
+        });
+      }
 
       protected override void OnInsert() {
-        List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId);
-        if (staffs.Count == 0) {
-          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");
-        } else {
-          new Form.Insert.Permission(roleId, staffs).ShowDialog();
-          LoadData(roleId, roleName);
-        }
+        new Form.Insert.Macro().ShowDialog();
+        OnLoad();
+        // throw new NotImplementedException();
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Permission((Model.Permission)GetSelectedRow()).ShowDialog();
-        LoadData(roleId, roleName);
+        new Form.Update.Macro((Model.Macro)GetSelectedRow()).ShowDialog();
+        OnLoad();
+        //throw new NotImplementedException();
       }
 
       protected override void OnDisabled() {
-        Controller.Permission.Instance.Disable(((Model.Permission)GetSelectedRow()).Id);
-        LoadData(roleId, roleName);
-      }
-
-      public void LoadData(string roleId, string roleName) {
-        this.roleId = roleId;
-        this.roleName = roleName;
-
-        TitleLabel.Text = "Danh sách nhân viên có quyền " + roleName;
-
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Permission.Instance.SelectByRoleId(roleId), new[] {
-          "StaffUsername", "StaffName", "CreateDatetime", "UpdateDatetime"
-        });
+        Controller.Macro.Instance.Disable(((Model.Macro)GetSelectedRow()).Id);
+        OnLoad();
+        //throw new NotImplementedException();
       }
     }
 
     public Macro() {
       InitializeComponent();
-      permissionPanel.Controls.Add(new PermissionTable() {
+      Controls.Add(new MacroTable() {
         Dock = DockStyle.Fill
       });
-    }
-
-    private void Permission_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(roleSelect, Controller.Role.Instance.SelectAll(), new[] { "Name", "CreateDatetime", "UpdateDatetime", "State" }, "Id", "Name");
-    }
-
-    private void RoleSelect_EditValueChanged(object sender, EventArgs e) {
-      ((PermissionTable)permissionPanel.Controls[0]).LoadData(roleSelect.EditValue.ToString(), roleSelect.Text);
     }
   }
 }

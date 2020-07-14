@@ -322,8 +322,11 @@ insert into pmsx_biopsy(biopsy_id, biopsy_code, biopsy_groupId, biopsy_patientId
 insert into pmsx_biopsy(biopsy_id, biopsy_code, biopsy_groupId, biopsy_patientId, biopsy_segment, biopsy_grossStaffId, biopsy_createStaffId) values ('8B77B18F-1ABE-4D5C-AF0E-6AA9628C01A9', 3, '2183CCCB-0A65-407C-AE93-CE9CF37B5499', '54C1D24B-4D38-4B99-B973-5B0D2204800A', 1, '6DDAA669-7F0E-46CC-8271-88633C859FFC', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
 
-insert into pmsx_macroGroup(macroGroup_id,macroGroup_code,macroGroup_name,macroGroup_comment,macroGroup_state,macroGroup_createStaffId,macroGroup_createDatetime,macroGroup_updateStaffId,macroGroup_updateDatetime) values ('8B77B18F-1ABE-4D5C-AF0E-6AA9628C02A3','D','DA','abc',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
+insert into pmsx_macroGroup(macroGroup_id, macroGroup_code, macroGroup_name, macroGroup_comment, macroGroup_state, macroGroup_createStaffId, macroGroup_createDatetime, macroGroup_updateStaffId, macroGroup_updateDatetime) values ('8B77B18F-1ABE-4D5C-AF0E-6AA9628C02A3','D','DA','abc',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
 go
 
-insert into pmsx_microGroup(microGroup_id,microGroup_code,microGroup_name,microGroup_comment,microGroup_state,microGroup_createStaffId,microGroup_createDatetime,microGroup_updateStaffId,microGroup_updateDatetime) values ('1EB38555-03CA-4A31-BBC3-F7070730A672','RHM','RANG HAM MAT','ABC',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
+insert into pmsx_microGroup(microGroup_id, microGroup_code, microGroup_name, microGroup_comment, microGroup_state, microGroup_createStaffId, microGroup_createDatetime, microGroup_updateStaffId, microGroup_updateDatetime) values ('1EB38555-03CA-4A31-BBC3-F7070730A672','RHM','RANG HAM MAT','ABC',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
+go
+
+insert into pmsx_macro(macro_id, macro_code, macro_description, macro_groupId, macro_comment, macro_state, macro_createStaffId, macro_createDatetime, macro_updateStaffId, macro_updateDatetime) values ('CE4B5656-DCBA-46A3-9F71-6A8A52D0CB2A','D42','Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.','8B77B18F-1ABE-4D5C-AF0E-6AA9628C02A3','',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
 go

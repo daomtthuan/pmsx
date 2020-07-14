@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace PMSX.View.Form.Update {
   public partial class Macro : XtraForm {
-    private readonly Model.MacroGroup macroGroups;
+    private readonly Model.Macro macros;
 
-    public Macro(Model.MacroGroup macroGroups) {
+    public Macro(Model.Macro macros) {
       InitializeComponent();
-      this.macroGroups = macroGroups;
+      this.macros = macros;
 
       DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
@@ -18,9 +18,9 @@ namespace PMSX.View.Form.Update {
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      nameInput.Text = macroGroups.Name;
-      stateRadio.EditValue = macroGroups.GetStateNumber();
-      commentInput.Text = macroGroups.Comment;
+      nameInput.Text = macros.Description;
+      stateRadio.EditValue = macros.GetStateNumber();
+      commentInput.Text = macros.Comment;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {
@@ -29,7 +29,7 @@ namespace PMSX.View.Form.Update {
       } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
       }*/ else {
-        //       Controller.Staff.Instance.Update(macroGroups.Id, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+               Controller.Macro.Instance.Update(macros.Id, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       }
     }
