@@ -324,3 +324,6 @@ go
 
 insert into pmsx_macroGroup(macroGroup_id,macroGroup_code,macroGroup_name,macroGroup_comment,macroGroup_state,macroGroup_createStaffId,macroGroup_createDatetime,macroGroup_updateStaffId,macroGroup_updateDatetime) values ('8B77B18F-1ABE-4D5C-AF0E-6AA9628C02A3','D','DA','abc',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
 go
+
+insert into pmsx_microGroup(microGroup_id,microGroup_code,microGroup_name,microGroup_comment,microGroup_state,microGroup_createStaffId,microGroup_createDatetime,microGroup_updateStaffId,microGroup_updateDatetime) values ('1EB38555-03CA-4A31-BBC3-F7070730A672','RHM','RANG HAM MAT','ABC',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
+go

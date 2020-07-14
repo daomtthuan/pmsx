@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace PMSX.View.Form.Update {
   public partial class MicroGroup : XtraForm {
-    private readonly Model.MacroGroup macroGroups;
+    private readonly Model.MicroGroup microGroups;
 
-    public MicroGroup(Model.MacroGroup macroGroups) {
+    public MicroGroup(Model.MicroGroup microGroups) {
       InitializeComponent();
-      this.macroGroups = macroGroups;
+      this.microGroups = microGroups;
 
       DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
@@ -18,9 +18,9 @@ namespace PMSX.View.Form.Update {
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      nameInput.Text = macroGroups.Name;
-      stateRadio.EditValue = macroGroups.GetStateNumber();
-      commentInput.Text = macroGroups.Comment;
+      nameInput.Text = microGroups.Name;
+      stateRadio.EditValue = microGroups.GetStateNumber();
+      commentInput.Text = microGroups.Comment;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {
