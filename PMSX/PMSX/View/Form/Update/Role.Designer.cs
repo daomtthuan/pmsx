@@ -33,8 +33,8 @@
       this.updateButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
-      this.stateRadioLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.stateRadioLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).BeginInit();
@@ -45,8 +45,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -168,6 +168,16 @@
       this.notRequiredLabel.Text = "Thông tin không bắt buộc";
       this.notRequiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
+      // commentInputLayout
+      // 
+      this.commentInputLayout.Control = this.commentInput;
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 193);
+      this.commentInputLayout.Name = "commentInputLayout";
+      this.commentInputLayout.Size = new System.Drawing.Size(442, 173);
+      this.commentInputLayout.Text = "Ghi chú";
+      this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
+      // 
       // stateRadioLayout
       // 
       this.stateRadioLayout.Control = this.stateRadio;
@@ -181,16 +191,6 @@
       this.stateRadioLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.stateRadioLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // commentInputLayout
-      // 
-      this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 193);
-      this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(442, 173);
-      this.commentInputLayout.Text = "Ghi chú";
-      this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
-      // 
       // Role
       // 
       this.AcceptButton = this.updateButton;
@@ -202,7 +202,7 @@
       this.MaximizeBox = false;
       this.Name = "Role";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Sửa nhân viên";
+      this.Text = "PMSX - Sửa quyền";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();
@@ -213,8 +213,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.updateButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).EndInit();
       this.ResumeLayout(false);
 
         }

@@ -275,7 +275,7 @@
       this.MaximizeBox = false;
       this.Name = "Session";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm quyền";
+      this.Text = "PMSX - Sửa phiên làm việc";
       this.Load += new System.EventHandler(this.Session_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
