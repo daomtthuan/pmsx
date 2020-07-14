@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
-  public partial class MicroGroup : XtraUserControl {
+  public partial class MacroGroup : XtraUserControl {
     private class MacroGroupTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhóm đại thể";
@@ -34,7 +34,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
     }
 
-    public MicroGroup() {
+    public MacroGroup() {
       InitializeComponent();
       Controls.Add(new MacroGroupTable() {
         Dock = DockStyle.Fill

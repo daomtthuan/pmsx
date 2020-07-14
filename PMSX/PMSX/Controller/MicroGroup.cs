@@ -88,7 +88,7 @@ namespace PMSX.Controller {
       return microGroups;
     }
 
-    public bool Insert(string code, string name, string comment, string createStaffId) {
+    public bool Insert(string code, string name, string comment) {
       if (SelectByCode(code).Count > 0) {
         return false;
       }

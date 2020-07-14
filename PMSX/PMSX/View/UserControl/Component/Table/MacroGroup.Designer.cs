@@ -1,5 +1,5 @@
 ﻿namespace PMSX.View.UserControl.Component.Table {
-  partial class MicroGroup {
+  partial class MacroGroup {
     /// <summary> 
     /// Required designer variable.
     /// </summary>

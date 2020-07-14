@@ -1,5 +1,5 @@
 ﻿namespace PMSX.View.Form.Update {
-  partial class MacroGroup {
+  partial class Micro {
     /// <summary>
     /// Required designer variable.
     /// </summary>
