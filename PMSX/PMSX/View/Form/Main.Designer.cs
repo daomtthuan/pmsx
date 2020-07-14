@@ -44,16 +44,16 @@
       DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem10 = new DevExpress.Utils.ToolTipItem();
-      DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipItem toolTipItem14 = new DevExpress.Utils.ToolTipItem();
-      DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipItem toolTipItem15 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem12 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem13 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
+      DevExpress.Utils.ToolTipItem toolTipItem14 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
+      DevExpress.Utils.ToolTipItem toolTipItem15 = new DevExpress.Utils.ToolTipItem();
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.backstageView = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
       this.aboutBackstage = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -71,21 +71,21 @@
       this.macroGroupButton = new DevExpress.XtraBars.BarButtonItem();
       this.macroButton = new DevExpress.XtraBars.BarButtonItem();
       this.microGroupButton = new DevExpress.XtraBars.BarButtonItem();
+      this.microButton = new DevExpress.XtraBars.BarButtonItem();
+      this.diagnose2Button = new DevExpress.XtraBars.BarButtonItem();
+      this.diagnose3Button = new DevExpress.XtraBars.BarButtonItem();
       this.adminPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
       this.personnelPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.workGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.clinicPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.clinicGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.pathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.diagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.pathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-      this.microButton = new DevExpress.XtraBars.BarButtonItem();
-      this.diagnose2Button = new DevExpress.XtraBars.BarButtonItem();
-      this.diagnose3Button = new DevExpress.XtraBars.BarButtonItem();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
@@ -116,13 +116,14 @@
             this.diagnose2Button,
             this.diagnose3Button});
       this.ribbon.Location = new System.Drawing.Point(0, 0);
+      this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.ribbon.MaxItemId = 16;
       this.ribbon.Name = "ribbon";
       this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.adminPageGroup});
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-      this.ribbon.Size = new System.Drawing.Size(1600, 195);
+      this.ribbon.Size = new System.Drawing.Size(1942, 235);
       // 
       // backstageView
       // 
@@ -131,19 +132,21 @@
       this.backstageView.Items.Add(this.separatorBackstage);
       this.backstageView.Items.Add(this.logoutButton);
       this.backstageView.Items.Add(this.exitButton);
-      this.backstageView.Location = new System.Drawing.Point(75, 259);
+      this.backstageView.Location = new System.Drawing.Point(100, 308);
+      this.backstageView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.backstageView.Name = "backstageView";
       this.backstageView.OwnerControl = this.ribbon;
       this.backstageView.SelectedTab = this.aboutButtonBackstage;
       this.backstageView.SelectedTabIndex = 0;
-      this.backstageView.Size = new System.Drawing.Size(565, 364);
+      this.backstageView.Size = new System.Drawing.Size(753, 433);
       this.backstageView.TabIndex = 5;
       // 
       // aboutBackstage
       // 
-      this.aboutBackstage.Location = new System.Drawing.Point(151, 63);
+      this.aboutBackstage.Location = new System.Drawing.Point(190, 78);
+      this.aboutBackstage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.aboutBackstage.Name = "aboutBackstage";
-      this.aboutBackstage.Size = new System.Drawing.Size(413, 300);
+      this.aboutBackstage.Size = new System.Drawing.Size(562, 354);
       this.aboutBackstage.TabIndex = 1;
       // 
       // aboutButtonBackstage
@@ -267,6 +270,7 @@
       toolTipItem8.Text = "Quản lý nhóm đại thể";
       superToolTip8.Items.Add(toolTipItem8);
       this.macroGroupButton.SuperTip = superToolTip8;
+      this.macroGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroGroupButton_ItemClick);
       // 
       // macroButton
       // 
@@ -277,6 +281,7 @@
       toolTipItem9.Text = "Quản lý đại thể";
       superToolTip9.Items.Add(toolTipItem9);
       this.macroButton.SuperTip = superToolTip9;
+      this.macroButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroButton_ItemClick);
       // 
       // microGroupButton
       // 
@@ -287,6 +292,36 @@
       toolTipItem10.Text = "Quản lý nhóm vi thể";
       superToolTip10.Items.Add(toolTipItem10);
       this.microGroupButton.SuperTip = superToolTip10;
+      // 
+      // microButton
+      // 
+      this.microButton.Caption = "Vi thể";
+      this.microButton.Id = 13;
+      this.microButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_point;
+      this.microButton.Name = "microButton";
+      toolTipItem11.Text = "Quản lý vi thể";
+      superToolTip11.Items.Add(toolTipItem11);
+      this.microButton.SuperTip = superToolTip11;
+      // 
+      // diagnose2Button
+      // 
+      this.diagnose2Button.Caption = "Loại 2";
+      this.diagnose2Button.Id = 14;
+      this.diagnose2Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
+      this.diagnose2Button.Name = "diagnose2Button";
+      toolTipItem12.Text = "Quản lý kết quả chẩn đoán loại 2";
+      superToolTip12.Items.Add(toolTipItem12);
+      this.diagnose2Button.SuperTip = superToolTip12;
+      // 
+      // diagnose3Button
+      // 
+      this.diagnose3Button.Caption = "Loại 3";
+      this.diagnose3Button.Id = 15;
+      this.diagnose3Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
+      this.diagnose3Button.Name = "diagnose3Button";
+      toolTipItem13.Text = "Quản lý kết quả chuẩn đoán loại 3";
+      superToolTip13.Items.Add(toolTipItem13);
+      this.diagnose3Button.SuperTip = superToolTip13;
       // 
       // adminPageGroup
       // 
@@ -334,6 +369,14 @@
       this.clinicGroup.Name = "clinicGroup";
       this.clinicGroup.Text = "Phòng khám";
       // 
+      // diagnoseGroup
+      // 
+      this.diagnoseGroup.ItemLinks.Add(this.diagnose1Button);
+      this.diagnoseGroup.ItemLinks.Add(this.diagnose2Button);
+      this.diagnoseGroup.ItemLinks.Add(this.diagnose3Button);
+      this.diagnoseGroup.Name = "diagnoseGroup";
+      this.diagnoseGroup.Text = "Kết quả chẩn đoán";
+      // 
       // pathologyGroup
       // 
       this.pathologyGroup.ItemLinks.Add(this.macroGroupButton);
@@ -342,14 +385,6 @@
       this.pathologyGroup.ItemLinks.Add(this.microButton);
       this.pathologyGroup.Name = "pathologyGroup";
       this.pathologyGroup.Text = "Giải phẫu bệnh";
-      // 
-      // diagnoseGroup
-      // 
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose1Button);
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose2Button);
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose3Button);
-      this.diagnoseGroup.Name = "diagnoseGroup";
-      this.diagnoseGroup.Text = "Kết quả chẩn đoán";
       // 
       // ribbonPage1
       // 
@@ -385,43 +420,14 @@
       superToolTip15.Items.Add(toolTipItem15);
       this.barButtonItem2.SuperTip = superToolTip15;
       // 
-      // microButton
-      // 
-      this.microButton.Caption = "Vi thể";
-      this.microButton.Id = 13;
-      this.microButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_point;
-      this.microButton.Name = "microButton";
-      toolTipItem11.Text = "Quản lý vi thể";
-      superToolTip11.Items.Add(toolTipItem11);
-      this.microButton.SuperTip = superToolTip11;
-      // 
-      // diagnose2Button
-      // 
-      this.diagnose2Button.Caption = "Loại 2";
-      this.diagnose2Button.Id = 14;
-      this.diagnose2Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.diagnose2Button.Name = "diagnose2Button";
-      toolTipItem12.Text = "Quản lý kết quả chẩn đoán loại 2";
-      superToolTip12.Items.Add(toolTipItem12);
-      this.diagnose2Button.SuperTip = superToolTip12;
-      // 
-      // diagnose3Button
-      // 
-      this.diagnose3Button.Caption = "Loại 3";
-      this.diagnose3Button.Id = 15;
-      this.diagnose3Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.diagnose3Button.Name = "diagnose3Button";
-      toolTipItem13.Text = "Quản lý kết quả chuẩn đoán loại 3";
-      superToolTip13.Items.Add(toolTipItem13);
-      this.diagnose3Button.SuperTip = superToolTip13;
-      // 
       // Main
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1600, 900);
+      this.ClientSize = new System.Drawing.Size(1942, 1071);
       this.Controls.Add(this.backstageView);
       this.Controls.Add(this.ribbon);
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Main";
       this.Ribbon = this.ribbon;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
