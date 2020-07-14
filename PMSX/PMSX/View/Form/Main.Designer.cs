@@ -91,13 +91,13 @@
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
       this.SuspendLayout();
-      //
+      // 
       // splashScreenManager
-      //
+      // 
       splashScreenManager.ClosingDelay = 1000;
-      //
+      // 
       // ribbon
-      //
+      // 
       this.ribbon.ApplicationButtonDropDownControl = this.backstageView;
       this.ribbon.ExpandCollapseItem.Id = 0;
       this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -124,71 +124,69 @@
             this.adminPageGroup});
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-      this.ribbon.Size = new System.Drawing.Size(1942, 235);
-      //
+      this.ribbon.Size = new System.Drawing.Size(1600, 195);
+      // 
       // backstageView
-      //
+      // 
       this.backstageView.Controls.Add(this.aboutBackstage);
       this.backstageView.Items.Add(this.aboutButtonBackstage);
       this.backstageView.Items.Add(this.separatorBackstage);
       this.backstageView.Items.Add(this.logoutButton);
       this.backstageView.Items.Add(this.exitButton);
-      this.backstageView.Location = new System.Drawing.Point(100, 308);
-      this.backstageView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.backstageView.Location = new System.Drawing.Point(75, 259);
       this.backstageView.Name = "backstageView";
       this.backstageView.OwnerControl = this.ribbon;
       this.backstageView.SelectedTab = this.aboutButtonBackstage;
       this.backstageView.SelectedTabIndex = 0;
-      this.backstageView.Size = new System.Drawing.Size(753, 433);
+      this.backstageView.Size = new System.Drawing.Size(565, 364);
       this.backstageView.TabIndex = 5;
-      //
+      // 
       // aboutBackstage
-      //
-      this.aboutBackstage.Location = new System.Drawing.Point(190, 78);
-      this.aboutBackstage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      // 
+      this.aboutBackstage.Location = new System.Drawing.Point(151, 63);
       this.aboutBackstage.Name = "aboutBackstage";
-      this.aboutBackstage.Size = new System.Drawing.Size(562, 354);
+      this.aboutBackstage.Size = new System.Drawing.Size(413, 300);
       this.aboutBackstage.TabIndex = 1;
-      //
+      // 
       // aboutButtonBackstage
-      //
+      // 
       this.aboutButtonBackstage.Caption = "Giới thiệu";
       this.aboutButtonBackstage.ContentControl = this.aboutBackstage;
       this.aboutButtonBackstage.Name = "aboutButtonBackstage";
       this.aboutButtonBackstage.Selected = true;
-      //
+      // 
       // separatorBackstage
-      //
+      // 
       this.separatorBackstage.Name = "separatorBackstage";
-      //
+      // 
       // logoutButton
-      //
+      // 
       this.logoutButton.Caption = "Đăng xuất";
       this.logoutButton.Name = "logoutButton";
       this.logoutButton.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.LogoutButton_Click);
-      //
+      // 
       // exitButton
-      //
+      // 
       this.exitButton.Caption = "Thoát";
       this.exitButton.Name = "exitButton";
       this.exitButton.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.ExitButton_Click);
-      //
+      // 
       // staffButton
-      //
+      // 
       this.staffButton.Caption = "Nhân viên";
       this.staffButton.Id = 1;
       this.staffButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.staffButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.bo_lead;
       this.staffButton.Name = "staffButton";
-      this.staffButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)
+      this.staffButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
       toolTipItem1.Text = "Quản lý nhân viên";
       superToolTip1.Items.Add(toolTipItem1);
       this.staffButton.SuperTip = superToolTip1;
       this.staffButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.StaffButton_Click);
-      //
+      // 
       // patientButton
-      //
+      // 
       this.patientButton.Caption = "Bệnh nhân";
       this.patientButton.Id = 2;
       this.patientButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -198,37 +196,37 @@
       superToolTip2.Items.Add(toolTipItem2);
       this.patientButton.SuperTip = superToolTip2;
       this.patientButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PatientButton_Click);
-      //
+      // 
       // roleButton
-      //
+      // 
       this.roleButton.Caption = "Quyền truy cập";
       this.roleButton.Id = 3;
       this.roleButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.roleButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.security_key;
       this.roleButton.Name = "roleButton";
-      this.roleButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)
+      this.roleButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
       toolTipItem3.Text = "Quản lý quyền truy cập nhân viên";
       superToolTip3.Items.Add(toolTipItem3);
       this.roleButton.SuperTip = superToolTip3;
       this.roleButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RoleButton_Click);
-      //
+      // 
       // sessionButton
-      //
+      // 
       this.sessionButton.Caption = "Phiên làm việc";
       this.sessionButton.Id = 5;
       this.sessionButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.sessionButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.bo_audit_changehistory;
       this.sessionButton.Name = "sessionButton";
-      this.sessionButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)
+      this.sessionButton.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
       toolTipItem4.Text = "Quản lý phiên làm việc";
       superToolTip4.Items.Add(toolTipItem4);
       this.sessionButton.SuperTip = superToolTip4;
       this.sessionButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SessionButton_Click);
-      //
+      // 
       // biopsyButton
-      //
+      // 
       this.biopsyButton.Caption = "Sinh thiết";
       this.biopsyButton.Id = 6;
       this.biopsyButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -238,9 +236,9 @@
       superToolTip5.Items.Add(toolTipItem5);
       this.biopsyButton.SuperTip = superToolTip5;
       this.biopsyButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyButton_Click);
-      //
+      // 
       // diagnose1Button
-      //
+      // 
       this.diagnose1Button.Caption = "Loại 1";
       this.diagnose1Button.Id = 7;
       this.diagnose1Button.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -249,9 +247,9 @@
       toolTipItem6.Text = "Quản lý kết quả chẩn đoán loại 1";
       superToolTip6.Items.Add(toolTipItem6);
       this.diagnose1Button.SuperTip = superToolTip6;
-      //
+      // 
       // permissionButton
-      //
+      // 
       this.permissionButton.Caption = "Phân quyền";
       this.permissionButton.Id = 8;
       this.permissionButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -261,9 +259,9 @@
       superToolTip7.Items.Add(toolTipItem7);
       this.permissionButton.SuperTip = superToolTip7;
       this.permissionButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PermissionButton_ItemClick);
-      //
+      // 
       // macroGroupButton
-      //
+      // 
       this.macroGroupButton.Caption = "Nhóm đại thể";
       this.macroGroupButton.Id = 10;
       this.macroGroupButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_polarline;
@@ -271,10 +269,9 @@
       toolTipItem8.Text = "Quản lý nhóm đại thể";
       superToolTip8.Items.Add(toolTipItem8);
       this.macroGroupButton.SuperTip = superToolTip8;
-      this.macroGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroGroupButton_ItemClick);
-      //
+      // 
       // macroButton
-      //
+      // 
       this.macroButton.Caption = "Đại thể";
       this.macroButton.Id = 11;
       this.macroButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_polarline;
@@ -282,10 +279,9 @@
       toolTipItem9.Text = "Quản lý đại thể";
       superToolTip9.Items.Add(toolTipItem9);
       this.macroButton.SuperTip = superToolTip9;
-      this.macroButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroButton_ItemClick);
-      //
+      // 
       // microGroupButton
-      //
+      // 
       this.microGroupButton.Caption = "Nhóm vi thể";
       this.microGroupButton.Id = 12;
       this.microGroupButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_point;
@@ -293,9 +289,9 @@
       toolTipItem10.Text = "Quản lý nhóm vi thể";
       superToolTip10.Items.Add(toolTipItem10);
       this.microGroupButton.SuperTip = superToolTip10;
-      //
+      // 
       // microButton
-      //
+      // 
       this.microButton.Caption = "Vi thể";
       this.microButton.Id = 13;
       this.microButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_point;
@@ -303,9 +299,9 @@
       toolTipItem11.Text = "Quản lý vi thể";
       superToolTip11.Items.Add(toolTipItem11);
       this.microButton.SuperTip = superToolTip11;
-      //
+      // 
       // diagnose2Button
-      //
+      // 
       this.diagnose2Button.Caption = "Loại 2";
       this.diagnose2Button.Id = 14;
       this.diagnose2Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
@@ -313,9 +309,9 @@
       toolTipItem12.Text = "Quản lý kết quả chẩn đoán loại 2";
       superToolTip12.Items.Add(toolTipItem12);
       this.diagnose2Button.SuperTip = superToolTip12;
-      //
+      // 
       // diagnose3Button
-      //
+      // 
       this.diagnose3Button.Caption = "Loại 3";
       this.diagnose3Button.Id = 15;
       this.diagnose3Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
@@ -323,85 +319,85 @@
       toolTipItem13.Text = "Quản lý kết quả chuẩn đoán loại 3";
       superToolTip13.Items.Add(toolTipItem13);
       this.diagnose3Button.SuperTip = superToolTip13;
-      //
+      // 
       // adminPageGroup
-      //
+      // 
       this.adminPageGroup.Name = "adminPageGroup";
       this.adminPageGroup.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.personnelPage,
             this.clinicPage});
       this.adminPageGroup.Text = "Quản trị viên";
-      //
+      // 
       // personnelPage
-      //
+      // 
       this.personnelPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.accountGroup,
             this.workGroup});
       this.personnelPage.Name = "personnelPage";
       this.personnelPage.Text = "Nhân sự";
-      //
+      // 
       // accountGroup
-      //
+      // 
       this.accountGroup.ItemLinks.Add(this.staffButton);
       this.accountGroup.ItemLinks.Add(this.roleButton);
       this.accountGroup.ItemLinks.Add(this.permissionButton);
       this.accountGroup.Name = "accountGroup";
       this.accountGroup.Text = "Tài khoản";
-      //
+      // 
       // workGroup
-      //
+      // 
       this.workGroup.ItemLinks.Add(this.sessionButton);
       this.workGroup.Name = "workGroup";
       this.workGroup.Text = "Công việc";
-      //
+      // 
       // clinicPage
-      //
+      // 
       this.clinicPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.clinicGroup,
             this.diagnoseGroup,
             this.pathologyGroup});
       this.clinicPage.Name = "clinicPage";
       this.clinicPage.Text = "Phòng khám";
-      //
+      // 
       // clinicGroup
-      //
+      // 
       this.clinicGroup.ItemLinks.Add(this.patientButton);
       this.clinicGroup.ItemLinks.Add(this.biopsyGroupButton);
       this.clinicGroup.ItemLinks.Add(this.biopsyButton);
       this.clinicGroup.Name = "clinicGroup";
       this.clinicGroup.Text = "Phòng khám";
-      //
+      // 
       // diagnoseGroup
-      //
+      // 
       this.diagnoseGroup.ItemLinks.Add(this.diagnose1Button);
       this.diagnoseGroup.ItemLinks.Add(this.diagnose2Button);
       this.diagnoseGroup.ItemLinks.Add(this.diagnose3Button);
       this.diagnoseGroup.Name = "diagnoseGroup";
       this.diagnoseGroup.Text = "Kết quả chẩn đoán";
-      //
+      // 
       // pathologyGroup
-      //
+      // 
       this.pathologyGroup.ItemLinks.Add(this.macroGroupButton);
       this.pathologyGroup.ItemLinks.Add(this.macroButton);
       this.pathologyGroup.ItemLinks.Add(this.microGroupButton);
       this.pathologyGroup.ItemLinks.Add(this.microButton);
       this.pathologyGroup.Name = "pathologyGroup";
       this.pathologyGroup.Text = "Giải phẫu bệnh";
-      //
+      // 
       // ribbonPage1
-      //
+      // 
       this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
       this.ribbonPage1.Name = "ribbonPage1";
       this.ribbonPage1.Text = "ribbonPage1";
-      //
+      // 
       // ribbonPageGroup1
-      //
+      // 
       this.ribbonPageGroup1.Name = "ribbonPageGroup1";
       this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-      //
+      // 
       // barButtonItem1
-      //
+      // 
       this.barButtonItem1.Caption = "Loại 1";
       this.barButtonItem1.Id = 7;
       this.barButtonItem1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -410,9 +406,9 @@
       toolTipItem14.Text = "Quản lý kết quả chuẩn đoán xét nghiệm";
       superToolTip14.Items.Add(toolTipItem14);
       this.barButtonItem1.SuperTip = superToolTip14;
-      //
+      // 
       // barButtonItem2
-      //
+      // 
       this.barButtonItem2.Caption = "Loại 1";
       this.barButtonItem2.Id = 7;
       this.barButtonItem2.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -421,23 +417,22 @@
       toolTipItem15.Text = "Quản lý kết quả chuẩn đoán xét nghiệm";
       superToolTip15.Items.Add(toolTipItem15);
       this.barButtonItem2.SuperTip = superToolTip15;
-      //
+      // 
       // biopsyGroupButton
-      //
+      // 
       this.biopsyGroupButton.Caption = "Nhóm sinh thiết";
       this.biopsyGroupButton.Id = 16;
       this.biopsyGroupButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
       this.biopsyGroupButton.Name = "biopsyGroupButton";
       this.biopsyGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyGroupButton_ItemClick);
-      //
+      // 
       // Main
-      //
-      this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1942, 1071);
+      this.ClientSize = new System.Drawing.Size(1600, 900);
       this.Controls.Add(this.backstageView);
       this.Controls.Add(this.ribbon);
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Main";
       this.Ribbon = this.ribbon;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
