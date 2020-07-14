@@ -1,59 +1,56 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Printing.ExportHelpers;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Micro : XtraUserControl {
-    private class PermissionTable : Layout.Table {
-      private string roleId;
-      private string roleName;
+    private class MicroTable : Layout.Table {
+      private string groupId;
+      private string groupName;
 
       protected override void OnInsert() {
-        List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId);
-        if (staffs.Count == 0) {
-          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");
-        } else {
-          new Form.Insert.Permission(roleId, staffs).ShowDialog();
-          LoadData(roleId, roleName);
-        }
+        new Form.Insert.Micro().ShowDialog();
+        OnLoad();
+        // throw new NotImplementedException();
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Permission((Model.Permission)GetSelectedRow()).ShowDialog();
-        LoadData(roleId, roleName);
+        //new Form.Update.Micro((Model.Micro)GetSelectedRow()).ShowDialog();
+        OnLoad();
       }
 
       protected override void OnDisabled() {
-        Controller.Permission.Instance.Disable(((Model.Permission)GetSelectedRow()).Id);
-        LoadData(roleId, roleName);
+        //Controller.Micro.Instance.Disable(((Model.Micro)GetSelectedRow()).Id);
+        OnLoad();
       }
 
-      public void LoadData(string roleId, string roleName) {
-        this.roleId = roleId;
-        this.roleName = roleName;
+      public void LoadData(string groupId, string groupName) {
+        this.groupId = groupId;
+        this.groupName = groupName;
 
-        TitleLabel.Text = "Danh sách nhân viên có quyền " + roleName;
+        TitleLabel.Text = "Danh sách vi thể thuộc nhóm " + groupName;
 
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Permission.Instance.SelectByRoleId(roleId), new[] {
-          "StaffUsername", "StaffName", "CreateDatetime", "UpdateDatetime"
+        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Micro.Instance.SelectByGroupId(groupId), new[] {
+          "Code", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
     }
 
     public Micro() {
       InitializeComponent();
-      permissionPanel.Controls.Add(new PermissionTable() {
+      microPanel.Controls.Add(new MicroTable() {
         Dock = DockStyle.Fill
       });
     }
 
-    private void Permission_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(roleSelect, Controller.Role.Instance.SelectAll(), new[] { "Name", "CreateDatetime", "UpdateDatetime", "State" }, "Id", "Name");
+    private void Micro_Load(object sender, EventArgs e) {
+      Util.View.Grid.Instance.Load(microGroupSelect, Controller.MicroGroup.Instance.SelectAll(), new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
     }
 
-    private void RoleSelect_EditValueChanged(object sender, EventArgs e) {
-      ((PermissionTable)permissionPanel.Controls[0]).LoadData(roleSelect.EditValue.ToString(), roleSelect.Text);
+    private void MicroGroupSelect_EditValueChanged(object sender, EventArgs e) {
+      ((MicroTable)microPanel.Controls[0]).LoadData(microGroupSelect.EditValue.ToString(), microGroupSelect.Text);
     }
   }
 }

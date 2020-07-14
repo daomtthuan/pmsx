@@ -23,112 +23,112 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-            this.permissionPanel = new DevExpress.XtraEditors.PanelControl();
-            this.roleSelect = new DevExpress.XtraEditors.LookUpEdit();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.roleSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
-            this.staffRolePanelLayout = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
-            this.layoutControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.permissionPanel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roleSelect.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roleSelectLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffRolePanelLayout)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // layoutControl
-            // 
-            this.layoutControl.Controls.Add(this.permissionPanel);
-            this.layoutControl.Controls.Add(this.roleSelect);
-            this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl.Name = "layoutControl";
-            this.layoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1016, 178, 650, 400);
-            this.layoutControl.Root = this.Root;
-            this.layoutControl.Size = new System.Drawing.Size(150, 150);
-            this.layoutControl.TabIndex = 1;
-            this.layoutControl.Text = "layoutControl1";
-            // 
-            // permissionPanel
-            // 
-            this.permissionPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.permissionPanel.Location = new System.Drawing.Point(12, 78);
-            this.permissionPanel.Name = "permissionPanel";
-            this.permissionPanel.Size = new System.Drawing.Size(126, 60);
-            this.permissionPanel.TabIndex = 4;
-            // 
-            // roleSelect
-            // 
-            this.roleSelect.Location = new System.Drawing.Point(12, 36);
-            this.roleSelect.Name = "roleSelect";
-            this.roleSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
+      this.macroPanel = new DevExpress.XtraEditors.PanelControl();
+      this.macroGroupSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+      this.macroGroupSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.staffRolePanelLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
+      this.layoutControl.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.macroPanel)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.staffRolePanelLayout)).BeginInit();
+      this.SuspendLayout();
+      // 
+      // layoutControl
+      // 
+      this.layoutControl.Controls.Add(this.macroPanel);
+      this.layoutControl.Controls.Add(this.macroGroupSelect);
+      this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.layoutControl.Location = new System.Drawing.Point(0, 0);
+      this.layoutControl.Name = "layoutControl";
+      this.layoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1016, 178, 650, 400);
+      this.layoutControl.Root = this.Root;
+      this.layoutControl.Size = new System.Drawing.Size(150, 150);
+      this.layoutControl.TabIndex = 1;
+      this.layoutControl.Text = "layoutControl1";
+      // 
+      // macroPanel
+      // 
+      this.macroPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.macroPanel.Location = new System.Drawing.Point(12, 78);
+      this.macroPanel.Name = "macroPanel";
+      this.macroPanel.Size = new System.Drawing.Size(126, 60);
+      this.macroPanel.TabIndex = 4;
+      // 
+      // macroGroupSelect
+      // 
+      this.macroGroupSelect.Location = new System.Drawing.Point(12, 36);
+      this.macroGroupSelect.Name = "macroGroupSelect";
+      this.macroGroupSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.roleSelect.Properties.NullText = "";
-            this.roleSelect.Properties.PopupSizeable = false;
-            this.roleSelect.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.roleSelect.Size = new System.Drawing.Size(126, 28);
-            this.roleSelect.StyleController = this.layoutControl;
-            this.roleSelect.TabIndex = 5;
-            this.roleSelect.EditValueChanged += new System.EventHandler(this.RoleSelect_EditValueChanged);
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.roleSelectLayout,
+      this.macroGroupSelect.Properties.NullText = "";
+      this.macroGroupSelect.Properties.PopupSizeable = false;
+      this.macroGroupSelect.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+      this.macroGroupSelect.Size = new System.Drawing.Size(126, 28);
+      this.macroGroupSelect.StyleController = this.layoutControl;
+      this.macroGroupSelect.TabIndex = 5;
+      this.macroGroupSelect.EditValueChanged += new System.EventHandler(this.MacroGroupSelect_EditValueChanged);
+      // 
+      // Root
+      // 
+      this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+      this.Root.GroupBordersVisible = false;
+      this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.macroGroupSelectLayout,
             this.staffRolePanelLayout});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(150, 150);
-            this.Root.TextVisible = false;
-            // 
-            // roleSelectLayout
-            // 
-            this.roleSelectLayout.Control = this.roleSelect;
-            this.roleSelectLayout.Location = new System.Drawing.Point(0, 0);
-            this.roleSelectLayout.Name = "roleSelectLayout";
-            this.roleSelectLayout.Size = new System.Drawing.Size(130, 56);
-            this.roleSelectLayout.Text = "Quyền";
-            this.roleSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
-            this.roleSelectLayout.TextSize = new System.Drawing.Size(46, 21);
-            // 
-            // staffRolePanelLayout
-            // 
-            this.staffRolePanelLayout.Control = this.permissionPanel;
-            this.staffRolePanelLayout.Location = new System.Drawing.Point(0, 56);
-            this.staffRolePanelLayout.Name = "staffRolePanelLayout";
-            this.staffRolePanelLayout.Size = new System.Drawing.Size(130, 74);
-            this.staffRolePanelLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
-            this.staffRolePanelLayout.TextSize = new System.Drawing.Size(0, 0);
-            this.staffRolePanelLayout.TextVisible = false;
-            // 
-            // Permission
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.layoutControl);
-            this.Name = "Permission";
-            this.Load += new System.EventHandler(this.Permission_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
-            this.layoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.permissionPanel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roleSelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roleSelectLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffRolePanelLayout)).EndInit();
-            this.ResumeLayout(false);
+      this.Root.Name = "Root";
+      this.Root.Size = new System.Drawing.Size(150, 150);
+      this.Root.TextVisible = false;
+      // 
+      // macroGroupSelectLayout
+      // 
+      this.macroGroupSelectLayout.Control = this.macroGroupSelect;
+      this.macroGroupSelectLayout.Location = new System.Drawing.Point(0, 0);
+      this.macroGroupSelectLayout.Name = "macroGroupSelectLayout";
+      this.macroGroupSelectLayout.Size = new System.Drawing.Size(130, 56);
+      this.macroGroupSelectLayout.Text = "Nhóm đại thể";
+      this.macroGroupSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.macroGroupSelectLayout.TextSize = new System.Drawing.Size(97, 21);
+      // 
+      // staffRolePanelLayout
+      // 
+      this.staffRolePanelLayout.Control = this.macroPanel;
+      this.staffRolePanelLayout.Location = new System.Drawing.Point(0, 56);
+      this.staffRolePanelLayout.Name = "staffRolePanelLayout";
+      this.staffRolePanelLayout.Size = new System.Drawing.Size(130, 74);
+      this.staffRolePanelLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
+      this.staffRolePanelLayout.TextSize = new System.Drawing.Size(0, 0);
+      this.staffRolePanelLayout.TextVisible = false;
+      // 
+      // Macro
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.layoutControl);
+      this.Name = "Macro";
+      this.Load += new System.EventHandler(this.Macro_Load);
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
+      this.layoutControl.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.macroPanel)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.staffRolePanelLayout)).EndInit();
+      this.ResumeLayout(false);
 
         }
 
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl;
-        private DevExpress.XtraEditors.PanelControl permissionPanel;
-        private DevExpress.XtraEditors.LookUpEdit roleSelect;
+        private DevExpress.XtraEditors.PanelControl macroPanel;
+        private DevExpress.XtraEditors.LookUpEdit macroGroupSelect;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem roleSelectLayout;
+        private DevExpress.XtraLayout.LayoutControlItem macroGroupSelectLayout;
         private DevExpress.XtraLayout.LayoutControlItem staffRolePanelLayout;
     }
 }

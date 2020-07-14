@@ -28,7 +28,7 @@ namespace PMSX.View.Form.Update {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else if (!Regex.IsMatch(codeInput.Text, Util.RegexPattern.Instance.Code)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số không hợp lệ.");
-      } else if (!Controller.BiopsyGroup.Instance.Update(biopsyGroup.Id, codeInput.Text, commentInput.Text, (int)stateRadio.EditValue) {
+      } else if (!Controller.BiopsyGroup.Instance.Update(biopsyGroup.Id, codeInput.Text, commentInput.Text, (int)stateRadio.EditValue)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số đã tồn tại.");
       } else {
         Close();

@@ -39,6 +39,8 @@ namespace PMSX.Util {
         { "GrossDatetime", "Ngày gọt" },
         { "CollectDatetime", "Ngày thu thập" },
         { "BiopsyGroupId", "Mã định danh nhóm sinh thiết" },
+        { "Description", "Mô tả" },
+        { "Conclusion", "Kết luận" },
       };      
     }
 

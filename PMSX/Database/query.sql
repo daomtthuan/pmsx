@@ -330,3 +330,6 @@ go
 
 insert into pmsx_macro(macro_id, macro_code, macro_description, macro_groupId, macro_comment, macro_state, macro_createStaffId, macro_createDatetime, macro_updateStaffId, macro_updateDatetime) values ('CE4B5656-DCBA-46A3-9F71-6A8A52D0CB2A','D42','Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.','8B77B18F-1ABE-4D5C-AF0E-6AA9628C02A3','',1,'73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-11','73F2B296-EBDC-4434-892C-983E46F7CCF3','2020-7-12')
 go
+
+insert into pmsx_micro(micro_id, micro_code, micro_description, micro_groupId, micro_createStaffId, micro_conclusion) values ('EFA6726E-1AD4-42DF-B401-F1EFFCFA4114','D42','Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.','1EB38555-03CA-4A31-BBC3-F7070730A672', '73F2B296-EBDC-4434-892C-983E46F7CCF3', 'asdasdasd')
+go
