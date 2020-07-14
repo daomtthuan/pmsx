@@ -11,7 +11,7 @@ namespace PMSX.View.UserControl.Component.Table {
 
       protected override void OnLoad() {
         Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Patient.Instance.SelectAll(), new[] {
-          "Name", "Year", "Address", "State", "CreateDatetime", "UpdateDatetime"
+          "Name", "YearsOld", "Address", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
 

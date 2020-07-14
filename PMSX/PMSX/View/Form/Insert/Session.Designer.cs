@@ -75,6 +75,7 @@
       // 
       this.technicianSelect.Location = new System.Drawing.Point(12, 127);
       this.technicianSelect.Name = "technicianSelect";
+      this.technicianSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.technicianSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.technicianSelect.Properties.NullText = "";
@@ -95,6 +96,7 @@
       // 
       this.doctorSelect.Location = new System.Drawing.Point(12, 183);
       this.doctorSelect.Name = "doctorSelect";
+      this.doctorSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.doctorSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.doctorSelect.Properties.NullText = "";

@@ -78,6 +78,7 @@
       // 
       this.staffSelect.Location = new System.Drawing.Point(12, 71);
       this.staffSelect.Name = "staffSelect";
+      this.staffSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.staffSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.staffSelect.Properties.NullText = "";
