@@ -1,10 +1,10 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class MacroGroup : Interface.Model {
+  public class MicroGroup : Interface.Model {
     private readonly int state;
 
-    public MacroGroup(DataRow row) {
+    public MicroGroup(DataRow row) {
       Id = row["microGroup_id"].ToString();
       Code = row["microGroup_code"].ToString();
       Name = row["microGroup_name"].ToString();

@@ -74,6 +74,7 @@
       this.microButton = new DevExpress.XtraBars.BarButtonItem();
       this.diagnose2Button = new DevExpress.XtraBars.BarButtonItem();
       this.diagnose3Button = new DevExpress.XtraBars.BarButtonItem();
+      this.biopsyGroupButton = new DevExpress.XtraBars.BarButtonItem();
       this.adminPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
       this.personnelPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +87,6 @@
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-      this.biopsyGroupButton = new DevExpress.XtraBars.BarButtonItem();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
@@ -247,6 +247,7 @@
       toolTipItem6.Text = "Quản lý kết quả chẩn đoán loại 1";
       superToolTip6.Items.Add(toolTipItem6);
       this.diagnose1Button.SuperTip = superToolTip6;
+      this.diagnose1Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose1Button_ItemClick);
       // 
       // permissionButton
       // 
@@ -269,6 +270,7 @@
       toolTipItem8.Text = "Quản lý nhóm đại thể";
       superToolTip8.Items.Add(toolTipItem8);
       this.macroGroupButton.SuperTip = superToolTip8;
+      this.macroGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroGroupButton_ItemClick);
       // 
       // macroButton
       // 
@@ -279,6 +281,7 @@
       toolTipItem9.Text = "Quản lý đại thể";
       superToolTip9.Items.Add(toolTipItem9);
       this.macroButton.SuperTip = superToolTip9;
+      this.macroButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MacroButton_ItemClick);
       // 
       // microGroupButton
       // 
@@ -289,6 +292,7 @@
       toolTipItem10.Text = "Quản lý nhóm vi thể";
       superToolTip10.Items.Add(toolTipItem10);
       this.microGroupButton.SuperTip = superToolTip10;
+      this.microGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MicroGroupButton_ItemClick);
       // 
       // microButton
       // 
@@ -299,6 +303,7 @@
       toolTipItem11.Text = "Quản lý vi thể";
       superToolTip11.Items.Add(toolTipItem11);
       this.microButton.SuperTip = superToolTip11;
+      this.microButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MicroButton_ItemClick);
       // 
       // diagnose2Button
       // 
@@ -309,6 +314,7 @@
       toolTipItem12.Text = "Quản lý kết quả chẩn đoán loại 2";
       superToolTip12.Items.Add(toolTipItem12);
       this.diagnose2Button.SuperTip = superToolTip12;
+      this.diagnose2Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose2Button_ItemClick);
       // 
       // diagnose3Button
       // 
@@ -319,6 +325,15 @@
       toolTipItem13.Text = "Quản lý kết quả chuẩn đoán loại 3";
       superToolTip13.Items.Add(toolTipItem13);
       this.diagnose3Button.SuperTip = superToolTip13;
+      this.diagnose3Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose3Button_ItemClick);
+      // 
+      // biopsyGroupButton
+      // 
+      this.biopsyGroupButton.Caption = "Nhóm sinh thiết";
+      this.biopsyGroupButton.Id = 16;
+      this.biopsyGroupButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
+      this.biopsyGroupButton.Name = "biopsyGroupButton";
+      this.biopsyGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyGroupButton_ItemClick);
       // 
       // adminPageGroup
       // 
@@ -417,14 +432,6 @@
       toolTipItem15.Text = "Quản lý kết quả chuẩn đoán xét nghiệm";
       superToolTip15.Items.Add(toolTipItem15);
       this.barButtonItem2.SuperTip = superToolTip15;
-      // 
-      // biopsyGroupButton
-      // 
-      this.biopsyGroupButton.Caption = "Nhóm sinh thiết";
-      this.biopsyGroupButton.Id = 16;
-      this.biopsyGroupButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
-      this.biopsyGroupButton.Name = "biopsyGroupButton";
-      this.biopsyGroupButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyGroupButton_ItemClick);
       // 
       // Main
       // 

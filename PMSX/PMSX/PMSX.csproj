@@ -114,6 +114,12 @@
     <Compile Include="Util\View\Grid.cs" />
     <Compile Include="Util\View\MessageBox.cs" />
     <Compile Include="Util\RegexPattern.cs" />
+    <Compile Include="View\Form\Insert\MacroGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\Insert\MacroGroup.Designer.cs">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form\Insert\Session.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     </Compile>
     <Compile Include="View\Form\SelectSession.Designer.cs">
       <DependentUpon>SelectSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\Update\MacroGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\Update\MacroGroup.Designer.cs">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form\Update\Patient.cs">
       <SubType>Form</SubType>
@@ -263,6 +275,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Form\Insert\MacroGroup.resx">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Insert\Session.resx">
       <DependentUpon>Session.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -297,6 +313,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\SelectSession.resx">
       <DependentUpon>SelectSession.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Update\MacroGroup.resx">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Update\Patient.resx">

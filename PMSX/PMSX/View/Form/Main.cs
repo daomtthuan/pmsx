@@ -118,5 +118,35 @@ namespace PMSX.View.Form {
         Dock = DockStyle.Fill
       });
     }
+
+    private void Diagnose1Button_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void Diagnose2Button_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void Diagnose3Button_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void MacroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
+      AddUserControl(new UserControl.Component.Table.MacroGroup() {
+        Dock = DockStyle.Fill
+      });
+    }
+
+    private void MacroButton_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void MicroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void MicroButton_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
   }
 }

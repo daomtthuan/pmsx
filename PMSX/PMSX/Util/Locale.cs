@@ -27,6 +27,7 @@ namespace PMSX.Util {
         { "RoleId", "Mã định danh quyền truy cập" },
         { "YearsOld", "Tuổi" },
         { "Address", "Địa chỉ" },
+        { "Code", "Mã số" },
       };
     }
 
