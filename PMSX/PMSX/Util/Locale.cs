@@ -29,7 +29,8 @@ namespace PMSX.Util {
         { "Address", "Địa chỉ" },
         { "Code", "Mã số" },
         { "NumberBiopsy", "Số mẫu sinh thiết" },
-        { "GroupId", "Mã định danh nhóm" },
+        { "MacroGroupId", "Mã định danh nhóm đại thể" },
+        { "MicroGroupId", "Mã định danh nhóm vi thể" },
         { "DiagnoseType", "Loại chẩn đoán" },
         { "PatientId", "Mã định danh bệnh nhân" },
         { "SessionId", "Mã định danh phiên làm việc" },
@@ -37,7 +38,8 @@ namespace PMSX.Util {
         { "Segment", "Số mảnh" },
         { "GrossDatetime", "Ngày gọt" },
         { "CollectDatetime", "Ngày thu thập" },
-      };
+        { "BiopsyGroupId", "Mã định danh nhóm sinh thiết" },
+      };      
     }
 
     public static Locale Instance {

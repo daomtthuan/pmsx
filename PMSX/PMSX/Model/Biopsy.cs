@@ -7,7 +7,7 @@ namespace PMSX.Model {
     public Biopsy(DataRow row) {
       Id = row["biopsy_id"].ToString();
       Code = row["biopsy_code"].ToString();
-      GroupId = row["biopsy_groupId"].ToString();
+      BiopsyGroupId = row["biopsy_groupId"].ToString();
       DiagnoseType = row["biopsy_diagnoseType"].ToString();
       PatientId = row["biopsy_patientId"].ToString();
       SessionId = row["biopsy_sessionId"].ToString();
@@ -28,7 +28,7 @@ namespace PMSX.Model {
 
     public string Id { get; private set; }
     public string Code { get; private set; }
-    public string GroupId { get; private set; }
+    public string BiopsyGroupId { get; private set; }
     public string DiagnoseType { get; private set; }
     public string PatientId { get; private set; }
     public string SessionId { get; private set; }

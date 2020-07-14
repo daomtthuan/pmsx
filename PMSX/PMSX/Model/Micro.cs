@@ -9,7 +9,7 @@ namespace PMSX.Model {
       Code = row["micro_code"].ToString();
       Description = row["micro_description"].ToString();
       Conclusion = row["micro_conclusion"].ToString();
-      GroupId = row["micro_groupId"].ToString();
+      MicroGroupId = row["micro_groupId"].ToString();
 
       Comment = row["micro_comment"].ToString();
       state = (int)row["micro_state"];
@@ -25,7 +25,7 @@ namespace PMSX.Model {
     public string Code { get; private set; }
     public string Description { get; private set; }
     public string Conclusion { get; private set; }
-    public string GroupId { get; private set; }
+    public string MicroGroupId { get; private set; }
 
     public string Comment { get; private set; }
     public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
