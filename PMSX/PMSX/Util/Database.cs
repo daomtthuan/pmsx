@@ -7,7 +7,7 @@ namespace PMSX.Util {
     private readonly string connectionString;
 
     private Database() {
-      connectionString = "Data Source = .; Initial Catalog = pmsx; User ID = sa; Password = sa";
+      connectionString = Setting.Instance.ConnectionString;
     }
 
     public static Database Instance {
