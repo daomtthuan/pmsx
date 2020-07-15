@@ -58,7 +58,7 @@ namespace PMSX.Controller {
               biopsy_groupId,
               biopsy_patientId,
               biopsy_sessionId,
-              biopsy_grossStaffId,
+              biopsy_grossDoctorId,
               biopsy_segment,
               biopsy_grossDatetime,
               biopsy_collectDatetime,

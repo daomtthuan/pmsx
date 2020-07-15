@@ -10,7 +10,7 @@ namespace PMSX.Model {
       BiopsyGroupId = row["biopsy_groupId"].ToString();
       PatientId = row["biopsy_patientId"].ToString();
       SessionId = row["biopsy_sessionId"].ToString();
-      GrossStaffId = row["biopsy_grossStaffId"].ToString();
+      GrossDoctorId = row["biopsy_grossDoctorId"].ToString();
       Segment = (int)row["biopsy_segment"];
       GrossDatetime = row["biopsy_grossDatetime"].ToString();
       CollectDatetime = row["biopsy_collectDatetime"].ToString();
@@ -28,10 +28,9 @@ namespace PMSX.Model {
     public string Id { get; private set; }
     public string Code { get; private set; }
     public string BiopsyGroupId { get; private set; }
-    public string DiagnoseType { get; private set; }
     public string PatientId { get; private set; }
     public string SessionId { get; private set; }
-    public string GrossStaffId { get; private set; }
+    public string GrossDoctorId { get; private set; }
     public int Segment { get; private set; }
     public string GrossDatetime { get; private set; }
     public string CollectDatetime { get; private set; }

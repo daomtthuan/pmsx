@@ -27,6 +27,7 @@
       this.nameInput = new DevExpress.XtraEditors.TextEdit();
       this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
+      this.patientSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.patientSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.nameInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -34,11 +35,13 @@
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.patientSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.sessionSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.sessionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.patientSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.patientSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).BeginInit();
@@ -46,7 +49,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.patientSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -56,6 +60,7 @@
       this.layoutControl.Controls.Add(this.insertButton);
       this.layoutControl.Controls.Add(this.commentInput);
       this.layoutControl.Controls.Add(this.patientSelect);
+      this.layoutControl.Controls.Add(this.sessionSelect);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
@@ -89,12 +94,26 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 228);
+      this.commentInput.Location = new System.Drawing.Point(12, 284);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(476, 426);
+      this.commentInput.Size = new System.Drawing.Size(476, 370);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
+      // 
+      // patientSelect
+      // 
+      this.patientSelect.Location = new System.Drawing.Point(12, 71);
+      this.patientSelect.Name = "patientSelect";
+      this.patientSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+      this.patientSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+      this.patientSelect.Properties.DropDownRows = 10;
+      this.patientSelect.Properties.MaxLength = 100;
+      this.patientSelect.Properties.NullText = "";
+      this.patientSelect.Size = new System.Drawing.Size(476, 28);
+      this.patientSelect.StyleController = this.layoutControl;
+      this.patientSelect.TabIndex = 4;
       // 
       // Root
       // 
@@ -106,7 +125,8 @@
             this.insertButtonLayout,
             this.requiredLabel,
             this.notRequiredLabel,
-            this.commentInputLayout});
+            this.commentInputLayout,
+            this.sessionSelectLayout});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(500, 716);
       this.Root.TextVisible = false;
@@ -168,26 +188,37 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 192);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 248);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(480, 454);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 398);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // patientSelect
+      // sessionSelect
       // 
-      this.patientSelect.Location = new System.Drawing.Point(12, 71);
-      this.patientSelect.Name = "patientSelect";
-      this.patientSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-      this.patientSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.sessionSelect.Location = new System.Drawing.Point(12, 228);
+      this.sessionSelect.Name = "sessionSelect";
+      this.sessionSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+      this.sessionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.patientSelect.Properties.DropDownRows = 10;
-      this.patientSelect.Properties.MaxLength = 100;
-      this.patientSelect.Properties.NullText = "";
-      this.patientSelect.Size = new System.Drawing.Size(476, 28);
-      this.patientSelect.StyleController = this.layoutControl;
-      this.patientSelect.TabIndex = 4;
+      this.sessionSelect.Properties.DropDownRows = 10;
+      this.sessionSelect.Properties.MaxLength = 100;
+      this.sessionSelect.Properties.NullText = "";
+      this.sessionSelect.Size = new System.Drawing.Size(476, 28);
+      this.sessionSelect.StyleController = this.layoutControl;
+      this.sessionSelect.TabIndex = 4;
+      // 
+      // sessionSelectLayout
+      // 
+      this.sessionSelectLayout.Control = this.sessionSelect;
+      this.sessionSelectLayout.CustomizationFormText = "Bệnh nhân";
+      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 192);
+      this.sessionSelectLayout.Name = "sessionSelectLayout";
+      this.sessionSelectLayout.Size = new System.Drawing.Size(480, 56);
+      this.sessionSelectLayout.Text = "Phiên làm việc";
+      this.sessionSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.sessionSelectLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // Biopsy
       // 
@@ -206,6 +237,7 @@
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.patientSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.patientSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).EndInit();
@@ -213,7 +245,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.patientSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).EndInit();
       this.ResumeLayout(false);
 
         }
@@ -232,5 +265,7 @@
         private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
         private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
     private DevExpress.XtraEditors.LookUpEdit patientSelect;
+    private DevExpress.XtraEditors.LookUpEdit sessionSelect;
+    private DevExpress.XtraLayout.LayoutControlItem sessionSelectLayout;
   }
 }
