@@ -7,10 +7,9 @@ namespace PMSX.View.UserControl.Component.Table {
     private class MacroTable : Layout.Table {
       private string groupId;
       private string groupName;
-      private List<Model.Macro> macros;
 
       protected override void OnInsert() {
-        new Form.Insert.Macro(groupId,macros).ShowDialog();
+        new Form.Insert.Macro(groupId).ShowDialog();
         LoadData(groupId,groupName);
       }
 

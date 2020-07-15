@@ -7,8 +7,7 @@ using System.Windows.Forms;
 namespace PMSX.View.Form.Insert {
   public partial class Macro : XtraForm {
     private readonly string groupId;
-    private readonly List<Model.Macro> macros;
-    public Macro(string groupId, List<Model.Macro> macros) {
+    public Macro(string groupId) {
       InitializeComponent();
 
       DialogResult = DialogResult.Cancel;
@@ -19,7 +18,6 @@ namespace PMSX.View.Form.Insert {
       CancelButton = closeButton;
 
       this.groupId = groupId;
-      this.macros = macros;
     }
 /*   private void Macro_Load(object sender, System.EventArgs e) {
     //  Util.View.Grid.Instance.Load(, macros, new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
@@ -35,7 +33,7 @@ namespace PMSX.View.Form.Insert {
       } else if (!Controller.Staff.Instance.InsertWithDefaultPassword(idInput.Text, codeInput.Text, commentInput.Text)) {
         Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên đăng nhập đã tồn tại.");
       }*/ else {
-        Controller.Macro.Instance.Insert(codeInput.Text, nameInput.Text, commentInput.Text);
+        Controller.Macro.Instance.Insert(codeInput.Text, nameInput.Text, groupId,commentInput.Text);
         Close();
       }
     }
