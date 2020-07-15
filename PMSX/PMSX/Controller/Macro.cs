@@ -84,10 +84,8 @@ namespace PMSX.Controller {
 
       return macros;
     }
-    public bool Insert(string code, string description, string comment) {
-      if (SelectByCode(code).Count > 0) {
-        return false;
-      }
+    public List<Model.Macro> Insert(string code, string description, string comment) {
+      List<Model.Macro> macros = new List<Model.Macro>();
 
       string query = @"
         insert into pmsx_macro(
@@ -105,13 +103,16 @@ namespace PMSX.Controller {
 
       SqlParameter[] parameters = {
         new SqlParameter("@code", code),
-        new SqlParameter("@name", description),
-        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
+        new SqlParameter("@description", description),
+        new SqlParameter("@comment", comment),
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
-      return true;
+      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+        macros.Add(new Model.Macro(row));
+      }
+
+      return macros;
     }
 
     public void Update(string code, string description, string comment, int state) {

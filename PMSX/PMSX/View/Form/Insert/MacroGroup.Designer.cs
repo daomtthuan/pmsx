@@ -190,6 +190,7 @@
       this.MaximizeBox = false;
       this.Name = "MacroGroup";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.Text = "PMSX - Thêm nhóm đại thể";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();

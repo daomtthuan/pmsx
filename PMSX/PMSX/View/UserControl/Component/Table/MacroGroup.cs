@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {

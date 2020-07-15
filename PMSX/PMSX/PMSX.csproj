@@ -363,6 +363,9 @@
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Insert\MacroGroup.resx">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Insert\Session.resx">
       <DependentUpon>Session.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -445,6 +448,9 @@
     <EmbeddedResource Include="View\UserControl\Component\Table\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\Component\Table\Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl\Layout\Table.resx">
       <DependentUpon>Table.cs</DependentUpon>

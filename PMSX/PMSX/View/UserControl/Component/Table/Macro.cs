@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using System.Collections.Generic;
 using System.Windows.Forms;
  
 namespace PMSX.View.UserControl.Component.Table {
@@ -6,20 +7,21 @@ namespace PMSX.View.UserControl.Component.Table {
     private class MacroTable : Layout.Table {
       private string groupId;
       private string groupName;
+      private List<Model.Macro> macros;
 
       protected override void OnInsert() {
-        new Form.Insert.Macro().ShowDialog();
-        OnLoad();
+        new Form.Insert.Macro(groupId,macros).ShowDialog();
+        LoadData(groupId,groupName);
       }
 
       protected override void OnUpdate() {
         new Form.Update.Macro((Model.Macro)GetSelectedRow()).ShowDialog();
-        OnLoad();
+        LoadData(groupId, groupName);
       }
 
       protected override void OnDisabled() {
         Controller.Macro.Instance.Disable(((Model.Macro)GetSelectedRow()).Id);
-        OnLoad();
+        LoadData(groupId, groupName);
       }
 
       public void LoadData(string groupId, string groupName) {
