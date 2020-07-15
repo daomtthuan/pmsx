@@ -34,9 +34,32 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (groupId == null) {
+          Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhóm sinh thiết nào.");
+        } else {
+          List<Model.Patient> patients = Controller.Patient.Instance.SelectAll();
+          if (patients.Count == 0) {
+            Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy bệnh nhân nào.");
+          } else {
+            List<Model.Role> doctorRoles = Controller.Role.Instance.SelectByName("Bác sĩ");
+            if (doctorRoles.Count == 0) {
+              Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Bác sĩ.");
+            } else {
+              List<Model.Staff> grossDoctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
+              if (grossDoctors.Count == 0) {
+                Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
+              } else {
+                new Form.Update.Biopsy((Model.Biopsy)GetSelectedRow(), patients, grossDoctors, Controller.Session.Instance.SelectAll()).ShowDialog();
+                LoadData(groupId, groupName);
+              }
+            }
+          }
+        }
       }
 
       protected override void OnDisabled() {
+        Controller.Biopsy.Instance.Disable(((Model.Biopsy)GetSelectedRow()).Id);
+        LoadData(groupId, groupName);
       }
 
       public void LoadData(string groupId, string groupName) {

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class MicroGroup : Utils.Pattern.Model {
+  public class MicroGroup : Utils.Pattern.IModel {
     private readonly int state;
 
     public MicroGroup(DataRow row) {

@@ -3,6 +3,7 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Collections;
 using System.Linq;
 
 namespace PMSX.Utils.View {
@@ -20,7 +21,7 @@ namespace PMSX.Utils.View {
       private set => instance = value;
     }
 
-    public void Load(GridControl gridControl, GridView gridView, object models, string[] visibledFieldNames) {
+    public void Load(GridControl gridControl, GridView gridView, IList models, string[] visibledFieldNames) {
       gridControl.DataSource = models;
       gridView.PopulateColumns();
 
@@ -30,7 +31,7 @@ namespace PMSX.Utils.View {
       }
     }
 
-    public void Load(LookUpEdit select, object models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 0) {
+    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 0) {
       select.Properties.DataSource = models;
       select.Properties.PopulateColumns();
 
@@ -45,7 +46,7 @@ namespace PMSX.Utils.View {
       select.ItemIndex = selectIndex;
     }
 
-    public void Load(LookUpEdit select, object models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, object editValue) {
+    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, object editValue) {
       select.Properties.DataSource = models;
       select.Properties.PopulateColumns();
 

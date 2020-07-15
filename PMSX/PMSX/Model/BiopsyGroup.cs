@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class BiopsyGroup : Utils.Pattern.Model {
+  public class BiopsyGroup : Utils.Pattern.IModel {
     private readonly int state;
 
     public BiopsyGroup(DataRow row) {

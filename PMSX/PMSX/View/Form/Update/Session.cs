@@ -30,6 +30,7 @@ namespace PMSX.View.Form.Update {
 
       nameSelect.EditValue = DateTime.Parse(session.Name);
       stateRadio.EditValue = session.GetStateNumber();
+      commentInput.Text = session.Comment;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {

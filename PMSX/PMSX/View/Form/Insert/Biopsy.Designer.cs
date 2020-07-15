@@ -36,13 +36,14 @@
       this.patientSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.segmentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
+      this.sampleLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.sessionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.grossDoctorSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.grossDatetimeSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.collectDatetimeSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.segmentInput.Properties)).BeginInit();
@@ -58,13 +59,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.patientSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.segmentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDoctorSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDatetimeSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.collectDatetimeSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -83,14 +85,14 @@
       this.layoutControl.Name = "layoutControl";
       this.layoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(997, 232, 650, 400);
       this.layoutControl.Root = this.Root;
-      this.layoutControl.Size = new System.Drawing.Size(500, 653);
+      this.layoutControl.Size = new System.Drawing.Size(500, 670);
       this.layoutControl.TabIndex = 1;
       this.layoutControl.Text = "layoutControl";
       // 
       // segmentInput
       // 
       this.segmentInput.EditValue = "1";
-      this.segmentInput.Location = new System.Drawing.Point(12, 183);
+      this.segmentInput.Location = new System.Drawing.Point(12, 284);
       this.segmentInput.Name = "segmentInput";
       this.segmentInput.Properties.Mask.EditMask = "\\d+";
       this.segmentInput.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -103,7 +105,7 @@
       // 
       this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.insertButton.Appearance.Options.UseBackColor = true;
-      this.insertButton.Location = new System.Drawing.Point(12, 605);
+      this.insertButton.Location = new System.Drawing.Point(12, 622);
       this.insertButton.Name = "insertButton";
       this.insertButton.Padding = new System.Windows.Forms.Padding(5);
       this.insertButton.Size = new System.Drawing.Size(476, 36);
@@ -114,16 +116,16 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 452);
+      this.commentInput.Location = new System.Drawing.Point(12, 497);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(476, 139);
+      this.commentInput.Size = new System.Drawing.Size(476, 111);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
       // patientSelect
       // 
-      this.patientSelect.Location = new System.Drawing.Point(12, 71);
+      this.patientSelect.Location = new System.Drawing.Point(12, 172);
       this.patientSelect.Name = "patientSelect";
       this.patientSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.patientSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -138,7 +140,7 @@
       // 
       // sessionSelect
       // 
-      this.sessionSelect.Location = new System.Drawing.Point(12, 396);
+      this.sessionSelect.Location = new System.Drawing.Point(12, 71);
       this.sessionSelect.Name = "sessionSelect";
       this.sessionSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.sessionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -153,7 +155,7 @@
       // 
       // grossDoctorSelect
       // 
-      this.grossDoctorSelect.Location = new System.Drawing.Point(12, 127);
+      this.grossDoctorSelect.Location = new System.Drawing.Point(12, 228);
       this.grossDoctorSelect.Name = "grossDoctorSelect";
       this.grossDoctorSelect.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
       this.grossDoctorSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -168,7 +170,7 @@
       // grossDatetimeSelect
       // 
       this.grossDatetimeSelect.EditValue = null;
-      this.grossDatetimeSelect.Location = new System.Drawing.Point(12, 239);
+      this.grossDatetimeSelect.Location = new System.Drawing.Point(12, 340);
       this.grossDatetimeSelect.Name = "grossDatetimeSelect";
       this.grossDatetimeSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -190,7 +192,7 @@
       // collectDatetimeSelect
       // 
       this.collectDatetimeSelect.EditValue = null;
-      this.collectDatetimeSelect.Location = new System.Drawing.Point(12, 295);
+      this.collectDatetimeSelect.Location = new System.Drawing.Point(12, 396);
       this.collectDatetimeSelect.Name = "collectDatetimeSelect";
       this.collectDatetimeSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -216,21 +218,22 @@
             this.patientSelectLayout,
             this.segmentInputLayout,
             this.insertButtonLayout,
-            this.requiredLabel,
+            this.sampleLabel,
             this.notRequiredLabel,
             this.commentInputLayout,
-            this.sessionSelectLayout,
             this.grossDoctorSelectLayout,
             this.grossDatetimeSelectLayout,
-            this.collectDatetimeSelectLayout});
+            this.collectDatetimeSelectLayout,
+            this.requiredLabel,
+            this.sessionSelectLayout});
       this.Root.Name = "Root";
-      this.Root.Size = new System.Drawing.Size(500, 653);
+      this.Root.Size = new System.Drawing.Size(500, 670);
       this.Root.TextVisible = false;
       // 
       // patientSelectLayout
       // 
       this.patientSelectLayout.Control = this.patientSelect;
-      this.patientSelectLayout.Location = new System.Drawing.Point(0, 35);
+      this.patientSelectLayout.Location = new System.Drawing.Point(0, 136);
       this.patientSelectLayout.Name = "patientSelectLayout";
       this.patientSelectLayout.Size = new System.Drawing.Size(480, 56);
       this.patientSelectLayout.Text = "Bệnh nhân";
@@ -240,7 +243,7 @@
       // segmentInputLayout
       // 
       this.segmentInputLayout.Control = this.segmentInput;
-      this.segmentInputLayout.Location = new System.Drawing.Point(0, 147);
+      this.segmentInputLayout.Location = new System.Drawing.Point(0, 248);
       this.segmentInputLayout.Name = "segmentInputLayout";
       this.segmentInputLayout.Size = new System.Drawing.Size(480, 56);
       this.segmentInputLayout.Text = "Số mảnh";
@@ -250,31 +253,31 @@
       // insertButtonLayout
       // 
       this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(0, 583);
+      this.insertButtonLayout.Location = new System.Drawing.Point(0, 600);
       this.insertButtonLayout.Name = "insertButtonLayout";
       this.insertButtonLayout.Size = new System.Drawing.Size(480, 50);
       this.insertButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.insertButtonLayout.TextVisible = false;
       // 
-      // requiredLabel
+      // sampleLabel
       // 
-      this.requiredLabel.AllowHotTrack = false;
-      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
-      this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.requiredLabel.Location = new System.Drawing.Point(0, 0);
-      this.requiredLabel.Name = "requiredLabel";
-      this.requiredLabel.Size = new System.Drawing.Size(480, 35);
-      this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
-      this.requiredLabel.Text = "Thông tin bắt buộc";
-      this.requiredLabel.TextSize = new System.Drawing.Size(190, 21);
+      this.sampleLabel.AllowHotTrack = false;
+      this.sampleLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
+      this.sampleLabel.AppearanceItemCaption.Options.UseFont = true;
+      this.sampleLabel.Location = new System.Drawing.Point(0, 0);
+      this.sampleLabel.Name = "sampleLabel";
+      this.sampleLabel.Size = new System.Drawing.Size(480, 35);
+      this.sampleLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
+      this.sampleLabel.Text = "Thông tin mẫu";
+      this.sampleLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // notRequiredLabel
       // 
       this.notRequiredLabel.AllowHotTrack = false;
       this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.notRequiredLabel.Location = new System.Drawing.Point(0, 315);
+      this.notRequiredLabel.Location = new System.Drawing.Point(0, 416);
       this.notRequiredLabel.Name = "notRequiredLabel";
       this.notRequiredLabel.Size = new System.Drawing.Size(480, 45);
       this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
@@ -284,9 +287,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 416);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 461);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(480, 167);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 139);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -295,7 +298,7 @@
       // 
       this.sessionSelectLayout.Control = this.sessionSelect;
       this.sessionSelectLayout.CustomizationFormText = "Bệnh nhân";
-      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 360);
+      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 35);
       this.sessionSelectLayout.Name = "sessionSelectLayout";
       this.sessionSelectLayout.Size = new System.Drawing.Size(480, 56);
       this.sessionSelectLayout.Text = "Phiên làm việc";
@@ -306,7 +309,7 @@
       // 
       this.grossDoctorSelectLayout.Control = this.grossDoctorSelect;
       this.grossDoctorSelectLayout.CustomizationFormText = "Bệnh nhân";
-      this.grossDoctorSelectLayout.Location = new System.Drawing.Point(0, 91);
+      this.grossDoctorSelectLayout.Location = new System.Drawing.Point(0, 192);
       this.grossDoctorSelectLayout.Name = "grossDoctorSelectLayout";
       this.grossDoctorSelectLayout.Size = new System.Drawing.Size(480, 56);
       this.grossDoctorSelectLayout.Text = "Bác sĩ gọt";
@@ -317,7 +320,7 @@
       // 
       this.grossDatetimeSelectLayout.Control = this.grossDatetimeSelect;
       this.grossDatetimeSelectLayout.CustomizationFormText = "Kỹ thuật viên";
-      this.grossDatetimeSelectLayout.Location = new System.Drawing.Point(0, 203);
+      this.grossDatetimeSelectLayout.Location = new System.Drawing.Point(0, 304);
       this.grossDatetimeSelectLayout.Name = "grossDatetimeSelectLayout";
       this.grossDatetimeSelectLayout.Size = new System.Drawing.Size(480, 56);
       this.grossDatetimeSelectLayout.Text = "Ngày gọt";
@@ -328,12 +331,25 @@
       // 
       this.collectDatetimeSelectLayout.Control = this.collectDatetimeSelect;
       this.collectDatetimeSelectLayout.CustomizationFormText = "Kỹ thuật viên";
-      this.collectDatetimeSelectLayout.Location = new System.Drawing.Point(0, 259);
+      this.collectDatetimeSelectLayout.Location = new System.Drawing.Point(0, 360);
       this.collectDatetimeSelectLayout.Name = "collectDatetimeSelectLayout";
       this.collectDatetimeSelectLayout.Size = new System.Drawing.Size(480, 56);
       this.collectDatetimeSelectLayout.Text = "Ngày thu thập";
       this.collectDatetimeSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.collectDatetimeSelectLayout.TextSize = new System.Drawing.Size(190, 21);
+      // 
+      // requiredLabel
+      // 
+      this.requiredLabel.AllowHotTrack = false;
+      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
+      this.requiredLabel.CustomizationFormText = "Thông tin không bắt buộc";
+      this.requiredLabel.Location = new System.Drawing.Point(0, 91);
+      this.requiredLabel.Name = "requiredLabel";
+      this.requiredLabel.Size = new System.Drawing.Size(480, 45);
+      this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
+      this.requiredLabel.Text = "Thông tin bắt buộc";
+      this.requiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // Biopsy
       // 
@@ -341,12 +357,12 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.ClientSize = new System.Drawing.Size(500, 653);
+      this.ClientSize = new System.Drawing.Size(500, 670);
       this.Controls.Add(this.layoutControl);
       this.MaximizeBox = false;
       this.Name = "Biopsy";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm nhân viên";
+      this.Text = "PMSX - Thêm mẫu sinh thiết";
       this.Load += new System.EventHandler(this.Biopsy_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
@@ -363,13 +379,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.patientSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.segmentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDoctorSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDatetimeSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.collectDatetimeSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       this.ResumeLayout(false);
 
         }
@@ -384,7 +401,7 @@
         private DevExpress.XtraLayout.LayoutControlItem segmentInputLayout;
         private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
         private DevExpress.XtraEditors.MemoEdit commentInput;
-        private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
+        private DevExpress.XtraLayout.SimpleLabelItem sampleLabel;
         private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
         private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
     private DevExpress.XtraEditors.LookUpEdit patientSelect;
@@ -396,5 +413,6 @@
     private DevExpress.XtraLayout.LayoutControlItem grossDatetimeSelectLayout;
     private DevExpress.XtraEditors.DateEdit collectDatetimeSelect;
     private DevExpress.XtraLayout.LayoutControlItem collectDatetimeSelectLayout;
+    private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
   }
 }

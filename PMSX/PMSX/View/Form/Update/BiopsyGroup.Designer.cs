@@ -26,26 +26,26 @@
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
       this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
+      this.codeInput = new DevExpress.XtraEditors.TextEdit();
+      this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.codeInput = new DevExpress.XtraEditors.TextEdit();
       this.codeInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
       this.stateRadioLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).BeginInit();
       this.SuspendLayout();
       // 
@@ -86,6 +86,29 @@
       this.commentInput.Size = new System.Drawing.Size(476, 135);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
+      // 
+      // codeInput
+      // 
+      this.codeInput.Location = new System.Drawing.Point(12, 71);
+      this.codeInput.Name = "codeInput";
+      this.codeInput.Properties.MaxLength = 100;
+      this.codeInput.Size = new System.Drawing.Size(476, 28);
+      this.codeInput.StyleController = this.layoutControl;
+      this.codeInput.TabIndex = 4;
+      // 
+      // stateRadio
+      // 
+      this.stateRadio.Location = new System.Drawing.Point(12, 127);
+      this.stateRadio.Name = "stateRadio";
+      this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
+      this.stateRadio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+      this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá")});
+      this.stateRadio.Size = new System.Drawing.Size(476, 29);
+      this.stateRadio.StyleController = this.layoutControl;
+      this.stateRadio.TabIndex = 8;
       // 
       // Root
       // 
@@ -146,15 +169,6 @@
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // codeInput
-      // 
-      this.codeInput.Location = new System.Drawing.Point(12, 71);
-      this.codeInput.Name = "codeInput";
-      this.codeInput.Properties.MaxLength = 100;
-      this.codeInput.Size = new System.Drawing.Size(476, 28);
-      this.codeInput.StyleController = this.layoutControl;
-      this.codeInput.TabIndex = 4;
-      // 
       // codeInputLayout
       // 
       this.codeInputLayout.Control = this.codeInput;
@@ -165,20 +179,6 @@
       this.codeInputLayout.Text = "Mã số";
       this.codeInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.codeInputLayout.TextSize = new System.Drawing.Size(190, 21);
-      // 
-      // stateRadio
-      // 
-      this.stateRadio.Location = new System.Drawing.Point(12, 127);
-      this.stateRadio.Name = "stateRadio";
-      this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-      this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
-      this.stateRadio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-      this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá")});
-      this.stateRadio.Size = new System.Drawing.Size(476, 29);
-      this.stateRadio.StyleController = this.layoutControl;
-      this.stateRadio.TabIndex = 8;
       // 
       // stateRadioLayout
       // 
@@ -209,14 +209,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).EndInit();
       this.ResumeLayout(false);
 

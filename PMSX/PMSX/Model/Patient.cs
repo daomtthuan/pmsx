@@ -2,7 +2,7 @@
 using System.Data;
 
 namespace PMSX.Model {
-  public class Patient : Utils.Pattern.Model {
+  public class Patient : Utils.Pattern.IModel {
     private readonly int state;
 
     public Patient(DataRow row) {

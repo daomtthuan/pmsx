@@ -115,5 +115,56 @@ namespace PMSX.Controller {
 
       return (int)Utils.Database.Instance.ExecuteScalar(query, parameters) == 1;
     }
+
+    public void Update(string id, string patientId, string sessionId, string grossStaffId, int segment, DateTime grossDatetime, DateTime collectDatetime, string comment, int state) {
+      string query = @"
+        update pmsx_biopsy
+        set
+          biopsy_patientId = @patientId,
+          biopsy_sessionId = @sessionId,
+          biopsy_grossDoctorId = @grossStaffId,
+          biopsy_segment = @segment,
+          biopsy_grossDatetime = @grossDatetime,
+          biopsy_collectDatetime = @collectDatetime,
+	        biopsy_comment = @comment,
+          biopsy_state = @state,
+          biopsy_updateStaffId = @updateStaffId,
+	        biopsy_updateDatetime = getdate()
+        where biopsy_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@patientId", patientId),
+        new SqlParameter("@sessionId", sessionId),
+        new SqlParameter("@grossStaffId", grossStaffId),
+        new SqlParameter("@segment", segment),
+        new SqlParameter("@grossDatetime", grossDatetime),
+        new SqlParameter("@collectDatetime", collectDatetime),
+        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
+        new SqlParameter("@state", state),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.Excute(query, parameters);
+    }
+
+    public void Disable(string id) {
+      string query = @"
+        update pmsx_biopsy
+        set
+          biopsy_state = 0,
+          biopsy_updateStaffId = @updateStaffId,
+	        biopsy_updateDatetime = getdate()
+        where biopsy_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.Excute(query, parameters);
+    }
   }
 }

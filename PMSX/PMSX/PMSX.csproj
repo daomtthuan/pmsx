@@ -94,7 +94,7 @@
     <Compile Include="Controller\Session.cs" />
     <Compile Include="Controller\Staff.cs" />
     <Compile Include="Controller\Main.cs" />
-    <Compile Include="Utils\Pattern\Model.cs" />
+    <Compile Include="Utils\Pattern\IModel.cs" />
     <Compile Include="Model\Biopsy.cs" />
     <Compile Include="Model\BiopsyGroup.cs" />
     <Compile Include="Model\Micro.cs" />
