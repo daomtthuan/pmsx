@@ -21,11 +21,11 @@ namespace PMSX.View.UserControl.Component.Table {
             if (doctorRoles.Count == 0) {
               Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Bác sĩ.");
             } else {
-              List<Model.Staff> grossStaffs = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
-              if (grossStaffs.Count == 0) {
+              List<Model.Staff> grossDoctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
+              if (grossDoctors.Count == 0) {
                 Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
-                new Form.Insert.Biopsy(groupId, patients, grossStaffs, Controller.Session.Instance.SelectAll()).ShowDialog();
+                new Form.Insert.Biopsy(groupId, patients, grossDoctors, Controller.Session.Instance.SelectAll()).ShowDialog();
                 LoadData(groupId, groupName);
               }
             }

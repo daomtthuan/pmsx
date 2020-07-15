@@ -34,7 +34,7 @@ namespace PMSX.Util {
         { "DiagnoseType", "Loại chẩn đoán" },
         { "PatientId", "Mã định danh bệnh nhân" },
         { "SessionId", "Mã định danh phiên làm việc" },
-        { "GrossStaffId", "Mã định danh nhân viên gọt" },
+        { "GrossDoctorId", "Mã định danh bác sĩ gọt" },
         { "Segment", "Số mảnh" },
         { "GrossDatetime", "Ngày gọt" },
         { "CollectDatetime", "Ngày thu thập" },

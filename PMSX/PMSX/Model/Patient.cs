@@ -39,5 +39,9 @@ namespace PMSX.Model {
     public int GetStateNumber() {
       return state;
     }
+
+    public DateTime GetBirthday() {
+      return new DateTime(year, 1, 1);
+    }
   }
 }

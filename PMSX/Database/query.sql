@@ -122,8 +122,8 @@ create table pmsx_biopsy(
 	biopsy_sessionId uniqueidentifier references pmsx_session(session_id),
 	biopsy_grossDoctorId uniqueidentifier not null references pmsx_staff(staff_id),
 	biopsy_segment int not null default 1,	
-	biopsy_grossDatetime datetime not null,
-	biopsy_collectDatetime datetime not null,		
+	biopsy_grossDatetime date not null,
+	biopsy_collectDatetime date not null,		
 
 	biopsy_comment nvarchar(500),
 	biopsy_state int not null default 1,
