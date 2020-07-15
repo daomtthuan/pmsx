@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace PMSX.Model {
   public class Staff : Pattern.IModel {

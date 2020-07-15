@@ -94,8 +94,9 @@
     <Compile Include="Controller\Session.cs" />
     <Compile Include="Controller\Staff.cs" />
     <Compile Include="Controller\Main.cs" />
+    <Compile Include="Model\Diagnose\Type1.cs" />
     <Compile Include="Pattern\IController.cs" />
-    <Compile Include="Pattern\IModel.cs" />
+    <Compile Include="Pattern\Model.cs" />
     <Compile Include="Model\Biopsy.cs" />
     <Compile Include="Model\BiopsyGroup.cs" />
     <Compile Include="Model\Micro.cs" />
@@ -279,6 +280,12 @@
     <Compile Include="View\UserControl\Component\Brand.Designer.cs">
       <DependentUpon>Brand.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl\Component\Table\Diagnose\Type1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Table\Diagnose\Type1.Designer.cs">
+      <DependentUpon>Type1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl\Component\Table\Macro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -443,6 +450,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl\Component\Table\Biopsy.resx">
       <DependentUpon>Biopsy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\Component\Table\Diagnose\Type1.resx">
+      <DependentUpon>Type1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl\Component\Table\Macro.resx">
       <DependentUpon>Macro.cs</DependentUpon>
