@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Role {
-    private static Role instance;
-
+  public class Role : Pattern.Singleton<Role>, Pattern.IController {
     private Role() { }
-
-    public static Role Instance {
-      get {
-        if (instance == null)
-          instance = new Role();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Role> SelectAll(int state = -1) {
       List<Model.Role> roles = new List<Model.Role>();

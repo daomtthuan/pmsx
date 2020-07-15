@@ -3,19 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Permission {
-    private static Permission instance;
-
+  public class Permission : Pattern.Singleton<Permission>, Pattern.IController {
     private Permission() { }
-
-    public static Permission Instance {
-      get {
-        if (instance == null)
-          instance = new Permission();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Permission> SelectByRoleId(string id, int state = -1) {
       List<Model.Permission> permissions = new List<Model.Permission>();

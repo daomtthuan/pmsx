@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Staff : Utils.Pattern.IModel {
+  public class Staff : Pattern.IModel {
     private readonly int state;
 
     public Staff(DataRow row) {

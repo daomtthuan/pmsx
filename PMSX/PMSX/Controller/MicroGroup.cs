@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class MicroGroup {
-    private static MicroGroup instance;
-
+  public class MicroGroup : Pattern.Singleton<MicroGroup>, Pattern.IController {
     private MicroGroup() { }
-
-    public static MicroGroup Instance {
-      get {
-        if (instance == null)
-          instance = new MicroGroup();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.MicroGroup> SelectAll(int state = -1) {
       List<Model.MicroGroup> microGroups = new List<Model.MicroGroup>();

@@ -2,26 +2,12 @@
 using System.Data.SqlClient;
 
 namespace PMSX.Utils {
-  public class Database {
-    private static Database instance;
-    private readonly string connectionString;
-
-    private Database() {
-      connectionString = Setting.Instance.ConnectionString;
-    }
-
-    public static Database Instance {
-      get {
-        if (instance == null)
-          instance = new Database();
-        return instance;
-      }
-      private set => instance = value;
-    }
+  public class Database : Pattern.Singleton<Database> {
+    private Database() { }
 
     public DataTable Excute(string query, SqlParameter[] parameters = null) {
       DataTable table = new DataTable();
-      using (SqlConnection connection = new SqlConnection(connectionString)) {
+      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
           using (SqlCommand command = connection.CreateCommand()) {
@@ -55,7 +41,7 @@ namespace PMSX.Utils {
     }
 
     public void ExcuteNon(string query, SqlParameter[] parameters = null) {
-      using (SqlConnection connection = new SqlConnection(connectionString)) {
+      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
           using (SqlCommand command = connection.CreateCommand()) {
@@ -86,7 +72,7 @@ namespace PMSX.Utils {
 
     public object ExecuteScalar(string query, SqlParameter[] parameters = null) {
       object result = null;
-      using (SqlConnection connection = new SqlConnection(connectionString)) {
+      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
           using (SqlCommand command = connection.CreateCommand()) {

@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class MacroGroup {
-    private static MacroGroup instance;
-
+  public class MacroGroup : Pattern.Singleton<MacroGroup>, Pattern.IController {
     private MacroGroup() { }
-
-    public static MacroGroup Instance {
-      get {
-        if (instance == null)
-          instance = new MacroGroup();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.MacroGroup> SelectAll(int state = -1) {
       List<Model.MacroGroup> macroGroups = new List<Model.MacroGroup>();

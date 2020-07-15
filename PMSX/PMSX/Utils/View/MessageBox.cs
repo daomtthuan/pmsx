@@ -2,19 +2,8 @@
 using System.Windows.Forms;
 
 namespace PMSX.Utils.View {
-  public class MessageBox {
-    private static MessageBox instance;
-
+  public class MessageBox : Pattern.Singleton<MessageBox> {
     private MessageBox() { }
-
-    public static MessageBox Instance {
-      get {
-        if (instance == null)
-          instance = new MessageBox();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public DialogResult Error(string message) {
       return XtraMessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

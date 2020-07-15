@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Macro : Utils.Pattern.IModel {
+  public class Macro : Pattern.IModel {
     private readonly int state;
 
     public Macro(DataRow row) {

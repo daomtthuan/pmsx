@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Patient {
-    private static Patient instance;
-
+  public class Patient : Pattern.Singleton<Patient>, Pattern.IController {
     private Patient() { }
-
-    public static Patient Instance {
-      get {
-        if (instance == null)
-          instance = new Patient();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Patient> SelectAll(int state = -1) {
       List<Model.Patient> patients = new List<Model.Patient>();

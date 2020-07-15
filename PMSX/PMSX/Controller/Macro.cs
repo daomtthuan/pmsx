@@ -4,19 +4,9 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Macro {
-    private static Macro instance;
-
+  public class Macro : Pattern.Singleton<Macro>, Pattern.IController {
     private Macro() { }
 
-    public static Macro Instance {
-      get {
-        if (instance == null)
-          instance = new Macro();
-        return instance;
-      }
-      private set => instance = value;
-    }
     public List<Model.Macro> SelectAll(int state = -1) {
       List<Model.Macro> macros = new List<Model.Macro>();
 

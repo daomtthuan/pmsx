@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace PMSX.Utils {
-  public class Locale {
-
-    private static Locale instance;
-
+  public class Locale : Pattern.Singleton<Locale> {
     private Locale() {
       Caption = new Dictionary<string, string>() {
         { "Id", "Mã định danh" },
@@ -47,15 +44,6 @@ namespace PMSX.Utils {
         { "GrossDoctorName", "Tên bác sĩ gọt" },
         { "SessionName", "Tên phiên làm việc" },
       };
-    }
-
-    public static Locale Instance {
-      get {
-        if (instance == null)
-          instance = new Locale();
-        return instance;
-      }
-      private set => instance = value;
     }
 
     public Dictionary<string, string> Caption { get; private set; }

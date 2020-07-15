@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Permission : Utils.Pattern.IModel {
+  public class Permission : Pattern.IModel {
     private readonly int state;
 
     public Permission(DataRow row) {

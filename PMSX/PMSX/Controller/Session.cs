@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Session {
-    private static Session instance;
-
+  public class Session: Pattern.Singleton<Session>, Pattern.IController {
     private Session() { }
-
-    public static Session Instance {
-      get {
-        if (instance == null)
-          instance = new Session();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Session> SelectAll(int state = -1) {
       List<Model.Session> sessions = new List<Model.Session>();

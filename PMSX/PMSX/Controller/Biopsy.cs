@@ -4,19 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Biopsy {
-    private static Biopsy instance;
-
+  public class Biopsy : Pattern.Singleton<Biopsy>, Pattern.IController {
     private Biopsy() { }
-
-    public static Biopsy Instance {
-      get {
-        if (instance == null)
-          instance = new Biopsy();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Biopsy> SelectByGroupId(string id, int state = -1) {
       List<Model.Biopsy> biopsies = new List<Model.Biopsy>();

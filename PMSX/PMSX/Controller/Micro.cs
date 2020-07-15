@@ -3,19 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Micro {
-    private static Micro instance;
-
+  public class Micro : Pattern.Singleton<Micro>, Pattern.IController {
     private Micro() { }
-
-    public static Micro Instance {
-      get {
-        if (instance == null)
-          instance = new Micro();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public List<Model.Micro> SelectByGroupId(string id, int state = -1) {
       List<Model.Micro> micros = new List<Model.Micro>();

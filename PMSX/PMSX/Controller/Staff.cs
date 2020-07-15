@@ -4,21 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  using BCrypt.Net;
-
-  public class Staff {
-    private static Staff instance;
-
+  public class Staff : Pattern.Singleton<Staff>, Pattern.IController {
     private Staff() { }
-
-    public static Staff Instance {
-      get {
-        if (instance == null)
-          instance = new Staff();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public Model.Staff Auth(string username, string password) {
       List<Model.Staff> staffs = SelectByUsername(username);
@@ -26,7 +13,7 @@ namespace PMSX.Controller {
         return null;
       }
 
-      if (!BCrypt.Verify(password, staffs[0].Password)) {
+      if (!BCrypt.Net.BCrypt.Verify(password, staffs[0].Password)) {
         return null;
       }
 
@@ -179,7 +166,7 @@ namespace PMSX.Controller {
 
       SqlParameter[] parameters = {
         new SqlParameter("@username", username),
-        new SqlParameter("@password", BCrypt.HashPassword(password)),
+        new SqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
         new SqlParameter("@name", name),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
@@ -190,7 +177,7 @@ namespace PMSX.Controller {
     }
 
     public bool InsertWithDefaultPassword(string username, string name, string comment) {
-      return Insert(username, BCrypt.HashPassword("staff@pmxs"), name, comment);
+      return Insert(username, BCrypt.Net.BCrypt.HashPassword("staff@pmxs"), name, comment);
     }
 
     public void Update(string id, string name, string comment, int state) {

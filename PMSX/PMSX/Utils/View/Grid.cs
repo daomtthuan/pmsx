@@ -7,19 +7,8 @@ using System.Collections;
 using System.Linq;
 
 namespace PMSX.Utils.View {
-  public class Grid {
-    private static Grid instance;
-
+  public class Grid : Pattern.Singleton<Grid> {
     private Grid() { }
-
-    public static Grid Instance {
-      get {
-        if (instance == null)
-          instance = new Grid();
-        return instance;
-      }
-      private set => instance = value;
-    }
 
     public void Load(GridControl gridControl, GridView gridView, IList models, string[] visibledFieldNames) {
       gridControl.DataSource = models;
