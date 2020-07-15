@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System.Windows.Forms;
 
-namespace PMSX.Util.View {
+namespace PMSX.Utils.View {
   public class MessageBox {
     private static MessageBox instance;
 

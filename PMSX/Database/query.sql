@@ -84,7 +84,7 @@ go
 create table pmsx_patient(
 	patient_id uniqueidentifier not null primary key default newid(),
 	patient_name nvarchar(100) not null,
-	patient_year int not null,
+	patient_yearBirth int not null,
 	patient_address nvarchar(500) not null,
 
 	patient_comment nvarchar(500),
@@ -290,12 +290,12 @@ insert into pmsx_session(session_id, session_name, session_technicianId, session
 insert into pmsx_session(session_id, session_name, session_technicianId, session_doctorId, session_createStaffId) values('8CF9811C-8D66-4DC1-A42F-85B2A44089E5', '2020-7-9','E226DC82-6028-413E-B0B0-EEA3E62219D2', '6DDAA669-7F0E-46CC-8271-88633C859FFC', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
 
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('07F5E2E4-CA32-46A9-BED7-C25B7E9E74CB', N'Nguyễn Văn An', 1970, N'Ninh Kiều, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('E4F4845B-B47D-478C-B0CC-D10856057E2B', N'Trần Thanh Bình', 1966, N'Quận 1, TP. HCM', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('A04E2A34-4D6C-4246-BCF4-47B8482BAAF7', N'Đỗ Lâm Cường', 1983, N'Cái Răng, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('87F61977-AC33-4074-80FD-8ACEED052D64', N'Hà Thị Kim Dung', 1990, N'Bình Minh, Vĩnh Long', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('1A1D1307-A471-4752-B492-3E2DF431B0BA', N'Hồng Thị Bé Em', 1992, N'Ninh Kiều, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_patient(patient_id, patient_name, patient_year, patient_address, patient_createStaffId) values('54C1D24B-4D38-4B99-B973-5B0D2204800A', N'Nguyễn Trường Giang', 1988, N'Vị Thanh, Hậu Giang', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('07F5E2E4-CA32-46A9-BED7-C25B7E9E74CB', N'Nguyễn Văn An', 1970, N'Ninh Kiều, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('E4F4845B-B47D-478C-B0CC-D10856057E2B', N'Trần Thanh Bình', 1966, N'Quận 1, TP. HCM', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('A04E2A34-4D6C-4246-BCF4-47B8482BAAF7', N'Đỗ Lâm Cường', 1983, N'Cái Răng, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('87F61977-AC33-4074-80FD-8ACEED052D64', N'Hà Thị Kim Dung', 1990, N'Bình Minh, Vĩnh Long', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('1A1D1307-A471-4752-B492-3E2DF431B0BA', N'Hồng Thị Bé Em', 1992, N'Ninh Kiều, Cần Thơ', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
+insert into pmsx_patient(patient_id, patient_name, patient_yearBirth, patient_address, patient_createStaffId) values('54C1D24B-4D38-4B99-B973-5B0D2204800A', N'Nguyễn Trường Giang', 1988, N'Vị Thanh, Hậu Giang', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
 
 insert into pmsx_biopsyGroup(biopsyGroup_id, biopsyGroup_code, biopsyGroup_createStaffId, biopsyGroup_numberBiopsy) values ('574A295E-CFA9-4CDE-B75F-B4AA650206E4', N'YCT20', '73F2B296-EBDC-4434-892C-983E46F7CCF3', 6)

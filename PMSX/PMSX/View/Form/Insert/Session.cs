@@ -23,15 +23,15 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void Session_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(technicianSelect, technicians, new[] { "Username", "Name", "State" }, "Id", "Name");
-      Util.View.Grid.Instance.Load(doctorSelect, doctors, new[] { "Username", "Name", "State" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(technicianSelect, technicians, new[] { "Username", "Name", "State" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(doctorSelect, doctors, new[] { "Username", "Name", "State" }, "Id", "Name");
 
       nameSelect.EditValue = DateTime.Now;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
       if (!Controller.Session.Instance.Insert(nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text)) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên phiên làm việc đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
         DialogResult = DialogResult.OK;
         Close();

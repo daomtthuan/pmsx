@@ -5,7 +5,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Linq;
 
-namespace PMSX.Util.View {
+namespace PMSX.Utils.View {
   public class Grid {
     private static Grid instance;
 

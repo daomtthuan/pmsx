@@ -34,7 +34,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         micros.Add(new Model.Micro(row));
       }
 

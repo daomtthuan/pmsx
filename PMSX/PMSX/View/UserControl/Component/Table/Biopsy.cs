@@ -11,19 +11,19 @@ namespace PMSX.View.UserControl.Component.Table {
 
       protected override void OnInsert() {
         if (groupId == null) {
-          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhóm sinh thiết nào.");
+          Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhóm sinh thiết nào.");
         } else {
           List<Model.Patient> patients = Controller.Patient.Instance.SelectAll();
           if (patients.Count == 0) {
-            Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy bệnh nhân nào.");
+            Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy bệnh nhân nào.");
           } else {
             List<Model.Role> doctorRoles = Controller.Role.Instance.SelectByName("Bác sĩ");
             if (doctorRoles.Count == 0) {
-              Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Bác sĩ.");
+              Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Bác sĩ.");
             } else {
               List<Model.Staff> grossDoctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
               if (grossDoctors.Count == 0) {
-                Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
+                Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
                 new Form.Insert.Biopsy(groupId, patients, grossDoctors, Controller.Session.Instance.SelectAll()).ShowDialog();
                 LoadData(groupId, groupName);
@@ -48,7 +48,9 @@ namespace PMSX.View.UserControl.Component.Table {
         this.groupName = groupName;
 
         TitleLabel.Text = "Danh sách mẫu sinh thiết thuộc nhóm " + groupName;
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Biopsy.Instance.SelectByGroupId(groupId), new[] { "Code", "State", "CreateDatetime", "UpdateDatetime" });
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Biopsy.Instance.SelectByGroupId(groupId), new[] {
+          "FullCode", "PatientName", "SessionName", "GrossDoctorName", "Segment", "GrossDatetime", "CollectDatetime", "State", "CreateDatetime", "UpdateDatetime"
+        });
       }
     }
 
@@ -60,7 +62,7 @@ namespace PMSX.View.UserControl.Component.Table {
     }
 
     private void Biopsy_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(biopsyGroupSelect, Controller.BiopsyGroup.Instance.SelectAll(), new[] { "Code", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Code");
+      Utils.View.Grid.Instance.Load(biopsyGroupSelect, Controller.BiopsyGroup.Instance.SelectAll(), new[] { "Code", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Code");
     }
 
     private void BiopsyGroupSelect_EditValueChanged(object sender, EventArgs e) {

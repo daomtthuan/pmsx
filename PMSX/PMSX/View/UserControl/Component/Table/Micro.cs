@@ -1,7 +1,5 @@
-﻿using DevExpress.Printing.ExportHelpers;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
@@ -32,7 +30,7 @@ namespace PMSX.View.UserControl.Component.Table {
 
         TitleLabel.Text = "Danh sách vi thể thuộc nhóm " + groupName;
 
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Micro.Instance.SelectByGroupId(groupId), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Micro.Instance.SelectByGroupId(groupId), new[] {
           "Code", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
@@ -46,7 +44,7 @@ namespace PMSX.View.UserControl.Component.Table {
     }
 
     private void Micro_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(microGroupSelect, Controller.MicroGroup.Instance.SelectAll(), new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(microGroupSelect, Controller.MicroGroup.Instance.SelectAll(), new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
     }
 
     private void MicroGroupSelect_EditValueChanged(object sender, EventArgs e) {

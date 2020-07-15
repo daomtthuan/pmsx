@@ -12,7 +12,7 @@ namespace PMSX.View.UserControl.Component.Table {
       protected override void OnInsert() {
         List<Model.Staff> staffs = Controller.Staff.Instance.SelectByNotRoleId(roleId);
         if (staffs.Count == 0) {
-          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");
+          Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nTất cả nhân viên đã có quyền này.");
         } else {
           new Form.Insert.Permission(roleId, staffs).ShowDialog();
           LoadData(roleId, roleName);
@@ -35,7 +35,7 @@ namespace PMSX.View.UserControl.Component.Table {
 
         TitleLabel.Text = "Danh sách nhân viên có quyền " + roleName;
 
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Permission.Instance.SelectByRoleId(roleId), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Permission.Instance.SelectByRoleId(roleId), new[] {
           "StaffUsername", "StaffName", "CreateDatetime", "UpdateDatetime"
         });
       }
@@ -49,7 +49,7 @@ namespace PMSX.View.UserControl.Component.Table {
     }
 
     private void Permission_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(roleSelect, Controller.Role.Instance.SelectAll(), new[] { "Name", "CreateDatetime", "UpdateDatetime", "State" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(roleSelect, Controller.Role.Instance.SelectAll(), new[] { "Name", "CreateDatetime", "UpdateDatetime", "State" }, "Id", "Name");
     }
 
     private void RoleSelect_EditValueChanged(object sender, EventArgs e) {

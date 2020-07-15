@@ -25,11 +25,11 @@ namespace PMSX.View.Form.Update {
 
     private void UpdateButton_Click(object sender, EventArgs e) {
       if (nameInput.Text.Length == 0) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên quyền không hợp lệ.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+      } else if (!Regex.IsMatch(nameInput.Text, Utils.RegexPattern.Instance.Name)) {
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên quyền không hợp lệ.");
       } else if (!Controller.Role.Instance.Update(roles.Id, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên quyền đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên quyền đã tồn tại.");
       } else {
         Close();
       }

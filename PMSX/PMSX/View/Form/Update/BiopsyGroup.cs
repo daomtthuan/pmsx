@@ -25,11 +25,11 @@ namespace PMSX.View.Form.Update {
 
     private void InsertButton_Click(object sender, EventArgs e) {
       if (codeInput.Text.Length == 0) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Regex.IsMatch(codeInput.Text, Util.RegexPattern.Instance.Code)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số không hợp lệ.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+      } else if (!Regex.IsMatch(codeInput.Text, Utils.RegexPattern.Instance.Code)) {
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số không hợp lệ.");
       } else if (!Controller.BiopsyGroup.Instance.Update(biopsyGroup.Id, codeInput.Text, commentInput.Text, (int)stateRadio.EditValue)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số đã tồn tại.");
       } else {
         Close();
       }

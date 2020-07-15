@@ -2,14 +2,13 @@
 using System.Data;
 
 namespace PMSX.Model {
-  public class Patient : Interface.Model {
+  public class Patient : Utils.Pattern.Model {
     private readonly int state;
-    private readonly int year;
 
     public Patient(DataRow row) {
       Id = row["patient_id"].ToString();
       Name = row["patient_name"].ToString();
-      year = (int)row["patient_year"];
+      YearBirth = (int)row["patient_yearBirth"];
       Address = row["patient_address"].ToString();
 
       Comment = row["patient_comment"].ToString();
@@ -24,7 +23,8 @@ namespace PMSX.Model {
 
     public string Id { get; private set; }
     public string Name { get; private set; }
-    public int YearsOld { get => DateTime.Now.Year - year; }
+    public int YearBirth { get; private set; }
+    public int YearsOld { get => DateTime.Now.Year - YearBirth; }
     public string Address { get; private set; }
 
     public string Comment { get; private set; }
@@ -38,10 +38,6 @@ namespace PMSX.Model {
 
     public int GetStateNumber() {
       return state;
-    }
-
-    public DateTime GetBirthday() {
-      return new DateTime(year, 1, 1);
     }
   }
 }

@@ -34,7 +34,7 @@ namespace PMSX.View.UserControl.Layout {
     }
 
     private void DetailsButton_Click(object sender, EventArgs e) {
-      Util.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
+      Utils.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

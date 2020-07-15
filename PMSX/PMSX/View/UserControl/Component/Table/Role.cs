@@ -9,7 +9,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnLoad() {
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Role.Instance.SelectAll(), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Role.Instance.SelectAll(), new[] {
           "Name", "TechnicianName", "DoctorName", "State", "CreateDatetime", "UpdateDatetime"
         });
       }

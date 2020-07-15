@@ -149,7 +149,7 @@
       this.sessionSelect.Size = new System.Drawing.Size(476, 28);
       this.sessionSelect.StyleController = this.layoutControl;
       this.sessionSelect.TabIndex = 4;
-      this.sessionSelect.EditValueChanged += new System.EventHandler(this.sessionSelect_EditValueChanged);
+      this.sessionSelect.EditValueChanged += new System.EventHandler(this.SessionSelect_EditValueChanged);
       // 
       // grossDoctorSelect
       // 

@@ -56,7 +56,7 @@ namespace PMSX.View.Form {
 
           List<Model.Session> sessions = Controller.Session.Instance.SelectAll(1);
           if (sessions.Count == 0) {
-            Util.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
+            Utils.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
             Application.Exit();
           } else {
             SelectSession selectSessionForm = new SelectSession(sessions);

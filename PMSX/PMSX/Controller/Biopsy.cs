@@ -22,8 +22,17 @@ namespace PMSX.Controller {
       List<Model.Biopsy> biopsies = new List<Model.Biopsy>();
 
       string query = @"
-        select *
+        select
+          pmsx_biopsy.*,
+          concat(biopsyGroup_code,' - ', biopsy_code) as biopsy_fullCode,
+          patient_name as biopsy_patientName,
+          staff_name as biopsy_grossDoctorName,
+          session_name as biopsy_sessionName
         from pmsx_biopsy
+          join pmsx_biopsyGroup on biopsy_groupId = biopsyGroup_id
+          join pmsx_patient on biopsy_patientId = patient_id
+          join pmsx_staff on biopsy_grossDoctorId = staff_id
+          left outer join pmsx_session on biopsy_sessionId = session_id
         where
           (@state = -1 or biopsy_state = @state) and
           biopsy_groupId = @id
@@ -35,7 +44,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         biopsies.Add(new Model.Biopsy(row));
       }
 
@@ -104,7 +113,7 @@ namespace PMSX.Controller {
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
 
-      return (int)Util.Database.Instance.ExecuteScalar(query, parameters) == 1;
+      return (int)Utils.Database.Instance.ExecuteScalar(query, parameters) == 1;
     }
   }
 }

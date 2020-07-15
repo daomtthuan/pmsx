@@ -10,7 +10,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnLoad() {
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Session.Instance.SelectAll(), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Session.Instance.SelectAll(), new[] {
           "Name", "State", "TechnicianName", "DoctorName", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
@@ -18,19 +18,19 @@ namespace PMSX.View.UserControl.Component.Table {
       protected override void OnInsert() {
         List<Model.Role> technicianRoles = Controller.Role.Instance.SelectByName("Kỹ thuật viên");
         if (technicianRoles.Count == 0) {
-          Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Kỹ thuật viên.");
+          Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Kỹ thuật viên.");
         } else {
           List<Model.Role> doctorRoles = Controller.Role.Instance.SelectByName("Bác sĩ");
           if (doctorRoles.Count == 0) {
-            Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Bác sĩ.");
+            Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy quyền Bác sĩ.");
           } else {
             List<Model.Staff> technicians = Controller.Staff.Instance.SelectByRoleId(technicianRoles[0].Id);
             if (technicians.Count == 0) {
-              Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Kỹ thuật viên.");
+              Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Kỹ thuật viên.");
             } else {
               List<Model.Staff> doctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
               if (doctors.Count == 0) {
-                Util.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
+                Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
                 new Form.Insert.Session(technicians, doctors).ShowDialog();
                 OnLoad();
@@ -43,19 +43,19 @@ namespace PMSX.View.UserControl.Component.Table {
       protected override void OnUpdate() {
         List<Model.Role> technicianRoles = Controller.Role.Instance.SelectByName("Kỹ thuật viên");
         if (technicianRoles.Count == 0) {
-          Util.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Kỹ thuật viên.");
+          Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Kỹ thuật viên.");
         } else {
           List<Model.Role> doctorRoles = Controller.Role.Instance.SelectByName("Bác sĩ");
           if (doctorRoles.Count == 0) {
-            Util.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Bác sĩ.");
+            Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Bác sĩ.");
           } else {
             List<Model.Staff> technicians = Controller.Staff.Instance.SelectByRoleId(technicianRoles[0].Id);
             if (technicians.Count == 0) {
-              Util.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Kỹ thuật viên.");
+              Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Kỹ thuật viên.");
             } else {
               List<Model.Staff> doctors = Controller.Staff.Instance.SelectByRoleId(doctorRoles[0].Id);
               if (doctors.Count == 0) {
-                Util.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
+                Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
                 new Form.Update.Session((Model.Session)GetSelectedRow(), technicians, doctors).ShowDialog();
                 OnLoad();

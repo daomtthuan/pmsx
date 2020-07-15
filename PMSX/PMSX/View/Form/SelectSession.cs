@@ -24,7 +24,7 @@ namespace PMSX.View.Form {
     }
 
     private void SelectSession_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(sessionSelect, sessions, new[] { "Name", "TechnicianName", "DoctorName" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(sessionSelect, sessions, new[] { "Name", "TechnicianName", "DoctorName" }, "Id", "Name");
     }
 
     private void StartButton_Click(object sender, EventArgs e) {

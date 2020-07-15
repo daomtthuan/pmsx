@@ -25,8 +25,8 @@ namespace PMSX.View.Form.Update {
     }
 
     private void Session_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(technicianSelect, technicians, new[] { "Username", "Name", "State" }, "Id", "Name", session.TechnicianId);
-      Util.View.Grid.Instance.Load(doctorSelect, doctors, new[] { "Username", "Name", "State" }, "Id", "Name", session.DoctorId);
+      Utils.View.Grid.Instance.Load(technicianSelect, technicians, new[] { "Username", "Name", "State" }, "Id", "Name", session.TechnicianId);
+      Utils.View.Grid.Instance.Load(doctorSelect, doctors, new[] { "Username", "Name", "State" }, "Id", "Name", session.DoctorId);
 
       nameSelect.EditValue = DateTime.Parse(session.Name);
       stateRadio.EditValue = session.GetStateNumber();
@@ -34,7 +34,7 @@ namespace PMSX.View.Form.Update {
 
     private void UpdateButton_Click(object sender, EventArgs e) {
       if (!Controller.Session.Instance.Update(session.Id, nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text, (int)stateRadio.EditValue)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên phiên làm việc đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
         DialogResult = DialogResult.OK;
         Close();

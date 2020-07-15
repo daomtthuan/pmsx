@@ -23,7 +23,7 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void Permission_Load(object sender, EventArgs e) {
-      Util.View.Grid.Instance.Load(staffSelect, staffs, new[] { "Username", "Name", "State" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(staffSelect, staffs, new[] { "Username", "Name", "State" }, "Id", "Name");
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

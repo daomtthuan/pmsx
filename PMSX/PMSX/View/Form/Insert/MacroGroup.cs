@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Insert {
@@ -18,9 +17,9 @@ namespace PMSX.View.Form.Insert {
 
     private void InsertButton_Click(object sender, EventArgs e) {
       if (codeInput.Text.Length == 0 || nameInput.Text.Length == 0) {
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if(!Controller.MacroGroup.Instance.Insert(codeInput.Text,nameInput.Text,commentInput.Text)){
-        Util.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên mã đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+      } else if (!Controller.MacroGroup.Instance.Insert(codeInput.Text, nameInput.Text, commentInput.Text)) {
+        Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên mã đã tồn tại.");
       } else {
         Controller.MacroGroup.Instance.Insert(codeInput.Text, nameInput.Text, commentInput.Text);
         Close();

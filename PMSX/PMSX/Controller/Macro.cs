@@ -32,7 +32,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         macros.Add(new Model.Macro(row));
       }
 
@@ -55,7 +55,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         macros.Add(new Model.Macro(row));
       }
 
@@ -78,13 +78,13 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         macros.Add(new Model.Macro(row));
       }
 
       return macros;
     }
-    public List<Model.Macro> Insert(string code,string description, string groupId, string comment) {
+    public List<Model.Macro> Insert(string code, string description, string groupId, string comment) {
       List<Model.Macro> macros = new List<Model.Macro>();
 
       string query = @"
@@ -111,7 +111,7 @@ namespace PMSX.Controller {
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         macros.Add(new Model.Macro(row));
       }
 
@@ -138,7 +138,7 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
 
     public void Disable(string id) {
@@ -156,7 +156,7 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
   }
 }

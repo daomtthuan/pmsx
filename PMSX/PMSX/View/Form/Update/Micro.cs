@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Update {
@@ -25,7 +24,7 @@ namespace PMSX.View.Form.Update {
 
     private void UpdateButton_Click(object sender, EventArgs e) {
       if (nameInput.Text.Length == 0) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
       }*/ else {

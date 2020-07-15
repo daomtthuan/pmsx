@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace PMSX.Util {
+namespace PMSX.Utils {
   public class Setting {
     private static Setting instance;
 

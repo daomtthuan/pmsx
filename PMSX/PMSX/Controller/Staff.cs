@@ -48,7 +48,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         staffs.Add(new Model.Staff(row));
       }
 
@@ -71,7 +71,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         staffs.Add(new Model.Staff(row));
       }
 
@@ -95,7 +95,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         staffs.Add(new Model.Staff(row));
       }
 
@@ -120,7 +120,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         staffs.Add(new Model.Staff(row));
       }
 
@@ -149,7 +149,7 @@ namespace PMSX.Controller {
         new SqlParameter("@state", state)
       };
 
-      foreach (DataRow row in Util.Database.Instance.Excute(query, parameters).Rows) {
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
         staffs.Add(new Model.Staff(row));
       }
 
@@ -185,7 +185,7 @@ namespace PMSX.Controller {
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
+      Utils.Database.Instance.ExcuteNon(query, parameters);
       return true;
     }
 
@@ -213,7 +213,7 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
 
     public void Disable(string id) {
@@ -231,7 +231,7 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-      Util.Database.Instance.ExcuteNon(query, parameters);
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
   }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PMSX.Util {
+namespace PMSX.Utils {
   public class Locale {
 
     private static Locale instance;
@@ -25,9 +25,11 @@ namespace PMSX.Util {
         { "StaffUsername", "Tên đăng nhập nhân viên" },
         { "StaffName", "Tên nhân viên" },
         { "RoleId", "Mã định danh quyền truy cập" },
+        { "YearBirth", "Năm sinh" },
         { "YearsOld", "Tuổi" },
         { "Address", "Địa chỉ" },
         { "Code", "Mã số" },
+        { "FullCode", "Mã số đầy đủ" },
         { "NumberBiopsy", "Số mẫu sinh thiết" },
         { "MacroGroupId", "Mã định danh nhóm đại thể" },
         { "MicroGroupId", "Mã định danh nhóm vi thể" },
@@ -41,7 +43,10 @@ namespace PMSX.Util {
         { "BiopsyGroupId", "Mã định danh nhóm sinh thiết" },
         { "Description", "Mô tả" },
         { "Conclusion", "Kết luận" },
-      };      
+        { "PatientName", "Tên bệnh nhân" },
+        { "GrossDoctorName", "Tên bác sĩ gọt" },
+        { "SessionName", "Tên phiên làm việc" },
+      };
     }
 
     public static Locale Instance {

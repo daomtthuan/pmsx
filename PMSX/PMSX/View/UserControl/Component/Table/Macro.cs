@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraEditors;
-using System.Collections.Generic;
 using System.Windows.Forms;
- 
+
 namespace PMSX.View.UserControl.Component.Table {
   public partial class Macro : XtraUserControl {
     private class MacroTable : Layout.Table {
@@ -10,7 +9,7 @@ namespace PMSX.View.UserControl.Component.Table {
 
       protected override void OnInsert() {
         new Form.Insert.Macro(groupId).ShowDialog();
-        LoadData(groupId,groupName);
+        LoadData(groupId, groupName);
       }
 
       protected override void OnUpdate() {
@@ -29,7 +28,7 @@ namespace PMSX.View.UserControl.Component.Table {
 
         TitleLabel.Text = "Danh sách đại thể thuộc nhóm " + groupName;
 
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.Macro.Instance.SelectByGroupId(groupId), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Macro.Instance.SelectByGroupId(groupId), new[] {
           "Code", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
@@ -43,7 +42,7 @@ namespace PMSX.View.UserControl.Component.Table {
     }
 
     private void Macro_Load(object sender, System.EventArgs e) {
-      Util.View.Grid.Instance.Load(macroGroupSelect, Controller.MacroGroup.Instance.SelectAll(), new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
+      Utils.View.Grid.Instance.Load(macroGroupSelect, Controller.MacroGroup.Instance.SelectAll(), new[] { "Code", "Name", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
     }
 
     private void MacroGroupSelect_EditValueChanged(object sender, System.EventArgs e) {

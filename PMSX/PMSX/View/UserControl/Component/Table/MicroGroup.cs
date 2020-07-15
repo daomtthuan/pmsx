@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table {
@@ -10,7 +9,7 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnLoad() {
-        Util.View.Grid.Instance.Load(GridControl, GridView, Controller.MicroGroup.Instance.SelectAll(), new[] {
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.MicroGroup.Instance.SelectAll(), new[] {
           "Code", "Name", "State", "CreateDatetime",  "UpdateDatetime"
         });
       }

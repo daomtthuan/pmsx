@@ -1,4 +1,4 @@
-﻿namespace PMSX.Util {
+﻿namespace PMSX.Utils {
   public class RegexPattern {
     private static RegexPattern instance;
 

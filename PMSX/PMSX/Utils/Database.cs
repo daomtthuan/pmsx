@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace PMSX.Util {
+namespace PMSX.Utils {
   public class Database {
     private static Database instance;
     private readonly string connectionString;
