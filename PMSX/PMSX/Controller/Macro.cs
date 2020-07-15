@@ -84,18 +84,20 @@ namespace PMSX.Controller {
 
       return macros;
     }
-    public List<Model.Macro> Insert(string code, string description, string comment) {
+    public List<Model.Macro> Insert(string code,string description, string groupId, string comment) {
       List<Model.Macro> macros = new List<Model.Macro>();
 
       string query = @"
         insert into pmsx_macro(
           macro_code,
           macro_description,
+          macro_groupId,
           macro_comment,
           macro_createStaffId
         ) values(
           @code,
           @description,
+          @groupId,
           @comment,
           @createStaffId
         )
@@ -104,6 +106,7 @@ namespace PMSX.Controller {
       SqlParameter[] parameters = {
         new SqlParameter("@code", code),
         new SqlParameter("@description", description),
+        new SqlParameter("@groupId", groupId),
         new SqlParameter("@comment", comment),
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
