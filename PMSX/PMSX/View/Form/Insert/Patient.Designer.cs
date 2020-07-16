@@ -29,6 +29,7 @@
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.yearSelect = new DevExpress.XtraEditors.DateEdit();
       this.yearsOldInput = new DevExpress.XtraEditors.TextEdit();
+      this.addressInput = new DevExpress.XtraEditors.MemoEdit();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.nameInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -37,7 +38,6 @@
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.yearSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.yearsOldInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.addressInput = new DevExpress.XtraEditors.MemoEdit();
       this.addressInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
@@ -46,6 +46,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.yearSelect.Properties.CalendarTimeProperties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearsOldInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.addressInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
@@ -54,7 +55,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearsOldInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.addressInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.addressInputLayout)).BeginInit();
       this.SuspendLayout();
       // 
@@ -143,6 +143,15 @@
       this.yearsOldInput.StyleController = this.layoutControl;
       this.yearsOldInput.TabIndex = 5;
       this.yearsOldInput.EditValueChanged += new System.EventHandler(this.YearsOldInput_EditValueChanged);
+      // 
+      // addressInput
+      // 
+      this.addressInput.Location = new System.Drawing.Point(12, 183);
+      this.addressInput.Name = "addressInput";
+      this.addressInput.Properties.MaxLength = 500;
+      this.addressInput.Size = new System.Drawing.Size(476, 131);
+      this.addressInput.StyleController = this.layoutControl;
+      this.addressInput.TabIndex = 7;
       // 
       // Root
       // 
@@ -237,15 +246,6 @@
       this.yearsOldInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.yearsOldInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // addressInput
-      // 
-      this.addressInput.Location = new System.Drawing.Point(12, 183);
-      this.addressInput.Name = "addressInput";
-      this.addressInput.Properties.MaxLength = 500;
-      this.addressInput.Size = new System.Drawing.Size(476, 131);
-      this.addressInput.StyleController = this.layoutControl;
-      this.addressInput.TabIndex = 7;
-      // 
       // addressInputLayout
       // 
       this.addressInputLayout.Control = this.addressInput;
@@ -276,6 +276,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.yearSelect.Properties.CalendarTimeProperties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearsOldInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.addressInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
@@ -284,7 +285,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.yearsOldInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.addressInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.addressInputLayout)).EndInit();
       this.ResumeLayout(false);
 

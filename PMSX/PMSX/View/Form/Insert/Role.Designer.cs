@@ -197,5 +197,5 @@
         private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
         private DevExpress.XtraLayout.SimpleLabelItem notRequiredLabel;
         private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
-    }
+  }
 }

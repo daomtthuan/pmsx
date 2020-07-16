@@ -66,14 +66,14 @@
       this.roleButton = new DevExpress.XtraBars.BarButtonItem();
       this.sessionButton = new DevExpress.XtraBars.BarButtonItem();
       this.biopsyButton = new DevExpress.XtraBars.BarButtonItem();
-      this.diagnose1Button = new DevExpress.XtraBars.BarButtonItem();
+      this.diagnoseType1Button = new DevExpress.XtraBars.BarButtonItem();
       this.permissionButton = new DevExpress.XtraBars.BarButtonItem();
       this.macroGroupButton = new DevExpress.XtraBars.BarButtonItem();
       this.macroButton = new DevExpress.XtraBars.BarButtonItem();
       this.microGroupButton = new DevExpress.XtraBars.BarButtonItem();
       this.microButton = new DevExpress.XtraBars.BarButtonItem();
-      this.diagnose2Button = new DevExpress.XtraBars.BarButtonItem();
-      this.diagnose3Button = new DevExpress.XtraBars.BarButtonItem();
+      this.diagnoseType2Button = new DevExpress.XtraBars.BarButtonItem();
+      this.diagnoseType3Button = new DevExpress.XtraBars.BarButtonItem();
       this.biopsyGroupButton = new DevExpress.XtraBars.BarButtonItem();
       this.adminPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
       this.personnelPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -108,14 +108,14 @@
             this.roleButton,
             this.sessionButton,
             this.biopsyButton,
-            this.diagnose1Button,
+            this.diagnoseType1Button,
             this.permissionButton,
             this.macroGroupButton,
             this.macroButton,
             this.microGroupButton,
             this.microButton,
-            this.diagnose2Button,
-            this.diagnose3Button,
+            this.diagnoseType2Button,
+            this.diagnoseType3Button,
             this.biopsyGroupButton});
       this.ribbon.Location = new System.Drawing.Point(0, 0);
       this.ribbon.MaxItemId = 17;
@@ -237,17 +237,17 @@
       this.biopsyButton.SuperTip = superToolTip5;
       this.biopsyButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BiopsyButton_Click);
       // 
-      // diagnose1Button
+      // diagnoseType1Button
       // 
-      this.diagnose1Button.Caption = "Loại 1";
-      this.diagnose1Button.Id = 7;
-      this.diagnose1Button.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-      this.diagnose1Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.diagnose1Button.Name = "diagnose1Button";
+      this.diagnoseType1Button.Caption = "Loại 1";
+      this.diagnoseType1Button.Id = 7;
+      this.diagnoseType1Button.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+      this.diagnoseType1Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
+      this.diagnoseType1Button.Name = "diagnoseType1Button";
       toolTipItem6.Text = "Quản lý kết quả chẩn đoán loại 1";
       superToolTip6.Items.Add(toolTipItem6);
-      this.diagnose1Button.SuperTip = superToolTip6;
-      this.diagnose1Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose1Button_ItemClick);
+      this.diagnoseType1Button.SuperTip = superToolTip6;
+      this.diagnoseType1Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DiagnoseType1Button_ItemClick);
       // 
       // permissionButton
       // 
@@ -305,27 +305,27 @@
       this.microButton.SuperTip = superToolTip11;
       this.microButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MicroButton_ItemClick);
       // 
-      // diagnose2Button
+      // diagnoseType2Button
       // 
-      this.diagnose2Button.Caption = "Loại 2";
-      this.diagnose2Button.Id = 14;
-      this.diagnose2Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.diagnose2Button.Name = "diagnose2Button";
+      this.diagnoseType2Button.Caption = "Loại 2";
+      this.diagnoseType2Button.Id = 14;
+      this.diagnoseType2Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
+      this.diagnoseType2Button.Name = "diagnoseType2Button";
       toolTipItem12.Text = "Quản lý kết quả chẩn đoán loại 2";
       superToolTip12.Items.Add(toolTipItem12);
-      this.diagnose2Button.SuperTip = superToolTip12;
-      this.diagnose2Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose2Button_ItemClick);
+      this.diagnoseType2Button.SuperTip = superToolTip12;
+      this.diagnoseType2Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DiagnoseType2Button_ItemClick);
       // 
-      // diagnose3Button
+      // diagnoseType3Button
       // 
-      this.diagnose3Button.Caption = "Loại 3";
-      this.diagnose3Button.Id = 15;
-      this.diagnose3Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.diagnose3Button.Name = "diagnose3Button";
+      this.diagnoseType3Button.Caption = "Loại 3";
+      this.diagnoseType3Button.Id = 15;
+      this.diagnoseType3Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
+      this.diagnoseType3Button.Name = "diagnoseType3Button";
       toolTipItem13.Text = "Quản lý kết quả chuẩn đoán loại 3";
       superToolTip13.Items.Add(toolTipItem13);
-      this.diagnose3Button.SuperTip = superToolTip13;
-      this.diagnose3Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Diagnose3Button_ItemClick);
+      this.diagnoseType3Button.SuperTip = superToolTip13;
+      this.diagnoseType3Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DiagnoseType3Button_ItemClick);
       // 
       // biopsyGroupButton
       // 
@@ -384,9 +384,9 @@
       // 
       // diagnoseGroup
       // 
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose1Button);
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose2Button);
-      this.diagnoseGroup.ItemLinks.Add(this.diagnose3Button);
+      this.diagnoseGroup.ItemLinks.Add(this.diagnoseType1Button);
+      this.diagnoseGroup.ItemLinks.Add(this.diagnoseType2Button);
+      this.diagnoseGroup.ItemLinks.Add(this.diagnoseType3Button);
       this.diagnoseGroup.Name = "diagnoseGroup";
       this.diagnoseGroup.Text = "Kết quả chẩn đoán";
       // 
@@ -464,7 +464,7 @@
     private DevExpress.XtraBars.BarButtonItem sessionButton;
     private DevExpress.XtraBars.BarButtonItem biopsyButton;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup clinicGroup;
-    private DevExpress.XtraBars.BarButtonItem diagnose1Button;
+    private DevExpress.XtraBars.BarButtonItem diagnoseType1Button;
     private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageView;
     private DevExpress.XtraBars.Ribbon.BackstageViewClientControl aboutBackstage;
     private DevExpress.XtraBars.Ribbon.BackstageViewTabItem aboutButtonBackstage;
@@ -485,8 +485,8 @@
     private DevExpress.XtraBars.BarButtonItem macroButton;
     private DevExpress.XtraBars.BarButtonItem microGroupButton;
     private DevExpress.XtraBars.BarButtonItem microButton;
-    private DevExpress.XtraBars.BarButtonItem diagnose2Button;
-    private DevExpress.XtraBars.BarButtonItem diagnose3Button;
+    private DevExpress.XtraBars.BarButtonItem diagnoseType2Button;
+    private DevExpress.XtraBars.BarButtonItem diagnoseType3Button;
     private DevExpress.XtraBars.BarButtonItem biopsyGroupButton;
   }
 }
