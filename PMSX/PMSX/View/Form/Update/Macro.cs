@@ -17,18 +17,18 @@ namespace PMSX.View.Form.Update {
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      nameInput.Text = macros.Description;
+      descriptionInput.Text = macros.Description;
       stateRadio.EditValue = macros.GetStateNumber();
       commentInput.Text = macros.Comment;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {
-      if (nameInput.Text.Length == 0) {
+      if (descriptionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
       }*/ else {
-        Controller.Macro.Instance.Update(macros.Code, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Controller.Macro.Instance.Update(macros.Code, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       }
     }

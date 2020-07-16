@@ -27,27 +27,29 @@
       this.codeInput = new DevExpress.XtraEditors.TextEdit();
       this.insertButton = new DevExpress.XtraEditors.SimpleButton();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
-      this.nameInput = new DevExpress.XtraEditors.TextEdit();
+      this.descriptionInput = new DevExpress.XtraEditors.MemoEdit();
+      this.conclusionInput = new DevExpress.XtraEditors.MemoEdit();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.codeInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.nameInputLayout1 = new DevExpress.XtraLayout.LayoutControlItem();
-      this.conclusionInput = new DevExpress.XtraEditors.TextEdit();
+      this.notrequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
+      this.descriptionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.conclusionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.notrequiredLabel)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).BeginInit();
       this.SuspendLayout();
       // 
@@ -57,7 +59,7 @@
       this.layoutControl.Controls.Add(this.codeInput);
       this.layoutControl.Controls.Add(this.insertButton);
       this.layoutControl.Controls.Add(this.commentInput);
-      this.layoutControl.Controls.Add(this.nameInput);
+      this.layoutControl.Controls.Add(this.descriptionInput);
       this.layoutControl.Controls.Add(this.conclusionInput);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
@@ -95,23 +97,33 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 273);
+      this.commentInput.Location = new System.Drawing.Point(12, 306);
       this.commentInput.Margin = new System.Windows.Forms.Padding(4);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(643, 164);
+      this.commentInput.Size = new System.Drawing.Size(643, 131);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
-      // nameInput
+      // descriptionInput
       // 
-      this.nameInput.Location = new System.Drawing.Point(14, 145);
-      this.nameInput.Margin = new System.Windows.Forms.Padding(4);
-      this.nameInput.Name = "nameInput";
-      this.nameInput.Properties.MaxLength = 100;
-      this.nameInput.Size = new System.Drawing.Size(639, 32);
-      this.nameInput.StyleController = this.layoutControl;
-      this.nameInput.TabIndex = 5;
+      this.descriptionInput.Location = new System.Drawing.Point(12, 145);
+      this.descriptionInput.Margin = new System.Windows.Forms.Padding(4);
+      this.descriptionInput.Name = "descriptionInput";
+      this.descriptionInput.Properties.MaxLength = 500;
+      this.descriptionInput.Size = new System.Drawing.Size(643, 28);
+      this.descriptionInput.StyleController = this.layoutControl;
+      this.descriptionInput.TabIndex = 7;
+      // 
+      // conclusionInput
+      // 
+      this.conclusionInput.Location = new System.Drawing.Point(12, 205);
+      this.conclusionInput.Margin = new System.Windows.Forms.Padding(4);
+      this.conclusionInput.Name = "conclusionInput";
+      this.conclusionInput.Properties.MaxLength = 500;
+      this.conclusionInput.Size = new System.Drawing.Size(643, 28);
+      this.conclusionInput.StyleController = this.layoutControl;
+      this.conclusionInput.TabIndex = 7;
       // 
       // Root
       // 
@@ -122,7 +134,8 @@
             this.insertButtonLayout,
             this.requiredLabel,
             this.commentInputLayout,
-            this.nameInputLayout1,
+            this.notrequiredLabel,
+            this.descriptionInputLayout,
             this.conclusionInputLayout});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(667, 507);
@@ -136,7 +149,7 @@
       this.codeInputLayout.Size = new System.Drawing.Size(647, 64);
       this.codeInputLayout.Text = "Mã vi thể";
       this.codeInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.codeInputLayout.TextSize = new System.Drawing.Size(180, 25);
+      this.codeInputLayout.TextSize = new System.Drawing.Size(245, 25);
       // 
       // insertButtonLayout
       // 
@@ -158,55 +171,58 @@
       this.requiredLabel.Size = new System.Drawing.Size(647, 41);
       this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 12);
       this.requiredLabel.Text = "Thông tin bắt buộc";
-      this.requiredLabel.TextSize = new System.Drawing.Size(180, 25);
+      this.requiredLabel.TextSize = new System.Drawing.Size(245, 25);
       // 
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 233);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 266);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(647, 196);
+      this.commentInputLayout.Size = new System.Drawing.Size(647, 163);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.commentInputLayout.TextSize = new System.Drawing.Size(180, 25);
+      this.commentInputLayout.TextSize = new System.Drawing.Size(245, 25);
       // 
-      // nameInputLayout1
+      // notrequiredLabel
       // 
-      this.nameInputLayout1.Control = this.nameInput;
-      this.nameInputLayout1.CustomizationFormText = "Tên";
-      this.nameInputLayout1.Location = new System.Drawing.Point(0, 105);
-      this.nameInputLayout1.Name = "nameInputLayout1";
-      this.nameInputLayout1.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-      this.nameInputLayout1.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.nameInputLayout1.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 2, 2);
-      this.nameInputLayout1.Size = new System.Drawing.Size(647, 64);
-      this.nameInputLayout1.Text = "Tên";
-      this.nameInputLayout1.TextLocation = DevExpress.Utils.Locations.Top;
-      this.nameInputLayout1.TextSize = new System.Drawing.Size(180, 25);
+      this.notrequiredLabel.AllowHotTrack = false;
+      this.notrequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+      this.notrequiredLabel.AppearanceItemCaption.Options.UseFont = true;
+      this.notrequiredLabel.CustomizationFormText = "Thông tin không bắt buộc";
+      this.notrequiredLabel.Location = new System.Drawing.Point(0, 225);
+      this.notrequiredLabel.Name = "notrequiredLabel";
+      this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+      this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
+      this.notrequiredLabel.Size = new System.Drawing.Size(647, 41);
+      this.notrequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 12);
+      this.notrequiredLabel.Text = "Thông tin không bắt buộc";
+      this.notrequiredLabel.TextSize = new System.Drawing.Size(245, 25);
       // 
-      // conclusionInput
+      // descriptionInputLayout
       // 
-      this.conclusionInput.Location = new System.Drawing.Point(14, 209);
-      this.conclusionInput.Margin = new System.Windows.Forms.Padding(4);
-      this.conclusionInput.Name = "conclusionInput";
-      this.conclusionInput.Properties.MaxLength = 500;
-      this.conclusionInput.Size = new System.Drawing.Size(639, 32);
-      this.conclusionInput.StyleController = this.layoutControl;
-      this.conclusionInput.TabIndex = 5;
+      this.descriptionInputLayout.Control = this.descriptionInput;
+      this.descriptionInputLayout.CustomizationFormText = "Mô tả";
+      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 105);
+      this.descriptionInputLayout.Name = "descriptionInputLayout";
+      this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+      this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
+      this.descriptionInputLayout.Size = new System.Drawing.Size(647, 60);
+      this.descriptionInputLayout.Text = "Mô tả";
+      this.descriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.descriptionInputLayout.TextSize = new System.Drawing.Size(245, 25);
       // 
       // conclusionInputLayout
       // 
       this.conclusionInputLayout.Control = this.conclusionInput;
-      this.conclusionInputLayout.CustomizationFormText = "Tên";
-      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 169);
+      this.conclusionInputLayout.CustomizationFormText = "Kết luận";
+      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 165);
       this.conclusionInputLayout.Name = "conclusionInputLayout";
       this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.conclusionInputLayout.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 2, 2);
-      this.conclusionInputLayout.Size = new System.Drawing.Size(647, 64);
+      this.conclusionInputLayout.Size = new System.Drawing.Size(647, 60);
       this.conclusionInputLayout.Text = "Kết luận";
       this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.conclusionInputLayout.TextSize = new System.Drawing.Size(180, 25);
+      this.conclusionInputLayout.TextSize = new System.Drawing.Size(245, 25);
       // 
       // Micro
       // 
@@ -225,14 +241,15 @@
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.notrequiredLabel)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).EndInit();
       this.ResumeLayout(false);
 
@@ -249,9 +266,10 @@
     private DevExpress.XtraEditors.MemoEdit commentInput;
     private DevExpress.XtraLayout.SimpleLabelItem requiredLabel;
     private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
-    private DevExpress.XtraEditors.TextEdit nameInput;
-    private DevExpress.XtraLayout.LayoutControlItem nameInputLayout1;
-    private DevExpress.XtraEditors.TextEdit conclusionInput;
+    private DevExpress.XtraLayout.SimpleLabelItem notrequiredLabel;
+    private DevExpress.XtraEditors.MemoEdit descriptionInput;
+    private DevExpress.XtraEditors.MemoEdit conclusionInput;
+    private DevExpress.XtraLayout.LayoutControlItem descriptionInputLayout;
     private DevExpress.XtraLayout.LayoutControlItem conclusionInputLayout;
   }
 }

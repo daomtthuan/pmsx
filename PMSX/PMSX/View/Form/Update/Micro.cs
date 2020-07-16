@@ -16,16 +16,16 @@ namespace PMSX.View.Form.Update {
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      nameInput.Text = micros.Description;
+      descriptionInput.Text = micros.Description;
       stateRadio.EditValue = micros.GetStateNumber();
       commentInput.Text = micros.Comment;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {
-      if (nameInput.Text.Length == 0) {
+      if (descriptionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else {
-        Controller.Micro.Instance.Update(micros.Code, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Controller.Micro.Instance.Update(micros.Code, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       }
     }

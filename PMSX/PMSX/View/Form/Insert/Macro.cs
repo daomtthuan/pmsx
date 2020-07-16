@@ -19,12 +19,12 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
-      if (codeInput.Text.Length == 0 || nameInput.Text.Length == 0) {
+      if (codeInput.Text.Length == 0 || descriptionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Controller.Macro.Instance.Insert(codeInput.Text, nameInput.Text, groupId, commentInput.Text)) {
+      } else if (!Controller.Macro.Instance.Insert(codeInput.Text, descriptionInput.Text, groupId, commentInput.Text)) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nMã đã tồn tại.");
       } else {
-        Controller.Macro.Instance.Insert(codeInput.Text, nameInput.Text, groupId, commentInput.Text);
+        Controller.Macro.Instance.Insert(codeInput.Text, descriptionInput.Text, groupId, commentInput.Text);
         Close();
       }
     }

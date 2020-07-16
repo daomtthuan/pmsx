@@ -13,11 +13,17 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
         new Form.Update.Macro((Model.Macro)GetSelectedRow()).ShowDialog();
         LoadData(groupId, groupName);
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
         Controller.Macro.Instance.Disable(((Model.Macro)GetSelectedRow()).Id);
         LoadData(groupId, groupName);
       }

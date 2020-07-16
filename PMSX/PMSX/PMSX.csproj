@@ -434,8 +434,14 @@
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Update\Macro.resx">
+      <DependentUpon>Macro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Update\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Update\MicroGroup.resx">
+      <DependentUpon>MicroGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Update\Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>

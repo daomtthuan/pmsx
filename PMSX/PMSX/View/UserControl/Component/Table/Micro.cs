@@ -15,11 +15,18 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         new Form.Update.Micro((Model.Micro)GetSelectedRow()).ShowDialog();
         LoadData(groupId, groupName);
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
         Controller.Micro.Instance.Disable(((Model.Micro)GetSelectedRow()).Id);
         LoadData(groupId, groupName);
       }

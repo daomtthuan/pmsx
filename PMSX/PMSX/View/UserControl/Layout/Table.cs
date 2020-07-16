@@ -26,7 +26,8 @@ namespace PMSX.View.UserControl.Layout {
     protected abstract void OnDisabled();
 
     protected Pattern.IModel GetSelectedRow() {
-      return (Pattern.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
+      int[] selectedIndex = GridView.GetSelectedRows();
+      return selectedIndex.Length == 0 ? null : (Pattern.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
     }
 
     private void View_Load(object sender, EventArgs e) {

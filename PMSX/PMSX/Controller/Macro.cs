@@ -51,7 +51,7 @@ namespace PMSX.Controller {
 
       return macros;
     }
-    public List<Model.Macro> SelectByCode(string code, int state = -1) {
+    public List<Model.Macro> SelectByCode(string code, string groupId, int state = -1) {
       List<Model.Macro> macros = new List<Model.Macro>();
 
       string query = @"
@@ -59,12 +59,14 @@ namespace PMSX.Controller {
         from pmsx_macro
         where
           (@state = -1 or macro_state = @state) and
-          macro_code = @code
+          macro_code = @code and 
+          macro_groupId = @groupId
         order by macro_code
       ";
 
       SqlParameter[] parameters = {
         new SqlParameter("@code", code),
+        new SqlParameter("@groupId", groupId),
         new SqlParameter("@state", state)
       };
 
@@ -75,7 +77,7 @@ namespace PMSX.Controller {
       return macros;
     }
     public bool Insert(string code, string description, string groupId, string comment) {
-      if (SelectByCode(code).Count > 0) {
+      if (SelectByCode(code,groupId).Count > 0) {
         return false;
       }
 

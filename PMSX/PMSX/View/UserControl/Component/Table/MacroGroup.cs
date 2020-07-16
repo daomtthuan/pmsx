@@ -21,12 +21,18 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
         new Form.Update.MacroGroup((Model.MacroGroup)GetSelectedRow()).ShowDialog();
         OnLoad();
         //throw new NotImplementedException();
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
         Controller.MacroGroup.Instance.Disable(((Model.MacroGroup)GetSelectedRow()).Id);
         OnLoad();
         //throw new NotImplementedException();
