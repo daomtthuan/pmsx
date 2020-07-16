@@ -20,11 +20,19 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         new Form.Update.Permission((Model.Permission)GetSelectedRow()).ShowDialog();
         LoadData(roleId, roleName);
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         Controller.Permission.Instance.Disable(((Model.Permission)GetSelectedRow()).Id);
         LoadData(roleId, roleName);
       }

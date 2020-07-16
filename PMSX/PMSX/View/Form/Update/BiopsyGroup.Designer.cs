@@ -205,7 +205,7 @@
       this.MaximizeBox = false;
       this.Name = "BiopsyGroup";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm nhân viên";
+      this.Text = "PMSX - Sửa nhóm sinh thiết";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();

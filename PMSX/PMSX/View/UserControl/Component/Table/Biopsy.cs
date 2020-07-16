@@ -34,6 +34,10 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         if (groupId == null) {
           Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhóm sinh thiết nào.");
         } else {
@@ -58,6 +62,10 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         Controller.Biopsy.Instance.Disable(((Model.Biopsy)GetSelectedRow()).Id);
         LoadData(groupId, groupName);
       }

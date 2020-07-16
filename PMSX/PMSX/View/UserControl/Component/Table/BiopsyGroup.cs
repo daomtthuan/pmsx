@@ -20,11 +20,19 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         new Form.Update.BiopsyGroup((Model.BiopsyGroup)GetSelectedRow()).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         Controller.BiopsyGroup.Instance.Disable(((Model.BiopsyGroup)GetSelectedRow()).Id);
         OnLoad();
       }

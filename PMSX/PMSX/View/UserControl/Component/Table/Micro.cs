@@ -11,7 +11,6 @@ namespace PMSX.View.UserControl.Component.Table {
       protected override void OnInsert() {
         new Form.Insert.Micro(groupId).ShowDialog();
         LoadData(groupId,groupName);
-        // throw new NotImplementedException();
       }
 
       protected override void OnUpdate() {
@@ -27,6 +26,7 @@ namespace PMSX.View.UserControl.Component.Table {
         if (GetSelectedRow() == null) {
           return;
         }
+
         Controller.Micro.Instance.Disable(((Model.Micro)GetSelectedRow()).Id);
         LoadData(groupId, groupName);
       }

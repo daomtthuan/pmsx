@@ -20,11 +20,19 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         new Form.Update.Patient((Model.Patient)GetSelectedRow()).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         Controller.Patient.Instance.Disable(((Model.Patient)GetSelectedRow()).Id);
         OnLoad();
       }

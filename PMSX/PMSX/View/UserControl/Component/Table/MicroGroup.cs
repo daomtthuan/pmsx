@@ -17,25 +17,24 @@ namespace PMSX.View.UserControl.Component.Table {
       protected override void OnInsert() {
         new Form.Insert.MicroGroup().ShowDialog();
         OnLoad();
-        // throw new NotImplementedException();
       }
 
       protected override void OnUpdate() {
         if (GetSelectedRow() == null) {
           return;
         }
+
         new Form.Update.MicroGroup((Model.MicroGroup)GetSelectedRow()).ShowDialog();
         OnLoad();
-        //throw new NotImplementedException();
       }
 
       protected override void OnDisabled() {
         if (GetSelectedRow() == null) {
           return;
         }
+
         Controller.MicroGroup.Instance.Disable(((Model.MicroGroup)GetSelectedRow()).Id);
         OnLoad();
-        //throw new NotImplementedException();
       }
     }
 

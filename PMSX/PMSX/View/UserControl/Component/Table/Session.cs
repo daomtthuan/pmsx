@@ -41,6 +41,10 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnUpdate() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         List<Model.Role> technicianRoles = Controller.Role.Instance.SelectByName("Kỹ thuật viên");
         if (technicianRoles.Count == 0) {
           Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy quyền Kỹ thuật viên.");
@@ -66,6 +70,10 @@ namespace PMSX.View.UserControl.Component.Table {
       }
 
       protected override void OnDisabled() {
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
         Controller.Session.Instance.Disable(((Model.Session)GetSelectedRow()).Id);
         OnLoad();
       }
