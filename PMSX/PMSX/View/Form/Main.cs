@@ -1,7 +1,10 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,12 +38,15 @@ namespace PMSX.View.Form {
       }
     }
 
-    private void AddUserControl(XtraUserControl userControl) {
-      if (panelControl.Controls.Count > 0) {
-        panelControl.Controls[0].Dispose();
-        panelControl.Controls.Clear();
-      }
-      panelControl.Controls.Add(userControl);
+    private void AddUserControl<T>() where T : XtraUserControl, new() {
+      Utils.View.Progress.Instance.Start(panelControl, () => {
+        if (panelControl.Controls.Count > 0) {
+          panelControl.Controls[0].Dispose();
+          panelControl.Controls.Clear();
+        }
+
+        panelControl.Controls.Add(new T() { Dock = DockStyle.Fill });
+      });
     }
 
     private async void Main_Load(object sender, System.EventArgs e) {
@@ -78,81 +84,59 @@ namespace PMSX.View.Form {
     }
 
     private void StaffButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Staff() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Staff>();
     }
 
     private void RoleButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Role() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Role>();
     }
 
     private void PermissionButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Permission() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Permission>();
     }
 
     private void PatientButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Patient() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Patient>();
     }
 
     private void SessionButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Session() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Session>();
     }
 
     private void BiopsyButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Biopsy() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Biopsy>();
     }
 
     private void BiopsyGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.BiopsyGroup() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.BiopsyGroup>();
     }
 
-    private void Diagnose1Button_ItemClick(object sender, ItemClickEventArgs e) {
-
-    }
-
-    private void Diagnose2Button_ItemClick(object sender, ItemClickEventArgs e) {
+    private void DiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
 
     }
 
-    private void Diagnose3Button_ItemClick(object sender, ItemClickEventArgs e) {
+    private void DiagnoseType2Button_ItemClick(object sender, ItemClickEventArgs e) {
+
+    }
+
+    private void DiagnoseType3Button_ItemClick(object sender, ItemClickEventArgs e) {
 
     }
 
     private void MacroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.MacroGroup() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.MacroGroup>();
     }
 
     private void MacroButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Macro() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Macro>();
     }
 
     private void MicroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.MicroGroup() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.MicroGroup>();
     }
 
     private void MicroButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl(new UserControl.Component.Table.Micro() {
-        Dock = DockStyle.Fill
-      });
+      AddUserControl<UserControl.Component.Table.Micro>();
     }
   }
 }

@@ -209,17 +209,17 @@ create table pmsx_micro(
 )
 go
 
-create table pmsx_diagnose1(
+create table pmsx_diagnoseType1(
 	diagnose_id uniqueidentifier not null primary key default newid(),
 	diagnose_code nvarchar(100) not null unique,	
 
 	diagnose_macroId uniqueidentifier not null references pmsx_macro(macro_id),
 	diagnose_macroDescription nvarchar(500) not null,
-	diagnose_macroConclusion nvarchar(500) not null,
 
 	diagnose_microId uniqueidentifier not null references pmsx_micro(micro_id),
 	diagnose_microDescription nvarchar(500) not null,
-	diagnose_microConclusion nvarchar(500) not null,
+
+	diagnose_conclusion nvarchar(500) not null,
 
 	diagnose_readDate datetime,
 	diagnose_biopsyId uniqueidentifier not null references pmsx_biopsy(biopsy_id),

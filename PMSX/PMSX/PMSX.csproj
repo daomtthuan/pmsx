@@ -118,6 +118,7 @@
     <Compile Include="Utils\View\Grid.cs" />
     <Compile Include="Utils\View\MessageBox.cs" />
     <Compile Include="Utils\RegexPattern.cs" />
+    <Compile Include="Utils\View\Progress.cs" />
     <Compile Include="View\Form\Insert\BiopsyGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Insert\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Insert\MicroGroup.resx">
+      <DependentUpon>MicroGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Insert\Session.resx">
       <DependentUpon>Session.cs</DependentUpon>

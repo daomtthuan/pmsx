@@ -265,5 +265,6 @@
         private DevExpress.XtraLayout.LayoutControlItem updateButtonLayout;
         private DevExpress.XtraEditors.SimpleButton detailsButton;
         private DevExpress.XtraLayout.LayoutControlItem detailsButtonLayout;
-    }
+    private DevExpress.XtraSplashScreen.SplashScreenManager waitScreenManager;
+  }
 }

@@ -39,11 +39,11 @@
       this.sampleLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.sessionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.grossDoctorSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.grossDatetimeSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.collectDatetimeSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
+      this.sessionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.segmentInput.Properties)).BeginInit();
@@ -62,11 +62,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDoctorSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDatetimeSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.collectDatetimeSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -294,17 +294,6 @@
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // sessionSelectLayout
-      // 
-      this.sessionSelectLayout.Control = this.sessionSelect;
-      this.sessionSelectLayout.CustomizationFormText = "Bệnh nhân";
-      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 35);
-      this.sessionSelectLayout.Name = "sessionSelectLayout";
-      this.sessionSelectLayout.Size = new System.Drawing.Size(480, 56);
-      this.sessionSelectLayout.Text = "Phiên làm việc";
-      this.sessionSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.sessionSelectLayout.TextSize = new System.Drawing.Size(190, 21);
-      // 
       // grossDoctorSelectLayout
       // 
       this.grossDoctorSelectLayout.Control = this.grossDoctorSelect;
@@ -351,6 +340,17 @@
       this.requiredLabel.Text = "Thông tin bắt buộc";
       this.requiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
+      // sessionSelectLayout
+      // 
+      this.sessionSelectLayout.Control = this.sessionSelect;
+      this.sessionSelectLayout.CustomizationFormText = "Bệnh nhân";
+      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 35);
+      this.sessionSelectLayout.Name = "sessionSelectLayout";
+      this.sessionSelectLayout.Size = new System.Drawing.Size(480, 56);
+      this.sessionSelectLayout.Text = "Phiên làm việc";
+      this.sessionSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.sessionSelectLayout.TextSize = new System.Drawing.Size(190, 21);
+      // 
       // Biopsy
       // 
       this.AcceptButton = this.insertButton;
@@ -382,11 +382,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDoctorSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.grossDatetimeSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.collectDatetimeSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sessionSelectLayout)).EndInit();
       this.ResumeLayout(false);
 
         }
