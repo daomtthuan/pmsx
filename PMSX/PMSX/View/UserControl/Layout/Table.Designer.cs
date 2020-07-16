@@ -1,28 +1,28 @@
 ﻿namespace PMSX.View.UserControl.Layout {
-    partial class Table {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+  partial class Table {
+    /// <summary> 
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    /// <summary> 
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing) {
+      if (disposing && (components != null)) {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
 
-        #region Component Designer generated code
+    #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent() {
+    /// <summary> 
+    /// Required method for Designer support - do not modify 
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent() {
       this.gridControl = new DevExpress.XtraGrid.GridControl();
       this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
@@ -247,24 +247,23 @@
       ((System.ComponentModel.ISupportInitialize)(this.detailsButtonLayout)).EndInit();
       this.ResumeLayout(false);
 
-        }
+    }
 
-        #endregion
+    #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraEditors.SimpleButton insertButton;
-        private DevExpress.XtraEditors.SimpleButton updateButton;
-        private DevExpress.XtraEditors.SimpleButton disabledButton;
-        private DevExpress.XtraLayout.SimpleLabelItem titleLabel;
-        private DevExpress.XtraLayout.LayoutControl layoutControl;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem gridControlLayout;
-        private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
-        private DevExpress.XtraLayout.LayoutControlItem deleteButtonLayout;
-        private DevExpress.XtraLayout.LayoutControlItem updateButtonLayout;
-        private DevExpress.XtraEditors.SimpleButton detailsButton;
-        private DevExpress.XtraLayout.LayoutControlItem detailsButtonLayout;
-    private DevExpress.XtraSplashScreen.SplashScreenManager waitScreenManager;
+    private DevExpress.XtraGrid.GridControl gridControl;
+    private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+    private DevExpress.XtraEditors.SimpleButton insertButton;
+    private DevExpress.XtraEditors.SimpleButton updateButton;
+    private DevExpress.XtraEditors.SimpleButton disabledButton;
+    private DevExpress.XtraLayout.SimpleLabelItem titleLabel;
+    private DevExpress.XtraLayout.LayoutControl layoutControl;
+    private DevExpress.XtraLayout.LayoutControlGroup Root;
+    private DevExpress.XtraLayout.LayoutControlItem gridControlLayout;
+    private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
+    private DevExpress.XtraLayout.LayoutControlItem deleteButtonLayout;
+    private DevExpress.XtraLayout.LayoutControlItem updateButtonLayout;
+    private DevExpress.XtraEditors.SimpleButton detailsButton;
+    private DevExpress.XtraLayout.LayoutControlItem detailsButtonLayout;
   }
 }
