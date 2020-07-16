@@ -34,6 +34,8 @@
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.nameInputLayout1 = new DevExpress.XtraLayout.LayoutControlItem();
+      this.conclusionInput = new DevExpress.XtraEditors.TextEdit();
+      this.conclusionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).BeginInit();
@@ -45,6 +47,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -54,6 +58,7 @@
       this.layoutControl.Controls.Add(this.insertButton);
       this.layoutControl.Controls.Add(this.commentInput);
       this.layoutControl.Controls.Add(this.nameInput);
+      this.layoutControl.Controls.Add(this.conclusionInput);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Margin = new System.Windows.Forms.Padding(4);
@@ -90,11 +95,11 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 209);
+      this.commentInput.Location = new System.Drawing.Point(12, 273);
       this.commentInput.Margin = new System.Windows.Forms.Padding(4);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(643, 228);
+      this.commentInput.Size = new System.Drawing.Size(643, 164);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
@@ -117,7 +122,8 @@
             this.insertButtonLayout,
             this.requiredLabel,
             this.commentInputLayout,
-            this.nameInputLayout1});
+            this.nameInputLayout1,
+            this.conclusionInputLayout});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(667, 507);
       this.Root.TextVisible = false;
@@ -128,7 +134,7 @@
       this.codeInputLayout.Location = new System.Drawing.Point(0, 41);
       this.codeInputLayout.Name = "codeInputLayout";
       this.codeInputLayout.Size = new System.Drawing.Size(647, 64);
-      this.codeInputLayout.Text = "Mã đại thể";
+      this.codeInputLayout.Text = "Mã vi thể";
       this.codeInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.codeInputLayout.TextSize = new System.Drawing.Size(180, 25);
       // 
@@ -157,9 +163,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 169);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 233);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(647, 260);
+      this.commentInputLayout.Size = new System.Drawing.Size(647, 196);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(180, 25);
@@ -178,7 +184,31 @@
       this.nameInputLayout1.TextLocation = DevExpress.Utils.Locations.Top;
       this.nameInputLayout1.TextSize = new System.Drawing.Size(180, 25);
       // 
-      // MacroGroup
+      // conclusionInput
+      // 
+      this.conclusionInput.Location = new System.Drawing.Point(14, 209);
+      this.conclusionInput.Margin = new System.Windows.Forms.Padding(4);
+      this.conclusionInput.Name = "conclusionInput";
+      this.conclusionInput.Properties.MaxLength = 500;
+      this.conclusionInput.Size = new System.Drawing.Size(639, 32);
+      this.conclusionInput.StyleController = this.layoutControl;
+      this.conclusionInput.TabIndex = 5;
+      // 
+      // conclusionInputLayout
+      // 
+      this.conclusionInputLayout.Control = this.conclusionInput;
+      this.conclusionInputLayout.CustomizationFormText = "Tên";
+      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 169);
+      this.conclusionInputLayout.Name = "conclusionInputLayout";
+      this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+      this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
+      this.conclusionInputLayout.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 2, 2);
+      this.conclusionInputLayout.Size = new System.Drawing.Size(647, 64);
+      this.conclusionInputLayout.Text = "Kết luận";
+      this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.conclusionInputLayout.TextSize = new System.Drawing.Size(180, 25);
+      // 
+      // Micro
       // 
       this.AcceptButton = this.insertButton;
       this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -188,8 +218,9 @@
       this.Controls.Add(this.layoutControl);
       this.Margin = new System.Windows.Forms.Padding(4);
       this.MaximizeBox = false;
-      this.Name = "MacroGroup";
+      this.Name = "Micro";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.Text = "PMSX - Thêm vi thể";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();
@@ -201,6 +232,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -218,5 +251,7 @@
     private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
     private DevExpress.XtraEditors.TextEdit nameInput;
     private DevExpress.XtraLayout.LayoutControlItem nameInputLayout1;
+    private DevExpress.XtraEditors.TextEdit conclusionInput;
+    private DevExpress.XtraLayout.LayoutControlItem conclusionInputLayout;
   }
 }

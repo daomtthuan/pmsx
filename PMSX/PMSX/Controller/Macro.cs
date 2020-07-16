@@ -74,8 +74,10 @@ namespace PMSX.Controller {
 
       return macros;
     }
-    public List<Model.Macro> Insert(string code, string description, string groupId, string comment) {
-      List<Model.Macro> macros = new List<Model.Macro>();
+    public bool Insert(string code, string description, string groupId, string comment) {
+      if (SelectByCode(code).Count > 0) {
+        return false;
+      }
 
       string query = @"
         insert into pmsx_macro(
@@ -101,11 +103,8 @@ namespace PMSX.Controller {
         new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
       };
 
-      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
-        macros.Add(new Model.Macro(row));
-      }
-
-      return macros;
+      Utils.Database.Instance.ExcuteNon(query, parameters);
+      return true;
     }
 
     public void Update(string code, string description, string comment, int state) {

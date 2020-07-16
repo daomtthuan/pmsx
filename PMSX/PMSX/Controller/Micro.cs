@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,6 +7,27 @@ namespace PMSX.Controller {
   public class Micro : Pattern.Singleton<Micro>, Pattern.IController {
     private Micro() { }
 
+    public List<Model.Micro> SelectAll(int state = -1) {
+      List<Model.Micro> micros = new List<Model.Micro>();
+
+      string query = @"
+        select *
+        from pmsx_micro
+        where
+          (@state = -1 or micro_state = @state)
+        order by micro_code
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@state", state)
+      };
+
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
+        micros.Add(new Model.Micro(row));
+      }
+
+      return micros;
+    }
     public List<Model.Micro> SelectByGroupId(string id, int state = -1) {
       List<Model.Micro> micros = new List<Model.Micro>();
 
@@ -28,6 +50,105 @@ namespace PMSX.Controller {
       }
 
       return micros;
+    }
+    public List<Model.Micro> SelectByCode(string code, int state = -1) {
+      List<Model.Micro> micros = new List<Model.Micro>();
+
+      string query = @"
+        select *
+        from pmsx_micro
+        where
+          (@state = -1 or micro_state = @state) and
+          micro_code = @code
+        order by micro_code
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@code", code),
+        new SqlParameter("@state", state)
+      };
+
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
+        micros.Add(new Model.Micro(row));
+      }
+
+      return micros;
+    }
+    public bool Insert(string code, string description, string conclusion, string groupId, string comment) {
+      if (SelectByCode(code).Count > 0) {
+        return false;
+      }
+
+      string query = @"
+        insert into pmsx_micro(
+          micro_code,
+          micro_description,
+          micro_conclusion,
+          micro_groupId,
+          micro_comment,
+          micro_createStaffId
+        ) values(
+          @code,
+          @description,
+          @conclusion,
+          @groupId,
+          @comment,
+          @createStaffId
+        )
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@code", code),
+        new SqlParameter("@description", description),
+        new SqlParameter("@conclusion", conclusion),
+        new SqlParameter("@groupId", groupId),
+        new SqlParameter("@comment", comment),
+        new SqlParameter("@createStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.ExcuteNon(query, parameters);
+      return true;
+    }
+
+    public void Update(string code, string description, string comment, int state) {
+      string query = @"
+        update pmsx_micro
+        set 
+	        micro_description = @description,
+	        micro_comment = @comment,
+          micro_state = @state,
+          micro_updateStaffId = @updateStaffId,
+	        micro_updateDatetime = getdate()                    
+        where micro_code = @code
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@code", code),
+        new SqlParameter("@description", description),
+        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
+        new SqlParameter("@state", state),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.ExcuteNon(query, parameters);
+    }
+
+    public void Disable(string id) {
+      string query = @"
+        update pmsx_micro
+        set
+          micro_state = 0,
+          micro_updateStaffId = @updateStaffId,
+          micro_updateDatetime = getdate()  
+        where micro_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
   }
 }

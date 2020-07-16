@@ -19,7 +19,7 @@ namespace PMSX.View.Form.Insert {
       if (codeInput.Text.Length == 0 || nameInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else if (!Controller.MacroGroup.Instance.Insert(codeInput.Text, nameInput.Text, commentInput.Text)) {
-        Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên mã đã tồn tại.");
+        Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nMã đã tồn tại.");
       } else {
         Controller.MacroGroup.Instance.Insert(codeInput.Text, nameInput.Text, commentInput.Text);
         Close();

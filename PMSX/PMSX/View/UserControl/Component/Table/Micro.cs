@@ -9,19 +9,19 @@ namespace PMSX.View.UserControl.Component.Table {
       private string groupName;
 
       protected override void OnInsert() {
-        new Form.Insert.Micro().ShowDialog();
-        OnLoad();
+        new Form.Insert.Micro(groupId).ShowDialog();
+        LoadData(groupId,groupName);
         // throw new NotImplementedException();
       }
 
       protected override void OnUpdate() {
-        //new Form.Update.Micro((Model.Micro)GetSelectedRow()).ShowDialog();
-        OnLoad();
+        new Form.Update.Micro((Model.Micro)GetSelectedRow()).ShowDialog();
+        LoadData(groupId, groupName);
       }
 
       protected override void OnDisabled() {
-        //Controller.Micro.Instance.Disable(((Model.Micro)GetSelectedRow()).Id);
-        OnLoad();
+        Controller.Micro.Instance.Disable(((Model.Micro)GetSelectedRow()).Id);
+        LoadData(groupId, groupName);
       }
 
       public void LoadData(string groupId, string groupName) {

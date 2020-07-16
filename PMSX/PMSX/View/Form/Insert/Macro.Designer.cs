@@ -190,7 +190,7 @@
       this.MaximizeBox = false;
       this.Name = "Macro";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Đại thể";
+      this.Text = "PMSX - Thêm đại thể";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();

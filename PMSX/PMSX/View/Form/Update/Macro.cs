@@ -28,7 +28,7 @@ namespace PMSX.View.Form.Update {
       } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
         Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
       }*/ else {
-        Controller.Macro.Instance.Update(macros.Id, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Controller.Macro.Instance.Update(macros.Code, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       }
     }
