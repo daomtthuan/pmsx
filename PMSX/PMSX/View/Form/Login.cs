@@ -15,7 +15,7 @@ namespace PMSX.View.Form {
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
 
-      brandPanel.Controls.Add(new UserControl.Component.Brand() {
+      brandPanel.Controls.Add(new UserControl.Brand() {
         Dock = DockStyle.Fill
       });
     }

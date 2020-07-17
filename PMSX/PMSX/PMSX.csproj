@@ -137,76 +137,76 @@
     <Compile Include="Utils\View\MessageBox.cs" />
     <Compile Include="Utils\RegexPattern.cs" />
     <Compile Include="Utils\View\Progress.cs" />
-    <Compile Include="View\Form\Insert\BiopsyGroup.cs">
+    <Compile Include="View\Form\Admin\Insert\BiopsyGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\BiopsyGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\BiopsyGroup.Designer.cs">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Diagnose\Type1.cs">
+    <Compile Include="View\Form\Admin\Insert\Diagnose\Type1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Diagnose\Type1.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Diagnose\Type1.Designer.cs">
       <DependentUpon>Type1.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Micro.cs">
+    <Compile Include="View\Form\Admin\Insert\Micro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Micro.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Micro.Designer.cs">
       <DependentUpon>Micro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Macro.cs">
+    <Compile Include="View\Form\Admin\Insert\Macro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Macro.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Macro.Designer.cs">
       <DependentUpon>Macro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\MicroGroup.cs">
+    <Compile Include="View\Form\Admin\Insert\MicroGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\MicroGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\MicroGroup.Designer.cs">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\MacroGroup.cs">
+    <Compile Include="View\Form\Admin\Insert\MacroGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\MacroGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\MacroGroup.Designer.cs">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Session.cs">
+    <Compile Include="View\Form\Admin\Insert\Session.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Session.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Session.Designer.cs">
       <DependentUpon>Session.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Role.cs">
+    <Compile Include="View\Form\Admin\Insert\Role.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Role.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Role.Designer.cs">
       <DependentUpon>Role.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Permission.cs">
+    <Compile Include="View\Form\Admin\Insert\Permission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Permission.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Permission.Designer.cs">
       <DependentUpon>Permission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Patient.cs">
+    <Compile Include="View\Form\Admin\Insert\Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Patient.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Biopsy.cs">
+    <Compile Include="View\Form\Admin\Insert\Biopsy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Biopsy.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Biopsy.Designer.cs">
       <DependentUpon>Biopsy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Insert\Staff.cs">
+    <Compile Include="View\Form\Admin\Insert\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Insert\Staff.Designer.cs">
+    <Compile Include="View\Form\Admin\Insert\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form\Loading.cs">
@@ -233,233 +233,233 @@
     <Compile Include="View\Form\SelectSession.Designer.cs">
       <DependentUpon>SelectSession.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Biopsy.cs">
+    <Compile Include="View\Form\Admin\Update\Biopsy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Biopsy.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Biopsy.Designer.cs">
       <DependentUpon>Biopsy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\BiopsyGroup.cs">
+    <Compile Include="View\Form\Admin\Update\BiopsyGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\BiopsyGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\BiopsyGroup.Designer.cs">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Diagnose\Type1.cs">
+    <Compile Include="View\Form\Admin\Update\Diagnose\Type1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Diagnose\Type1.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Diagnose\Type1.Designer.cs">
       <DependentUpon>Type1.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Micro.cs">
+    <Compile Include="View\Form\Admin\Update\Micro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Micro.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Micro.Designer.cs">
       <DependentUpon>Micro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Macro.cs">
+    <Compile Include="View\Form\Admin\Update\Macro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Macro.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Macro.Designer.cs">
       <DependentUpon>Macro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\MicroGroup.cs">
+    <Compile Include="View\Form\Admin\Update\MicroGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\MicroGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\MicroGroup.Designer.cs">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\MacroGroup.cs">
+    <Compile Include="View\Form\Admin\Update\MacroGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\MacroGroup.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\MacroGroup.Designer.cs">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Patient.cs">
+    <Compile Include="View\Form\Admin\Update\Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Patient.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Permission.cs">
+    <Compile Include="View\Form\Admin\Update\Permission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Permission.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Permission.Designer.cs">
       <DependentUpon>Permission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Role.cs">
+    <Compile Include="View\Form\Admin\Update\Role.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Role.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Role.Designer.cs">
       <DependentUpon>Role.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Session.cs">
+    <Compile Include="View\Form\Admin\Update\Session.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Session.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Session.Designer.cs">
       <DependentUpon>Session.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\Update\Staff.cs">
+    <Compile Include="View\Form\Admin\Update\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\Update\Staff.Designer.cs">
+    <Compile Include="View\Form\Admin\Update\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Brand.cs">
+    <Compile Include="View\UserControl\Brand.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Brand.Designer.cs">
+    <Compile Include="View\UserControl\Brand.Designer.cs">
       <DependentUpon>Brand.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Biopsy.cs">
+    <Compile Include="View\UserControl\Admin\Details\Biopsy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Biopsy.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Biopsy.Designer.cs">
       <DependentUpon>Biopsy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\BiopsyGroup.cs">
+    <Compile Include="View\UserControl\Admin\Details\BiopsyGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\BiopsyGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\BiopsyGroup.Designer.cs">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Diagnose\Type1.cs">
+    <Compile Include="View\UserControl\Admin\Details\Diagnose\Type1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Diagnose\Type1.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Diagnose\Type1.Designer.cs">
       <DependentUpon>Type1.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Macro.cs">
+    <Compile Include="View\UserControl\Admin\Details\Macro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Macro.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Macro.Designer.cs">
       <DependentUpon>Macro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\MacroGroup.cs">
+    <Compile Include="View\UserControl\Admin\Details\MacroGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\MacroGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\MacroGroup.Designer.cs">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Micro.cs">
+    <Compile Include="View\UserControl\Admin\Details\Micro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Micro.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Micro.Designer.cs">
       <DependentUpon>Micro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\MicroGroup.cs">
+    <Compile Include="View\UserControl\Admin\Details\MicroGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\MicroGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\MicroGroup.Designer.cs">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Patient.cs">
+    <Compile Include="View\UserControl\Admin\Details\Patient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Patient.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Permission.cs">
+    <Compile Include="View\UserControl\Admin\Details\Permission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Permission.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Permission.Designer.cs">
       <DependentUpon>Permission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Role.cs">
+    <Compile Include="View\UserControl\Admin\Details\Role.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Role.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Role.Designer.cs">
       <DependentUpon>Role.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Session.cs">
+    <Compile Include="View\UserControl\Admin\Details\Session.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Session.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Session.Designer.cs">
       <DependentUpon>Session.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Staff.cs">
+    <Compile Include="View\UserControl\Admin\Details\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Details\Staff.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Details\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Diagnose\Type1.cs">
+    <Compile Include="View\UserControl\Admin\Table\Diagnose\Type1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Diagnose\Type1.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Diagnose\Type1.Designer.cs">
       <DependentUpon>Type1.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Macro.cs">
+    <Compile Include="View\UserControl\Admin\Table\Macro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Macro.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Macro.Designer.cs">
       <DependentUpon>Macro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\MicroGroup.cs">
+    <Compile Include="View\UserControl\Admin\Table\MicroGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\MicroGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\MicroGroup.Designer.cs">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\MacroGroup.cs">
+    <Compile Include="View\UserControl\Admin\Table\MacroGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\MacroGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\MacroGroup.Designer.cs">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Biopsy.cs">
+    <Compile Include="View\UserControl\Admin\Table\Biopsy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Biopsy.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Biopsy.Designer.cs">
       <DependentUpon>Biopsy.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Patient.cs">
+    <Compile Include="View\UserControl\Admin\Table\Patient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Patient.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Micro.cs">
+    <Compile Include="View\UserControl\Admin\Table\Micro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Micro.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Micro.Designer.cs">
       <DependentUpon>Micro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Permission.cs">
+    <Compile Include="View\UserControl\Admin\Table\Permission.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Permission.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Permission.Designer.cs">
       <DependentUpon>Permission.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Role.cs">
+    <Compile Include="View\UserControl\Admin\Table\Role.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Role.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Role.Designer.cs">
       <DependentUpon>Role.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Session.cs">
+    <Compile Include="View\UserControl\Admin\Table\Session.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Session.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Session.Designer.cs">
       <DependentUpon>Session.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\BiopsyGroup.cs">
+    <Compile Include="View\UserControl\Admin\Table\BiopsyGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\BiopsyGroup.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\BiopsyGroup.Designer.cs">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Staff.cs">
+    <Compile Include="View\UserControl\Admin\Table\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Component\Table\Staff.Designer.cs">
+    <Compile Include="View\UserControl\Admin\Table\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\Layout\Table.cs">
+    <Compile Include="View\UserControl\Admin\Table\Layout.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\Layout\Table.Designer.cs">
-      <DependentUpon>Table.cs</DependentUpon>
+    <Compile Include="View\UserControl\Admin\Table\Layout.Designer.cs">
+      <DependentUpon>Layout.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -472,47 +472,47 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\Form\Insert\BiopsyGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\BiopsyGroup.resx">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Diagnose\Type1.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Diagnose\Type1.resx">
       <DependentUpon>Type1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Macro.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Macro.resx">
       <DependentUpon>Macro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\MacroGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\MacroGroup.resx">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Micro.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\MicroGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\MicroGroup.resx">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Session.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Session.resx">
       <DependentUpon>Session.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Role.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Role.resx">
       <DependentUpon>Role.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Permission.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Permission.resx">
       <DependentUpon>Permission.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Patient.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Biopsy.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Biopsy.resx">
       <DependentUpon>Biopsy.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Insert\Staff.resx">
+    <EmbeddedResource Include="View\Form\Admin\Insert\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -532,84 +532,84 @@
       <DependentUpon>SelectSession.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Biopsy.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Biopsy.resx">
       <DependentUpon>Biopsy.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\BiopsyGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\BiopsyGroup.resx">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Diagnose\Type1.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Diagnose\Type1.resx">
       <DependentUpon>Type1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Macro.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Macro.resx">
       <DependentUpon>Macro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\MacroGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\MacroGroup.resx">
       <DependentUpon>MacroGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Micro.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\MicroGroup.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\MicroGroup.resx">
       <DependentUpon>MicroGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Patient.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Permission.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Permission.resx">
       <DependentUpon>Permission.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Role.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Role.resx">
       <DependentUpon>Role.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Session.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Session.resx">
       <DependentUpon>Session.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\Update\Staff.resx">
+    <EmbeddedResource Include="View\Form\Admin\Update\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Brand.resx">
+    <EmbeddedResource Include="View\UserControl\Brand.resx">
       <DependentUpon>Brand.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Biopsy.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Biopsy.resx">
       <DependentUpon>Biopsy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Diagnose\Type1.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Diagnose\Type1.resx">
       <DependentUpon>Type1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Macro.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Macro.resx">
       <DependentUpon>Macro.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Micro.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Staff.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Layout\Table.resx">
-      <DependentUpon>Table.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Layout.resx">
+      <DependentUpon>Layout.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Patient.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Permission.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Permission.resx">
       <DependentUpon>Permission.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\Component\Table\Role.resx">
+    <EmbeddedResource Include="View\UserControl\Admin\Table\Role.resx">
       <DependentUpon>Role.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -652,6 +652,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Form\Technician\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -84,35 +84,35 @@ namespace PMSX.View.Form {
     }
 
     private void StaffButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Staff>();
+      AddUserControl<UserControl.Admin.Table.Staff>();
     }
 
     private void RoleButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Role>();
+      AddUserControl<UserControl.Admin.Table.Role>();
     }
 
     private void PermissionButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Permission>();
+      AddUserControl<UserControl.Admin.Table.Permission>();
     }
 
     private void PatientButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Patient>();
+      AddUserControl<UserControl.Admin.Table.Patient>();
     }
 
     private void SessionButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Session>();
+      AddUserControl<UserControl.Admin.Table.Session>();
     }
 
     private void BiopsyButton_Click(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Biopsy>();
+      AddUserControl<UserControl.Admin.Table.Biopsy>();
     }
 
     private void BiopsyGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.BiopsyGroup>();
+      AddUserControl<UserControl.Admin.Table.BiopsyGroup>();
     }
 
     private void DiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Diagnose.Type1>();
+      AddUserControl<UserControl.Admin.Table.Diagnose.Type1>();
     }
 
     private void DiagnoseType2Button_ItemClick(object sender, ItemClickEventArgs e) {
@@ -124,19 +124,19 @@ namespace PMSX.View.Form {
     }
 
     private void MacroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.MacroGroup>();
+      AddUserControl<UserControl.Admin.Table.MacroGroup>();
     }
 
     private void MacroButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Macro>();
+      AddUserControl<UserControl.Admin.Table.Macro>();
     }
 
     private void MicroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.MicroGroup>();
+      AddUserControl<UserControl.Admin.Table.MicroGroup>();
     }
 
     private void MicroButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Component.Table.Micro>();
+      AddUserControl<UserControl.Admin.Table.Micro>();
     }
   }
 }

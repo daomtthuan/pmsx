@@ -10,7 +10,7 @@ namespace PMSX.View.Form {
       string year = DateTime.Now.Year.ToString();
       copyrightLabel.Text = "Copyright © " + (year == "2020" ? "2020" : ("2020-" + year)) + " Daomtthuan";
 
-      brandPanel.Controls.Add(new UserControl.Component.Brand() {
+      brandPanel.Controls.Add(new UserControl.Brand() {
         Dock = DockStyle.Fill
       });
     }
