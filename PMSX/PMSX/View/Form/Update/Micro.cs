@@ -15,7 +15,9 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+    }
 
+    private void Micro_Load(object sender, EventArgs e) {
       descriptionInput.Text = micros.Description;
       stateRadio.EditValue = micros.GetStateNumber();
       commentInput.Text = micros.Comment;

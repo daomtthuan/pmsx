@@ -13,7 +13,10 @@ namespace PMSX.Controller.Diagnose {
       string query = @"
           select
             pmsx_diagnoseType1.*,
+            biopsy_groupId as diagnose_biopsyGroupId,
+            macro_groupId as diagnose_macroGroupId,
             macro_code as diagnose_macroCode,
+            micro_groupId as diagnose_microGroupId,
             micro_code as diagnose_microCode,
             biopsy_code as diagnose_biopsyCode,
             patient_name as diagnose_patientName
@@ -44,7 +47,10 @@ namespace PMSX.Controller.Diagnose {
       string query = @"
           select
             pmsx_diagnoseType1.*,
+            biopsy_groupId as diagnose_biopsyGroupId,
+            macro_groupId as diagnose_macroGroupId,
             macro_code as diagnose_macroCode,
+            micro_groupId as diagnose_microGroupId,
             micro_code as diagnose_microCode,
             biopsy_code as diagnose_biopsyCode,
             patient_name as diagnose_patientName
@@ -117,6 +123,69 @@ namespace PMSX.Controller.Diagnose {
 
       Utils.Database.Instance.ExcuteNon(query, parameters);
       return true;
+    }
+
+    public bool Update(string id, string code, string biopsyId, string macroId, string macroDescription, string microId, string microDescription, string conclusion, DateTime readDate, string comment, int state) {
+      List<Model.Diagnose.Type1> diagnoses = SelectByCode(code);
+      if (diagnoses.Count > 0) {
+        if (diagnoses[0].Id != id) {
+          return false;
+        }
+      }
+
+      string query = @"
+        update pmsx_diagnoseType1
+        set 
+	        diagnose_code = @code,
+	        diagnose_biopsyId = @biopsyId,
+          diagnose_macroId = @macroId,
+          diagnose_macroDescription = @macroDescription,
+          diagnose_microId = @microId,
+          diagnose_microDescription = @microDescription,
+          diagnose_conclusion = @conclusion,
+          diagnose_readDate = @readDate,
+          diagnose_comment = @comment,
+          diagnose_state = @state,
+          diagnose_updateStaffId = @updateStaffId,
+	        diagnose_updateDatetime = getdate()                    
+        where diagnose_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@code", code),
+        new SqlParameter("@biopsyId", biopsyId),
+        macroId.Length > 0 ? new SqlParameter("@macroId", macroId) : new SqlParameter("@macroId", DBNull.Value),
+        new SqlParameter("@macroDescription", macroDescription),
+        microId.Length > 0 ? new SqlParameter("@microId", microId) : new SqlParameter("@microId", DBNull.Value),
+        new SqlParameter("@microDescription", microDescription),
+        new SqlParameter("@conclusion", conclusion),
+        new SqlParameter("@readDate", readDate),
+        comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
+        new SqlParameter("@state", state),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.ExcuteNon(query, parameters);
+      return true;
+    }
+
+    public void Disable(string id) {
+      string query = @"
+        update pmsx_diagnoseType1
+        set 
+          diagnose_state = 0,
+          diagnose_updateStaffId = @updateStaffId,
+	        diagnose_updateDatetime = getdate()                    
+        where diagnose_id = @id
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
+        new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
+      };
+
+      Utils.Database.Instance.ExcuteNon(query, parameters);
     }
   }
 }

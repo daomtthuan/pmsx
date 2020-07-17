@@ -203,6 +203,7 @@
       this.Name = "Staff";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Sửa nhân viên";
+      this.Load += new System.EventHandler(this.Staff_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();

@@ -69,10 +69,10 @@
       // 
       this.updateButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.updateButton.Appearance.Options.UseBackColor = true;
-      this.updateButton.Location = new System.Drawing.Point(8, 497);
+      this.updateButton.Location = new System.Drawing.Point(12, 495);
       this.updateButton.Name = "updateButton";
-      this.updateButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-      this.updateButton.Size = new System.Drawing.Size(484, 36);
+      this.updateButton.Padding = new System.Windows.Forms.Padding(5);
+      this.updateButton.Size = new System.Drawing.Size(476, 36);
       this.updateButton.StyleController = this.layoutControl;
       this.updateButton.TabIndex = 6;
       this.updateButton.Text = "Sửa";
@@ -80,15 +80,15 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(8, 307);
+      this.commentInput.Location = new System.Drawing.Point(12, 309);
       this.commentInput.Name = "commentInput";
-      this.commentInput.Size = new System.Drawing.Size(484, 176);
+      this.commentInput.Size = new System.Drawing.Size(476, 172);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
       // stateRadio
       // 
-      this.stateRadio.Location = new System.Drawing.Point(8, 206);
+      this.stateRadio.Location = new System.Drawing.Point(12, 208);
       this.stateRadio.Name = "stateRadio";
       this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
       this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
@@ -96,15 +96,15 @@
       this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá")});
-      this.stateRadio.Size = new System.Drawing.Size(478, 30);
+      this.stateRadio.Size = new System.Drawing.Size(476, 29);
       this.stateRadio.StyleController = this.layoutControl;
       this.stateRadio.TabIndex = 8;
       // 
       // descriptionInput
       // 
-      this.descriptionInput.Location = new System.Drawing.Point(8, 67);
+      this.descriptionInput.Location = new System.Drawing.Point(12, 70);
       this.descriptionInput.Name = "descriptionInput";
-      this.descriptionInput.Size = new System.Drawing.Size(484, 112);
+      this.descriptionInput.Size = new System.Drawing.Size(476, 110);
       this.descriptionInput.StyleController = this.layoutControl;
       this.descriptionInput.TabIndex = 7;
       // 
@@ -126,9 +126,9 @@
       // updateButtonLayout
       // 
       this.updateButtonLayout.Control = this.updateButton;
-      this.updateButtonLayout.Location = new System.Drawing.Point(0, 477);
+      this.updateButtonLayout.Location = new System.Drawing.Point(0, 473);
       this.updateButtonLayout.Name = "updateButtonLayout";
-      this.updateButtonLayout.Size = new System.Drawing.Size(486, 50);
+      this.updateButtonLayout.Size = new System.Drawing.Size(480, 50);
       this.updateButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.updateButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.updateButtonLayout.TextVisible = false;
@@ -140,7 +140,7 @@
       this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.requiredLabel.Location = new System.Drawing.Point(0, 0);
       this.requiredLabel.Name = "requiredLabel";
-      this.requiredLabel.Size = new System.Drawing.Size(486, 34);
+      this.requiredLabel.Size = new System.Drawing.Size(480, 34);
       this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
       this.requiredLabel.Text = "Thông tin bắt buộc";
       this.requiredLabel.TextSize = new System.Drawing.Size(204, 20);
@@ -150,9 +150,9 @@
       this.notRequiredLabel.AllowHotTrack = false;
       this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
       this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.notRequiredLabel.Location = new System.Drawing.Point(0, 230);
+      this.notRequiredLabel.Location = new System.Drawing.Point(0, 229);
       this.notRequiredLabel.Name = "notRequiredLabel";
-      this.notRequiredLabel.Size = new System.Drawing.Size(486, 44);
+      this.notRequiredLabel.Size = new System.Drawing.Size(480, 44);
       this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
       this.notRequiredLabel.Text = "Thông tin không bắt buộc";
       this.notRequiredLabel.TextSize = new System.Drawing.Size(204, 20);
@@ -160,9 +160,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 274);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 273);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(486, 203);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 200);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(204, 21);
@@ -170,11 +170,11 @@
       // stateRadioLayout
       // 
       this.stateRadioLayout.Control = this.stateRadio;
-      this.stateRadioLayout.Location = new System.Drawing.Point(0, 173);
+      this.stateRadioLayout.Location = new System.Drawing.Point(0, 172);
       this.stateRadioLayout.MaxSize = new System.Drawing.Size(480, 57);
       this.stateRadioLayout.MinSize = new System.Drawing.Size(480, 57);
       this.stateRadioLayout.Name = "stateRadioLayout";
-      this.stateRadioLayout.Size = new System.Drawing.Size(486, 57);
+      this.stateRadioLayout.Size = new System.Drawing.Size(480, 57);
       this.stateRadioLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.stateRadioLayout.Text = "Trạng thái";
       this.stateRadioLayout.TextLocation = DevExpress.Utils.Locations.Top;
@@ -188,7 +188,7 @@
       this.descriptionInputLayout.Name = "descriptionInputLayout";
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.descriptionInputLayout.Size = new System.Drawing.Size(486, 139);
+      this.descriptionInputLayout.Size = new System.Drawing.Size(480, 138);
       this.descriptionInputLayout.Text = "Mô tả";
       this.descriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.descriptionInputLayout.TextSize = new System.Drawing.Size(204, 21);
@@ -205,6 +205,7 @@
       this.Name = "Micro";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Sửa vi thể";
+      this.Load += new System.EventHandler(this.Micro_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();

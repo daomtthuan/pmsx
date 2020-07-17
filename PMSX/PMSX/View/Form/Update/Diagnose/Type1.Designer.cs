@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.Form.Insert.Diagnose {
+﻿namespace PMSX.View.Form.Update.Diagnose {
     partial class Type1 {
         /// <summary>
         /// Required designer variable.
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-      this.insertButton = new DevExpress.XtraEditors.SimpleButton();
+      this.updateButton = new DevExpress.XtraEditors.SimpleButton();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.macroSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.readDateSelect = new DevExpress.XtraEditors.DateEdit();
@@ -37,6 +37,7 @@
       this.conclusionInput = new DevExpress.XtraEditors.MemoEdit();
       this.macroGroupSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.microGroupSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.sampleLabel = new DevExpress.XtraLayout.SimpleLabelItem();
@@ -50,10 +51,11 @@
       this.macroDescriptionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.microSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.biopsySelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.conclusionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.microDescriptionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.macroGroupSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.microGroupSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.stateRadioLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.conclusionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
@@ -69,6 +71,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).BeginInit();
@@ -82,16 +85,17 @@
       ((System.ComponentModel.ISupportInitialize)(this.macroDescriptionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.microSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.biopsySelectLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.microDescriptionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
       // 
       this.layoutControl.AllowCustomization = false;
-      this.layoutControl.Controls.Add(this.insertButton);
+      this.layoutControl.Controls.Add(this.updateButton);
       this.layoutControl.Controls.Add(this.commentInput);
       this.layoutControl.Controls.Add(this.macroSelect);
       this.layoutControl.Controls.Add(this.readDateSelect);
@@ -104,6 +108,7 @@
       this.layoutControl.Controls.Add(this.conclusionInput);
       this.layoutControl.Controls.Add(this.macroGroupSelect);
       this.layoutControl.Controls.Add(this.microGroupSelect);
+      this.layoutControl.Controls.Add(this.stateRadio);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
@@ -113,25 +118,25 @@
       this.layoutControl.TabIndex = 1;
       this.layoutControl.Text = "layoutControl";
       // 
-      // insertButton
+      // updateButton
       // 
-      this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
-      this.insertButton.Appearance.Options.UseBackColor = true;
-      this.insertButton.Location = new System.Drawing.Point(12, 772);
-      this.insertButton.Name = "insertButton";
-      this.insertButton.Padding = new System.Windows.Forms.Padding(5);
-      this.insertButton.Size = new System.Drawing.Size(1176, 36);
-      this.insertButton.StyleController = this.layoutControl;
-      this.insertButton.TabIndex = 6;
-      this.insertButton.Text = "Thêm";
-      this.insertButton.Click += new System.EventHandler(this.InsertButton_Click);
+      this.updateButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+      this.updateButton.Appearance.Options.UseBackColor = true;
+      this.updateButton.Location = new System.Drawing.Point(12, 772);
+      this.updateButton.Name = "updateButton";
+      this.updateButton.Padding = new System.Windows.Forms.Padding(5);
+      this.updateButton.Size = new System.Drawing.Size(1176, 36);
+      this.updateButton.StyleController = this.layoutControl;
+      this.updateButton.TabIndex = 6;
+      this.updateButton.Text = "Sửa";
+      this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 665);
+      this.commentInput.Location = new System.Drawing.Point(12, 688);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(1176, 93);
+      this.commentInput.Size = new System.Drawing.Size(1176, 70);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
@@ -153,7 +158,7 @@
       // readDateSelect
       // 
       this.readDateSelect.EditValue = null;
-      this.readDateSelect.Location = new System.Drawing.Point(12, 564);
+      this.readDateSelect.Location = new System.Drawing.Point(12, 530);
       this.readDateSelect.Name = "readDateSelect";
       this.readDateSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -229,7 +234,7 @@
       this.macroDescriptionInput.Location = new System.Drawing.Point(12, 340);
       this.macroDescriptionInput.Name = "macroDescriptionInput";
       this.macroDescriptionInput.Properties.MaxLength = 500;
-      this.macroDescriptionInput.Size = new System.Drawing.Size(586, 97);
+      this.macroDescriptionInput.Size = new System.Drawing.Size(586, 67);
       this.macroDescriptionInput.StyleController = this.layoutControl;
       this.macroDescriptionInput.TabIndex = 7;
       // 
@@ -238,16 +243,16 @@
       this.microDescriptionInput.Location = new System.Drawing.Point(602, 340);
       this.microDescriptionInput.Name = "microDescriptionInput";
       this.microDescriptionInput.Properties.MaxLength = 500;
-      this.microDescriptionInput.Size = new System.Drawing.Size(586, 97);
+      this.microDescriptionInput.Size = new System.Drawing.Size(586, 67);
       this.microDescriptionInput.StyleController = this.layoutControl;
       this.microDescriptionInput.TabIndex = 7;
       // 
       // conclusionInput
       // 
-      this.conclusionInput.Location = new System.Drawing.Point(12, 465);
+      this.conclusionInput.Location = new System.Drawing.Point(12, 435);
       this.conclusionInput.Name = "conclusionInput";
       this.conclusionInput.Properties.MaxLength = 500;
-      this.conclusionInput.Size = new System.Drawing.Size(1176, 71);
+      this.conclusionInput.Size = new System.Drawing.Size(1176, 67);
       this.conclusionInput.StyleController = this.layoutControl;
       this.conclusionInput.TabIndex = 7;
       // 
@@ -281,6 +286,20 @@
       this.microGroupSelect.TabIndex = 4;
       this.microGroupSelect.EditValueChanged += new System.EventHandler(this.MicroGroupSelect_EditValueChanged);
       // 
+      // stateRadio
+      // 
+      this.stateRadio.Location = new System.Drawing.Point(12, 586);
+      this.stateRadio.Name = "stateRadio";
+      this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
+      this.stateRadio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+      this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá")});
+      this.stateRadio.Size = new System.Drawing.Size(476, 29);
+      this.stateRadio.StyleController = this.layoutControl;
+      this.stateRadio.TabIndex = 8;
+      // 
       // Root
       // 
       this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -298,17 +317,18 @@
             this.macroDescriptionInputLayout,
             this.microSelectLayout,
             this.biopsySelectLayout,
-            this.conclusionInputLayout,
             this.microDescriptionInputLayout,
             this.macroGroupSelectLayout,
-            this.microGroupSelectLayout});
+            this.microGroupSelectLayout,
+            this.stateRadioLayout,
+            this.conclusionInputLayout});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(1200, 820);
       this.Root.TextVisible = false;
       // 
       // insertButtonLayout
       // 
-      this.insertButtonLayout.Control = this.insertButton;
+      this.insertButtonLayout.Control = this.updateButton;
       this.insertButtonLayout.Location = new System.Drawing.Point(0, 750);
       this.insertButtonLayout.Name = "insertButtonLayout";
       this.insertButtonLayout.Size = new System.Drawing.Size(1180, 50);
@@ -333,7 +353,7 @@
       this.notRequiredLabel.AllowHotTrack = false;
       this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.notRequiredLabel.Location = new System.Drawing.Point(0, 584);
+      this.notRequiredLabel.Location = new System.Drawing.Point(0, 607);
       this.notRequiredLabel.Name = "notRequiredLabel";
       this.notRequiredLabel.Size = new System.Drawing.Size(1180, 45);
       this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
@@ -343,9 +363,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 629);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 652);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(1180, 121);
+      this.commentInputLayout.Size = new System.Drawing.Size(1180, 98);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -354,7 +374,7 @@
       // 
       this.readDateSelectLayout.Control = this.readDateSelect;
       this.readDateSelectLayout.CustomizationFormText = "Kỹ thuật viên";
-      this.readDateSelectLayout.Location = new System.Drawing.Point(0, 528);
+      this.readDateSelectLayout.Location = new System.Drawing.Point(0, 494);
       this.readDateSelectLayout.Name = "readDateSelectLayout";
       this.readDateSelectLayout.Size = new System.Drawing.Size(1180, 56);
       this.readDateSelectLayout.Text = "Ngày đọc kết quả";
@@ -413,7 +433,7 @@
       this.macroDescriptionInputLayout.CustomizationFormText = "Mô tả đại thể";
       this.macroDescriptionInputLayout.Location = new System.Drawing.Point(0, 304);
       this.macroDescriptionInputLayout.Name = "macroDescriptionInputLayout";
-      this.macroDescriptionInputLayout.Size = new System.Drawing.Size(590, 125);
+      this.macroDescriptionInputLayout.Size = new System.Drawing.Size(590, 95);
       this.macroDescriptionInputLayout.Text = "Mô tả đại thể";
       this.macroDescriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.macroDescriptionInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -440,24 +460,13 @@
       this.biopsySelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.biopsySelectLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // conclusionInputLayout
-      // 
-      this.conclusionInputLayout.Control = this.conclusionInput;
-      this.conclusionInputLayout.CustomizationFormText = "Kết luận";
-      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 429);
-      this.conclusionInputLayout.Name = "conclusionInputLayout";
-      this.conclusionInputLayout.Size = new System.Drawing.Size(1180, 99);
-      this.conclusionInputLayout.Text = "Kết luận";
-      this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.conclusionInputLayout.TextSize = new System.Drawing.Size(190, 21);
-      // 
       // microDescriptionInputLayout
       // 
       this.microDescriptionInputLayout.Control = this.microDescriptionInput;
       this.microDescriptionInputLayout.CustomizationFormText = "Mô tả vi thể";
       this.microDescriptionInputLayout.Location = new System.Drawing.Point(590, 304);
       this.microDescriptionInputLayout.Name = "microDescriptionInputLayout";
-      this.microDescriptionInputLayout.Size = new System.Drawing.Size(590, 125);
+      this.microDescriptionInputLayout.Size = new System.Drawing.Size(590, 95);
       this.microDescriptionInputLayout.Text = "Mô tả vi thể";
       this.microDescriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.microDescriptionInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -484,9 +493,34 @@
       this.microGroupSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.microGroupSelectLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
+      // stateRadioLayout
+      // 
+      this.stateRadioLayout.Control = this.stateRadio;
+      this.stateRadioLayout.CustomizationFormText = "Trạng thái";
+      this.stateRadioLayout.Location = new System.Drawing.Point(0, 550);
+      this.stateRadioLayout.MaxSize = new System.Drawing.Size(480, 57);
+      this.stateRadioLayout.MinSize = new System.Drawing.Size(480, 57);
+      this.stateRadioLayout.Name = "stateRadioLayout";
+      this.stateRadioLayout.Size = new System.Drawing.Size(1180, 57);
+      this.stateRadioLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.stateRadioLayout.Text = "Trạng thái";
+      this.stateRadioLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.stateRadioLayout.TextSize = new System.Drawing.Size(190, 21);
+      // 
+      // conclusionInputLayout
+      // 
+      this.conclusionInputLayout.Control = this.conclusionInput;
+      this.conclusionInputLayout.CustomizationFormText = "Kết luận";
+      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 399);
+      this.conclusionInputLayout.Name = "conclusionInputLayout";
+      this.conclusionInputLayout.Size = new System.Drawing.Size(1180, 95);
+      this.conclusionInputLayout.Text = "Kết luận";
+      this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
+      this.conclusionInputLayout.TextSize = new System.Drawing.Size(190, 21);
+      // 
       // Type1
       // 
-      this.AcceptButton = this.insertButton;
+      this.AcceptButton = this.updateButton;
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
@@ -495,7 +529,7 @@
       this.MaximizeBox = false;
       this.Name = "Type1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm kết quả chuẩn đoán loại 1";
+      this.Text = "PMSX - Sửa kết quả chuẩn đoán loại 1";
       this.Load += new System.EventHandler(this.Biopsy_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
@@ -512,6 +546,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.conclusionInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).EndInit();
@@ -525,10 +560,11 @@
       ((System.ComponentModel.ISupportInitialize)(this.macroDescriptionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.microSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.biopsySelectLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.microDescriptionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.conclusionInputLayout)).EndInit();
       this.ResumeLayout(false);
 
         }
@@ -536,7 +572,7 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl;
-        private DevExpress.XtraEditors.SimpleButton insertButton;
+        private DevExpress.XtraEditors.SimpleButton updateButton;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem insertButtonLayout;
         private DevExpress.XtraEditors.MemoEdit commentInput;
@@ -566,5 +602,7 @@
     private DevExpress.XtraLayout.LayoutControlItem macroGroupSelectLayout;
     private DevExpress.XtraEditors.LookUpEdit microGroupSelect;
     private DevExpress.XtraLayout.LayoutControlItem microGroupSelectLayout;
+    private DevExpress.XtraEditors.RadioGroup stateRadio;
+    private DevExpress.XtraLayout.LayoutControlItem stateRadioLayout;
   }
 }

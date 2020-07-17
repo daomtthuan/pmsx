@@ -17,7 +17,9 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+    }
 
+    private void BiopsyGroup_Load(object sender, EventArgs e) {
       codeInput.Text = biopsyGroup.Code;
       stateRadio.EditValue = biopsyGroup.GetStateNumber();
       commentInput.Text = biopsyGroup.Comment;

@@ -16,7 +16,9 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+    }
 
+    private void Macro_Load(object sender, EventArgs e) {
       descriptionInput.Text = macros.Description;
       stateRadio.EditValue = macros.GetStateNumber();
       commentInput.Text = macros.Comment;
@@ -25,9 +27,7 @@ namespace PMSX.View.Form.Update {
     private void UpdateButton_Click(object sender, EventArgs e) {
       if (descriptionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
-      }*/ else {
+      } else {
         Controller.Macro.Instance.Update(macros.Code, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       }

@@ -11,7 +11,7 @@ namespace PMSX.View.UserControl.Component.Table.Diagnose {
 
       protected override void OnLoad() {
         Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Diagnose.Type1.Instance.SelectAll(), new[] {
-          "Code", "PatientName", "BiopsyCode", "MacroCode", "MicroCode", "Conclusion", "ReadDate", "Sate", "CreateDatetime", "UpdateDatetime"
+          "Code", "PatientName", "BiopsyCode", "MacroCode", "MicroCode", "Conclusion", "ReadDate", "State", "CreateDatetime", "UpdateDatetime"
         });
       }
 
@@ -26,12 +26,25 @@ namespace PMSX.View.UserControl.Component.Table.Diagnose {
       }
 
       protected override void OnUpdate() {
-        new Form.Update.Staff((Model.Staff)GetSelectedRow()).ShowDialog();
-        OnLoad();
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
+        List<Model.BiopsyGroup> biopsyGroups = Controller.BiopsyGroup.Instance.SelectAll();
+        if (biopsyGroups.Count == 0) {
+          Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhóm sinh thiết nào.");
+        } else {
+          new Form.Update.Diagnose.Type1((Model.Diagnose.Type1)GetSelectedRow(), Controller.MacroGroup.Instance.SelectAll(), Controller.MicroGroup.Instance.SelectAll(), biopsyGroups).ShowDialog();
+          OnLoad();
+        }     
       }
 
       protected override void OnDisabled() {
-        Controller.Staff.Instance.Disable(((Model.Staff)GetSelectedRow()).Id);
+        if (GetSelectedRow() == null) {
+          return;
+        }
+
+        Controller.Diagnose.Type1.Instance.Disable(((Model.Diagnose.Type1)GetSelectedRow()).Id);
         OnLoad();
       }
     }

@@ -17,7 +17,9 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+    }
 
+    private void Staff_Load(object sender, EventArgs e) {
       nameInput.Text = staffs.Name;
       stateRadio.EditValue = staffs.GetStateNumber();
       commentInput.Text = staffs.Comment;

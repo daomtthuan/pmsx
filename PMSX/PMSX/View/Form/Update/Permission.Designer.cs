@@ -178,6 +178,7 @@
       this.Name = "Permission";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Sửa quyền nhân viên";
+      this.Load += new System.EventHandler(this.Permission_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();

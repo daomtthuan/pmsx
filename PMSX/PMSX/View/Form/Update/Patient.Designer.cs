@@ -303,6 +303,7 @@
       this.Name = "Patient";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Sửa bệnh nhân";
+      this.Load += new System.EventHandler(this.Patient_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();

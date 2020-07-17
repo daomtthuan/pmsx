@@ -206,6 +206,7 @@
       this.Name = "BiopsyGroup";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Sửa nhóm sinh thiết";
+      this.Load += new System.EventHandler(this.BiopsyGroup_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();

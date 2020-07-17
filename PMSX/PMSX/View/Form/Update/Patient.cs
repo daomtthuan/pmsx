@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.Form.Update {
   public partial class Patient : XtraForm {
-    private Model.Patient patient;
+    private readonly Model.Patient patient;
 
     public Patient(Model.Patient patient) {
       InitializeComponent();
@@ -20,7 +20,9 @@ namespace PMSX.View.Form.Update {
 
       yearSelect.Properties.MaxValue = DateTime.Now;
       yearSelect.Properties.MinValue = DateTime.Now.AddYears(-150);
+    }
 
+    private void Patient_Load(object sender, EventArgs e) {
       nameInput.Text = patient.Name;
       yearsOldInput.EditValue = patient.YearsOld;
       addressInput.Text = patient.Address;

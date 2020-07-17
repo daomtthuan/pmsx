@@ -16,7 +16,9 @@ namespace PMSX.View.Form.Update {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
+    }
 
+    private void Permission_Load(object sender, EventArgs e) {
       stateRadio.EditValue = permissions.GetStateNumber();
       commentInput.Text = permissions.Comment;
     }
