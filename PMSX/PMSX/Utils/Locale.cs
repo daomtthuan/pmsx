@@ -43,6 +43,15 @@ namespace PMSX.Utils {
         { "PatientName", "Tên bệnh nhân" },
         { "GrossDoctorName", "Tên bác sĩ gọt" },
         { "SessionName", "Tên phiên làm việc" },
+        { "MacroId", "Mã định danh đại thể" },
+        { "MacroDescription", "Mô tả đại thể" },
+        { "MicroId", "Mã định danh vi thể" },
+        { "MicroDescription", "Mô tả vi thể" },
+        { "ReadDate", "Ngày đọc kết quả" },
+        { "BiopsyId", "Mã định danh mẫu sinh thiết" },
+        { "MacroCode", "Mã số đại thể" },
+        { "MicroCode", "Mã số vi thể" },
+        { "BiopsyCode", "Mã số mẫu sinh thiết" },
       };
     }
 

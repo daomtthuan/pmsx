@@ -143,6 +143,12 @@
     <Compile Include="View\Form\Insert\BiopsyGroup.Designer.cs">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form\Insert\Diagnose\Type1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\Insert\Diagnose\Type1.Designer.cs">
+      <DependentUpon>Type1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form\Insert\Micro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,78 @@
     <Compile Include="View\UserControl\Component\Brand.Designer.cs">
       <DependentUpon>Brand.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl\Component\Details\Biopsy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Biopsy.Designer.cs">
+      <DependentUpon>Biopsy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\BiopsyGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\BiopsyGroup.Designer.cs">
+      <DependentUpon>BiopsyGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Diagnose\Type1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Diagnose\Type1.Designer.cs">
+      <DependentUpon>Type1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Macro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Macro.Designer.cs">
+      <DependentUpon>Macro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\MacroGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\MacroGroup.Designer.cs">
+      <DependentUpon>MacroGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Micro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Micro.Designer.cs">
+      <DependentUpon>Micro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\MicroGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\MicroGroup.Designer.cs">
+      <DependentUpon>MicroGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Patient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Permission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Permission.Designer.cs">
+      <DependentUpon>Permission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Role.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Role.Designer.cs">
+      <DependentUpon>Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Session.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Session.Designer.cs">
+      <DependentUpon>Session.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\Component\Details\Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl\Component\Table\Diagnose\Type1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,6 +468,10 @@
     </Compile>
     <EmbeddedResource Include="View\Form\Insert\BiopsyGroup.resx">
       <DependentUpon>BiopsyGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\Insert\Diagnose\Type1.resx">
+      <DependentUpon>Type1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form\Insert\Macro.resx">

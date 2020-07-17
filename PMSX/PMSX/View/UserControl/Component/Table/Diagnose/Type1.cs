@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Component.Table.Diagnose {
@@ -9,14 +10,19 @@ namespace PMSX.View.UserControl.Component.Table.Diagnose {
       }
 
       protected override void OnLoad() {
-        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Staff.Instance.SelectAll(), new[] {
-          "Username", "Name", "State", "CreateDatetime", "UpdateDatetime"
+        Utils.View.Grid.Instance.Load(GridControl, GridView, Controller.Diagnose.Type1.Instance.SelectAll(), new[] {
+          "Code", "PatientName", "BiopsyCode", "MacroCode", "MicroCode", "Conclusion", "ReadDate", "Sate", "CreateDatetime", "UpdateDatetime"
         });
       }
 
       protected override void OnInsert() {
-        new Form.Insert.Staff().ShowDialog();
-        OnLoad();
+        List<Model.BiopsyGroup> biopsyGroups = Controller.BiopsyGroup.Instance.SelectAll();
+        if (biopsyGroups.Count == 0) {
+          Utils.View.MessageBox.Instance.Warning("Không thể thêm.\nKhông tìm thấy nhóm sinh thiết nào.");
+        } else {
+          new Form.Insert.Diagnose.Type1(Controller.MacroGroup.Instance.SelectAll(), Controller.MicroGroup.Instance.SelectAll(), biopsyGroups).ShowDialog();
+          OnLoad();
+        }
       }
 
       protected override void OnUpdate() {

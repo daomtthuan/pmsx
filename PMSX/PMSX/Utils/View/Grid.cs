@@ -20,7 +20,7 @@ namespace PMSX.Utils.View {
       }
     }
 
-    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 0) {
+    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 1) {
       select.Properties.DataSource = models;
       select.Properties.PopulateColumns();
 
@@ -35,7 +35,7 @@ namespace PMSX.Utils.View {
       select.ItemIndex = selectIndex;
     }
 
-    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, object editValue) {
+    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, object selectValue) {
       select.Properties.DataSource = models;
       select.Properties.PopulateColumns();
 
@@ -47,7 +47,7 @@ namespace PMSX.Utils.View {
       select.Properties.ValueMember = valueFieldName;
       select.Properties.DisplayMember = displayFieldNames;
 
-      select.EditValue = editValue;
+      select.EditValue = selectValue;
     }
   }
 }

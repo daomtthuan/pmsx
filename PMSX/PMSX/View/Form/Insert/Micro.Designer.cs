@@ -72,10 +72,10 @@
       // 
       // codeInput
       // 
-      this.codeInput.Location = new System.Drawing.Point(8, 67);
+      this.codeInput.Location = new System.Drawing.Point(12, 70);
       this.codeInput.Name = "codeInput";
       this.codeInput.Properties.MaxLength = 100;
-      this.codeInput.Size = new System.Drawing.Size(484, 28);
+      this.codeInput.Size = new System.Drawing.Size(476, 28);
       this.codeInput.StyleController = this.layoutControl;
       this.codeInput.TabIndex = 5;
       // 
@@ -83,10 +83,10 @@
       // 
       this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.insertButton.Appearance.Options.UseBackColor = true;
-      this.insertButton.Location = new System.Drawing.Point(8, 524);
+      this.insertButton.Location = new System.Drawing.Point(12, 522);
       this.insertButton.Name = "insertButton";
-      this.insertButton.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-      this.insertButton.Size = new System.Drawing.Size(484, 36);
+      this.insertButton.Padding = new System.Windows.Forms.Padding(5);
+      this.insertButton.Size = new System.Drawing.Size(476, 36);
       this.insertButton.StyleController = this.layoutControl;
       this.insertButton.TabIndex = 6;
       this.insertButton.Text = "Thêm";
@@ -94,28 +94,28 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(8, 389);
+      this.commentInput.Location = new System.Drawing.Point(12, 391);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(484, 121);
+      this.commentInput.Size = new System.Drawing.Size(476, 117);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
       // descriptionInput
       // 
-      this.descriptionInput.Location = new System.Drawing.Point(8, 122);
+      this.descriptionInput.Location = new System.Drawing.Point(12, 126);
       this.descriptionInput.Name = "descriptionInput";
       this.descriptionInput.Properties.MaxLength = 500;
-      this.descriptionInput.Size = new System.Drawing.Size(484, 87);
+      this.descriptionInput.Size = new System.Drawing.Size(476, 85);
       this.descriptionInput.StyleController = this.layoutControl;
       this.descriptionInput.TabIndex = 7;
       // 
       // conclusionInput
       // 
-      this.conclusionInput.Location = new System.Drawing.Point(8, 236);
+      this.conclusionInput.Location = new System.Drawing.Point(12, 239);
       this.conclusionInput.Name = "conclusionInput";
       this.conclusionInput.Properties.MaxLength = 500;
-      this.conclusionInput.Size = new System.Drawing.Size(484, 82);
+      this.conclusionInput.Size = new System.Drawing.Size(476, 80);
       this.conclusionInput.StyleController = this.layoutControl;
       this.conclusionInput.TabIndex = 7;
       // 
@@ -140,17 +140,17 @@
       this.codeInputLayout.Control = this.codeInput;
       this.codeInputLayout.Location = new System.Drawing.Point(0, 34);
       this.codeInputLayout.Name = "codeInputLayout";
-      this.codeInputLayout.Size = new System.Drawing.Size(486, 55);
-      this.codeInputLayout.Text = "Mã vi thể";
+      this.codeInputLayout.Size = new System.Drawing.Size(480, 56);
+      this.codeInputLayout.Text = "Mã số";
       this.codeInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.codeInputLayout.TextSize = new System.Drawing.Size(204, 21);
       // 
       // insertButtonLayout
       // 
       this.insertButtonLayout.Control = this.insertButton;
-      this.insertButtonLayout.Location = new System.Drawing.Point(0, 504);
+      this.insertButtonLayout.Location = new System.Drawing.Point(0, 500);
       this.insertButtonLayout.Name = "insertButtonLayout";
-      this.insertButtonLayout.Size = new System.Drawing.Size(486, 50);
+      this.insertButtonLayout.Size = new System.Drawing.Size(480, 50);
       this.insertButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.insertButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.insertButtonLayout.TextVisible = false;
@@ -162,7 +162,7 @@
       this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.requiredLabel.Location = new System.Drawing.Point(0, 0);
       this.requiredLabel.Name = "requiredLabel";
-      this.requiredLabel.Size = new System.Drawing.Size(486, 34);
+      this.requiredLabel.Size = new System.Drawing.Size(480, 34);
       this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
       this.requiredLabel.Text = "Thông tin bắt buộc";
       this.requiredLabel.TextSize = new System.Drawing.Size(204, 20);
@@ -170,9 +170,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 356);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 355);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(486, 148);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 145);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(204, 21);
@@ -183,11 +183,11 @@
       this.notrequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
       this.notrequiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.notrequiredLabel.CustomizationFormText = "Thông tin không bắt buộc";
-      this.notrequiredLabel.Location = new System.Drawing.Point(0, 312);
+      this.notrequiredLabel.Location = new System.Drawing.Point(0, 311);
       this.notrequiredLabel.Name = "notrequiredLabel";
       this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.notrequiredLabel.Size = new System.Drawing.Size(486, 44);
+      this.notrequiredLabel.Size = new System.Drawing.Size(480, 44);
       this.notrequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
       this.notrequiredLabel.Text = "Thông tin không bắt buộc";
       this.notrequiredLabel.TextSize = new System.Drawing.Size(204, 20);
@@ -196,11 +196,11 @@
       // 
       this.descriptionInputLayout.Control = this.descriptionInput;
       this.descriptionInputLayout.CustomizationFormText = "Mô tả";
-      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 89);
+      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 90);
       this.descriptionInputLayout.Name = "descriptionInputLayout";
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.descriptionInputLayout.Size = new System.Drawing.Size(486, 114);
+      this.descriptionInputLayout.Size = new System.Drawing.Size(480, 113);
       this.descriptionInputLayout.Text = "Mô tả";
       this.descriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.descriptionInputLayout.TextSize = new System.Drawing.Size(204, 21);
@@ -213,7 +213,7 @@
       this.conclusionInputLayout.Name = "conclusionInputLayout";
       this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.conclusionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-      this.conclusionInputLayout.Size = new System.Drawing.Size(486, 109);
+      this.conclusionInputLayout.Size = new System.Drawing.Size(480, 108);
       this.conclusionInputLayout.Text = "Kết luận";
       this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.conclusionInputLayout.TextSize = new System.Drawing.Size(204, 21);

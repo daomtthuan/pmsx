@@ -30,7 +30,7 @@ namespace PMSX.View.Form.Insert {
     }
 
     private void Biopsy_Load(object sender, EventArgs e) {
-      Utils.View.Grid.Instance.Load(sessionSelect, sessions, new[] { "Name", "TechnicianName", "DoctorName" }, "Id", "Name", -1);
+      Utils.View.Grid.Instance.Load(sessionSelect, sessions, new[] { "Name", "TechnicianName", "DoctorName" }, "Id", "Name", null);
       Utils.View.Grid.Instance.Load(patientSelect, patients, new[] { "Name", "YearsOld", "State", "CreateDatetime", "UpdateDatetime" }, "Id", "Name");
       Utils.View.Grid.Instance.Load(grossDoctorSelect, grossDoctors, new[] { "Username", "Name", "State" }, "Id", "Name");
     }
