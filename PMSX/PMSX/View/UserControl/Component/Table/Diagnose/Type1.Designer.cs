@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.UserControl.Component.Table {
+﻿namespace PMSX.View.UserControl.Component.Table.Diagnose {
     partial class Type1 {
         /// <summary> 
         /// Required designer variable.

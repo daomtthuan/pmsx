@@ -25,6 +25,11 @@ namespace PMSX.View.UserControl.Layout {
 
     protected abstract void OnDisabled();
 
+    protected virtual void OnDetails() {
+      Utils.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
+    }
+
+
     protected Pattern.IModel GetSelectedRow() {
       int[] selectedIndex = GridView.GetSelectedRows();
       return selectedIndex.Length == 0 ? null : (Pattern.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
@@ -35,7 +40,7 @@ namespace PMSX.View.UserControl.Layout {
     }
 
     private void DetailsButton_Click(object sender, EventArgs e) {
-      Utils.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
+      OnDetails();
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

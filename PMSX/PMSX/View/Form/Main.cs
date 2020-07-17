@@ -112,7 +112,7 @@ namespace PMSX.View.Form {
     }
 
     private void DiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
-
+      AddUserControl<UserControl.Component.Table.Diagnose.Type1>();
     }
 
     private void DiagnoseType2Button_ItemClick(object sender, ItemClickEventArgs e) {

@@ -1,7 +1,8 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace PMSX.Model.Diagnose {
-  public class Type1: Pattern.IModel {
+  public class Type1 : Pattern.IModel {
     private readonly int state;
 
     public Type1(DataRow row) {
@@ -12,6 +13,8 @@ namespace PMSX.Model.Diagnose {
       MicroId = row["diagnose_microId"].ToString();
       MicroDescription = row["diagnose_microDescription"].ToString();
       Conclusion = row["diagnose_conclusion"].ToString();
+      ReadDate = row["diagnose_readDate"].ToString();
+      BiopsyId = row["diagnose_biopsyId"].ToString();
 
       Comment = row["biopsy_comment"].ToString();
       state = (int)row["biopsy_state"];
@@ -30,7 +33,8 @@ namespace PMSX.Model.Diagnose {
     public string MicroId { get; private set; }
     public string MicroDescription { get; private set; }
     public string Conclusion { get; private set; }
-
+    public string ReadDate { get; private set; }
+    public string BiopsyId { get; private set; }
 
     public string Comment { get; private set; }
     public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }

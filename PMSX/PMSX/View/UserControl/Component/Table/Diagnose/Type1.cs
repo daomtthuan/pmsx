@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System.Windows.Forms;
 
-namespace PMSX.View.UserControl.Component.Table {
+namespace PMSX.View.UserControl.Component.Table.Diagnose {
   public partial class Type1 : XtraUserControl {
     private class DiagnoseTable : Layout.Table {
       protected override void OnInit() {
