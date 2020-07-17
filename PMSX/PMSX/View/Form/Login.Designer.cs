@@ -166,7 +166,6 @@
       this.Name = "Login";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX - Đăng nhập";
-      this.Load += new System.EventHandler(this.Login_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.brandPanel)).EndInit();

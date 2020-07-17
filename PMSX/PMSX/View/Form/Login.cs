@@ -39,11 +39,5 @@ namespace PMSX.View.Form {
         }
       }
     }
-
-    private void Login_Load(object sender, EventArgs e) {
-      usernameInput.Text = "daomtthuan";
-      passwordInput.Text = "1";
-      LoginButton_Click(sender, e);
-    }
   }
 }
