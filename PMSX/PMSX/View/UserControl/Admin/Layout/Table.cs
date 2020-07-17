@@ -5,15 +5,15 @@ using DevExpress.XtraLayout;
 using System;
 
 namespace PMSX.View.UserControl.Admin.Layout {
-  public abstract partial class Table : XtraUserControl {
+  internal abstract partial class Table : XtraUserControl, Pattern.Interface.IView {
     public Table() {
       InitializeComponent();
       OnInit();
     }
 
-    protected GridControl GridControl { get => gridControl; }
-    protected GridView GridView { get => gridView; }
-    protected SimpleLabelItem TitleLabel { get => titleLabel; }
+    protected GridControl GridControl => gridControl;
+    protected GridView GridView => gridView;
+    protected SimpleLabelItem TitleLabel => titleLabel;
 
     protected virtual void OnInit() { }
 
@@ -29,10 +29,9 @@ namespace PMSX.View.UserControl.Admin.Layout {
       Utils.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
     }
 
-
-    protected Pattern.IModel GetSelectedRow() {
+    protected Pattern.Interface.IModel GetSelectedRow() {
       int[] selectedIndex = GridView.GetSelectedRows();
-      return selectedIndex.Length == 0 ? null : (Pattern.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
+      return selectedIndex.Length == 0 ? null : (Pattern.Interface.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
     }
 
     private void View_Load(object sender, EventArgs e) {

@@ -1,5 +1,7 @@
-﻿namespace PMSX.View.UserControl.Admin.Details {
-  public partial class Biopsy : DevExpress.XtraEditors.XtraUserControl {
+﻿using DevExpress.XtraEditors;
+
+namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class Biopsy : XtraUserControl, Pattern.Interface.IView {
     public Biopsy() {
       InitializeComponent();
     }

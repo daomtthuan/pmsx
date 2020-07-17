@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Macro : Pattern.Singleton<Macro>, Pattern.IController {
+  internal class Macro : Pattern.Class.Singleton<Macro>, Pattern.Interface.IController {
     private Macro() { }
 
     public List<Model.Macro> SelectAll(int state = -1) {

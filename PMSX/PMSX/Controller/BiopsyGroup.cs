@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class BiopsyGroup : Pattern.Singleton<BiopsyGroup>, Pattern.IController {
+  internal class BiopsyGroup : Pattern.Class.Singleton<BiopsyGroup>, Pattern.Interface.IController {
     private BiopsyGroup() { }
 
     public List<Model.BiopsyGroup> SelectAll(int state = -1) {

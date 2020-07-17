@@ -1,5 +1,7 @@
-﻿namespace PMSX.View.UserControl.Admin.Details {
-  public partial class Session : DevExpress.XtraEditors.XtraUserControl {
+﻿using DevExpress.XtraEditors;
+
+namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class Session : XtraUserControl, Pattern.Interface.IView {
     public Session() {
       InitializeComponent();
     }

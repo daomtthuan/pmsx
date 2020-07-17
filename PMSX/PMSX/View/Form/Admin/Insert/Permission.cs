@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class Permission : XtraForm {
+  internal partial class Permission : XtraForm, Pattern.Interface.IView {
     private readonly string roleId;
     private readonly List<Model.Staff> staffs;
 

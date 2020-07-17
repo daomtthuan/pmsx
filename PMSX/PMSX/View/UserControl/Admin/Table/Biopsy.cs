@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class Biopsy : XtraUserControl {
+  internal partial class Biopsy : XtraUserControl, Pattern.Interface.IView {
     private class BiopsyTable : Layout.Table {
       private string groupId;
       private string groupName;

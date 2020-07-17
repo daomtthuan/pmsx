@@ -1,5 +1,7 @@
-﻿namespace PMSX.View.UserControl.Admin.Details {
-  public partial class Micro : DevExpress.XtraEditors.XtraUserControl {
+﻿using DevExpress.XtraEditors;
+
+namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class Micro : XtraUserControl, Pattern.Interface.IView {
     public Micro() {
       InitializeComponent();
     }

@@ -45,12 +45,13 @@
       // layoutControl
       // 
       this.layoutControl.AllowCustomization = false;
+      this.layoutControl.BackColor = System.Drawing.Color.Transparent;
       this.layoutControl.Controls.Add(this.logoImage);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
       this.layoutControl.Root = this.Root;
-      this.layoutControl.Size = new System.Drawing.Size(500, 244);
+      this.layoutControl.Size = new System.Drawing.Size(371, 237);
       this.layoutControl.TabIndex = 1;
       this.layoutControl.Text = "layoutControl";
       // 
@@ -65,7 +66,7 @@
       this.logoImage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
       this.logoImage.Properties.ShowMenu = false;
       this.logoImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-      this.logoImage.Size = new System.Drawing.Size(496, 100);
+      this.logoImage.Size = new System.Drawing.Size(367, 100);
       this.logoImage.StyleController = this.layoutControl;
       this.logoImage.TabIndex = 11;
       // 
@@ -81,7 +82,7 @@
             this.logoImageLayout});
       this.Root.Name = "Root";
       this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-      this.Root.Size = new System.Drawing.Size(500, 244);
+      this.Root.Size = new System.Drawing.Size(371, 237);
       this.Root.TextVisible = false;
       // 
       // titleLabel
@@ -95,11 +96,8 @@
       this.titleLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
       this.titleLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
       this.titleLabel.Location = new System.Drawing.Point(0, 104);
-      this.titleLabel.MaxSize = new System.Drawing.Size(0, 52);
-      this.titleLabel.MinSize = new System.Drawing.Size(371, 52);
       this.titleLabel.Name = "titleLabel";
-      this.titleLabel.Size = new System.Drawing.Size(500, 52);
-      this.titleLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.titleLabel.Size = new System.Drawing.Size(371, 52);
       this.titleLabel.Text = "PMSX";
       this.titleLabel.TextSize = new System.Drawing.Size(367, 48);
       // 
@@ -115,11 +113,8 @@
       this.enSubTitleLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
       this.enSubTitleLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
       this.enSubTitleLabel.Location = new System.Drawing.Point(0, 156);
-      this.enSubTitleLabel.MaxSize = new System.Drawing.Size(0, 30);
-      this.enSubTitleLabel.MinSize = new System.Drawing.Size(371, 30);
       this.enSubTitleLabel.Name = "enSubTitleLabel";
-      this.enSubTitleLabel.Size = new System.Drawing.Size(500, 30);
-      this.enSubTitleLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.enSubTitleLabel.Size = new System.Drawing.Size(371, 30);
       this.enSubTitleLabel.Text = "PATHOLOGY MANAGEMENT SYSTEM";
       this.enSubTitleLabel.TextSize = new System.Drawing.Size(367, 26);
       // 
@@ -135,11 +130,8 @@
       this.viSubTitleLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
       this.viSubTitleLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
       this.viSubTitleLabel.Location = new System.Drawing.Point(0, 186);
-      this.viSubTitleLabel.MaxSize = new System.Drawing.Size(0, 25);
-      this.viSubTitleLabel.MinSize = new System.Drawing.Size(371, 25);
       this.viSubTitleLabel.Name = "viSubTitleLabel";
-      this.viSubTitleLabel.Size = new System.Drawing.Size(500, 25);
-      this.viSubTitleLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.viSubTitleLabel.Size = new System.Drawing.Size(371, 25);
       this.viSubTitleLabel.Text = "HỆ THỐNG QUẢN LÝ KẾT QUẢ GIẢI PHẪU BỆNH";
       this.viSubTitleLabel.TextSize = new System.Drawing.Size(367, 21);
       // 
@@ -152,13 +144,10 @@
       this.versionLabel.AppearanceItemCaption.Options.UseForeColor = true;
       this.versionLabel.AppearanceItemCaption.Options.UseTextOptions = true;
       this.versionLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+      this.versionLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
       this.versionLabel.Location = new System.Drawing.Point(0, 211);
-      this.versionLabel.MaxSize = new System.Drawing.Size(0, 33);
-      this.versionLabel.MinSize = new System.Drawing.Size(371, 33);
       this.versionLabel.Name = "versionLabel";
-      this.versionLabel.Size = new System.Drawing.Size(500, 33);
-      this.versionLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-      this.versionLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
+      this.versionLabel.Size = new System.Drawing.Size(371, 26);
       this.versionLabel.Text = "Phiên bản 1.0.0";
       this.versionLabel.TextSize = new System.Drawing.Size(367, 19);
       // 
@@ -169,7 +158,7 @@
       this.logoImageLayout.MaxSize = new System.Drawing.Size(0, 104);
       this.logoImageLayout.MinSize = new System.Drawing.Size(24, 104);
       this.logoImageLayout.Name = "logoImageLayout";
-      this.logoImageLayout.Size = new System.Drawing.Size(500, 104);
+      this.logoImageLayout.Size = new System.Drawing.Size(371, 104);
       this.logoImageLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.logoImageLayout.TextSize = new System.Drawing.Size(0, 0);
       this.logoImageLayout.TextVisible = false;
@@ -180,7 +169,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.layoutControl);
       this.Name = "Brand";
-      this.Size = new System.Drawing.Size(500, 244);
+      this.Size = new System.Drawing.Size(371, 237);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.logoImage.Properties)).EndInit();

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class MicroGroup : XtraUserControl {
+  internal partial class MicroGroup : XtraUserControl, Pattern.Interface.IView {
     private class MicroGroupTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhóm vi thể";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class Session : XtraUserControl {
+  internal partial class Session : XtraUserControl, Pattern.Interface.IView {
     private class SessionTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách phiên làm việc";

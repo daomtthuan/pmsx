@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Staff : XtraForm {
+  internal partial class Staff : XtraForm, Pattern.Interface.IView {
     private readonly Model.Staff staffs;
 
     public Staff(Model.Staff staffs) {

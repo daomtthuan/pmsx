@@ -1,5 +1,7 @@
-﻿namespace PMSX.View.UserControl.Admin.Details {
-  public partial class Role : DevExpress.XtraEditors.XtraUserControl {
+﻿using DevExpress.XtraEditors;
+
+namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class Role : XtraUserControl, Pattern.Interface.IView {
     public Role() {
       InitializeComponent();
     }

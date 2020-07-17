@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 namespace PMSX.Utils.View {
-  public class MessageBox : Pattern.Singleton<MessageBox> {
+  internal class MessageBox : Pattern.Class.Singleton<MessageBox>, Pattern.Interface.IUtil {
     private MessageBox() { }
 
     public DialogResult Error(string message) {

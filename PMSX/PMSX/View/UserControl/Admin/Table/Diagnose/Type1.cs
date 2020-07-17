@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table.Diagnose {
-  public partial class Type1 : XtraUserControl {
+  internal partial class Type1 : XtraUserControl, Pattern.Interface.IView {
     private class DiagnoseTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách kết quả chẩn đoán loại 1";

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class Role : XtraForm {
+  internal partial class Role : XtraForm, Pattern.Interface.IView {
     public Role() {
       InitializeComponent();
 

@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Micro : XtraForm {
+  internal partial class Micro : XtraForm, Pattern.Interface.IView {
     private readonly Model.Micro micros;
     public Micro(Model.Micro micros) {
       InitializeComponent();

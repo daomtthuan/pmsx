@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Permission : Pattern.Singleton<Permission>, Pattern.IController {
+  internal class Permission : Pattern.Class.Singleton<Permission>, Pattern.Interface.IController {
     private Permission() { }
 
     public List<Model.Permission> SelectByRoleId(string id, int state = -1) {

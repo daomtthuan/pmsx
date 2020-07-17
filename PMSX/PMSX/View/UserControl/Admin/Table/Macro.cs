@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class Macro : XtraUserControl {
+  internal partial class Macro : XtraUserControl, Pattern.Interface.IView {
     private class MacroTable : Layout.Table {
       private string groupId;
       private string groupName;
