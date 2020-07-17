@@ -330,15 +330,16 @@ go
 insert into pmsx_micro(micro_id, micro_code, micro_description, micro_groupId, micro_createStaffId, micro_conclusion) values ('EFA6726E-1AD4-42DF-B401-F1EFFCFA4114','D42','Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.','1EB38555-03CA-4A31-BBC3-F7070730A672', '73F2B296-EBDC-4434-892C-983E46F7CCF3', 'asdasdasd')
 go
 
-
+          declare @state int = -1
           select
             pmsx_diagnoseType1.*,
+            biopsy_groupId as diagnose_biopsyGroupId,
             macro_groupId as diagnose_macroGroupId,
             macro_code as diagnose_macroCode,
             micro_groupId as diagnose_microGroupId,
             micro_code as diagnose_microCode,
             biopsy_code as diagnose_biopsyCode,
-            patient_name as diagnose_patientName,
+            patient_name as diagnose_patientName
           from pmsx_diagnoseType1
             left outer join pmsx_macro on macro_id = diagnose_macroId
             left outer join pmsx_micro on micro_id = diagnose_microId
