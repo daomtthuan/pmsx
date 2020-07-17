@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Role : XtraUserControl {
-    private class RoleTable : Layout {
+    private class RoleTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách quyền";
       }

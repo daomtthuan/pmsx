@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table.Diagnose {
   public partial class Type1 : XtraUserControl {
-    private class DiagnoseTable : Layout {
+    private class DiagnoseTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách kết quả chẩn đoán loại 1";
       }

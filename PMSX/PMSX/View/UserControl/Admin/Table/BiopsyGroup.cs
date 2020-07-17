@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class BiopsyGroup : XtraUserControl {
-    private class BiopsyGroupTable : Layout {
+    private class BiopsyGroupTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhóm sinh thiết";
       }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Session : XtraUserControl {
-    private class SessionTable : Layout {
+    private class SessionTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách phiên làm việc";
       }

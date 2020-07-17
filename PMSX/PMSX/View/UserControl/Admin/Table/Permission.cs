@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Permission : XtraUserControl {
-    private class PermissionTable : Layout {
+    private class PermissionTable : Layout.Table {
       private string roleId;
       private string roleName;
 
