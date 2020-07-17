@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Session: Pattern.Singleton<Session>, Pattern.IController {
+  public class Session : Pattern.Singleton<Session>, Pattern.IController {
     private Session() { }
 
     public List<Model.Session> SelectAll(int state = -1) {

@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraSplashScreen;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace PMSX.Controller {
   public class Main : Pattern.Singleton<Main>, Pattern.IController {

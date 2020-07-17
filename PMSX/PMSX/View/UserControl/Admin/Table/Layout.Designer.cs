@@ -1,5 +1,5 @@
-﻿namespace PMSX.View.UserControl.Layout {
-  partial class Table {
+﻿namespace PMSX.View.UserControl.Admin.Table {
+  partial class Layout {
     /// <summary> 
     /// Required designer variable.
     /// </summary>

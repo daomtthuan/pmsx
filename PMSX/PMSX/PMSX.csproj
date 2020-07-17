@@ -655,6 +655,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\Form\Technician\" />
+    <Folder Include="View\UserControl\Technician\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

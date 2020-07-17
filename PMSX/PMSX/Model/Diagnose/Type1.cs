@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 
 namespace PMSX.Model.Diagnose {
   public class Type1 : Pattern.IModel {
@@ -48,7 +47,7 @@ namespace PMSX.Model.Diagnose {
     public string MicroCode { get; private set; }
     public string MicroDescription { get; private set; }
     public string Conclusion { get; private set; }
-    public string ReadDate { get; private set; } 
+    public string ReadDate { get; private set; }
 
     public string Comment { get; private set; }
     public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }

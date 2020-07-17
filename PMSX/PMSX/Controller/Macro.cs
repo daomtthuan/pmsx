@@ -77,7 +77,7 @@ namespace PMSX.Controller {
       return macros;
     }
     public bool Insert(string code, string description, string groupId, string comment) {
-      if (SelectByCode(code,groupId).Count > 0) {
+      if (SelectByCode(code, groupId).Count > 0) {
         return false;
       }
 

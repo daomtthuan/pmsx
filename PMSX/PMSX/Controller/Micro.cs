@@ -77,7 +77,7 @@ namespace PMSX.Controller {
       return micros;
     }
     public bool Insert(string code, string description, string conclusion, string groupId, string comment) {
-      if (SelectByCode(code,groupId).Count > 0) {
+      if (SelectByCode(code, groupId).Count > 0) {
         return false;
       }
 

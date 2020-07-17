@@ -4,9 +4,9 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using System;
 
-namespace PMSX.View.UserControl.Layout {
-  public abstract partial class Table : XtraUserControl {
-    public Table() {
+namespace PMSX.View.UserControl.Admin.Table {
+  public abstract partial class Layout : XtraUserControl {
+    public Layout() {
       InitializeComponent();
       OnInit();
     }

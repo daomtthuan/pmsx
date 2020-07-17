@@ -21,10 +21,10 @@ namespace PMSX.View.Form.Admin.Insert {
     private void InsertButton_Click(object sender, EventArgs e) {
       if (codeInput.Text.Length == 0 || descriptionInput.Text.Length == 0 || conclusionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } else if (!Controller.Micro.Instance.Insert(codeInput.Text, descriptionInput.Text,conclusionInput.Text, groupId, commentInput.Text)) {
+      } else if (!Controller.Micro.Instance.Insert(codeInput.Text, descriptionInput.Text, conclusionInput.Text, groupId, commentInput.Text)) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nMã đã tồn tại.");
       } else {
-        Controller.Micro.Instance.Insert(codeInput.Text, descriptionInput.Text,conclusionInput.Text, groupId, commentInput.Text);
+        Controller.Micro.Instance.Insert(codeInput.Text, descriptionInput.Text, conclusionInput.Text, groupId, commentInput.Text);
         Close();
       }
     }

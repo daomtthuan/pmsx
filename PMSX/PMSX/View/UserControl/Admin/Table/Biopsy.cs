@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Biopsy : XtraUserControl {
-    private class BiopsyTable : Layout.Table {
+    private class BiopsyTable : Layout {
       private string groupId;
       private string groupName;
 

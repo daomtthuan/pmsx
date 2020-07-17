@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Macro : XtraUserControl {
-    private class MacroTable : Layout.Table {
+    private class MacroTable : Layout {
       private string groupId;
       private string groupName;
 

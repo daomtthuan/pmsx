@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table.Diagnose {
   public partial class Type1 : XtraUserControl {
-    private class DiagnoseTable : Layout.Table {
+    private class DiagnoseTable : Layout {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách kết quả chẩn đoán loại 1";
       }
@@ -36,7 +36,7 @@ namespace PMSX.View.UserControl.Admin.Table.Diagnose {
         } else {
           new Form.Admin.Update.Diagnose.Type1((Model.Diagnose.Type1)GetSelectedRow(), Controller.MacroGroup.Instance.SelectAll(), Controller.MicroGroup.Instance.SelectAll(), biopsyGroups).ShowDialog();
           OnLoad();
-        }     
+        }
       }
 
       protected override void OnDisabled() {

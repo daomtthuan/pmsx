@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
   public partial class Micro : XtraUserControl {
-    private class MicroTable : Layout.Table {
+    private class MicroTable : Layout {
       private string groupId;
       private string groupName;
 
       protected override void OnInsert() {
         new Form.Admin.Insert.Micro(groupId).ShowDialog();
-        LoadData(groupId,groupName);
+        LoadData(groupId, groupName);
       }
 
       protected override void OnUpdate() {
