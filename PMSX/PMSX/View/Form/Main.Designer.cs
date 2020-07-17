@@ -83,10 +83,16 @@
       this.clinicGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.diagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.pathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.doctorPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+      this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+      this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+      this.tTechnicianPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+      this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+      this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
@@ -121,6 +127,8 @@
       this.ribbon.MaxItemId = 17;
       this.ribbon.Name = "ribbon";
       this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.tTechnicianPageGroup,
+            this.doctorPageGroup,
             this.adminPageGroup});
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -399,6 +407,25 @@
       this.pathologyGroup.Name = "pathologyGroup";
       this.pathologyGroup.Text = "Giải phẫu bệnh";
       // 
+      // doctorPageGroup
+      // 
+      this.doctorPageGroup.Name = "doctorPageGroup";
+      this.doctorPageGroup.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage2});
+      this.doctorPageGroup.Text = "Bác sĩ";
+      // 
+      // ribbonPage2
+      // 
+      this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+      this.ribbonPage2.Name = "ribbonPage2";
+      this.ribbonPage2.Text = "ribbonPage2";
+      // 
+      // ribbonPageGroup2
+      // 
+      this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+      this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+      // 
       // ribbonPage1
       // 
       this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -432,6 +459,25 @@
       toolTipItem15.Text = "Quản lý kết quả chuẩn đoán xét nghiệm";
       superToolTip15.Items.Add(toolTipItem15);
       this.barButtonItem2.SuperTip = superToolTip15;
+      // 
+      // tTechnicianPageGroup
+      // 
+      this.tTechnicianPageGroup.Name = "tTechnicianPageGroup";
+      this.tTechnicianPageGroup.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage3});
+      this.tTechnicianPageGroup.Text = "Kỹ thuật viên";
+      // 
+      // ribbonPage3
+      // 
+      this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+      this.ribbonPage3.Name = "ribbonPage3";
+      this.ribbonPage3.Text = "ribbonPage3";
+      // 
+      // ribbonPageGroup3
+      // 
+      this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+      this.ribbonPageGroup3.Text = "ribbonPageGroup3";
       // 
       // Main
       // 
@@ -488,5 +534,11 @@
     private DevExpress.XtraBars.BarButtonItem diagnoseType2Button;
     private DevExpress.XtraBars.BarButtonItem diagnoseType3Button;
     private DevExpress.XtraBars.BarButtonItem biopsyGroupButton;
+    private DevExpress.XtraBars.Ribbon.RibbonPageCategory doctorPageGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+    private DevExpress.XtraBars.Ribbon.RibbonPageCategory tTechnicianPageGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
   }
 }
