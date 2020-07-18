@@ -23,14 +23,16 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.SuspendLayout();
-            // 
-            // Role
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Role";
-            this.ResumeLayout(false);
+      this.SuspendLayout();
+      // 
+      // Role
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
+      this.Name = "Role";
+      this.ResumeLayout(false);
+
         }
 
         #endregion

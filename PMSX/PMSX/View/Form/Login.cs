@@ -1,18 +1,18 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  internal partial class Login : XtraForm, Pattern.Interface.IView {
-    public Login() {
+  internal partial class Login : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+    public Login() : base() {
       InitializeComponent();
 
       Icon = Properties.Resources.icon;
 
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
+      Load += new EventHandler((sender, e) => {
+        usernameInput.Text = "doctor1";
+        passwordInput.Text = "1";
+        LoginButton_Click(sender, e);
+      });
     }
 
     private void LoginButton_Click(object sender, EventArgs e) {

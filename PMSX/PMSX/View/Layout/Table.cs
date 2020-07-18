@@ -4,7 +4,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using System;
 
-namespace PMSX.View.UserControl.Admin.Layout {
+namespace PMSX.View.Layout {
   internal abstract partial class Table : XtraUserControl, Pattern.Interface.IView {
     public Table() {
       InitializeComponent();
@@ -27,11 +27,6 @@ namespace PMSX.View.UserControl.Admin.Layout {
 
     protected virtual void OnDetails() {
       Utils.View.MessageBox.Instance.Information("Sẽ có vào phiên bản kế tiếp");
-    }
-
-    protected Pattern.Interface.IModel GetSelectedRow() {
-      int[] selectedIndex = GridView.GetSelectedRows();
-      return selectedIndex.Length == 0 ? null : (Pattern.Interface.IModel)GridView.GetRow(GridView.GetSelectedRows()[0]);
     }
 
     private void View_Load(object sender, EventArgs e) {

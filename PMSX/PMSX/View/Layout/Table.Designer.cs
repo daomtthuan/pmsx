@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.UserControl.Admin.Layout {
+﻿namespace PMSX.View.Layout {
   partial class Table {
     /// <summary> 
     /// Required designer variable.
@@ -168,7 +168,7 @@
       // titleLabel
       // 
       this.titleLabel.AllowHotTrack = false;
-      this.titleLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.titleLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.titleLabel.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.titleLabel.AppearanceItemCaption.Options.UseFont = true;
       this.titleLabel.AppearanceItemCaption.Options.UseForeColor = true;
@@ -176,7 +176,7 @@
       this.titleLabel.Name = "titleLabel";
       this.titleLabel.Size = new System.Drawing.Size(144, 50);
       this.titleLabel.Text = " ";
-      this.titleLabel.TextSize = new System.Drawing.Size(5, 25);
+      this.titleLabel.TextSize = new System.Drawing.Size(5, 26);
       // 
       // deleteButtonLayout
       // 
@@ -230,6 +230,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.Controls.Add(this.layoutControl);
       this.Name = "Table";
       this.Size = new System.Drawing.Size(738, 700);

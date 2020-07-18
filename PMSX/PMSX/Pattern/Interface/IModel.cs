@@ -1,3 +1,3 @@
 ﻿namespace PMSX.Pattern.Interface {
-  internal interface IModel { }
+  internal interface IModel : IPattern { }
 }

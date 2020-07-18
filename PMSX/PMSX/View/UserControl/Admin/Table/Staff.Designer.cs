@@ -27,9 +27,12 @@
       // 
       // Staff
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
+      this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
       this.Name = "Staff";
+      this.Size = new System.Drawing.Size(112, 126);
       this.ResumeLayout(false);
 
         }

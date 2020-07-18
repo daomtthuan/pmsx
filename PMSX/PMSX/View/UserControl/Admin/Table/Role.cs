@@ -20,20 +20,20 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnUpdate() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        new Form.Admin.Update.Role((Model.Role)GetSelectedRow()).ShowDialog();
+        new Form.Admin.Update.Role((Model.Role)Utils.View.Grid.Instance.GetSelectedRow(GridView)).ShowDialog();
         OnLoad();
       }
 
       protected override void OnDisabled() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        Controller.Role.Instance.Disable(((Model.Role)GetSelectedRow()).Id);
+        Controller.Role.Instance.Disable(((Model.Role)Utils.View.Grid.Instance.GetSelectedRow(GridView)).Id);
         OnLoad();
       }
     }

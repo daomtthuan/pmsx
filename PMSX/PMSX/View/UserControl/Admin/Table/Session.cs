@@ -41,7 +41,7 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnUpdate() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
@@ -61,7 +61,7 @@ namespace PMSX.View.UserControl.Admin.Table {
               if (doctors.Count == 0) {
                 Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
-                new Form.Admin.Update.Session((Model.Session)GetSelectedRow(), technicians, doctors).ShowDialog();
+                new Form.Admin.Update.Session((Model.Session)Utils.View.Grid.Instance.GetSelectedRow(GridView), technicians, doctors).ShowDialog();
                 OnLoad();
               }
             }
@@ -70,11 +70,11 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnDisabled() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        Controller.Session.Instance.Disable(((Model.Session)GetSelectedRow()).Id);
+        Controller.Session.Instance.Disable(((Model.Session)Utils.View.Grid.Instance.GetSelectedRow(GridView)).Id);
         OnLoad();
       }
     }

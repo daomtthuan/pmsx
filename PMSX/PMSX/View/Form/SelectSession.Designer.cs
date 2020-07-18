@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
+      this.brand1 = new PMSX.View.UserControl.Brand();
       this.startButton = new DevExpress.XtraEditors.SimpleButton();
       this.sessionSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.sessionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.startButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.brand1 = new PMSX.View.UserControl.Brand();
       this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
@@ -53,6 +53,14 @@
       this.layoutControl.Size = new System.Drawing.Size(397, 370);
       this.layoutControl.TabIndex = 0;
       this.layoutControl.Text = "layoutControl";
+      // 
+      // brand1
+      // 
+      this.brand1.Location = new System.Drawing.Point(12, 12);
+      this.brand1.Name = "brand1";
+      this.brand1.Size = new System.Drawing.Size(373, 240);
+      this.brand1.TabIndex = 6;
+      this.brand1.TabStop = false;
       // 
       // startButton
       // 
@@ -114,14 +122,6 @@
       this.startButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.startButtonLayout.TextVisible = false;
       // 
-      // brand1
-      // 
-      this.brand1.Location = new System.Drawing.Point(12, 12);
-      this.brand1.Name = "brand1";
-      this.brand1.Size = new System.Drawing.Size(373, 240);
-      this.brand1.TabIndex = 6;
-      this.brand1.TabStop = false;
-      // 
       // layoutControlItem1
       // 
       this.layoutControlItem1.Control = this.brand1;
@@ -136,6 +136,7 @@
       this.AcceptButton = this.startButton;
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.ClientSize = new System.Drawing.Size(397, 370);
       this.Controls.Add(this.layoutControl);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -23,14 +23,15 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.SuspendLayout();
-            // 
-            // Patient
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "Patient";
-            this.ResumeLayout(false);
+      this.SuspendLayout();
+      // 
+      // Patient
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
+      this.Name = "Patient";
+      this.ResumeLayout(false);
 
         }
 

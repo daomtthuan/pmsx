@@ -18,7 +18,7 @@ namespace PMSX.Controller {
     public Model.Session Session { get; set; }
 
     public bool HasRole(Role role) {
-      return Roles.Where(item => item.Name == this.role[(int)role] || item.Name == this.role[(int)Role.Admin]).Count() > 0;
+      return Roles.Where(item => item.Name == this.role[(int)role]).Count() > 0;
     }
 
     public enum Role {

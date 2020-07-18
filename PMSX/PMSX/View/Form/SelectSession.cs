@@ -1,21 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  internal partial class SelectSession : XtraForm, Pattern.Interface.IView {
+  internal partial class SelectSession : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly List<Model.Session> sessions;
 
-    public SelectSession(List<Model.Session> sessions) {
+    public SelectSession(List<Model.Session> sessions) : base() {
       InitializeComponent();
 
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
-
       this.sessions = sessions;
     }
 

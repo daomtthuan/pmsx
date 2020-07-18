@@ -1,3 +1,3 @@
 ﻿namespace PMSX.Pattern.Interface {
-  internal interface IController { }
+  internal interface IController : IPattern { }
 }

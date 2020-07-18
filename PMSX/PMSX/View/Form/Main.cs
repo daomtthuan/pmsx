@@ -11,10 +11,6 @@ namespace PMSX.View.Form {
 
     public Main() {
       InitializeComponent();
-
-      managePageGroup.Visible = false;
-      personnelPage.Visible = false;
-      clinicPage.Visible = false;
       Icon = Properties.Resources.icon;
       Display = false;
     }
@@ -32,16 +28,30 @@ namespace PMSX.View.Form {
     private void OnLoad() {
       Controls.Add(panelControl = new PanelControl() { Dock = DockStyle.Fill });
 
-      if (Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor)) {
-        managePageGroup.Visible = true;
-        clinicPage.Visible = true;
+      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {
+        managePageGroup.Pages.Remove(personnelPage);
+        personnelPage.Dispose();
       }
 
-      if (Controller.Main.Instance.HasRole(Controller.Main.Role.Technician)) {
-        managePageGroup.Visible = true;
+      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor)) {
+        managePageGroup.Pages.Remove(clinicPage);
+        clinicPage.Dispose();
+      }
+
+      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor) && !Controller.Main.Instance.HasRole(Controller.Main.Role.Technician)) {
+        ribbon.Pages.Remove(pathologyPage);
+        ribbon.Pages.Remove(diagnosePage);
+        pathologyPage.Dispose();
+        diagnosePage.Dispose();
+      }
+
+      if (managePageGroup.Pages.Count == 0) {
+        ribbon.PageCategories.Remove(managePageGroup);
+        managePageGroup.Dispose();
       }
 
       Display = true;
+
     }
 
     private void AddUserControl<T>() where T : XtraUserControl, new() {
@@ -68,14 +78,15 @@ namespace PMSX.View.Form {
           if (sessions.Count == 0) {
             Utils.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
             Application.Exit();
-            return;
           } else {
             SelectSession selectSessionForm = new SelectSession(sessions);
             selectSessionForm.ShowDialog();
-          }
-        }
 
-        Utils.View.Progress.Instance.Start(this, OnLoad);
+            Utils.View.Progress.Instance.Start(this, OnLoad);
+          }
+        } else {
+          Utils.View.Progress.Instance.Start(this, OnLoad);
+        }        
       }
     }
 
@@ -136,7 +147,7 @@ namespace PMSX.View.Form {
     }
 
     private void CollectBiopsyButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Technician.CollectBiopsy>();
+      AddUserControl<UserControl.Doctor.CollectBiopsy>();
     }
 
     private void InputDiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {

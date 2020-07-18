@@ -108,6 +108,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.Controls.Add(this.layoutControl);
       this.Name = "Micro";
       this.Load += new System.EventHandler(this.Micro_Load);

@@ -44,34 +44,31 @@
       this.layoutControl.Controls.Add(this.macroGroupSelect);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
-      this.layoutControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.layoutControl.Name = "layoutControl";
       this.layoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1016, 178, 650, 400);
       this.layoutControl.Root = this.Root;
-      this.layoutControl.Size = new System.Drawing.Size(200, 179);
+      this.layoutControl.Size = new System.Drawing.Size(150, 150);
       this.layoutControl.TabIndex = 1;
       this.layoutControl.Text = "layoutControl1";
       // 
       // macroPanel
       // 
       this.macroPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      this.macroPanel.Location = new System.Drawing.Point(16, 91);
-      this.macroPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.macroPanel.Location = new System.Drawing.Point(8, 75);
       this.macroPanel.Name = "macroPanel";
-      this.macroPanel.Size = new System.Drawing.Size(168, 74);
+      this.macroPanel.Size = new System.Drawing.Size(134, 65);
       this.macroPanel.TabIndex = 4;
       // 
       // macroGroupSelect
       // 
-      this.macroGroupSelect.Location = new System.Drawing.Point(16, 43);
-      this.macroGroupSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.macroGroupSelect.Location = new System.Drawing.Point(8, 33);
       this.macroGroupSelect.Name = "macroGroupSelect";
       this.macroGroupSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.macroGroupSelect.Properties.NullText = "";
       this.macroGroupSelect.Properties.PopupSizeable = false;
       this.macroGroupSelect.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-      this.macroGroupSelect.Size = new System.Drawing.Size(168, 32);
+      this.macroGroupSelect.Size = new System.Drawing.Size(134, 28);
       this.macroGroupSelect.StyleController = this.layoutControl;
       this.macroGroupSelect.TabIndex = 5;
       this.macroGroupSelect.EditValueChanged += new System.EventHandler(this.MacroGroupSelect_EditValueChanged);
@@ -84,7 +81,7 @@
             this.macroGroupSelectLayout,
             this.staffRolePanelLayout});
       this.Root.Name = "Root";
-      this.Root.Size = new System.Drawing.Size(200, 179);
+      this.Root.Size = new System.Drawing.Size(150, 150);
       this.Root.TextVisible = false;
       // 
       // macroGroupSelectLayout
@@ -92,29 +89,28 @@
       this.macroGroupSelectLayout.Control = this.macroGroupSelect;
       this.macroGroupSelectLayout.Location = new System.Drawing.Point(0, 0);
       this.macroGroupSelectLayout.Name = "macroGroupSelectLayout";
-      this.macroGroupSelectLayout.Size = new System.Drawing.Size(174, 65);
+      this.macroGroupSelectLayout.Size = new System.Drawing.Size(136, 55);
       this.macroGroupSelectLayout.Text = "Nhóm đại thể";
       this.macroGroupSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.macroGroupSelectLayout.TextSize = new System.Drawing.Size(115, 25);
+      this.macroGroupSelectLayout.TextSize = new System.Drawing.Size(97, 21);
       // 
       // staffRolePanelLayout
       // 
       this.staffRolePanelLayout.Control = this.macroPanel;
-      this.staffRolePanelLayout.Location = new System.Drawing.Point(0, 65);
+      this.staffRolePanelLayout.Location = new System.Drawing.Point(0, 55);
       this.staffRolePanelLayout.Name = "staffRolePanelLayout";
-      this.staffRolePanelLayout.Size = new System.Drawing.Size(174, 90);
-      this.staffRolePanelLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 12, 0);
+      this.staffRolePanelLayout.Size = new System.Drawing.Size(136, 79);
+      this.staffRolePanelLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.staffRolePanelLayout.TextSize = new System.Drawing.Size(0, 0);
       this.staffRolePanelLayout.TextVisible = false;
       // 
       // Macro
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.Controls.Add(this.layoutControl);
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Macro";
-      this.Size = new System.Drawing.Size(200, 179);
       this.Load += new System.EventHandler(this.Macro_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);

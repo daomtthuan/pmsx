@@ -142,6 +142,9 @@
   <data name="travel_rest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\travel_rest.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="actions_previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_previous.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="actions_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_edit.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="actions_addcircled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_addcircled.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="charttype_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charttype_point.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="actions_zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_zoom.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
@@ -160,7 +166,7 @@
   <data name="actions_deletecircled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_deletecircled.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="charttype_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\charttype_point.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>

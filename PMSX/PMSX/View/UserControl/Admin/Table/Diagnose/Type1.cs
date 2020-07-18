@@ -26,7 +26,7 @@ namespace PMSX.View.UserControl.Admin.Table.Diagnose {
       }
 
       protected override void OnUpdate() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
@@ -34,17 +34,17 @@ namespace PMSX.View.UserControl.Admin.Table.Diagnose {
         if (biopsyGroups.Count == 0) {
           Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhóm sinh thiết nào.");
         } else {
-          new Form.Admin.Update.Diagnose.Type1((Model.Diagnose.Type1)GetSelectedRow(), Controller.MacroGroup.Instance.SelectAll(), Controller.MicroGroup.Instance.SelectAll(), biopsyGroups).ShowDialog();
+          new Form.Admin.Update.Diagnose.Type1((Model.Diagnose.Type1)Utils.View.Grid.Instance.GetSelectedRow(GridView), Controller.MacroGroup.Instance.SelectAll(), Controller.MicroGroup.Instance.SelectAll(), biopsyGroups).ShowDialog();
           OnLoad();
         }
       }
 
       protected override void OnDisabled() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        Controller.Diagnose.Type1.Instance.Disable(((Model.Diagnose.Type1)GetSelectedRow()).Id);
+        Controller.Diagnose.Type1.Instance.Disable(((Model.Diagnose.Type1)Utils.View.Grid.Instance.GetSelectedRow(GridView)).Id);
         OnLoad();
       }
     }

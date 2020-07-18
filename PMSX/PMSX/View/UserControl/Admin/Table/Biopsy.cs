@@ -34,7 +34,7 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnUpdate() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
@@ -53,7 +53,7 @@ namespace PMSX.View.UserControl.Admin.Table {
               if (grossDoctors.Count == 0) {
                 Utils.View.MessageBox.Instance.Warning("Không thể sửa.\nKhông tìm thấy nhân viên có quyền Bác sĩ.");
               } else {
-                new Form.Admin.Update.Biopsy((Model.Biopsy)GetSelectedRow(), patients, grossDoctors, Controller.Session.Instance.SelectAll()).ShowDialog();
+                new Form.Admin.Update.Biopsy((Model.Biopsy)Utils.View.Grid.Instance.GetSelectedRow(GridView), patients, grossDoctors, Controller.Session.Instance.SelectAll()).ShowDialog();
                 LoadData(groupId, groupName);
               }
             }
@@ -62,11 +62,11 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnDisabled() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        Controller.Biopsy.Instance.Disable(((Model.Biopsy)GetSelectedRow()).Id);
+        Controller.Biopsy.Instance.Disable(((Model.Biopsy)Utils.View.Grid.Instance.GetSelectedRow(GridView)).Id);
         LoadData(groupId, groupName);
       }
 

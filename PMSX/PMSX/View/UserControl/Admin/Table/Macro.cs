@@ -13,20 +13,20 @@ namespace PMSX.View.UserControl.Admin.Table {
       }
 
       protected override void OnUpdate() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        new Form.Admin.Update.Macro((Model.Macro)GetSelectedRow()).ShowDialog();
+        new Form.Admin.Update.Macro((Model.Macro)Utils.View.Grid.Instance.GetSelectedRow(GridView)).ShowDialog();
         LoadData(groupId, groupName);
       }
 
       protected override void OnDisabled() {
-        if (GetSelectedRow() == null) {
+        if (Utils.View.Grid.Instance.GetSelectedRow(GridView) == null) {
           return;
         }
 
-        Controller.Macro.Instance.Disable(((Model.Macro)GetSelectedRow()).Id);
+        Controller.Macro.Instance.Disable(((Model.Macro)Utils.View.Grid.Instance.GetSelectedRow(GridView)).Id);
         LoadData(groupId, groupName);
       }
 

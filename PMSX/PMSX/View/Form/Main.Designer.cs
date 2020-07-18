@@ -73,16 +73,16 @@
       this.collectBiopsyButton = new DevExpress.XtraBars.BarButtonItem();
       this.managePageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
       this.personnelPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.workGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.manageAccountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.manageWorkGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.clinicPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.clinicGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.diagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.pathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.manageClinicGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.manageDiagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.managePathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.pathologyPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.biopsyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.diagnosePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.inputDiagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.diagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
@@ -371,61 +371,61 @@
       // personnelPage
       // 
       this.personnelPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.accountGroup,
-            this.workGroup});
+            this.manageAccountGroup,
+            this.manageWorkGroup});
       this.personnelPage.Name = "personnelPage";
       this.personnelPage.Text = "Nhân sự";
       // 
-      // accountGroup
+      // manageAccountGroup
       // 
-      this.accountGroup.AllowTextClipping = false;
-      this.accountGroup.ItemLinks.Add(this.staffButton);
-      this.accountGroup.ItemLinks.Add(this.roleButton);
-      this.accountGroup.ItemLinks.Add(this.permissionButton);
-      this.accountGroup.Name = "accountGroup";
-      this.accountGroup.Text = "Tài khoản";
+      this.manageAccountGroup.AllowTextClipping = false;
+      this.manageAccountGroup.ItemLinks.Add(this.staffButton);
+      this.manageAccountGroup.ItemLinks.Add(this.roleButton);
+      this.manageAccountGroup.ItemLinks.Add(this.permissionButton);
+      this.manageAccountGroup.Name = "manageAccountGroup";
+      this.manageAccountGroup.Text = "Tài khoản";
       // 
-      // workGroup
+      // manageWorkGroup
       // 
-      this.workGroup.AllowTextClipping = false;
-      this.workGroup.ItemLinks.Add(this.sessionButton);
-      this.workGroup.Name = "workGroup";
-      this.workGroup.Text = "Công việc";
+      this.manageWorkGroup.AllowTextClipping = false;
+      this.manageWorkGroup.ItemLinks.Add(this.sessionButton);
+      this.manageWorkGroup.Name = "manageWorkGroup";
+      this.manageWorkGroup.Text = "Công việc";
       // 
       // clinicPage
       // 
       this.clinicPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.clinicGroup,
-            this.diagnoseGroup,
-            this.pathologyGroup});
+            this.manageClinicGroup,
+            this.manageDiagnoseGroup,
+            this.managePathologyGroup});
       this.clinicPage.Name = "clinicPage";
       this.clinicPage.Text = "Phòng khám";
       // 
-      // clinicGroup
+      // manageClinicGroup
       // 
-      this.clinicGroup.AllowTextClipping = false;
-      this.clinicGroup.ItemLinks.Add(this.patientButton);
-      this.clinicGroup.ItemLinks.Add(this.biopsyGroupButton);
-      this.clinicGroup.ItemLinks.Add(this.biopsyButton);
-      this.clinicGroup.Name = "clinicGroup";
-      this.clinicGroup.Text = "Phòng khám";
+      this.manageClinicGroup.AllowTextClipping = false;
+      this.manageClinicGroup.ItemLinks.Add(this.patientButton);
+      this.manageClinicGroup.ItemLinks.Add(this.biopsyGroupButton);
+      this.manageClinicGroup.ItemLinks.Add(this.biopsyButton);
+      this.manageClinicGroup.Name = "manageClinicGroup";
+      this.manageClinicGroup.Text = "Phòng khám";
       // 
-      // diagnoseGroup
+      // manageDiagnoseGroup
       // 
-      this.diagnoseGroup.AllowTextClipping = false;
-      this.diagnoseGroup.ItemLinks.Add(this.diagnoseType1Button);
-      this.diagnoseGroup.Name = "diagnoseGroup";
-      this.diagnoseGroup.Text = "Kết quả chẩn đoán";
+      this.manageDiagnoseGroup.AllowTextClipping = false;
+      this.manageDiagnoseGroup.ItemLinks.Add(this.diagnoseType1Button);
+      this.manageDiagnoseGroup.Name = "manageDiagnoseGroup";
+      this.manageDiagnoseGroup.Text = "Kết quả chẩn đoán";
       // 
-      // pathologyGroup
+      // managePathologyGroup
       // 
-      this.pathologyGroup.AllowTextClipping = false;
-      this.pathologyGroup.ItemLinks.Add(this.macroGroupButton);
-      this.pathologyGroup.ItemLinks.Add(this.macroButton);
-      this.pathologyGroup.ItemLinks.Add(this.microGroupButton);
-      this.pathologyGroup.ItemLinks.Add(this.microButton);
-      this.pathologyGroup.Name = "pathologyGroup";
-      this.pathologyGroup.Text = "Giải phẫu bệnh";
+      this.managePathologyGroup.AllowTextClipping = false;
+      this.managePathologyGroup.ItemLinks.Add(this.macroGroupButton);
+      this.managePathologyGroup.ItemLinks.Add(this.macroButton);
+      this.managePathologyGroup.ItemLinks.Add(this.microGroupButton);
+      this.managePathologyGroup.ItemLinks.Add(this.microButton);
+      this.managePathologyGroup.Name = "managePathologyGroup";
+      this.managePathologyGroup.Text = "Giải phẫu bệnh";
       // 
       // pathologyPage
       // 
@@ -444,21 +444,22 @@
       // diagnosePage
       // 
       this.diagnosePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.inputDiagnoseGroup});
+            this.diagnoseGroup});
       this.diagnosePage.Name = "diagnosePage";
       this.diagnosePage.Text = "Chẩn đoán";
       // 
-      // inputDiagnoseGroup
+      // diagnoseGroup
       // 
-      this.inputDiagnoseGroup.AllowTextClipping = false;
-      this.inputDiagnoseGroup.ItemLinks.Add(this.inputDiagnoseType1Button);
-      this.inputDiagnoseGroup.Name = "inputDiagnoseGroup";
-      this.inputDiagnoseGroup.Text = "Nhập liệu kết quả";
+      this.diagnoseGroup.AllowTextClipping = false;
+      this.diagnoseGroup.ItemLinks.Add(this.inputDiagnoseType1Button);
+      this.diagnoseGroup.Name = "diagnoseGroup";
+      this.diagnoseGroup.Text = "Chẩn đoán";
       // 
       // Main
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.ClientSize = new System.Drawing.Size(1600, 900);
       this.Controls.Add(this.backstageView);
       this.Controls.Add(this.ribbon);
@@ -479,13 +480,13 @@
 
     private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
     private DevExpress.XtraBars.Ribbon.RibbonPage personnelPage;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageAccountGroup;
     private DevExpress.XtraBars.BarButtonItem staffButton;
     private DevExpress.XtraBars.BarButtonItem patientButton;
     private DevExpress.XtraBars.BarButtonItem roleButton;
     private DevExpress.XtraBars.BarButtonItem sessionButton;
     private DevExpress.XtraBars.BarButtonItem biopsyButton;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup clinicGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageClinicGroup;
     private DevExpress.XtraBars.BarButtonItem diagnoseType1Button;
     private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageView;
     private DevExpress.XtraBars.Ribbon.BackstageViewClientControl aboutBackstage;
@@ -495,12 +496,12 @@
     private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem exitButton;
     private DevExpress.XtraBars.Ribbon.RibbonPageCategory managePageGroup;
     private DevExpress.XtraBars.Ribbon.RibbonPage clinicPage;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup pathologyGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup managePathologyGroup;
     private DevExpress.XtraBars.Ribbon.RibbonPage diagnosePage;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup inputDiagnoseGroup;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup workGroup;
-    private DevExpress.XtraBars.BarButtonItem permissionButton;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup diagnoseGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageWorkGroup;
+    private DevExpress.XtraBars.BarButtonItem permissionButton;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageDiagnoseGroup;
     private DevExpress.XtraBars.BarButtonItem macroGroupButton;
     private DevExpress.XtraBars.BarButtonItem macroButton;
     private DevExpress.XtraBars.BarButtonItem microGroupButton;

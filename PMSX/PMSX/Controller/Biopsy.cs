@@ -40,6 +40,41 @@ namespace PMSX.Controller {
       return biopsies;
     }
 
+    public List<Model.Biopsy> SelectByGroupIdAndPatientId(string groupId, string patientId, int state = -1) {
+      List<Model.Biopsy> biopsies = new List<Model.Biopsy>();
+
+      string query = @"
+        select
+          pmsx_biopsy.*,
+          concat(biopsyGroup_code,' - ', biopsy_code) as biopsy_fullCode,
+          patient_name as biopsy_patientName,
+          staff_name as biopsy_grossDoctorName,
+          session_name as biopsy_sessionName
+        from pmsx_biopsy
+          join pmsx_biopsyGroup on biopsy_groupId = biopsyGroup_id
+          join pmsx_patient on biopsy_patientId = patient_id
+          join pmsx_staff on biopsy_grossDoctorId = staff_id
+          left outer join pmsx_session on biopsy_sessionId = session_id
+        where
+          (@state = -1 or biopsy_state = @state) and
+          biopsy_groupId = @groupId and
+          biopsy_patientId = @patientId
+        order by biopsy_code 
+      ";
+
+      SqlParameter[] parameters = {
+        new SqlParameter("@groupId", groupId),
+        new SqlParameter("@patientId", patientId),
+        new SqlParameter("@state", state)
+      };
+
+      foreach (DataRow row in Utils.Database.Instance.Excute(query, parameters).Rows) {
+        biopsies.Add(new Model.Biopsy(row));
+      }
+
+      return biopsies;
+    }
+
     public bool Insert(string groupId, string patientId, string sessionId, string grossStaffId, int segment, DateTime grossDatetime, DateTime collectDatetime, string comment) {
       string query = @"
         set xact_abort on

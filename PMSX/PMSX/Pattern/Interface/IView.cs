@@ -1,3 +1,3 @@
 ﻿namespace PMSX.Pattern.Interface {
-  internal interface IView { }
+  internal interface IView : IPattern { }
 }

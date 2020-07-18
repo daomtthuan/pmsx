@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
+      this.brand1 = new PMSX.View.UserControl.Brand();
       this.usernameInput = new DevExpress.XtraEditors.TextEdit();
       this.passwordInput = new DevExpress.XtraEditors.TextEdit();
       this.loginButton = new DevExpress.XtraEditors.SimpleButton();
@@ -31,7 +32,6 @@
       this.usernameInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.passwordInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.loginButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.brand1 = new PMSX.View.UserControl.Brand();
       this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
@@ -58,6 +58,14 @@
       this.layoutControl.Size = new System.Drawing.Size(400, 430);
       this.layoutControl.TabIndex = 3;
       this.layoutControl.Text = "layoutControl1";
+      // 
+      // brand1
+      // 
+      this.brand1.Location = new System.Drawing.Point(12, 12);
+      this.brand1.Name = "brand1";
+      this.brand1.Size = new System.Drawing.Size(376, 244);
+      this.brand1.TabIndex = 4;
+      this.brand1.TabStop = false;
       // 
       // usernameInput
       // 
@@ -134,14 +142,6 @@
       this.loginButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.loginButtonLayout.TextVisible = false;
       // 
-      // brand1
-      // 
-      this.brand1.Location = new System.Drawing.Point(12, 12);
-      this.brand1.Name = "brand1";
-      this.brand1.Size = new System.Drawing.Size(376, 244);
-      this.brand1.TabIndex = 4;
-      this.brand1.TabStop = false;
-      // 
       // layoutControlItem1
       // 
       this.layoutControlItem1.Control = this.brand1;
@@ -157,6 +157,7 @@
       this.Appearance.Options.UseFont = true;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.ClientSize = new System.Drawing.Size(400, 430);
       this.Controls.Add(this.layoutControl);
       this.Font = new System.Drawing.Font("Segoe UI", 8.25F);

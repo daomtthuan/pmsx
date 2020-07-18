@@ -20,7 +20,7 @@ namespace PMSX.Utils.View {
       }
     }
 
-    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 1) {
+    public void Load(LookUpEdit select, IList models, string[] visibledFieldNames, string valueFieldName, string displayFieldNames, int selectIndex = 0) {
       select.Properties.DataSource = models;
       select.Properties.PopulateColumns();
 
@@ -48,6 +48,11 @@ namespace PMSX.Utils.View {
       select.Properties.DisplayMember = displayFieldNames;
 
       select.EditValue = selectValue;
+    }
+
+    public Pattern.Interface.IModel GetSelectedRow(GridView gridView) {
+      int[] selectedIndex = gridView.GetSelectedRows();
+      return selectedIndex.Length == 0 ? null : (Pattern.Interface.IModel)gridView.GetRow(gridView.GetSelectedRows()[0]);
     }
   }
 }
