@@ -25,13 +25,16 @@ namespace PMSX.View.Form.Admin.Update {
     }
 
     private void UpdateButton_Click(object sender, EventArgs e) {
-      if (nameInput.Text.Length == 0) {
+      if (nameInput.Text.Length == 0 || codeInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
-      } /*else if (!Regex.IsMatch(nameInput.Text, Util.RegexPattern.Instance.Name)) {
-        Util.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên nhân viên không hợp lệ.");
-      }*/ else {
-        Controller.MicroGroup.Instance.Update(microGroups.Code, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+      } else if (codeInput.Text == microGroups.Code) {
+        Controller.MicroGroup.Instance.Update(microGroups.Id, codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
+      } else if ((codeInput.Text != microGroups.Code) && (Controller.MicroGroup.Instance.SelectByCode(codeInput.Text).Count == 0)) {
+        Controller.MicroGroup.Instance.Update(microGroups.Id, codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Close();
+      } else {
+        Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã nhóm đã tồn tại.");
       }
     }
   }

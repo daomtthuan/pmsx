@@ -107,19 +107,22 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Update(string code, string name, string comment, int state) {
+    public void Update(string id, string code, string name, string comment, int state) {
+
       string query = @"
         update pmsx_macroGroup
         set 
+          macroGroup_code = @code,
 	        macroGroup_name = @name,
 	        macroGroup_comment = @comment,
           macroGroup_state = @state,
           macroGroup_updateStaffId = @updateStaffId,
-	        macroGroup_updateDatetime = getdate()                    
-        where macroGroup_code = @code
+	        macroGroup_updateDatetime = getdate()   
+         where macroGroup_id = @id
       ";
 
-      SqlParameter[] parameters = {
+        SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
         new SqlParameter("@code", code),
         new SqlParameter("@name", name),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
@@ -127,7 +130,8 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-      Utils.Database.Instance.ExcuteNon(query, parameters);
+        Utils.Database.Instance.ExcuteNon(query, parameters);
+       
     }
 
     public void Disable(string id) {

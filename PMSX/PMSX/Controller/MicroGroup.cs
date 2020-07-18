@@ -107,19 +107,21 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Update(string code, string name, string comment, int state) {
+    public void Update(string id,string code, string name, string comment, int state) {
       string query = @"
         update pmsx_microGroup
         set 
+          microGroup_code = @code,
 	        microGroup_name = @name,
 	        microGroup_comment = @comment,
           microGroup_state = @state,
           microGroup_updateStaffId = @updateStaffId,
 	        microGroup_updateDatetime = getdate()                    
-        where microGroup_code = @code
+        where microGroup_id = @id
       ";
 
       SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
         new SqlParameter("@code", code),
         new SqlParameter("@name", name),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),

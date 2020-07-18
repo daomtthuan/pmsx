@@ -51,7 +51,7 @@ namespace PMSX.Controller {
 
       return macros;
     }
-    public List<Model.Macro> SelectByCode(string code, string groupId, int state = -1) {
+    public List<Model.Macro> SelectByCodeAndId(string code, string groupId, int state = -1) {
       List<Model.Macro> macros = new List<Model.Macro>();
 
       string query = @"
@@ -76,8 +76,9 @@ namespace PMSX.Controller {
 
       return macros;
     }
+    
     public bool Insert(string code, string description, string groupId, string comment) {
-      if (SelectByCode(code, groupId).Count > 0) {
+      if (SelectByCodeAndId(code, groupId).Count > 0) {
         return false;
       }
 
@@ -109,19 +110,21 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Update(string code, string description, string comment, int state) {
+    public void Update(string id, string code, string description, string comment, int state) {
       string query = @"
         update pmsx_macro
         set 
+          macro_code = @code,
 	        macro_description = @description,
 	        macro_comment = @comment,
           macro_state = @state,
           macro_updateStaffId = @updateStaffId,
 	        macro_updateDatetime = getdate()                    
-        where macro_code = @code
+        where macro_id = @id
       ";
 
       SqlParameter[] parameters = {
+        new SqlParameter("@id", id),
         new SqlParameter("@code", code),
         new SqlParameter("@description", description),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
