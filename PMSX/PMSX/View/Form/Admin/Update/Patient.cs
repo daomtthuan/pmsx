@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Patient : XtraForm {
+  internal partial class Patient : XtraForm, Pattern.Interface.IView {
     private readonly Model.Patient patient;
 
     public Patient(Model.Patient patient) {

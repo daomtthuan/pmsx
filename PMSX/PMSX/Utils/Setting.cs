@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 
 namespace PMSX.Utils {
-  public class Setting : Pattern.Singleton<Setting> {
+  internal class Setting : Pattern.Class.Singleton<Setting> {
     private Setting() {
       ConnectionString = ConfigurationManager.AppSettings["connectionString"];
     }

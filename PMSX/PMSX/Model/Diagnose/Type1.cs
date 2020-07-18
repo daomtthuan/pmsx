@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model.Diagnose {
-  public class Type1 : Pattern.IModel {
+  internal class Type1 : Pattern.Interface.IModel {
     private readonly int state;
 
     public Type1(DataRow row) {
@@ -50,7 +50,7 @@ namespace PMSX.Model.Diagnose {
     public string ReadDate { get; private set; }
 
     public string Comment { get; private set; }
-    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
+    public string State => state == 0 ? "Vô hiệu hoá" : "Kích hoạt";
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }

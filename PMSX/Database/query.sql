@@ -266,14 +266,10 @@ insert into pmsx_role(role_id, role_name, role_createStaffId) values('16A63F6F-5
 insert into pmsx_role(role_id, role_name, role_createStaffId) values('7871A37A-F721-44E2-8F03-611FF5888808', N'Quản trị viên','73F2B296-EBDC-4434-892C-983E46F7CCF3')
 go
 
-insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('73F2B296-EBDC-4434-892C-983E46F7CCF3', 'E226DC82-6028-413E-B0B0-EEA3E62219D2', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('6DDAA669-7F0E-46CC-8271-88633C859FFC', 'E226DC82-6028-413E-B0B0-EEA3E62219D2', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('E226DC82-6028-413E-B0B0-EEA3E62219D2', 'E226DC82-6028-413E-B0B0-EEA3E62219D2', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('999A21D1-B792-4033-BCA9-6838F8A7311A', 'E226DC82-6028-413E-B0B0-EEA3E62219D2', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('9294B3B9-261E-49E3-92EF-BB5F05AA43D1', 'E226DC82-6028-413E-B0B0-EEA3E62219D2', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 
-insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('73F2B296-EBDC-4434-892C-983E46F7CCF3', '16A63F6F-54D9-4EBD-A946-04CB061FD503', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
-insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('6DDAA669-7F0E-46CC-8271-88633C859FFC', '16A63F6F-54D9-4EBD-A946-04CB061FD503', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('AEF97B23-9C18-4F6F-922E-9768BA930068', '16A63F6F-54D9-4EBD-A946-04CB061FD503', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 insert into pmsx_permission(permission_staffId, permission_roleId, permission_createStaffId) values('D9B482FC-A146-476A-AA72-3A686F12E8D7', '16A63F6F-54D9-4EBD-A946-04CB061FD503', '73F2B296-EBDC-4434-892C-983E46F7CCF3')
 

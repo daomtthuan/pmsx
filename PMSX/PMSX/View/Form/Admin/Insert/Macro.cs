@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class Macro : XtraForm {
+  internal partial class Macro : XtraForm, Pattern.Interface.IView {
     private readonly string groupId;
     public Macro(string groupId) {
       InitializeComponent();

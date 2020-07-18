@@ -128,10 +128,10 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 665);
+      this.commentInput.Location = new System.Drawing.Point(12, 620);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(1176, 93);
+      this.commentInput.Size = new System.Drawing.Size(1176, 138);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
@@ -229,7 +229,7 @@
       this.macroDescriptionInput.Location = new System.Drawing.Point(12, 340);
       this.macroDescriptionInput.Name = "macroDescriptionInput";
       this.macroDescriptionInput.Properties.MaxLength = 500;
-      this.macroDescriptionInput.Size = new System.Drawing.Size(586, 97);
+      this.macroDescriptionInput.Size = new System.Drawing.Size(586, 62);
       this.macroDescriptionInput.StyleController = this.layoutControl;
       this.macroDescriptionInput.TabIndex = 7;
       // 
@@ -238,16 +238,16 @@
       this.microDescriptionInput.Location = new System.Drawing.Point(602, 340);
       this.microDescriptionInput.Name = "microDescriptionInput";
       this.microDescriptionInput.Properties.MaxLength = 500;
-      this.microDescriptionInput.Size = new System.Drawing.Size(586, 97);
+      this.microDescriptionInput.Size = new System.Drawing.Size(586, 62);
       this.microDescriptionInput.StyleController = this.layoutControl;
       this.microDescriptionInput.TabIndex = 7;
       // 
       // conclusionInput
       // 
-      this.conclusionInput.Location = new System.Drawing.Point(12, 465);
+      this.conclusionInput.Location = new System.Drawing.Point(12, 430);
       this.conclusionInput.Name = "conclusionInput";
       this.conclusionInput.Properties.MaxLength = 500;
-      this.conclusionInput.Size = new System.Drawing.Size(1176, 71);
+      this.conclusionInput.Size = new System.Drawing.Size(1176, 61);
       this.conclusionInput.StyleController = this.layoutControl;
       this.conclusionInput.TabIndex = 7;
       // 
@@ -288,7 +288,6 @@
       this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.insertButtonLayout,
             this.sampleLabel,
-            this.notRequiredLabel,
             this.commentInputLayout,
             this.readDateSelectLayout,
             this.requiredLabel,
@@ -301,7 +300,8 @@
             this.conclusionInputLayout,
             this.microDescriptionInputLayout,
             this.macroGroupSelectLayout,
-            this.microGroupSelectLayout});
+            this.microGroupSelectLayout,
+            this.notRequiredLabel});
       this.Root.Name = "Root";
       this.Root.Size = new System.Drawing.Size(1200, 820);
       this.Root.TextVisible = false;
@@ -333,7 +333,7 @@
       this.notRequiredLabel.AllowHotTrack = false;
       this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.notRequiredLabel.Location = new System.Drawing.Point(0, 584);
+      this.notRequiredLabel.Location = new System.Drawing.Point(0, 483);
       this.notRequiredLabel.Name = "notRequiredLabel";
       this.notRequiredLabel.Size = new System.Drawing.Size(1180, 45);
       this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
@@ -343,9 +343,9 @@
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 629);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 584);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(1180, 121);
+      this.commentInputLayout.Size = new System.Drawing.Size(1180, 166);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -413,7 +413,7 @@
       this.macroDescriptionInputLayout.CustomizationFormText = "Mô tả đại thể";
       this.macroDescriptionInputLayout.Location = new System.Drawing.Point(0, 304);
       this.macroDescriptionInputLayout.Name = "macroDescriptionInputLayout";
-      this.macroDescriptionInputLayout.Size = new System.Drawing.Size(590, 125);
+      this.macroDescriptionInputLayout.Size = new System.Drawing.Size(590, 90);
       this.macroDescriptionInputLayout.Text = "Mô tả đại thể";
       this.macroDescriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.macroDescriptionInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -444,9 +444,9 @@
       // 
       this.conclusionInputLayout.Control = this.conclusionInput;
       this.conclusionInputLayout.CustomizationFormText = "Kết luận";
-      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 429);
+      this.conclusionInputLayout.Location = new System.Drawing.Point(0, 394);
       this.conclusionInputLayout.Name = "conclusionInputLayout";
-      this.conclusionInputLayout.Size = new System.Drawing.Size(1180, 99);
+      this.conclusionInputLayout.Size = new System.Drawing.Size(1180, 89);
       this.conclusionInputLayout.Text = "Kết luận";
       this.conclusionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.conclusionInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -457,7 +457,7 @@
       this.microDescriptionInputLayout.CustomizationFormText = "Mô tả vi thể";
       this.microDescriptionInputLayout.Location = new System.Drawing.Point(590, 304);
       this.microDescriptionInputLayout.Name = "microDescriptionInputLayout";
-      this.microDescriptionInputLayout.Size = new System.Drawing.Size(590, 125);
+      this.microDescriptionInputLayout.Size = new System.Drawing.Size(590, 90);
       this.microDescriptionInputLayout.Text = "Mô tả vi thể";
       this.microDescriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.microDescriptionInputLayout.TextSize = new System.Drawing.Size(190, 21);
@@ -495,7 +495,7 @@
       this.MaximizeBox = false;
       this.Name = "Type1";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "PMSX - Thêm kết quả chuẩn đoán loại 1";
+      this.Text = "PMSX - Thêm kết quả chẩn đoán loại 1";
       this.Load += new System.EventHandler(this.Biopsy_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);

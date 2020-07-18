@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class Micro : XtraForm {
+  internal partial class Micro : XtraForm, Pattern.Interface.IView {
     private readonly string groupId;
     public Micro(string groupId) {
       InitializeComponent();

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class Staff : Pattern.IModel {
+  internal class Staff : Pattern.Interface.IModel {
     private readonly int state;
 
     public Staff(DataRow row) {
@@ -26,7 +26,7 @@ namespace PMSX.Model {
     public string Name { get; private set; }
 
     public string Comment { get; private set; }
-    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
+    public string State => state == 0 ? "Vô hiệu hoá" : "Kích hoạt";
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }

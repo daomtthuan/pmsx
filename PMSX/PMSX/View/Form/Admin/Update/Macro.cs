@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Macro : XtraForm {
+  internal partial class Macro : XtraForm, Pattern.Interface.IView {
     private readonly Model.Macro macros;
 
     public Macro(Model.Macro macros) {

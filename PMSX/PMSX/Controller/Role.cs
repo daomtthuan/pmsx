@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Role : Pattern.Singleton<Role>, Pattern.IController {
+  internal class Role : Pattern.Class.Singleton<Role>, Pattern.Interface.IController {
     private Role() { }
 
     public List<Model.Role> SelectAll(int state = -1) {

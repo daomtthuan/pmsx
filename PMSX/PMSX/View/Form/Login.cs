@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  public partial class Login : XtraForm {
+  internal partial class Login : XtraForm, Pattern.Interface.IView {
     public Login() {
       InitializeComponent();
 
@@ -13,10 +13,6 @@ namespace PMSX.View.Form {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
-
-      brandPanel.Controls.Add(new UserControl.Brand() {
-        Dock = DockStyle.Fill
-      });
     }
 
     private void LoginButton_Click(object sender, EventArgs e) {
@@ -28,6 +24,8 @@ namespace PMSX.View.Form {
         Model.Staff staff = Controller.Staff.Instance.Auth(usernameInput.Text, passwordInput.Text);
         if (staff == null) {
           Utils.View.MessageBox.Instance.Warning("Đăng nhập không thành công.\nTên đăng nhập hoặc mật khẩu không đúng.");
+          usernameInput.Focus();
+          usernameInput.SelectAll();
         } else {
           if (staff.GetStateNumber() == 0) {
             Utils.View.MessageBox.Instance.Warning("Không thể đăng nhập.\nTài khoản này đã bị vô hiệu hoá.");

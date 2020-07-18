@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Biopsy : XtraForm {
+  internal partial class Biopsy : XtraForm, Pattern.Interface.IView {
     private readonly Model.Biopsy biopsy;
     private readonly List<Model.Patient> patients;
     private readonly List<Model.Staff> grossDoctors;

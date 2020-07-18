@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller {
-  public class Staff : Pattern.Singleton<Staff>, Pattern.IController {
+  internal class Staff : Pattern.Class.Singleton<Staff>, Pattern.Interface.IController {
     private Staff() { }
 
     public Model.Staff Auth(string username, string password) {

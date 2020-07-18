@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace PMSX.Controller.Diagnose {
-  public class Type1 : Pattern.Singleton<Type1>, Pattern.IController {
+  internal class Type1 : Pattern.Class.Singleton<Type1>, Pattern.Interface.IController {
     private Type1() { }
 
     public List<Model.Diagnose.Type1> SelectAll(int state = -1) {

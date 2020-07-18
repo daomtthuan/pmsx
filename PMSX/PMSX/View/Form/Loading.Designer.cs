@@ -24,37 +24,37 @@
         /// </summary>
         private void InitializeComponent() {
       this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
-      this.brandPanel = new DevExpress.XtraEditors.PanelControl();
+      this.brand1 = new PMSX.View.UserControl.Brand();
       this.root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.copyrightLabel = new DevExpress.XtraLayout.SimpleLabelItem();
-      this.brandPanelLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.brandPanel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.copyrightLabel)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.brandPanelLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
       // 
       this.layoutControl.AllowCustomization = false;
-      this.layoutControl.Controls.Add(this.brandPanel);
+      this.layoutControl.Controls.Add(this.brand1);
       this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layoutControl.Location = new System.Drawing.Point(0, 0);
       this.layoutControl.Name = "layoutControl";
       this.layoutControl.Root = this.root;
-      this.layoutControl.Size = new System.Drawing.Size(500, 319);
+      this.layoutControl.Size = new System.Drawing.Size(515, 292);
       this.layoutControl.TabIndex = 10;
       this.layoutControl.Text = "layoutControl1";
       // 
-      // brandPanel
+      // brand1
       // 
-      this.brandPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-      this.brandPanel.Location = new System.Drawing.Point(12, 12);
-      this.brandPanel.Name = "brandPanel";
-      this.brandPanel.Size = new System.Drawing.Size(476, 254);
-      this.brandPanel.TabIndex = 14;
+      this.brand1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+      this.brand1.Appearance.Options.UseBackColor = true;
+      this.brand1.Location = new System.Drawing.Point(12, 12);
+      this.brand1.Name = "brand1";
+      this.brand1.Size = new System.Drawing.Size(491, 234);
+      this.brand1.TabIndex = 4;
       // 
       // root
       // 
@@ -64,9 +64,9 @@
       this.root.GroupBordersVisible = false;
       this.root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.copyrightLabel,
-            this.brandPanelLayout});
+            this.layoutControlItem1});
       this.root.Name = "root";
-      this.root.Size = new System.Drawing.Size(500, 319);
+      this.root.Size = new System.Drawing.Size(515, 292);
       this.root.TextVisible = false;
       // 
       // copyrightLabel
@@ -79,38 +79,37 @@
       this.copyrightLabel.AppearanceItemCaption.Options.UseTextOptions = true;
       this.copyrightLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
       this.copyrightLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
-      this.copyrightLabel.Location = new System.Drawing.Point(0, 258);
+      this.copyrightLabel.Location = new System.Drawing.Point(0, 238);
       this.copyrightLabel.MinSize = new System.Drawing.Size(419, 21);
       this.copyrightLabel.Name = "copyrightLabel";
-      this.copyrightLabel.Size = new System.Drawing.Size(480, 41);
+      this.copyrightLabel.Size = new System.Drawing.Size(495, 34);
       this.copyrightLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.copyrightLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 0);
       this.copyrightLabel.Text = "Copyright";
       this.copyrightLabel.TextSize = new System.Drawing.Size(57, 17);
       // 
-      // brandPanelLayout
+      // layoutControlItem1
       // 
-      this.brandPanelLayout.Control = this.brandPanel;
-      this.brandPanelLayout.Location = new System.Drawing.Point(0, 0);
-      this.brandPanelLayout.Name = "brandPanelLayout";
-      this.brandPanelLayout.Size = new System.Drawing.Size(480, 258);
-      this.brandPanelLayout.TextSize = new System.Drawing.Size(0, 0);
-      this.brandPanelLayout.TextVisible = false;
+      this.layoutControlItem1.Control = this.brand1;
+      this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+      this.layoutControlItem1.Name = "layoutControlItem1";
+      this.layoutControlItem1.Size = new System.Drawing.Size(495, 238);
+      this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+      this.layoutControlItem1.TextVisible = false;
       // 
       // Loading
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(500, 319);
+      this.ClientSize = new System.Drawing.Size(515, 292);
       this.Controls.Add(this.layoutControl);
       this.Name = "Loading";
       this.Text = "Form1";
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
       this.layoutControl.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.brandPanel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.copyrightLabel)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.brandPanelLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
       this.ResumeLayout(false);
 
         }
@@ -119,7 +118,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl;
         private DevExpress.XtraLayout.LayoutControlGroup root;
         private DevExpress.XtraLayout.SimpleLabelItem copyrightLabel;
-    private DevExpress.XtraEditors.PanelControl brandPanel;
-    private DevExpress.XtraLayout.LayoutControlItem brandPanelLayout;
+    private UserControl.Brand brand1;
+    private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
   }
 }

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert.Diagnose {
-  public partial class Type1 : XtraForm {
+  internal partial class Type1 : XtraForm, Pattern.Interface.IView {
     private readonly List<Model.MacroGroup> macroGroups;
     private readonly List<Model.MicroGroup> microGroups;
     private readonly List<Model.BiopsyGroup> biopsyGroups;
@@ -56,7 +56,7 @@ namespace PMSX.View.Form.Admin.Insert.Diagnose {
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {
-      if (biopsySelect.EditValue == null || codeInput.Text.Length == 0 || macroDescriptionInput.Text.Length == 0 || microDescriptionInput.Text.Length == 0 || conclusionInput.Text.Length == 0 || readDateSelect.Text.Length == 0) {
+      if (biopsySelect.EditValue == null || codeInput.Text.Length == 0 || macroDescriptionInput.Text.Length == 0 || microDescriptionInput.Text.Length == 0 || conclusionInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else if (!Regex.IsMatch(codeInput.Text, Utils.RegexPattern.Instance.Code)) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nMã số không hợp lệ.");

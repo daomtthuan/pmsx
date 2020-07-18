@@ -2,27 +2,21 @@
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  public partial class Main : RibbonForm {
-    private readonly PanelControl panelControl;
-    private readonly Login loginForm;
+  internal partial class Main : RibbonForm {
+    private PanelControl panelControl;
 
     public Main() {
       InitializeComponent();
-      Display = false;
 
+      managePageGroup.Visible = false;
+      personnelPage.Visible = false;
+      clinicPage.Visible = false;
       Icon = Properties.Resources.icon;
-
-      panelControl = new PanelControl() {
-        Dock = DockStyle.Fill
-      };
-      Controls.Add(panelControl);
-
-      loginForm = new Login();
+      Display = false;
     }
 
     public bool Display {
@@ -33,6 +27,21 @@ namespace PMSX.View.Form {
         Opacity = value ? 1 : 0;
         FormBorderEffect = value ? FormBorderEffect.Default : FormBorderEffect.None;
       }
+    }
+
+    private void OnLoad() {
+      Controls.Add(panelControl = new PanelControl() { Dock = DockStyle.Fill });
+
+      if (Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor)) {
+        managePageGroup.Visible = true;
+        clinicPage.Visible = true;
+      }
+
+      if (Controller.Main.Instance.HasRole(Controller.Main.Role.Technician)) {
+        managePageGroup.Visible = true;
+      }
+
+      Display = true;
     }
 
     private void AddUserControl<T>() where T : XtraUserControl, new() {
@@ -49,26 +58,24 @@ namespace PMSX.View.Form {
     private async void Main_Load(object sender, System.EventArgs e) {
       await Task.Delay(2000);
 
-      loginForm.ShowDialog();
+      new Login().ShowDialog();
 
       if (Controller.Main.Instance.Staff == null) {
         Application.Exit();
       } else {
-        if (Controller.Main.Instance.Roles.Where(item => item.Name == "Quản trị viên").Count() != 1) {
-          adminPageGroup.Dispose();
-
+        if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {
           List<Model.Session> sessions = Controller.Session.Instance.SelectAll(1);
           if (sessions.Count == 0) {
             Utils.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
             Application.Exit();
+            return;
           } else {
             SelectSession selectSessionForm = new SelectSession(sessions);
             selectSessionForm.ShowDialog();
-            Display = true;
           }
-        } else {
-          Display = true;
         }
+
+        Utils.View.Progress.Instance.Start(this, OnLoad);
       }
     }
 
@@ -112,14 +119,6 @@ namespace PMSX.View.Form {
       AddUserControl<UserControl.Admin.Table.Diagnose.Type1>();
     }
 
-    private void DiagnoseType2Button_ItemClick(object sender, ItemClickEventArgs e) {
-
-    }
-
-    private void DiagnoseType3Button_ItemClick(object sender, ItemClickEventArgs e) {
-
-    }
-
     private void MacroGroupButton_ItemClick(object sender, ItemClickEventArgs e) {
       AddUserControl<UserControl.Admin.Table.MacroGroup>();
     }
@@ -134,6 +133,14 @@ namespace PMSX.View.Form {
 
     private void MicroButton_ItemClick(object sender, ItemClickEventArgs e) {
       AddUserControl<UserControl.Admin.Table.Micro>();
+    }
+
+    private void CollectBiopsyButton_ItemClick(object sender, ItemClickEventArgs e) {
+      AddUserControl<UserControl.Technician.CollectBiopsy>();
+    }
+
+    private void InputDiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
+      AddUserControl<UserControl.Doctor.InputDiagnose.Type1>();
     }
   }
 }

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Role : XtraForm {
+  internal partial class Role : XtraForm, Pattern.Interface.IView {
     private readonly Model.Role roles;
 
     public Role(Model.Role roles) {

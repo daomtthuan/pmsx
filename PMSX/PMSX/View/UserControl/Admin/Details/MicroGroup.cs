@@ -1,5 +1,7 @@
-﻿namespace PMSX.View.UserControl.Admin.Details {
-  public partial class MicroGroup : DevExpress.XtraEditors.XtraUserControl {
+﻿using DevExpress.XtraEditors;
+
+namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class MicroGroup : XtraUserControl, Pattern.Interface.IView {
     public MicroGroup() {
       InitializeComponent();
     }

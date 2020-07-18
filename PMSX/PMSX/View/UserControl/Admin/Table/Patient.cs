@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class Patient : XtraUserControl {
+  internal partial class Patient : XtraUserControl, Pattern.Interface.IView {
     private class PatientTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách bệnh nhân";

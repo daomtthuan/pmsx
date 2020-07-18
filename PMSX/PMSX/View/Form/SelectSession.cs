@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  public partial class SelectSession : XtraForm {
+  internal partial class SelectSession : XtraForm, Pattern.Interface.IView {
     private readonly List<Model.Session> sessions;
 
     public SelectSession(List<Model.Session> sessions) {
@@ -15,10 +15,6 @@ namespace PMSX.View.Form {
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
       CancelButton = closeButton;
-
-      brandPanel.Controls.Add(new UserControl.Brand() {
-        Dock = DockStyle.Fill
-      });
 
       this.sessions = sessions;
     }

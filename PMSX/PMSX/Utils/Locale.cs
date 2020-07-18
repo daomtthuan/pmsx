@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace PMSX.Utils {
-  public class Locale : Pattern.Singleton<Locale> {
+  internal class Locale : Pattern.Class.Singleton<Locale> {
     private Locale() {
       Caption = new Dictionary<string, string>() {
         { "Id", "Mã định danh" },

@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 
 namespace PMSX.View.UserControl {
-  public partial class Brand : XtraUserControl {
+  internal partial class Brand : XtraUserControl, Pattern.Interface.IView {
     public Brand() {
       InitializeComponent();
     }

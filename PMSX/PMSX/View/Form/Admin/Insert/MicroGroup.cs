@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class MicroGroup : XtraForm {
+  internal partial class MicroGroup : XtraForm, Pattern.Interface.IView {
     public MicroGroup() {
       InitializeComponent();
 

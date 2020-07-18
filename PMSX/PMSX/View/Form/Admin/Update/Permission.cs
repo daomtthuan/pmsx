@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class Permission : XtraForm {
+  internal partial class Permission : XtraForm, Pattern.Interface.IView {
     private readonly Model.Permission permissions;
 
     public Permission(Model.Permission permissions) {

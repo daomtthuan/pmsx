@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  public partial class Micro : XtraUserControl {
+  internal partial class Micro : XtraUserControl, Pattern.Interface.IView {
     private class MicroTable : Layout.Table {
       private string groupId;
       private string groupName;

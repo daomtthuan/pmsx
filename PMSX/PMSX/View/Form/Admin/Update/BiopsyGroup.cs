@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  public partial class BiopsyGroup : XtraForm {
+  internal partial class BiopsyGroup : XtraForm, Pattern.Interface.IView {
     private readonly Model.BiopsyGroup biopsyGroup;
 
     public BiopsyGroup(Model.BiopsyGroup biopsyGroup) {

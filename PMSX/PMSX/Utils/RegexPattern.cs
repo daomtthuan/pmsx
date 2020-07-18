@@ -1,5 +1,5 @@
 ﻿namespace PMSX.Utils {
-  public class RegexPattern : Pattern.Singleton<RegexPattern> {
+  internal class RegexPattern : Pattern.Class.Singleton<RegexPattern> {
     private RegexPattern() {
       Username = "^[a-z0-9_]+$";
       Code = "^\\w+$";

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  public partial class Session : XtraForm {
+  internal partial class Session : XtraForm, Pattern.Interface.IView {
     private readonly List<Model.Staff> technicians;
     private readonly List<Model.Staff> doctors;
 

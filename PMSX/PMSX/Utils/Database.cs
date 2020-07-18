@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 
 namespace PMSX.Utils {
-  public class Database : Pattern.Singleton<Database> {
+  internal class Database : Pattern.Class.Singleton<Database> {
     private Database() { }
 
     public DataTable Excute(string query, SqlParameter[] parameters = null) {

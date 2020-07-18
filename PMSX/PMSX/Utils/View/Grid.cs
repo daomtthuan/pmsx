@@ -7,7 +7,7 @@ using System.Collections;
 using System.Linq;
 
 namespace PMSX.Utils.View {
-  public class Grid : Pattern.Singleton<Grid> {
+  internal class Grid : Pattern.Class.Singleton<Grid>, Pattern.Interface.IUtil {
     private Grid() { }
 
     public void Load(GridControl gridControl, GridView gridView, IList models, string[] visibledFieldNames) {

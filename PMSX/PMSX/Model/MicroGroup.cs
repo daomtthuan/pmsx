@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace PMSX.Model {
-  public class MicroGroup : Pattern.IModel {
+  internal class MicroGroup : Pattern.Interface.IModel {
     private readonly int state;
 
     public MicroGroup(DataRow row) {
@@ -24,7 +24,7 @@ namespace PMSX.Model {
     public string Name { get; private set; }
 
     public string Comment { get; private set; }
-    public string State { get => state == 0 ? "Vô hiệu hoá" : "Kích hoạt"; }
+    public string State => state == 0 ? "Vô hiệu hoá" : "Kích hoạt";
 
     public string CreateStaffId { get; private set; }
     public string CreateDatetime { get; private set; }
