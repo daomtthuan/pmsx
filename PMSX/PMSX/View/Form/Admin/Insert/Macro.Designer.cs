@@ -78,6 +78,7 @@
       // 
       this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.insertButton.Appearance.Options.UseBackColor = true;
+      this.insertButton.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.insertButton.Location = new System.Drawing.Point(12, 468);
       this.insertButton.Name = "insertButton";
       this.insertButton.Padding = new System.Windows.Forms.Padding(5);

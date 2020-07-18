@@ -12,7 +12,6 @@ namespace PMSX.View.Form.Admin.Update {
     public Session(Model.Session session, List<Model.Staff> technicians, List<Model.Staff> doctors) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
@@ -37,7 +36,6 @@ namespace PMSX.View.Form.Admin.Update {
       if (!Controller.Session.Instance.Update(session.Id, nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text, (int)stateRadio.EditValue)) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
-        DialogResult = DialogResult.OK;
         Close();
       }
     }

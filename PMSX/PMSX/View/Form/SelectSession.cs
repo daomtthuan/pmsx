@@ -6,7 +6,7 @@ namespace PMSX.View.Form {
   internal partial class SelectSession : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly List<Model.Session> sessions;
 
-    public SelectSession(List<Model.Session> sessions) : base() {
+    public SelectSession(List<Model.Session> sessions) {
       InitializeComponent();
 
       Icon = Properties.Resources.icon;

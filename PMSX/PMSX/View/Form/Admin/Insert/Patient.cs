@@ -4,16 +4,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Patient : XtraForm, Pattern.Interface.IView {
+  internal partial class Patient : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     public Patient() {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       yearSelect.Properties.MaxValue = DateTime.Now;
       yearSelect.Properties.MinValue = DateTime.Now.AddYears(-150);

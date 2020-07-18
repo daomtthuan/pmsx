@@ -4,19 +4,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Session : XtraForm, Pattern.Interface.IView {
+  internal partial class Session : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly List<Model.Staff> technicians;
     private readonly List<Model.Staff> doctors;
 
     public Session(List<Model.Staff> technicians, List<Model.Staff> doctors) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       this.technicians = technicians;
       this.doctors = doctors;
@@ -33,7 +28,6 @@ namespace PMSX.View.Form.Admin.Insert {
       if (!Controller.Session.Instance.Insert(nameSelect.DateTime, technicianSelect.EditValue.ToString(), doctorSelect.EditValue.ToString(), commentInput.Text)) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nTên phiên làm việc đã tồn tại.");
       } else {
-        DialogResult = DialogResult.OK;
         Close();
       }
     }

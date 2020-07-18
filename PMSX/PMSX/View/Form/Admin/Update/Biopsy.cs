@@ -13,7 +13,6 @@ namespace PMSX.View.Form.Admin.Update {
     public Biopsy(Model.Biopsy biopsy, List<Model.Patient> patients, List<Model.Staff> grossDoctors, List<Model.Session> sessions) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();

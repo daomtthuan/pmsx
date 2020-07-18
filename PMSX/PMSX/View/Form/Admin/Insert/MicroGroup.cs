@@ -3,16 +3,11 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class MicroGroup : XtraForm, Pattern.Interface.IView {
+  internal partial class MicroGroup : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     public MicroGroup() {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

@@ -9,7 +9,6 @@ namespace PMSX.View.Form.Admin.Update {
       InitializeComponent();
       this.micros = micros;
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();

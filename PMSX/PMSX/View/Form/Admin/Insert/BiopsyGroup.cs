@@ -4,16 +4,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class BiopsyGroup : XtraForm, Pattern.Interface.IView {
+  internal partial class BiopsyGroup : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     public BiopsyGroup() {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

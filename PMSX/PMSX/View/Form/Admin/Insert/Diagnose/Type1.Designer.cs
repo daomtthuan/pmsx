@@ -40,7 +40,6 @@
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.insertButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.sampleLabel = new DevExpress.XtraLayout.SimpleLabelItem();
-      this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.readDateSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.requiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
@@ -54,6 +53,7 @@
       this.microDescriptionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.macroGroupSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.microGroupSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.notRequiredLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
       this.layoutControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
@@ -72,7 +72,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.readDateSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).BeginInit();
@@ -86,6 +85,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.microDescriptionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).BeginInit();
       this.SuspendLayout();
       // 
       // layoutControl
@@ -117,6 +117,7 @@
       // 
       this.insertButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.insertButton.Appearance.Options.UseBackColor = true;
+      this.insertButton.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.insertButton.Location = new System.Drawing.Point(12, 772);
       this.insertButton.Name = "insertButton";
       this.insertButton.Padding = new System.Windows.Forms.Padding(5);
@@ -328,18 +329,6 @@
       this.sampleLabel.Text = "Thông tin mẫu";
       this.sampleLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
-      // notRequiredLabel
-      // 
-      this.notRequiredLabel.AllowHotTrack = false;
-      this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
-      this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
-      this.notRequiredLabel.Location = new System.Drawing.Point(0, 483);
-      this.notRequiredLabel.Name = "notRequiredLabel";
-      this.notRequiredLabel.Size = new System.Drawing.Size(1180, 45);
-      this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
-      this.notRequiredLabel.Text = "Thông tin không bắt buộc";
-      this.notRequiredLabel.TextSize = new System.Drawing.Size(190, 21);
-      // 
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
@@ -484,6 +473,18 @@
       this.microGroupSelectLayout.TextLocation = DevExpress.Utils.Locations.Top;
       this.microGroupSelectLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
+      // notRequiredLabel
+      // 
+      this.notRequiredLabel.AllowHotTrack = false;
+      this.notRequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
+      this.notRequiredLabel.AppearanceItemCaption.Options.UseFont = true;
+      this.notRequiredLabel.Location = new System.Drawing.Point(0, 483);
+      this.notRequiredLabel.Name = "notRequiredLabel";
+      this.notRequiredLabel.Size = new System.Drawing.Size(1180, 45);
+      this.notRequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
+      this.notRequiredLabel.Text = "Thông tin không bắt buộc";
+      this.notRequiredLabel.TextSize = new System.Drawing.Size(190, 21);
+      // 
       // Type1
       // 
       this.AcceptButton = this.insertButton;
@@ -515,7 +516,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.insertButtonLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleLabel)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.readDateSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.requiredLabel)).EndInit();
@@ -529,6 +529,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.microDescriptionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.macroGroupSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.microGroupSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.notRequiredLabel)).EndInit();
       this.ResumeLayout(false);
 
         }

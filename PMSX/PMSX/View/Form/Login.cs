@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace PMSX.View.Form {
   internal partial class Login : Pattern.View.EscCloseForm, Pattern.Interface.IView {
-    public Login() : base() {
+    public Login() {
       InitializeComponent();
 
       Icon = Properties.Resources.icon;

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert.Diagnose {
-  internal partial class Type1 : XtraForm, Pattern.Interface.IView {
+  internal partial class Type1 : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly List<Model.MacroGroup> macroGroups;
     private readonly List<Model.MicroGroup> microGroups;
     private readonly List<Model.BiopsyGroup> biopsyGroups;
@@ -13,12 +13,7 @@ namespace PMSX.View.Form.Admin.Insert.Diagnose {
     public Type1(List<Model.MacroGroup> macroGroups, List<Model.MicroGroup> microGroups, List<Model.BiopsyGroup> biopsyGroups) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       readDateSelect.Properties.MinValue = DateTime.Now;
 

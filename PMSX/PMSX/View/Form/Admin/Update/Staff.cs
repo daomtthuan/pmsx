@@ -11,7 +11,6 @@ namespace PMSX.View.Form.Admin.Update {
       InitializeComponent();
       this.staffs = staffs;
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();

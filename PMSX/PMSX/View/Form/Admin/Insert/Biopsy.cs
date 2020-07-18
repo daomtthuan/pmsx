@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Biopsy : XtraForm, Pattern.Interface.IView {
+  internal partial class Biopsy : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly string groupId;
     private readonly List<Model.Patient> patients;
     private readonly List<Model.Staff> grossDoctors;
@@ -13,12 +13,7 @@ namespace PMSX.View.Form.Admin.Insert {
     public Biopsy(string groupId, List<Model.Patient> patients, List<Model.Staff> grossDoctors, List<Model.Session> sessions) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       grossDatetimeSelect.Properties.MaxValue = DateTime.Now;
       grossDatetimeSelect.Properties.MaxValue = DateTime.Now;

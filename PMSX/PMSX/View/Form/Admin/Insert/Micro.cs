@@ -3,17 +3,12 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Micro : XtraForm, Pattern.Interface.IView {
+  internal partial class Micro : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly string groupId;
     public Micro(string groupId) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       this.groupId = groupId;
     }

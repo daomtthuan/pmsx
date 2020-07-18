@@ -4,19 +4,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Permission : XtraForm, Pattern.Interface.IView {
+  internal partial class Permission : Pattern.View.EscCloseForm, Pattern.Interface.IView {
     private readonly string roleId;
     private readonly List<Model.Staff> staffs;
 
     public Permission(string roleId, List<Model.Staff> staffs) {
       InitializeComponent();
 
-      DialogResult = DialogResult.Cancel;
       Icon = Properties.Resources.icon;
-
-      Button closeButton = new Button();
-      closeButton.Click += new EventHandler((sender, e) => Close());
-      CancelButton = closeButton;
 
       this.roleId = roleId;
       this.staffs = staffs;
@@ -28,7 +23,6 @@ namespace PMSX.View.Form.Admin.Insert {
 
     private void InsertButton_Click(object sender, EventArgs e) {
       Controller.Permission.Instance.Insert(staffSelect.EditValue.ToString(), roleId, commentInput.Text);
-      DialogResult = DialogResult.OK;
       Close();
     }
   }
