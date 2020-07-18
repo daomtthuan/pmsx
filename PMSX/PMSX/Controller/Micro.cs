@@ -51,7 +51,8 @@ namespace PMSX.Controller {
 
       return micros;
     }
-    public List<Model.Micro> SelectByCode(string code, string groupId, int state = -1) {
+    
+    public List<Model.Micro> SelectByCodeAndId(string code, string groupId, int state = -1) {
       List<Model.Micro> micros = new List<Model.Micro>();
 
       string query = @"
@@ -77,7 +78,7 @@ namespace PMSX.Controller {
       return micros;
     }
     public bool Insert(string code, string description, string conclusion, string groupId, string comment) {
-      if (SelectByCode(code, groupId).Count > 0) {
+      if (SelectByCodeAndId(code, groupId).Count > 0) {
         return false;
       }
 
@@ -112,19 +113,23 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Update(string code, string description, string comment, int state) {
+    public void Update(string groupId, string id, string code, string description, string comment, int state) {
       string query = @"
         update pmsx_micro
         set 
+          micro_code = @code,
 	        micro_description = @description,
 	        micro_comment = @comment,
           micro_state = @state,
           micro_updateStaffId = @updateStaffId,
 	        micro_updateDatetime = getdate()                    
-        where micro_code = @code
+        where micro_id = @id and
+              micro_groupId = @groupId
       ";
 
       SqlParameter[] parameters = {
+        new SqlParameter("@groupId", groupId),
+        new SqlParameter("@id", id),
         new SqlParameter("@code", code),
         new SqlParameter("@description", description),
         comment.Length > 0 ? new SqlParameter("@comment", comment) : new SqlParameter("@comment", DBNull.Value),
