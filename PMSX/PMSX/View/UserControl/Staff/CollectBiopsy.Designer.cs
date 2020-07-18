@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.UserControl.Doctor {
+﻿namespace PMSX.View.UserControl.Staff {
   partial class CollectBiopsy {
     /// <summary> 
     /// Required designer variable.

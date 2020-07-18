@@ -1,9 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace PMSX.View.UserControl.Doctor {
-  internal partial class CollectBiopsy : XtraUserControl, Pattern.Interface.IView {
+namespace PMSX.View.UserControl.Staff {
+  internal partial class CollectBiopsy : Pattern.Class.UserControl {
     private List<Model.Biopsy> biopsies;
 
     public CollectBiopsy() {

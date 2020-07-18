@@ -1,17 +1,14 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class BiopsyGroup : XtraForm, Pattern.Interface.IView {
+  internal partial class BiopsyGroup : Pattern.Class.EscCloseForm {
     private readonly Model.BiopsyGroup biopsyGroup;
 
     public BiopsyGroup(Model.BiopsyGroup biopsyGroup) {
       InitializeComponent();
       this.biopsyGroup = biopsyGroup;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

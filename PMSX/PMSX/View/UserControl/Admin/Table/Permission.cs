@@ -1,10 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class Permission : XtraUserControl, Pattern.Interface.IView {
+  internal partial class Permission : Pattern.Class.UserControl {
     private class PermissionTable : Layout.Table {
       private string roleId;
       private string roleName;

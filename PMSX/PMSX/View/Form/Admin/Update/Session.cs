@@ -1,18 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class Session : XtraForm, Pattern.Interface.IView {
+  internal partial class Session : Pattern.Class.EscCloseForm {
     private readonly Model.Session session;
     private readonly List<Model.Staff> technicians;
     private readonly List<Model.Staff> doctors;
 
     public Session(Model.Session session, List<Model.Staff> technicians, List<Model.Staff> doctors) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

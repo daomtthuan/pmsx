@@ -1,19 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert.Diagnose {
-  internal partial class Type1 : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Type1 : Pattern.Class.EscCloseForm {
     private readonly List<Model.MacroGroup> macroGroups;
     private readonly List<Model.MicroGroup> microGroups;
     private readonly List<Model.BiopsyGroup> biopsyGroups;
 
     public Type1(List<Model.MacroGroup> macroGroups, List<Model.MicroGroup> microGroups, List<Model.BiopsyGroup> biopsyGroups) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       readDateSelect.Properties.MinValue = DateTime.Now;
 

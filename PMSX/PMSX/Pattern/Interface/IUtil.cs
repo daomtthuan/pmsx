@@ -1,4 +1,4 @@
 ﻿namespace PMSX.Pattern.Interface {
-  interface IUtil : IPattern {
+  internal interface IUtil : IPattern {
   }
 }

@@ -1,17 +1,14 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class Staff : XtraForm, Pattern.Interface.IView {
+  internal partial class Staff : Pattern.Class.EscCloseForm {
     private readonly Model.Staff staffs;
 
     public Staff(Model.Staff staffs) {
       InitializeComponent();
       this.staffs = staffs;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

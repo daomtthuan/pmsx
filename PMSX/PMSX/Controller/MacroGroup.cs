@@ -121,7 +121,7 @@ namespace PMSX.Controller {
          where macroGroup_id = @id
       ";
 
-        SqlParameter[] parameters = {
+      SqlParameter[] parameters = {
         new SqlParameter("@id", id),
         new SqlParameter("@code", code),
         new SqlParameter("@name", name),
@@ -130,8 +130,8 @@ namespace PMSX.Controller {
         new SqlParameter("@updateStaffId", Main.Instance.Staff.Id)
       };
 
-        Utils.Database.Instance.ExcuteNon(query, parameters);
-       
+      Utils.Database.Instance.ExcuteNon(query, parameters);
+
     }
 
     public void Disable(string id) {

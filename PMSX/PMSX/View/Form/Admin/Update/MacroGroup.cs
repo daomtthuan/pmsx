@@ -1,16 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class MacroGroup : XtraForm, Pattern.Interface.IView {
+  internal partial class MacroGroup : Pattern.Class.EscCloseForm {
     private readonly Model.MacroGroup macroGroups;
 
     public MacroGroup(Model.MacroGroup macroGroups) {
       InitializeComponent();
       this.macroGroups = macroGroups;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
@@ -27,11 +24,11 @@ namespace PMSX.View.Form.Admin.Update {
       if (nameInput.Text.Length == 0 || codeInput.Text.Length == 0) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else if (codeInput.Text == macroGroups.Code) {
-        Controller.MacroGroup.Instance.Update(macroGroups.Id,codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Controller.MacroGroup.Instance.Update(macroGroups.Id, codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
-      } else if((codeInput.Text != macroGroups.Code) && (Controller.MacroGroup.Instance.SelectByCode(codeInput.Text).Count == 0)) {
-        Controller.MacroGroup.Instance.Update(macroGroups.Id,codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
-        Close();  
+      } else if ((codeInput.Text != macroGroups.Code) && (Controller.MacroGroup.Instance.SelectByCode(codeInput.Text).Count == 0)) {
+        Controller.MacroGroup.Instance.Update(macroGroups.Id, codeInput.Text, nameInput.Text, commentInput.Text, (int)stateRadio.EditValue);
+        Close();
       } else {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã nhóm đã tồn tại.");
       }

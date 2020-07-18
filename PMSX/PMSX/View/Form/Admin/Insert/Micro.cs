@@ -1,14 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Windows.Forms;
+﻿using System;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Micro : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Micro : Pattern.Class.EscCloseForm {
     private readonly string groupId;
     public Micro(string groupId) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       this.groupId = groupId;
     }

@@ -1,10 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class Biopsy : XtraForm, Pattern.Interface.IView {
+  internal partial class Biopsy : Pattern.Class.EscCloseForm {
     private readonly Model.Biopsy biopsy;
     private readonly List<Model.Patient> patients;
     private readonly List<Model.Staff> grossDoctors;
@@ -12,8 +11,6 @@ namespace PMSX.View.Form.Admin.Update {
 
     public Biopsy(Model.Biopsy biopsy, List<Model.Patient> patients, List<Model.Staff> grossDoctors, List<Model.Session> sessions) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

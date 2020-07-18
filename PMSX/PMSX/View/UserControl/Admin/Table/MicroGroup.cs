@@ -1,8 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class MicroGroup : XtraUserControl, Pattern.Interface.IView {
+  internal partial class MicroGroup : Pattern.Class.UserControl {
     private class MicroGroupTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhóm vi thể";

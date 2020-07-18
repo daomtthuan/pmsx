@@ -2,7 +2,7 @@
 using System;
 
 namespace PMSX.View.Form {
-  internal partial class Loading : SplashScreen {
+  internal partial class Loading : SplashScreen, Pattern.Interface.IView {
     public Loading() {
       InitializeComponent();
 

@@ -1,9 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table.Diagnose {
-  internal partial class Type1 : XtraUserControl, Pattern.Interface.IView {
+  internal partial class Type1 : Pattern.Class.UserControl {
     private class DiagnoseTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách kết quả chẩn đoán loại 1";

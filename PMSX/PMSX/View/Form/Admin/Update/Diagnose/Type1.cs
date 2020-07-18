@@ -1,11 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update.Diagnose {
-  internal partial class Type1 : XtraForm, Pattern.Interface.IView {
+  internal partial class Type1 : Pattern.Class.EscCloseForm {
     private readonly Model.Diagnose.Type1 diagnose;
     private readonly List<Model.MacroGroup> macroGroups;
     private readonly List<Model.MicroGroup> microGroups;
@@ -13,8 +12,6 @@ namespace PMSX.View.Form.Admin.Update.Diagnose {
 
     public Type1(Model.Diagnose.Type1 diagnose, List<Model.MacroGroup> macroGroups, List<Model.MicroGroup> microGroups, List<Model.BiopsyGroup> biopsyGroups) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

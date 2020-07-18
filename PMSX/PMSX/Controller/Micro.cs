@@ -51,7 +51,7 @@ namespace PMSX.Controller {
 
       return micros;
     }
-    
+
     public List<Model.Micro> SelectByCodeAndId(string code, string groupId, int state = -1) {
       List<Model.Micro> micros = new List<Model.Micro>();
 

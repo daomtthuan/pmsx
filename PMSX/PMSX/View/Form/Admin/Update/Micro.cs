@@ -1,15 +1,12 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class Micro : XtraForm, Pattern.Interface.IView {
+  internal partial class Micro : Pattern.Class.EscCloseForm {
     private readonly Model.Micro micros;
     public Micro(Model.Micro micros) {
       InitializeComponent();
       this.micros = micros;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
@@ -28,7 +25,7 @@ namespace PMSX.View.Form.Admin.Update {
       } else if ((codeInput.Text == micros.Code)) {
         Controller.Micro.Instance.Update(micros.MicroGroupId, micros.Id, codeInput.Text, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
-      } else if ((codeInput.Text != micros.Code) && (Controller.Micro.Instance.SelectByCodeAndId(codeInput.Text,micros.MicroGroupId).Count == 0)) {
+      } else if ((codeInput.Text != micros.Code) && (Controller.Micro.Instance.SelectByCodeAndId(codeInput.Text, micros.MicroGroupId).Count == 0)) {
         Controller.Micro.Instance.Update(micros.MicroGroupId, micros.Id, codeInput.Text, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       } else {

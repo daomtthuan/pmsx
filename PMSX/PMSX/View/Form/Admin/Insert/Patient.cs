@@ -1,14 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Patient : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Patient : Pattern.Class.EscCloseForm {
     public Patient() {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       yearSelect.Properties.MaxValue = DateTime.Now;
       yearSelect.Properties.MinValue = DateTime.Now.AddYears(-150);

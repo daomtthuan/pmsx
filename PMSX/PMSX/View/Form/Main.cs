@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  internal partial class Main : RibbonForm {
+  internal partial class Main : RibbonForm, Pattern.Interface.IView {
     private PanelControl panelControl;
 
     public Main() {
       InitializeComponent();
-      Icon = Properties.Resources.icon;
       Display = false;
     }
 
@@ -33,14 +32,11 @@ namespace PMSX.View.Form {
         personnelPage.Dispose();
       }
 
-      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor)) {
-        managePageGroup.Pages.Remove(clinicPage);
-        clinicPage.Dispose();
-      }
-
       if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor) && !Controller.Main.Instance.HasRole(Controller.Main.Role.Technician)) {
+        managePageGroup.Pages.Remove(clinicPage);
         ribbon.Pages.Remove(pathologyPage);
         ribbon.Pages.Remove(diagnosePage);
+        clinicPage.Dispose();
         pathologyPage.Dispose();
         diagnosePage.Dispose();
       }
@@ -51,10 +47,9 @@ namespace PMSX.View.Form {
       }
 
       Display = true;
-
     }
 
-    private void AddUserControl<T>() where T : XtraUserControl, new() {
+    private void AddUserControl<T>() where T : Pattern.Class.UserControl, new() {
       Utils.View.Progress.Instance.Start(panelControl, () => {
         if (panelControl.Controls.Count > 0) {
           panelControl.Controls[0].Dispose();
@@ -72,22 +67,19 @@ namespace PMSX.View.Form {
 
       if (Controller.Main.Instance.Staff == null) {
         Application.Exit();
-      } else {
-        if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {
-          List<Model.Session> sessions = Controller.Session.Instance.SelectAll(1);
-          if (sessions.Count == 0) {
-            Utils.View.MessageBox.Instance.Warning("Không thể truy cập hệ thống.\nHiện tại không có phiên làm việc nào.");
-            Application.Exit();
-          } else {
-            SelectSession selectSessionForm = new SelectSession(sessions);
-            selectSessionForm.ShowDialog();
-
-            Utils.View.Progress.Instance.Start(this, OnLoad);
-          }
-        } else {
-          Utils.View.Progress.Instance.Start(this, OnLoad);
-        }        
+        return;
       }
+
+      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {    
+        new SelectSession().ShowDialog();
+
+        if (Controller.Main.Instance.Session == null) {
+          Application.Exit();
+          return;
+        }
+      }
+
+      Utils.View.Progress.Instance.Start(this, OnLoad);
     }
 
     private void ExitButton_Click(object sender, BackstageViewItemEventArgs e) {
@@ -147,11 +139,11 @@ namespace PMSX.View.Form {
     }
 
     private void CollectBiopsyButton_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Doctor.CollectBiopsy>();
+      AddUserControl<UserControl.Staff.CollectBiopsy>();
     }
 
     private void InputDiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Doctor.InputDiagnose.Type1>();
+      AddUserControl<UserControl.Staff.InputDiagnose.Type1>();
     }
   }
 }

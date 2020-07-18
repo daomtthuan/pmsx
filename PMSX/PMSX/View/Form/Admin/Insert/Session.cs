@@ -1,17 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Session : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Session : Pattern.Class.EscCloseForm {
     private readonly List<Model.Staff> technicians;
     private readonly List<Model.Staff> doctors;
 
     public Session(List<Model.Staff> technicians, List<Model.Staff> doctors) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       this.technicians = technicians;
       this.doctors = doctors;

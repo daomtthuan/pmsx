@@ -1,11 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
+﻿using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using System;
 
 namespace PMSX.View.Layout {
-  internal abstract partial class Table : XtraUserControl, Pattern.Interface.IView {
+  internal abstract partial class Table : Pattern.Class.UserControl {
     public Table() {
       InitializeComponent();
       OnInit();

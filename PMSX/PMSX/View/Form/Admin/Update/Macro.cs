@@ -1,16 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class Macro : XtraForm, Pattern.Interface.IView {
+  internal partial class Macro : Pattern.Class.EscCloseForm {
     private readonly Model.Macro macros;
 
     public Macro(Model.Macro macros) {
       InitializeComponent();
       this.macros = macros;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());
@@ -29,7 +26,7 @@ namespace PMSX.View.Form.Admin.Update {
       } else if (codeInput.Text == macros.Code) {
         Controller.Macro.Instance.Update(macros.Id, codeInput.Text, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
-      } else if ((codeInput.Text != macros.Code) && (Controller.Macro.Instance.SelectByCodeAndId(codeInput.Text,macros.MacroGroupId).Count == 0)) {
+      } else if ((codeInput.Text != macros.Code) && (Controller.Macro.Instance.SelectByCodeAndId(codeInput.Text, macros.MacroGroupId).Count == 0)) {
         Controller.Macro.Instance.Update(macros.Id, codeInput.Text, descriptionInput.Text, commentInput.Text, (int)stateRadio.EditValue);
         Close();
       } else {

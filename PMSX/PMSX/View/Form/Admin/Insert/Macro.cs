@@ -1,14 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Windows.Forms;
+﻿using System;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Macro : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Macro : Pattern.Class.EscCloseForm {
     private readonly string groupId;
     public Macro(string groupId) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       this.groupId = groupId;
     }

@@ -1,10 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class Biopsy : XtraUserControl, Pattern.Interface.IView {
+  internal partial class Biopsy : Pattern.Class.UserControl {
     private class BiopsyTable : Layout.Table {
       private string groupId;
       private string groupName;

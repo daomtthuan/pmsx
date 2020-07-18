@@ -107,7 +107,7 @@ namespace PMSX.Controller {
       return true;
     }
 
-    public void Update(string id,string code, string name, string comment, int state) {
+    public void Update(string id, string code, string name, string comment, int state) {
       string query = @"
         update pmsx_microGroup
         set 

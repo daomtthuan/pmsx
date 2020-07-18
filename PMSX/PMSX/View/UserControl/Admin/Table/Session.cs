@@ -1,9 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class Session : XtraUserControl, Pattern.Interface.IView {
+  internal partial class Session : Pattern.Class.UserControl {
     private class SessionTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách phiên làm việc";

@@ -1,4 +1,4 @@
-﻿namespace PMSX.View.UserControl.Doctor.InputDiagnose {
+﻿namespace PMSX.View.UserControl.Staff.InputDiagnose {
   partial class Type1 {
     /// <summary> 
     /// Required designer variable.

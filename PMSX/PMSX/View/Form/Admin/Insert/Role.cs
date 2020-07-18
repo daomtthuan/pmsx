@@ -1,14 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Role : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Role : Pattern.Class.EscCloseForm {
     public Role() {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

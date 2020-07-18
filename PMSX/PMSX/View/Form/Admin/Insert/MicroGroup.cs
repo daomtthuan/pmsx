@@ -1,13 +1,9 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Windows.Forms;
+﻿using System;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class MicroGroup : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class MicroGroup : Pattern.Class.EscCloseForm {
     public MicroGroup() {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
     }
 
     private void InsertButton_Click(object sender, EventArgs e) {

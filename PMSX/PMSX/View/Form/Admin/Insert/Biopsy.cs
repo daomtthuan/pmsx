@@ -1,10 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Biopsy : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Biopsy : Pattern.Class.EscCloseForm {
     private readonly string groupId;
     private readonly List<Model.Patient> patients;
     private readonly List<Model.Staff> grossDoctors;
@@ -12,8 +10,6 @@ namespace PMSX.View.Form.Admin.Insert {
 
     public Biopsy(string groupId, List<Model.Patient> patients, List<Model.Staff> grossDoctors, List<Model.Session> sessions) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       grossDatetimeSelect.Properties.MaxValue = DateTime.Now;
       grossDatetimeSelect.Properties.MaxValue = DateTime.Now;

@@ -2,11 +2,9 @@
 using System.Text.RegularExpressions;
 
 namespace PMSX.View.Form {
-  internal partial class Login : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Login : Pattern.Class.EscCloseForm {
     public Login() {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       Load += new EventHandler((sender, e) => {
         usernameInput.Text = "doctor1";

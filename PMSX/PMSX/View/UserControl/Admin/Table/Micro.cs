@@ -1,9 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class Micro : XtraUserControl, Pattern.Interface.IView {
+  internal partial class Micro : Pattern.Class.UserControl {
     private class MicroTable : Layout.Table {
       private string groupId;
       private string groupName;

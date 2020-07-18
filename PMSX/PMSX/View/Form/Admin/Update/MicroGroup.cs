@@ -1,16 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Update {
-  internal partial class MicroGroup : XtraForm, Pattern.Interface.IView {
+  internal partial class MicroGroup : Pattern.Class.EscCloseForm {
     private readonly Model.MicroGroup microGroups;
 
     public MicroGroup(Model.MicroGroup microGroups) {
       InitializeComponent();
       this.microGroups = microGroups;
-
-      Icon = Properties.Resources.icon;
 
       Button closeButton = new Button();
       closeButton.Click += new EventHandler((sender, e) => Close());

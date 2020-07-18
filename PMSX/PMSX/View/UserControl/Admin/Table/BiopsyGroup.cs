@@ -1,8 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PMSX.View.UserControl.Admin.Table {
-  internal partial class BiopsyGroup : XtraUserControl, Pattern.Interface.IView {
+  internal partial class BiopsyGroup : Pattern.Class.UserControl {
     private class BiopsyGroupTable : Layout.Table {
       protected override void OnInit() {
         TitleLabel.Text = "Danh sách nhóm sinh thiết";

@@ -1,17 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form.Admin.Insert {
-  internal partial class Permission : Pattern.View.EscCloseForm, Pattern.Interface.IView {
+  internal partial class Permission : Pattern.Class.EscCloseForm {
     private readonly string roleId;
     private readonly List<Model.Staff> staffs;
 
     public Permission(string roleId, List<Model.Staff> staffs) {
       InitializeComponent();
-
-      Icon = Properties.Resources.icon;
 
       this.roleId = roleId;
       this.staffs = staffs;

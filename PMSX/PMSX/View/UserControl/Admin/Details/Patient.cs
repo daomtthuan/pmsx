@@ -1,7 +1,5 @@
-﻿using DevExpress.XtraEditors;
-
-namespace PMSX.View.UserControl.Admin.Details {
-  internal partial class Patient : XtraUserControl, Pattern.Interface.IView {
+﻿namespace PMSX.View.UserControl.Admin.Details {
+  internal partial class Patient : Pattern.Class.UserControl {
     public Patient() {
       InitializeComponent();
     }
