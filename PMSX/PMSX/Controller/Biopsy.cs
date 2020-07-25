@@ -13,7 +13,7 @@ namespace PMSX.Controller {
       string query = @"
         select
           pmsx_biopsy.*,
-          concat(biopsyGroup_code,' - ', biopsy_code) as biopsy_fullCode,
+          concat(biopsy_code,' - ', biopsyGroup_code) as biopsy_fullCode,
           patient_name as biopsy_patientName,
           staff_name as biopsy_grossDoctorName,
           session_name as biopsy_sessionName
@@ -46,7 +46,7 @@ namespace PMSX.Controller {
       string query = @"
         select
           pmsx_biopsy.*,
-          concat(biopsyGroup_code,' - ', biopsy_code) as biopsy_fullCode,
+          concat(biopsy_code,' - ', biopsyGroup_code) as biopsy_fullCode,
           patient_name as biopsy_patientName,
           staff_name as biopsy_grossDoctorName,
           session_name as biopsy_sessionName

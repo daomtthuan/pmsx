@@ -1,29 +1,29 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace PMSX.Utils {
   internal class Database : Pattern.Class.Singleton<Database> {
     private Database() { }
 
-    public DataTable Excute(string query, SqlParameter[] parameters = null) {
+    public DataTable Excute(string query, MySqlParameter[] parameters = null) {
       DataTable table = new DataTable();
-      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
+      using (MySqlConnection connection = new MySqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
-          using (SqlCommand command = connection.CreateCommand()) {
+          using (MySqlCommand command = connection.CreateCommand()) {
             command.CommandText = query;
             if (parameters != null) {
-              foreach (SqlParameter parameter in parameters) {
+              foreach (MySqlParameter parameter in parameters) {
                 command.Parameters.Add(parameter);
               }
             }
-            using (SqlDataReader reader = command.ExecuteReader()) {
+            using (MySqlDataReader reader = command.ExecuteReader()) {
               table.Load(reader);
               reader.Close();
             }
           }
           connection.Close();
-        } catch (SqlException e) {
+        } catch (MySqlException e) {
           if (connection.State != ConnectionState.Closed) {
             View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();
@@ -40,21 +40,21 @@ namespace PMSX.Utils {
       return table;
     }
 
-    public void ExcuteNon(string query, SqlParameter[] parameters = null) {
-      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
+    public void ExcuteNon(string query, MySqlParameter[] parameters = null) {
+      using (MySqlConnection connection = new MySqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
-          using (SqlCommand command = connection.CreateCommand()) {
+          using (MySqlCommand command = connection.CreateCommand()) {
             command.CommandText = query;
             if (parameters != null) {
-              foreach (SqlParameter parameter in parameters) {
+              foreach (MySqlParameter parameter in parameters) {
                 command.Parameters.Add(parameter);
               }
             }
             command.ExecuteNonQuery();
           }
           connection.Close();
-        } catch (SqlException e) {
+        } catch (MySqlException e) {
           if (connection.State != ConnectionState.Closed) {
             View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();
@@ -70,22 +70,22 @@ namespace PMSX.Utils {
       }
     }
 
-    public object ExecuteScalar(string query, SqlParameter[] parameters = null) {
+    public object ExecuteScalar(string query, MySqlParameter[] parameters = null) {
       object result = null;
-      using (SqlConnection connection = new SqlConnection(Setting.Instance.ConnectionString)) {
+      using (MySqlConnection connection = new MySqlConnection(Setting.Instance.ConnectionString)) {
         try {
           connection.Open();
-          using (SqlCommand command = connection.CreateCommand()) {
+          using (MySqlCommand command = connection.CreateCommand()) {
             command.CommandText = query;
             if (parameters != null) {
-              foreach (SqlParameter parameter in parameters) {
+              foreach (MySqlParameter parameter in parameters) {
                 command.Parameters.Add(parameter);
               }
             }
             result = command.ExecuteScalar();
           }
           connection.Close();
-        } catch (SqlException e) {
+        } catch (MySqlException e) {
           if (connection.State != ConnectionState.Closed) {
             View.MessageBox.Instance.Error("Truy vấn cơ sở dữ liệu thất bại.");
             connection.Close();

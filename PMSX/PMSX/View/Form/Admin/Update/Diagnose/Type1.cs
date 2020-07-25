@@ -44,11 +44,11 @@ namespace PMSX.View.Form.Admin.Update.Diagnose {
     }
 
     private void MacroGroupSelect_EditValueChanged(object sender, EventArgs e) {
-      Utils.View.Grid.Instance.Load(macroSelect, Controller.Macro.Instance.SelectByGroupId(macroGroupSelect.EditValue.ToString()), new[] { "Code", "Name", "State" }, "Id", "Code");
+      Utils.View.Grid.Instance.Load(macroSelect, Controller.Macro.Instance.SelectByGroupId(macroGroupSelect.EditValue.ToString()), new[] { "Code", "Description", "State" }, "Id", "Code");
     }
 
     private void MicroGroupSelect_EditValueChanged(object sender, EventArgs e) {
-      Utils.View.Grid.Instance.Load(microSelect, Controller.Micro.Instance.SelectByGroupId(microGroupSelect.EditValue.ToString()), new[] { "Code", "Name", "State" }, "Id", "Code", null);
+      Utils.View.Grid.Instance.Load(microSelect, Controller.Micro.Instance.SelectByGroupId(microGroupSelect.EditValue.ToString()), new[] { "Code", "Description", "State" }, "Id", "Code", null);
     }
 
     private void BiopsyGroupSelect_EditValueChanged(object sender, EventArgs e) {
@@ -70,7 +70,7 @@ namespace PMSX.View.Form.Admin.Update.Diagnose {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nVui lòng nhập đầy đủ thông tin bắt buộc.");
       } else if (!Regex.IsMatch(codeInput.Text, Utils.RegexPattern.Instance.Code)) {
         Utils.View.MessageBox.Instance.Warning("Sửa không thành công.\nMã số không hợp lệ.");
-      } else if (!Controller.Diagnose.Type1.Instance.Update(diagnose.Id, codeInput.Text, biopsySelect.EditValue.ToString(), macroSelect.EditValue == null ? "" : macroSelect.EditValue.ToString(), macroDescriptionInput.Text, microSelect.EditValue == null ? "" : microSelect.EditValue.ToString(), microDescriptionInput.Text, conclusionInput.Text, readDateSelect.DateTime, commentInput.Text, (int)stateRadio.EditValue)) {
+      } else if (!Controller.Diagnose.Type1.Instance.Update(diagnose.Id, codeInput.Text, biopsySelect.EditValue.ToString(), macroSelect.EditValue == null ? "" : macroSelect.EditValue.ToString(), macroDescriptionInput.Text, microSelect.EditValue == null ? "" : microSelect.EditValue.ToString(), microDescriptionInput.Text, conclusionInput.Text, readDateSelect.EditValue == null ? "" : readDateSelect.DateTime.ToString(), commentInput.Text, (int)stateRadio.EditValue)) {
         Utils.View.MessageBox.Instance.Warning("Thêm không thành công.\nMã số đã tồn tại.");
       } else {
         Close();

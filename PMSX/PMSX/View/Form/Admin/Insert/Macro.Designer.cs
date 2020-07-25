@@ -67,7 +67,7 @@
       // 
       // codeInput
       // 
-      this.codeInput.Location = new System.Drawing.Point(12, 70);
+      this.codeInput.Location = new System.Drawing.Point(12, 71);
       this.codeInput.Name = "codeInput";
       this.codeInput.Properties.MaxLength = 100;
       this.codeInput.Size = new System.Drawing.Size(476, 28);
@@ -89,16 +89,16 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(12, 314);
+      this.commentInput.Location = new System.Drawing.Point(12, 316);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 500;
-      this.commentInput.Size = new System.Drawing.Size(476, 140);
+      this.commentInput.Size = new System.Drawing.Size(476, 138);
       this.commentInput.StyleController = this.layoutControl;
       this.commentInput.TabIndex = 7;
       // 
       // descriptionInput
       // 
-      this.descriptionInput.Location = new System.Drawing.Point(13, 126);
+      this.descriptionInput.Location = new System.Drawing.Point(13, 127);
       this.descriptionInput.Name = "descriptionInput";
       this.descriptionInput.Properties.MaxLength = 500;
       this.descriptionInput.Size = new System.Drawing.Size(474, 116);
@@ -123,12 +123,12 @@
       // codeInputLayout
       // 
       this.codeInputLayout.Control = this.codeInput;
-      this.codeInputLayout.Location = new System.Drawing.Point(0, 34);
+      this.codeInputLayout.Location = new System.Drawing.Point(0, 35);
       this.codeInputLayout.Name = "codeInputLayout";
       this.codeInputLayout.Size = new System.Drawing.Size(480, 56);
       this.codeInputLayout.Text = "Mã số";
       this.codeInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.codeInputLayout.TextSize = new System.Drawing.Size(204, 21);
+      this.codeInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // insertButtonLayout
       // 
@@ -143,30 +143,30 @@
       // requiredLabel
       // 
       this.requiredLabel.AllowHotTrack = false;
-      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+      this.requiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.requiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.requiredLabel.Location = new System.Drawing.Point(0, 0);
       this.requiredLabel.Name = "requiredLabel";
-      this.requiredLabel.Size = new System.Drawing.Size(480, 34);
+      this.requiredLabel.Size = new System.Drawing.Size(480, 35);
       this.requiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
       this.requiredLabel.Text = "Thông tin bắt buộc";
-      this.requiredLabel.TextSize = new System.Drawing.Size(204, 20);
+      this.requiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // commentInputLayout
       // 
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 278);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 280);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(480, 168);
+      this.commentInputLayout.Size = new System.Drawing.Size(480, 166);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.commentInputLayout.TextSize = new System.Drawing.Size(204, 21);
+      this.commentInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // descriptionInputLayout
       // 
       this.descriptionInputLayout.Control = this.descriptionInput;
       this.descriptionInputLayout.CustomizationFormText = "Mô tả";
-      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 90);
+      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 91);
       this.descriptionInputLayout.Name = "descriptionInputLayout";
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.descriptionInputLayout.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
@@ -174,23 +174,23 @@
       this.descriptionInputLayout.Size = new System.Drawing.Size(480, 144);
       this.descriptionInputLayout.Text = "Mô tả";
       this.descriptionInputLayout.TextLocation = DevExpress.Utils.Locations.Top;
-      this.descriptionInputLayout.TextSize = new System.Drawing.Size(204, 21);
+      this.descriptionInputLayout.TextSize = new System.Drawing.Size(190, 21);
       // 
       // notrequiredLabel
       // 
       this.notrequiredLabel.AllowHotTrack = false;
-      this.notrequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+      this.notrequiredLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Nunito", 12F, System.Drawing.FontStyle.Bold);
       this.notrequiredLabel.AppearanceItemCaption.Options.UseFont = true;
       this.notrequiredLabel.CustomizationFormText = "Thông tin không bắt buộc";
-      this.notrequiredLabel.Location = new System.Drawing.Point(0, 234);
+      this.notrequiredLabel.Location = new System.Drawing.Point(0, 235);
       this.notrequiredLabel.Name = "notrequiredLabel";
       this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
       this.notrequiredLabel.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
       this.notrequiredLabel.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-      this.notrequiredLabel.Size = new System.Drawing.Size(480, 44);
+      this.notrequiredLabel.Size = new System.Drawing.Size(480, 45);
       this.notrequiredLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 10, 10);
       this.notrequiredLabel.Text = "Thông tin không bắt buộc";
-      this.notrequiredLabel.TextSize = new System.Drawing.Size(204, 20);
+      this.notrequiredLabel.TextSize = new System.Drawing.Size(190, 21);
       // 
       // Macro
       // 

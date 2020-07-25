@@ -48,8 +48,6 @@
       DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
       DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipItem toolTipItem12 = new DevExpress.Utils.ToolTipItem();
-      DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipItem toolTipItem13 = new DevExpress.Utils.ToolTipItem();
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.backstageView = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
       this.aboutBackstage = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -80,9 +78,7 @@
       this.manageDiagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.managePathologyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.pathologyPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.biopsyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.diagnosePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.diagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.collectAndDiagnoseGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).BeginInit();
       this.backstageView.SuspendLayout();
@@ -114,14 +110,13 @@
             this.inputDiagnoseType1Button,
             this.collectBiopsyButton});
       this.ribbon.Location = new System.Drawing.Point(0, 0);
-      this.ribbon.MaxItemId = 19;
+      this.ribbon.MaxItemId = 20;
       this.ribbon.Name = "ribbon";
       this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.managePageGroup});
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.pathologyPage,
-            this.diagnosePage});
-      this.ribbon.Size = new System.Drawing.Size(1600, 195);
+            this.pathologyPage});
+      this.ribbon.Size = new System.Drawing.Size(1600, 190);
       // 
       // backstageView
       // 
@@ -130,19 +125,19 @@
       this.backstageView.Items.Add(this.separatorBackstage);
       this.backstageView.Items.Add(this.logoutButton);
       this.backstageView.Items.Add(this.exitButton);
-      this.backstageView.Location = new System.Drawing.Point(75, 259);
+      this.backstageView.Location = new System.Drawing.Point(75, 247);
       this.backstageView.Name = "backstageView";
       this.backstageView.OwnerControl = this.ribbon;
       this.backstageView.SelectedTab = this.aboutButtonBackstage;
       this.backstageView.SelectedTabIndex = 0;
-      this.backstageView.Size = new System.Drawing.Size(565, 364);
+      this.backstageView.Size = new System.Drawing.Size(565, 347);
       this.backstageView.TabIndex = 5;
       // 
       // aboutBackstage
       // 
-      this.aboutBackstage.Location = new System.Drawing.Point(151, 63);
+      this.aboutBackstage.Location = new System.Drawing.Point(150, 63);
       this.aboutBackstage.Name = "aboutBackstage";
-      this.aboutBackstage.Size = new System.Drawing.Size(413, 300);
+      this.aboutBackstage.Size = new System.Drawing.Size(414, 283);
       this.aboutBackstage.TabIndex = 1;
       // 
       // aboutButtonBackstage
@@ -336,28 +331,20 @@
       // 
       // inputDiagnoseType1Button
       // 
-      this.inputDiagnoseType1Button.Caption = "Loại 1";
-      this.inputDiagnoseType1Button.Id = 17;
-      this.inputDiagnoseType1Button.ImageOptions.SvgImage = global::PMSX.Properties.Resources.showallfieldresults;
-      this.inputDiagnoseType1Button.ItemAppearance.Normal.Options.UseTextOptions = true;
-      this.inputDiagnoseType1Button.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+      this.inputDiagnoseType1Button.Id = 19;
       this.inputDiagnoseType1Button.Name = "inputDiagnoseType1Button";
-      toolTipItem12.Text = "Nhập liệu kết quả chẩn đoán loại 1";
-      superToolTip12.Items.Add(toolTipItem12);
-      this.inputDiagnoseType1Button.SuperTip = superToolTip12;
-      this.inputDiagnoseType1Button.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.InputDiagnoseType1Button_ItemClick);
       // 
       // collectBiopsyButton
       // 
-      this.collectBiopsyButton.Caption = "Thu thập";
+      this.collectBiopsyButton.Caption = "Sinh thiết";
       this.collectBiopsyButton.Id = 18;
       this.collectBiopsyButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.charttype_bubble3d;
       this.collectBiopsyButton.ItemAppearance.Normal.Options.UseTextOptions = true;
       this.collectBiopsyButton.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
       this.collectBiopsyButton.Name = "collectBiopsyButton";
-      toolTipItem13.Text = "Nhập liệu thu thập mẫu sinh thiết";
-      superToolTip13.Items.Add(toolTipItem13);
-      this.collectBiopsyButton.SuperTip = superToolTip13;
+      toolTipItem12.Text = "Nhập liệu thu thập mẫu sinh thiết và\r\nchẩn đoán giải phẫu";
+      superToolTip12.Items.Add(toolTipItem12);
+      this.collectBiopsyButton.SuperTip = superToolTip12;
       this.collectBiopsyButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.CollectBiopsyButton_ItemClick);
       // 
       // managePageGroup
@@ -430,43 +417,30 @@
       // pathologyPage
       // 
       this.pathologyPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.biopsyGroup});
+            this.collectAndDiagnoseGroup});
       this.pathologyPage.Name = "pathologyPage";
       this.pathologyPage.Text = "Giải phẫu bệnh";
       // 
-      // biopsyGroup
+      // collectAndDiagnoseGroup
       // 
-      this.biopsyGroup.AllowTextClipping = false;
-      this.biopsyGroup.ItemLinks.Add(this.collectBiopsyButton);
-      this.biopsyGroup.Name = "biopsyGroup";
-      this.biopsyGroup.Text = "Mẫu sinh thiết";
-      // 
-      // diagnosePage
-      // 
-      this.diagnosePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.diagnoseGroup});
-      this.diagnosePage.Name = "diagnosePage";
-      this.diagnosePage.Text = "Chẩn đoán";
-      // 
-      // diagnoseGroup
-      // 
-      this.diagnoseGroup.AllowTextClipping = false;
-      this.diagnoseGroup.ItemLinks.Add(this.inputDiagnoseType1Button);
-      this.diagnoseGroup.Name = "diagnoseGroup";
-      this.diagnoseGroup.Text = "Chẩn đoán";
+      this.collectAndDiagnoseGroup.AllowTextClipping = false;
+      this.collectAndDiagnoseGroup.ItemLinks.Add(this.collectBiopsyButton);
+      this.collectAndDiagnoseGroup.Name = "collectAndDiagnoseGroup";
+      this.collectAndDiagnoseGroup.Text = "Thu thập - Chẩn đoán";
       // 
       // Main
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.ClientSize = new System.Drawing.Size(1600, 900);
+      this.ClientSize = new System.Drawing.Size(1600, 857);
       this.Controls.Add(this.backstageView);
       this.Controls.Add(this.ribbon);
       this.Name = "Main";
       this.Ribbon = this.ribbon;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "PMSX";
+      this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
       this.Load += new System.EventHandler(this.Main_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstageView)).EndInit();
@@ -497,8 +471,6 @@
     private DevExpress.XtraBars.Ribbon.RibbonPageCategory managePageGroup;
     private DevExpress.XtraBars.Ribbon.RibbonPage clinicPage;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup managePathologyGroup;
-    private DevExpress.XtraBars.Ribbon.RibbonPage diagnosePage;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup diagnoseGroup;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageWorkGroup;
     private DevExpress.XtraBars.BarButtonItem permissionButton;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup manageDiagnoseGroup;
@@ -508,7 +480,7 @@
     private DevExpress.XtraBars.BarButtonItem microButton;
     private DevExpress.XtraBars.BarButtonItem biopsyGroupButton;
     private DevExpress.XtraBars.Ribbon.RibbonPage pathologyPage;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup biopsyGroup;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup collectAndDiagnoseGroup;
     private DevExpress.XtraBars.BarButtonItem inputDiagnoseType1Button;
     private DevExpress.XtraBars.BarButtonItem collectBiopsyButton;
   }

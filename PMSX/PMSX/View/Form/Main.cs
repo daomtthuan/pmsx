@@ -1,12 +1,11 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  internal partial class Main : RibbonForm, Pattern.Interface.IView {
+  internal partial class Main : Pattern.Class.RibbonForm {
     private PanelControl panelControl;
 
     public Main() {
@@ -35,10 +34,8 @@ namespace PMSX.View.Form {
       if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Doctor) && !Controller.Main.Instance.HasRole(Controller.Main.Role.Technician)) {
         managePageGroup.Pages.Remove(clinicPage);
         ribbon.Pages.Remove(pathologyPage);
-        ribbon.Pages.Remove(diagnosePage);
         clinicPage.Dispose();
         pathologyPage.Dispose();
-        diagnosePage.Dispose();
       }
 
       if (managePageGroup.Pages.Count == 0) {
@@ -70,7 +67,7 @@ namespace PMSX.View.Form {
         return;
       }
 
-      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {    
+      if (!Controller.Main.Instance.HasRole(Controller.Main.Role.Admin)) {
         new SelectSession().ShowDialog();
 
         if (Controller.Main.Instance.Session == null) {
@@ -140,10 +137,6 @@ namespace PMSX.View.Form {
 
     private void CollectBiopsyButton_ItemClick(object sender, ItemClickEventArgs e) {
       AddUserControl<UserControl.Staff.CollectBiopsy>();
-    }
-
-    private void InputDiagnoseType1Button_ItemClick(object sender, ItemClickEventArgs e) {
-      AddUserControl<UserControl.Staff.InputDiagnose.Type1>();
     }
   }
 }

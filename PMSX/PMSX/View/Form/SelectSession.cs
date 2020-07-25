@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace PMSX.View.Form {
   internal partial class SelectSession : Pattern.Class.EscCloseForm {
