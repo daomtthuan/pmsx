@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMSX.View.Form {
-  internal partial class Main : Pattern.Class.RibbonForm {
+  internal partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm {
     private PanelControl panelControl;
 
     public Main() {

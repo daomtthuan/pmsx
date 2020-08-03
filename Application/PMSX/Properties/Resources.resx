@@ -112,16 +112,55 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, publicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, publicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, publicKeyToken=b77a5c561934e089" />
+  <data name="CollectBiopsy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\CollectBiopsy.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, publicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Macro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Macro.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, publicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MacroGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\MacroGroup.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\User.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Biopsy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Biopsy.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="MicroGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\MicroGroup.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Micro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Micro.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Key.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Diagnose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Diagnose.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Profile.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Bed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Bed.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Calendar.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon\Button\Password.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, publicKeyToken=b88d1754d700e49a</value>
   </data>
 </root>
