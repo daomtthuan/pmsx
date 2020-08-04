@@ -15,7 +15,6 @@ namespace PMSX.Utility.View.Form {
 
     public void Set(XtraForm form, bool value) {
       form.Visible = value;
-      form.ShowInTaskbar = value;
       form.Opacity = value ? 1 : 0;
       form.FormBorderEffect = value ? FormBorderEffect.Default : FormBorderEffect.None;
     }

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace PMSX.App {
   internal class Authentication : SingletonBase<Authentication> {
-    internal enum Role : int {
+    internal enum Role : long {
       Admin,
       Doctor,
       Technician
@@ -16,19 +16,20 @@ namespace PMSX.App {
       LoggedIn,
       Disabled,
       Failed,
+      Error,
       None
     }
 
-    private readonly string[] roles;
 
     private Authentication() {
-      roles = new[] {
+      Roles = new[] {
         "Quản trị",
         "Bác sĩ",
         "Kỹ thuật viên"
       };
     }
 
+    public string[] Roles { get; }
     public Staff Staff { get; set; }
     public Session Session { get; set; }
     public List<Permission> Permissions { get; set; }
@@ -40,7 +41,9 @@ namespace PMSX.App {
       }
 
       List<Staff> staffs = StaffController.Instance.GetByUsername(username);
-      if (staffs.Count == 0) {
+      if (staffs == null) {
+        return State.Error;
+      } else if (staffs.Count == 0) {
         return State.Failed;
       }
 
@@ -53,14 +56,24 @@ namespace PMSX.App {
       }
 
       Staff = staffs[0];
-      Permissions = PermissionController.Instance.GetByStaff(Staff.Id, 1);
-      Group = GroupController.Instance.Current[0];
+
+      List<Permission> permissions = PermissionController.Instance.GetByStaff(Staff.Id, 1);
+      if (permissions == null) {
+        return State.Error;
+      }
+      Permissions = permissions;
+
+      List<Group> groups = GroupController.Instance.Current;
+      if (groups == null) {
+        return State.Error;
+      }
+      Group = groups[0];
 
       return State.LoggedIn;
     }
 
     public string GetRoleName(Role role) {
-      return roles[(long)role];
+      return Roles[(long)role];
     }
 
     public bool HasRole(Role role) {

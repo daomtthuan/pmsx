@@ -5,13 +5,9 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using PMSX.App.View.Control.Table;
-#if !DEBUG
-using PMSX.Exception;
-using PMSX.Pattern.Base;
-#endif
 using PMSX.Pattern.Factory;
 using PMSX.Properties;
-using PMSX.Utility.View.Control;
+using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
 using System.Windows.Forms;
@@ -22,8 +18,6 @@ namespace PMSX.App.View.Form {
 
     public MainRibbonForm() {
       InitializeComponent();
-
-      DisplayUtility.Instance.Set(this, false);
       layout = new PanelControl() {
         Dock = DockStyle.Fill,
         BorderStyle = BorderStyles.NoBorder
@@ -81,43 +75,27 @@ namespace PMSX.App.View.Form {
       return category;
     }
 
-#if DEBUG
-    private void FormMain_Load(object sender, EventArgs e) {
-#else
-    private async void FormMain_Load(object sender, EventArgs e) {
-      await Loading.Instance.Close("Sẳn sàng!");
-      try {
-#endif
-      if (FormFactory<LoginForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
-        DisplayUtility.Instance.Set(this, true);
+    private async void MainRibbonForm_Load(object sender, EventArgs e) {
+      await LoadingUtility.Instance.Close("Sẳn sàng!");
 
+      if (FormFactory<LoginForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
         OverlayUtility.Instance.StartProcess(this, statusLabel, () => {
           accountLabel.Caption = $"Tài khoản: {Authentication.Instance.Staff.Username}";
           if (Authentication.Instance.HasOneRole(Authentication.Role.Admin, Authentication.Role.Doctor, Authentication.Role.Technician)) {
-            BarButtonItem staffButton = CreaetButton<StaffTable>("Nhân viên", Resources.User);
-
-            RibbonPageGroup accountGroup = CreateGroup("Tài khoản", staffButton);
-            RibbonPageGroup workGroup = CreateGroup("Công việc");
-
-            RibbonPage personnelPage = CreatePage("Nhân sự", accountGroup, workGroup);
-
-            RibbonPageCategory managementPageCategory = CreateCategory("Quản lý", personnelPage);
-
-            ribbon.PageCategories.AddRange(new[] { managementPageCategory });
+            ribbon.PageCategories.AddRange(new[] {
+              CreateCategory("Quản lý",
+                CreatePage("Nhân sự",
+                CreateGroup("Tài khoản",
+                  CreaetButton<StaffTable>("Nhân viên", Resources.User),
+                  CreaetButton<PermissionTable>("Phân quyền", Resources.Key)),
+                CreateGroup("Công việc")))
+            });
           }
         });
+        DisplayUtility.Instance.Set(this, true);
       } else {
         Application.Exit();
       }
-#if !DEBUG
-      } catch (ExceptionBase exception) {
-        Alert.Instance.ShowError(exception.FullMessage);
-        Application.Exit();
-      } catch {
-        Alert.Instance.ShowError(AppException.Instance.Error.FullMessage);
-        Application.Exit();
-      }
-#endif
     }
   }
 }

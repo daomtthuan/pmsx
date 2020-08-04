@@ -246,6 +246,7 @@
       this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
       this.Name = "EditSessionForm";
       this.Text = "Chỉnh sửa phiên làm việc";
+      this.Load += new System.EventHandler(this.EditSessionForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dateSelect.Properties.CalendarTimeProperties)).EndInit();

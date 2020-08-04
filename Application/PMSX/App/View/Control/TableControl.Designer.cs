@@ -57,16 +57,17 @@
       this.layout.Location = new System.Drawing.Point(0, 0);
       this.layout.Name = "layout";
       this.layout.Root = this.root;
-      this.layout.Size = new System.Drawing.Size(500, 600);
+      this.layout.Size = new System.Drawing.Size(632, 600);
       this.layout.TabIndex = 1;
       this.layout.Text = "layoutControl1";
       // 
       // tableGrid
       // 
-      this.tableGrid.Location = new System.Drawing.Point(14, 44);
+      this.tableGrid.Location = new System.Drawing.Point(14, 48);
       this.tableGrid.MainView = this.tableView;
       this.tableGrid.Name = "tableGrid";
-      this.tableGrid.Size = new System.Drawing.Size(472, 542);
+      this.tableGrid.Padding = new System.Windows.Forms.Padding(1);
+      this.tableGrid.Size = new System.Drawing.Size(604, 538);
       this.tableGrid.TabIndex = 5;
       this.tableGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tableView});
@@ -81,9 +82,10 @@
       // 
       this.addButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.addButton.Appearance.Options.UseBackColor = true;
-      this.addButton.Location = new System.Drawing.Point(161, 14);
+      this.addButton.Location = new System.Drawing.Point(167, 14);
       this.addButton.Name = "addButton";
-      this.addButton.Size = new System.Drawing.Size(103, 22);
+      this.addButton.Padding = new System.Windows.Forms.Padding(2);
+      this.addButton.Size = new System.Drawing.Size(145, 26);
       this.addButton.StyleController = this.layout;
       this.addButton.TabIndex = 6;
       this.addButton.Text = "Thêm";
@@ -91,9 +93,10 @@
       // 
       // editButton
       // 
-      this.editButton.Location = new System.Drawing.Point(272, 14);
+      this.editButton.Location = new System.Drawing.Point(320, 14);
       this.editButton.Name = "editButton";
-      this.editButton.Size = new System.Drawing.Size(103, 22);
+      this.editButton.Padding = new System.Windows.Forms.Padding(2);
+      this.editButton.Size = new System.Drawing.Size(145, 26);
       this.editButton.StyleController = this.layout;
       this.editButton.TabIndex = 7;
       this.editButton.Text = "Chỉnh sửa";
@@ -103,9 +106,10 @@
       // 
       this.disableButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
       this.disableButton.Appearance.Options.UseBackColor = true;
-      this.disableButton.Location = new System.Drawing.Point(381, 12);
+      this.disableButton.Location = new System.Drawing.Point(473, 14);
       this.disableButton.Name = "disableButton";
-      this.disableButton.Size = new System.Drawing.Size(107, 22);
+      this.disableButton.Padding = new System.Windows.Forms.Padding(2);
+      this.disableButton.Size = new System.Drawing.Size(145, 26);
       this.disableButton.StyleController = this.layout;
       this.disableButton.TabIndex = 8;
       this.disableButton.Text = "Vô hiệu hoá";
@@ -122,15 +126,15 @@
             this.disableButtonLayout,
             this.emptySpace});
       this.root.Name = "root";
-      this.root.Size = new System.Drawing.Size(500, 600);
+      this.root.Size = new System.Drawing.Size(632, 600);
       this.root.TextVisible = false;
       // 
       // tableGridLayout
       // 
       this.tableGridLayout.Control = this.tableGrid;
-      this.tableGridLayout.Location = new System.Drawing.Point(0, 30);
+      this.tableGridLayout.Location = new System.Drawing.Point(0, 34);
       this.tableGridLayout.Name = "tableGridLayout";
-      this.tableGridLayout.Size = new System.Drawing.Size(480, 550);
+      this.tableGridLayout.Size = new System.Drawing.Size(612, 546);
       this.tableGridLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.tableGridLayout.TextSize = new System.Drawing.Size(0, 0);
       this.tableGridLayout.TextVisible = false;
@@ -138,11 +142,11 @@
       // addButtonLayout
       // 
       this.addButtonLayout.Control = this.addButton;
-      this.addButtonLayout.Location = new System.Drawing.Point(147, 0);
-      this.addButtonLayout.MaxSize = new System.Drawing.Size(111, 30);
-      this.addButtonLayout.MinSize = new System.Drawing.Size(111, 30);
+      this.addButtonLayout.Location = new System.Drawing.Point(153, 0);
+      this.addButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.addButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.addButtonLayout.Name = "addButtonLayout";
-      this.addButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.addButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.addButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.addButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.addButtonLayout.TextSize = new System.Drawing.Size(0, 0);
@@ -151,11 +155,11 @@
       // editButtonLayout
       // 
       this.editButtonLayout.Control = this.editButton;
-      this.editButtonLayout.Location = new System.Drawing.Point(258, 0);
-      this.editButtonLayout.MaxSize = new System.Drawing.Size(111, 30);
-      this.editButtonLayout.MinSize = new System.Drawing.Size(111, 30);
+      this.editButtonLayout.Location = new System.Drawing.Point(306, 0);
+      this.editButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.editButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.editButtonLayout.Name = "editButtonLayout";
-      this.editButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.editButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.editButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.editButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.editButtonLayout.TextSize = new System.Drawing.Size(0, 0);
@@ -164,12 +168,13 @@
       // disableButtonLayout
       // 
       this.disableButtonLayout.Control = this.disableButton;
-      this.disableButtonLayout.Location = new System.Drawing.Point(369, 0);
-      this.disableButtonLayout.MaxSize = new System.Drawing.Size(111, 26);
-      this.disableButtonLayout.MinSize = new System.Drawing.Size(111, 26);
+      this.disableButtonLayout.Location = new System.Drawing.Point(459, 0);
+      this.disableButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.disableButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.disableButtonLayout.Name = "disableButtonLayout";
-      this.disableButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.disableButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.disableButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.disableButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.disableButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.disableButtonLayout.TextVisible = false;
       // 
@@ -177,8 +182,10 @@
       // 
       this.emptySpace.AllowHotTrack = false;
       this.emptySpace.Location = new System.Drawing.Point(0, 0);
+      this.emptySpace.MinSize = new System.Drawing.Size(108, 28);
       this.emptySpace.Name = "emptySpace";
-      this.emptySpace.Size = new System.Drawing.Size(147, 30);
+      this.emptySpace.Size = new System.Drawing.Size(153, 34);
+      this.emptySpace.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.emptySpace.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.emptySpace.TextSize = new System.Drawing.Size(0, 0);
       // 
@@ -188,7 +195,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.layout);
       this.Name = "TableControl";
-      this.Size = new System.Drawing.Size(500, 600);
+      this.Size = new System.Drawing.Size(632, 600);
       this.Load += new System.EventHandler(this.TableControl_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);

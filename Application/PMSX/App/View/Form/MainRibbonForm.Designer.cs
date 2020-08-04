@@ -158,7 +158,7 @@
       this.Ribbon = this.ribbon;
       this.StatusBar = this.statusBar;
       this.Text = "PMSX";
-      this.Load += new System.EventHandler(this.FormMain_Load);
+      this.Load += new System.EventHandler(this.MainRibbonForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstage)).EndInit();
       this.ResumeLayout(false);

@@ -24,22 +24,22 @@
     /// </summary>
     private void InitializeComponent() {
       this.layout = new DevExpress.XtraLayout.LayoutControl();
+      this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
       this.brandControl1 = new PMSX.App.View.Control.BrandControl();
       this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
       this.statusLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.versionLabel = new DevExpress.XtraLayout.SimpleLabelItem();
       this.copyrightLabel = new DevExpress.XtraLayout.SimpleLabelItem();
-      this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
       this.progressBarLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layout)).BeginInit();
       this.layout.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.statusLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.versionLabel)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.copyrightLabel)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.progressBarLayout)).BeginInit();
       this.SuspendLayout();
       // 
@@ -58,6 +58,19 @@
       this.layout.TabIndex = 9;
       this.layout.Text = "layoutControl1";
       // 
+      // progressBar
+      // 
+      this.progressBar.EditValue = 0;
+      this.progressBar.Location = new System.Drawing.Point(14, 236);
+      this.progressBar.Name = "progressBar";
+      this.progressBar.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.progressBar.Properties.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
+      this.progressBar.Properties.ProgressPadding = new System.Windows.Forms.Padding(1);
+      this.progressBar.Properties.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
+      this.progressBar.Size = new System.Drawing.Size(457, 10);
+      this.progressBar.StyleController = this.layout;
+      this.progressBar.TabIndex = 9;
+      // 
       // brandControl1
       // 
       this.brandControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -71,8 +84,6 @@
       // 
       // Root
       // 
-      this.Root.AppearanceGroup.BackColor = System.Drawing.Color.Transparent;
-      this.Root.AppearanceGroup.Options.UseBackColor = true;
       this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
       this.Root.GroupBordersVisible = false;
       this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -137,17 +148,6 @@
       this.copyrightLabel.Text = "Bản quyền";
       this.copyrightLabel.TextSize = new System.Drawing.Size(56, 15);
       // 
-      // progressBar
-      // 
-      this.progressBar.Location = new System.Drawing.Point(14, 236);
-      this.progressBar.Name = "progressBar";
-      this.progressBar.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-      this.progressBar.Properties.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
-      this.progressBar.Properties.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
-      this.progressBar.Size = new System.Drawing.Size(457, 10);
-      this.progressBar.StyleController = this.layout;
-      this.progressBar.TabIndex = 9;
-      // 
       // progressBarLayout
       // 
       this.progressBarLayout.Control = this.progressBar;
@@ -172,12 +172,12 @@
       this.Text = "SplashScreen1";
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.statusLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.versionLabel)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.copyrightLabel)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.progressBarLayout)).EndInit();
       this.ResumeLayout(false);
 

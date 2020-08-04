@@ -2,7 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using PMSX.Pattern.Base;
-using PMSX.Utility.View.Control;
+using PMSX.Utility.View;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace PMSX.App.View.Control {
 
     protected abstract void EventLoad(GridControl grid, GridView view);
     protected abstract DialogResult EventAddButtonClick();
-    protected abstract DialogResult EventEditButtonClick(ModelBase modelSelected);
+    protected abstract DialogResult EventEditButtonClick(object modelSelected);
     protected abstract bool EventDisableButtonClick(ModelBase modelSelected);
 
     protected void TableControl_Load(object sender, EventArgs e) {
@@ -23,19 +23,19 @@ namespace PMSX.App.View.Control {
 
     protected void AddButton_Click(object sender, EventArgs e) {
       if (EventAddButtonClick() == DialogResult.OK) {
-        EventLoad(tableGrid, tableView);
+        OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventLoad(tableGrid, tableView));
       }
     }
 
     protected void EditButton_Click(object sender, EventArgs e) {
       if (EventEditButtonClick(GridUtility.Instance.GetSelected(tableView)) == DialogResult.OK) {
-        EventLoad(tableGrid, tableView);
+        OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventLoad(tableGrid, tableView));
       }
     }
 
     protected void DisableButton_Click(object sender, EventArgs e) {
       if (EventDisableButtonClick(GridUtility.Instance.GetSelected(tableView))) {
-        EventLoad(tableGrid, tableView);
+        OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventLoad(tableGrid, tableView));
       }
     }
   }

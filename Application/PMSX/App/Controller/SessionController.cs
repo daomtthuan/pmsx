@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using PMSX.App.Model;
 using PMSX.Pattern.Base;
+using PMSX.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,8 +17,11 @@ namespace PMSX.App.Controller {
         where
           (@state = -1 or session_state = @state)";
 
-      DataTable data = Database.Instance.ExecuteReader(query,
+      DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
         new MySqlParameter("@state", state));
+      if (data == null) {
+        return null;
+      }
 
       List<Session> sessions = new List<Session>();
       foreach (DataRow row in data.Rows) {
@@ -43,7 +47,7 @@ namespace PMSX.App.Controller {
           @createStaffId
         )";
 
-      return Database.Instance.ExecuteNonQuery(query,
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@date", date),
         new MySqlParameter("@doctorId", doctorId),
         new MySqlParameter("@technicianId", technicianId),

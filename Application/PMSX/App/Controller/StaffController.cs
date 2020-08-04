@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using PMSX.App.Model;
 using PMSX.Pattern.Base;
+using PMSX.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,8 +18,11 @@ namespace PMSX.App.Controller {
           (@state = -1 or staff_state = @state)
       ";
 
-      DataTable data = Database.Instance.ExecuteReader(query,
+      DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
         new MySqlParameter("@state", state));
+      if (data == null) {
+        return null;
+      }
 
       List<Staff> staffs = new List<Staff>();
       foreach (DataRow row in data.Rows) {
@@ -37,9 +41,12 @@ namespace PMSX.App.Controller {
           staff_username = @username
       ";
 
-      DataTable data = Database.Instance.ExecuteReader(query,
+      DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
         new MySqlParameter("@state", state),
         new MySqlParameter("@username", username));
+      if (data == null) {
+        return null;
+      }
 
       List<Staff> staffs = new List<Staff>();
       foreach (DataRow row in data.Rows) {
@@ -49,7 +56,34 @@ namespace PMSX.App.Controller {
       return staffs;
     }
 
-    public string Add(string username, string password, string name, string comment) {
+    public List<Staff> GetByNoRoleName(string name, int state = -1) {
+      string query = @"
+        select *
+        from view_staff
+        where
+          (@state = -1 or staff_state = @state) and
+          staff_id not in (
+            select permission_staffId
+            from view_permission
+            where permission_roleName = @name
+          )";
+
+      DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
+        new MySqlParameter("@state", state),
+        new MySqlParameter("@name", name));
+      if (data == null) {
+        return null;
+      }
+
+      List<Staff> permissions = new List<Staff>();
+      foreach (DataRow row in data.Rows) {
+        permissions.Add(new Staff(row));
+      }
+
+      return permissions;
+    }
+
+    public int Add(string username, string password, string name, string comment) {
       string query = @"
         insert into table_staff(
           staff_username,
@@ -65,14 +99,12 @@ namespace PMSX.App.Controller {
           @createStaffId
         )";
 
-      var row = Database.Instance.ExecuteNonQuery(query,
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@username", username),
         new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
         new MySqlParameter("@name", name),
         comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
         new MySqlParameter("@createStaffId", Authentication.Instance.Staff.Id));
-
-      return row != 0 ? password : "";
     }
 
     public int Edit(long id, string name, int state, string comment) {
@@ -86,7 +118,7 @@ namespace PMSX.App.Controller {
           staff_updateDateTime = now()
         where staff_id = @id";
 
-      return Database.Instance.ExecuteNonQuery(query,
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@id", id),
         new MySqlParameter("@name", name),
         new MySqlParameter("@state", state),
@@ -106,7 +138,7 @@ namespace PMSX.App.Controller {
           staff_updateDateTime = now()
         where staff_id = @id";
 
-      return Database.Instance.ExecuteNonQuery(query,
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@id", id),
         new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
         new MySqlParameter("@name", name),
@@ -124,7 +156,7 @@ namespace PMSX.App.Controller {
           staff_updateDateTime = now()
         where staff_id = @id";
 
-      return Database.Instance.ExecuteNonQuery(query,
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@id", id),
         new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
     }

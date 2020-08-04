@@ -7,13 +7,11 @@ namespace PMSX.Utility.View {
     private AlertUtility() { }
 
     public DialogResult ShowError(string message) {
-      string contact =
-        "\nLiên hệ hỗ trợ Nhà phát triển:" +
-        "\nEmail: dao.mt.thuan@gmail.com" +
-        "\nSố điện thoại: +84 939 908 568" +
-        "\nWebsite: daomtthuan.com" +
-        "\nFacebook: facebook.com/dao.mt.thuan";
-      return XtraMessageBox.Show($"{message}\n{contact}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      return XtraMessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    public DialogResult ShowError(ExceptionBase exception) {
+      return ShowError(exception.AlertMessage);
     }
 
     public DialogResult ShowWarning(string message) {

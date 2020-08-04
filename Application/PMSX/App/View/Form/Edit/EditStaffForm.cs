@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using PMSX.App.Model;
+﻿using DevExpress.XtraEditors;
 using PMSX.App.Controller;
+using PMSX.App.Model;
+using PMSX.Utility;
+using PMSX.Utility.View;
+using PMSX.Utility.View.Form;
+using System;
+using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Edit {
   public partial class EditStaffForm : XtraForm {
@@ -18,31 +14,47 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditStaffForm_Load(object sender, EventArgs e) {
-      var staff = (Staff)Tag;
+      Staff staff = (Staff)Tag;
       usernameInput.Text = staff.Username;
       nameInput.Text = staff.Name;
       stateRadio.EditValue = staff.GetStateNumber();
       commentInput.Text = staff.Comment;
+
+      DisplayUtility.Instance.Set(this, true);
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
-      string password = passwordInput.Text;
-      string name = nameInput.Text;
-      int state = (int)stateRadio.EditValue;
-      string comment = commentInput.Text;
-
-      if (password == "") {
-        StaffController.Instance.Edit(((Staff)Tag).Id, name, state, comment);
-      } else {
-        StaffController.Instance.Edit(((Staff)Tag).Id, password, name, state, comment);
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa nhân viên này?") == DialogResult.No) {
+        return;
       }
 
-      DialogResult = DialogResult.OK;
-      Close();
+      OverlayUtility.Instance.StartProcess(this, () => {
+        string password = passwordInput.Text;
+        string name = nameInput.Text;
+        int state = (int)stateRadio.EditValue;
+        string comment = commentInput.Text;
+
+        if (password == "") {
+          if (StaffController.Instance.Edit(((Staff)Tag).Id, name, state, comment) < 0) {
+            Application.Exit();
+            return;
+          }
+        } else {
+          if (StaffController.Instance.Edit(((Staff)Tag).Id, password, name, state, comment) < 0) {
+            Application.Exit();
+            return;
+          }
+        }
+
+        DialogResult = DialogResult.OK;
+        Close();
+      });
     }
 
     private void ResetPasswordButton_Click(object sender, EventArgs e) {
-
+      OverlayUtility.Instance.StartProcess(this, () => {
+        passwordInput.Text = StringUtility.Instance.Random(10);
+      });
     }
   }
 }

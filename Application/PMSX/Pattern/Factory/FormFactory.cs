@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using PMSX.Pattern.Base;
+using PMSX.Utility.View.Form;
 using System;
 using System.Windows.Forms;
 
@@ -14,12 +15,13 @@ namespace PMSX.Pattern.Factory {
         StartPosition = FormStartPosition.CenterScreen,
         FormBorderStyle = FormBorderStyle.FixedSingle,
         MaximizeBox = false,
-        DialogResult = DialogResult.None
+        DialogResult = DialogResult.Cancel
       };
 
       SimpleButton closeButton = new SimpleButton();
       closeButton.Click += new EventHandler((sender, e) => form.Close());
       form.CancelButton = closeButton;
+      DisplayUtility.Instance.Set(form, false);
 
       return form;
     }

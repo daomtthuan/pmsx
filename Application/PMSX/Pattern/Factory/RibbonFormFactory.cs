@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using PMSX.Pattern.Base;
+using PMSX.Utility.View.Form;
 using System.Windows.Forms;
 
 namespace PMSX.Pattern.Factory {
@@ -8,11 +9,14 @@ namespace PMSX.Pattern.Factory {
 
     public RibbonForm Create() {
       WindowsFormsSettings.LoadApplicationSettings();
-      return new RibbonForm() {
+      RibbonForm ribbonForm = new RibbonForm() {
         Icon = Properties.Resources.Icon,
         StartPosition = FormStartPosition.CenterScreen,
         DialogResult = DialogResult.None
       };
+      DisplayUtility.Instance.Set(ribbonForm, false);
+
+      return ribbonForm;
     }
   }
 }

@@ -68,7 +68,7 @@
       this.layout.Name = "layout";
       this.layout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(910, 7, 650, 400);
       this.layout.Root = this.root;
-      this.layout.Size = new System.Drawing.Size(408, 340);
+      this.layout.Size = new System.Drawing.Size(408, 346);
       this.layout.TabIndex = 0;
       this.layout.Text = "layoutControl1";
       // 
@@ -87,16 +87,18 @@
       // 
       this.usernameInput.Location = new System.Drawing.Point(96, 205);
       this.usernameInput.Name = "usernameInput";
-      this.usernameInput.Size = new System.Drawing.Size(298, 22);
+      this.usernameInput.Properties.Padding = new System.Windows.Forms.Padding(1);
+      this.usernameInput.Size = new System.Drawing.Size(298, 24);
       this.usernameInput.StyleController = this.layout;
       this.usernameInput.TabIndex = 4;
       // 
       // passwordInput
       // 
-      this.passwordInput.Location = new System.Drawing.Point(96, 235);
+      this.passwordInput.Location = new System.Drawing.Point(96, 237);
       this.passwordInput.Name = "passwordInput";
+      this.passwordInput.Properties.Padding = new System.Windows.Forms.Padding(1);
       this.passwordInput.Properties.PasswordChar = 'o';
-      this.passwordInput.Size = new System.Drawing.Size(298, 22);
+      this.passwordInput.Size = new System.Drawing.Size(298, 24);
       this.passwordInput.StyleController = this.layout;
       this.passwordInput.TabIndex = 5;
       // 
@@ -104,7 +106,7 @@
       // 
       this.loginButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.loginButton.Appearance.Options.UseBackColor = true;
-      this.loginButton.Location = new System.Drawing.Point(206, 300);
+      this.loginButton.Location = new System.Drawing.Point(206, 306);
       this.loginButton.Name = "loginButton";
       this.loginButton.Padding = new System.Windows.Forms.Padding(2);
       this.loginButton.Size = new System.Drawing.Size(188, 26);
@@ -115,7 +117,7 @@
       // 
       // sessionButton
       // 
-      this.sessionButton.Location = new System.Drawing.Point(14, 300);
+      this.sessionButton.Location = new System.Drawing.Point(14, 306);
       this.sessionButton.Name = "sessionButton";
       this.sessionButton.Padding = new System.Windows.Forms.Padding(2);
       this.sessionButton.Size = new System.Drawing.Size(184, 26);
@@ -126,12 +128,13 @@
       // 
       // sessionSelect
       // 
-      this.sessionSelect.Location = new System.Drawing.Point(96, 270);
+      this.sessionSelect.Location = new System.Drawing.Point(96, 274);
       this.sessionSelect.Name = "sessionSelect";
       this.sessionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.sessionSelect.Properties.NullText = "";
-      this.sessionSelect.Size = new System.Drawing.Size(298, 22);
+      this.sessionSelect.Properties.Padding = new System.Windows.Forms.Padding(1);
+      this.sessionSelect.Size = new System.Drawing.Size(298, 24);
       this.sessionSelect.StyleController = this.layout;
       this.sessionSelect.TabIndex = 6;
       // 
@@ -148,7 +151,7 @@
             this.sessionButtonLayout,
             this.brandControlLayout});
       this.root.Name = "Root";
-      this.root.Size = new System.Drawing.Size(408, 340);
+      this.root.Size = new System.Drawing.Size(408, 346);
       this.root.TextVisible = false;
       // 
       // usernameInputLayout
@@ -156,7 +159,7 @@
       this.usernameInputLayout.Control = this.usernameInput;
       this.usernameInputLayout.Location = new System.Drawing.Point(0, 191);
       this.usernameInputLayout.Name = "inputUsernameLayout";
-      this.usernameInputLayout.Size = new System.Drawing.Size(388, 30);
+      this.usernameInputLayout.Size = new System.Drawing.Size(388, 32);
       this.usernameInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.usernameInputLayout.Text = "Tên đăng nhập";
       this.usernameInputLayout.TextSize = new System.Drawing.Size(79, 15);
@@ -164,9 +167,9 @@
       // passwordInputLayout
       // 
       this.passwordInputLayout.Control = this.passwordInput;
-      this.passwordInputLayout.Location = new System.Drawing.Point(0, 221);
+      this.passwordInputLayout.Location = new System.Drawing.Point(0, 223);
       this.passwordInputLayout.Name = "inputPasswordLayout";
-      this.passwordInputLayout.Size = new System.Drawing.Size(388, 30);
+      this.passwordInputLayout.Size = new System.Drawing.Size(388, 32);
       this.passwordInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.passwordInputLayout.Text = "Mật khẩu";
       this.passwordInputLayout.TextSize = new System.Drawing.Size(79, 15);
@@ -174,7 +177,7 @@
       // separator
       // 
       this.separator.AllowHotTrack = false;
-      this.separator.Location = new System.Drawing.Point(0, 251);
+      this.separator.Location = new System.Drawing.Point(0, 255);
       this.separator.Name = "separator";
       this.separator.Size = new System.Drawing.Size(388, 5);
       this.separator.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -182,9 +185,9 @@
       // sessionSelectLayout
       // 
       this.sessionSelectLayout.Control = this.sessionSelect;
-      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 256);
+      this.sessionSelectLayout.Location = new System.Drawing.Point(0, 260);
       this.sessionSelectLayout.Name = "selectSessionLayout";
-      this.sessionSelectLayout.Size = new System.Drawing.Size(388, 30);
+      this.sessionSelectLayout.Size = new System.Drawing.Size(388, 32);
       this.sessionSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.sessionSelectLayout.Text = "Phiên làm việc";
       this.sessionSelectLayout.TextSize = new System.Drawing.Size(79, 15);
@@ -192,7 +195,7 @@
       // loginButtonLayout
       // 
       this.loginButtonLayout.Control = this.loginButton;
-      this.loginButtonLayout.Location = new System.Drawing.Point(192, 286);
+      this.loginButtonLayout.Location = new System.Drawing.Point(192, 292);
       this.loginButtonLayout.Name = "buttonLoginLayout";
       this.loginButtonLayout.Size = new System.Drawing.Size(196, 34);
       this.loginButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -202,7 +205,7 @@
       // sessionButtonLayout
       // 
       this.sessionButtonLayout.Control = this.sessionButton;
-      this.sessionButtonLayout.Location = new System.Drawing.Point(0, 286);
+      this.sessionButtonLayout.Location = new System.Drawing.Point(0, 292);
       this.sessionButtonLayout.Name = "buttonInsertSessionLayout";
       this.sessionButtonLayout.Size = new System.Drawing.Size(192, 34);
       this.sessionButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -213,11 +216,8 @@
       // 
       this.brandControlLayout.Control = this.brandControl;
       this.brandControlLayout.Location = new System.Drawing.Point(0, 0);
-      this.brandControlLayout.MaxSize = new System.Drawing.Size(0, 191);
-      this.brandControlLayout.MinSize = new System.Drawing.Size(334, 191);
       this.brandControlLayout.Name = "brandControlLayout";
       this.brandControlLayout.Size = new System.Drawing.Size(388, 191);
-      this.brandControlLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.brandControlLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.brandControlLayout.TextSize = new System.Drawing.Size(0, 0);
       this.brandControlLayout.TextVisible = false;
@@ -228,7 +228,7 @@
       this.Appearance.Options.UseFont = true;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(408, 340);
+      this.ClientSize = new System.Drawing.Size(408, 346);
       this.Controls.Add(this.layout);
       this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.Name = "LoginForm";

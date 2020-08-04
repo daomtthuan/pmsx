@@ -1,8 +1,9 @@
-﻿using BCrypt.Net;
-using PMSX.Exception;
+﻿using PMSX.Exception;
 using PMSX.Pattern.Base;
+using PMSX.Utility.View;
 using System;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace PMSX.App {
   internal class Config : SingletonBase<Config> {
@@ -25,7 +26,8 @@ namespace PMSX.App {
       try {
         System.Collections.Specialized.NameValueCollection appSettings = ConfigurationManager.AppSettings;
         if (appSettings.Count == 0) {
-          throw SettingException.Instance.NotFound;
+          AlertUtility.Instance.ShowError(ConfigException.Instance.NotFound());
+          Application.Exit();
         } else {
           license = new License();
           Database = new DatabaseSetting() {
@@ -36,8 +38,12 @@ namespace PMSX.App {
             Name = appSettings["DatabaseName"]
           };
         }
-      } catch (ConfigurationErrorsException) {
-        throw SettingException.Instance.ErrorReading;
+      } catch (ConfigurationErrorsException e) {
+        AlertUtility.Instance.ShowError(ConfigException.Instance.ErrorReading(e));
+        Application.Exit();
+      } catch (System.Exception e) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Error(e));
+        Application.Exit();
       }
     }
 

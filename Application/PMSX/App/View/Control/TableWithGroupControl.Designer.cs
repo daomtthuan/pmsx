@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Control {
-  partial class TableWithGroupControl {
+  partial class TableWithSelectControl {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
@@ -26,7 +26,7 @@
       this.layout = new DevExpress.XtraLayout.LayoutControl();
       this.tableGrid = new DevExpress.XtraGrid.GridControl();
       this.tableView = new DevExpress.XtraGrid.Views.Grid.GridView();
-      this.groupSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.select = new DevExpress.XtraEditors.LookUpEdit();
       this.addButton = new DevExpress.XtraEditors.SimpleButton();
       this.editButton = new DevExpress.XtraEditors.SimpleButton();
       this.disableButton = new DevExpress.XtraEditors.SimpleButton();
@@ -40,7 +40,7 @@
       this.layout.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tableGrid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.groupSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.select.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableGridLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.addButtonLayout)).BeginInit();
@@ -52,7 +52,7 @@
       // layout
       // 
       this.layout.Controls.Add(this.tableGrid);
-      this.layout.Controls.Add(this.groupSelect);
+      this.layout.Controls.Add(this.select);
       this.layout.Controls.Add(this.addButton);
       this.layout.Controls.Add(this.editButton);
       this.layout.Controls.Add(this.disableButton);
@@ -60,16 +60,17 @@
       this.layout.Location = new System.Drawing.Point(0, 0);
       this.layout.Name = "layout";
       this.layout.Root = this.root;
-      this.layout.Size = new System.Drawing.Size(500, 600);
+      this.layout.Size = new System.Drawing.Size(632, 600);
       this.layout.TabIndex = 0;
       this.layout.Text = "layoutControl1";
       // 
       // tableGrid
       // 
-      this.tableGrid.Location = new System.Drawing.Point(14, 44);
+      this.tableGrid.Location = new System.Drawing.Point(14, 48);
       this.tableGrid.MainView = this.tableView;
       this.tableGrid.Name = "tableGrid";
-      this.tableGrid.Size = new System.Drawing.Size(472, 542);
+      this.tableGrid.Padding = new System.Windows.Forms.Padding(1);
+      this.tableGrid.Size = new System.Drawing.Size(604, 538);
       this.tableGrid.TabIndex = 5;
       this.tableGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tableView});
@@ -80,25 +81,27 @@
       this.tableView.Name = "tableView";
       this.tableView.OptionsView.ShowGroupPanel = false;
       // 
-      // groupSelect
+      // select
       // 
-      this.groupSelect.Location = new System.Drawing.Point(49, 14);
-      this.groupSelect.Name = "groupSelect";
-      this.groupSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.select.Location = new System.Drawing.Point(49, 14);
+      this.select.Name = "select";
+      this.select.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.groupSelect.Properties.NullText = "";
-      this.groupSelect.Size = new System.Drawing.Size(104, 22);
-      this.groupSelect.StyleController = this.layout;
-      this.groupSelect.TabIndex = 4;
-      this.groupSelect.EditValueChanged += new System.EventHandler(this.GroupSelect_EditValueChanged);
+      this.select.Properties.NullText = "";
+      this.select.Properties.Padding = new System.Windows.Forms.Padding(1);
+      this.select.Size = new System.Drawing.Size(110, 24);
+      this.select.StyleController = this.layout;
+      this.select.TabIndex = 4;
+      this.select.EditValueChanged += new System.EventHandler(this.GroupSelect_EditValueChanged);
       // 
       // addButton
       // 
       this.addButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.addButton.Appearance.Options.UseBackColor = true;
-      this.addButton.Location = new System.Drawing.Point(161, 14);
+      this.addButton.Location = new System.Drawing.Point(167, 14);
       this.addButton.Name = "addButton";
-      this.addButton.Size = new System.Drawing.Size(103, 22);
+      this.addButton.Padding = new System.Windows.Forms.Padding(2);
+      this.addButton.Size = new System.Drawing.Size(145, 26);
       this.addButton.StyleController = this.layout;
       this.addButton.TabIndex = 6;
       this.addButton.Text = "Thêm";
@@ -106,9 +109,10 @@
       // 
       // editButton
       // 
-      this.editButton.Location = new System.Drawing.Point(272, 14);
+      this.editButton.Location = new System.Drawing.Point(320, 14);
       this.editButton.Name = "editButton";
-      this.editButton.Size = new System.Drawing.Size(103, 22);
+      this.editButton.Padding = new System.Windows.Forms.Padding(2);
+      this.editButton.Size = new System.Drawing.Size(145, 26);
       this.editButton.StyleController = this.layout;
       this.editButton.TabIndex = 7;
       this.editButton.Text = "Chỉnh sửa";
@@ -118,9 +122,10 @@
       // 
       this.disableButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
       this.disableButton.Appearance.Options.UseBackColor = true;
-      this.disableButton.Location = new System.Drawing.Point(381, 12);
+      this.disableButton.Location = new System.Drawing.Point(473, 14);
       this.disableButton.Name = "disableButton";
-      this.disableButton.Size = new System.Drawing.Size(107, 22);
+      this.disableButton.Padding = new System.Windows.Forms.Padding(2);
+      this.disableButton.Size = new System.Drawing.Size(145, 26);
       this.disableButton.StyleController = this.layout;
       this.disableButton.TabIndex = 8;
       this.disableButton.Text = "Vô hiệu hoá";
@@ -137,15 +142,15 @@
             this.editButtonLayout,
             this.disableButtonLayout});
       this.root.Name = "root";
-      this.root.Size = new System.Drawing.Size(500, 600);
+      this.root.Size = new System.Drawing.Size(632, 600);
       this.root.TextVisible = false;
       // 
       // tableGridLayout
       // 
       this.tableGridLayout.Control = this.tableGrid;
-      this.tableGridLayout.Location = new System.Drawing.Point(0, 30);
+      this.tableGridLayout.Location = new System.Drawing.Point(0, 34);
       this.tableGridLayout.Name = "tableGridLayout";
-      this.tableGridLayout.Size = new System.Drawing.Size(480, 550);
+      this.tableGridLayout.Size = new System.Drawing.Size(612, 546);
       this.tableGridLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.tableGridLayout.TextSize = new System.Drawing.Size(0, 0);
       this.tableGridLayout.TextVisible = false;
@@ -153,11 +158,11 @@
       // addButtonLayout
       // 
       this.addButtonLayout.Control = this.addButton;
-      this.addButtonLayout.Location = new System.Drawing.Point(147, 0);
-      this.addButtonLayout.MaxSize = new System.Drawing.Size(111, 30);
-      this.addButtonLayout.MinSize = new System.Drawing.Size(111, 30);
+      this.addButtonLayout.Location = new System.Drawing.Point(153, 0);
+      this.addButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.addButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.addButtonLayout.Name = "addButtonLayout";
-      this.addButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.addButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.addButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.addButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.addButtonLayout.TextSize = new System.Drawing.Size(0, 0);
@@ -165,10 +170,12 @@
       // 
       // groupSelectLayout
       // 
-      this.groupSelectLayout.Control = this.groupSelect;
+      this.groupSelectLayout.Control = this.select;
       this.groupSelectLayout.Location = new System.Drawing.Point(0, 0);
+      this.groupSelectLayout.MinSize = new System.Drawing.Size(93, 34);
       this.groupSelectLayout.Name = "groupSelectLayout";
-      this.groupSelectLayout.Size = new System.Drawing.Size(147, 30);
+      this.groupSelectLayout.Size = new System.Drawing.Size(153, 34);
+      this.groupSelectLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.groupSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.groupSelectLayout.Text = "Nhóm";
       this.groupSelectLayout.TextSize = new System.Drawing.Size(32, 15);
@@ -176,11 +183,11 @@
       // editButtonLayout
       // 
       this.editButtonLayout.Control = this.editButton;
-      this.editButtonLayout.Location = new System.Drawing.Point(258, 0);
-      this.editButtonLayout.MaxSize = new System.Drawing.Size(111, 30);
-      this.editButtonLayout.MinSize = new System.Drawing.Size(111, 30);
+      this.editButtonLayout.Location = new System.Drawing.Point(306, 0);
+      this.editButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.editButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.editButtonLayout.Name = "editButtonLayout";
-      this.editButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.editButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.editButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.editButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.editButtonLayout.TextSize = new System.Drawing.Size(0, 0);
@@ -189,28 +196,29 @@
       // disableButtonLayout
       // 
       this.disableButtonLayout.Control = this.disableButton;
-      this.disableButtonLayout.Location = new System.Drawing.Point(369, 0);
-      this.disableButtonLayout.MaxSize = new System.Drawing.Size(111, 26);
-      this.disableButtonLayout.MinSize = new System.Drawing.Size(111, 26);
+      this.disableButtonLayout.Location = new System.Drawing.Point(459, 0);
+      this.disableButtonLayout.MaxSize = new System.Drawing.Size(153, 34);
+      this.disableButtonLayout.MinSize = new System.Drawing.Size(153, 34);
       this.disableButtonLayout.Name = "disableButtonLayout";
-      this.disableButtonLayout.Size = new System.Drawing.Size(111, 30);
+      this.disableButtonLayout.Size = new System.Drawing.Size(153, 34);
       this.disableButtonLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.disableButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.disableButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.disableButtonLayout.TextVisible = false;
       // 
-      // TableWithGroupControl
+      // TableWithSelectControl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.Controls.Add(this.layout);
-      this.Name = "TableWithGroupControl";
-      this.Size = new System.Drawing.Size(500, 600);
+      this.Name = "TableWithSelectControl";
+      this.Size = new System.Drawing.Size(632, 600);
       this.Load += new System.EventHandler(this.TableWithGroupControl_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.tableGrid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.groupSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.select.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableGridLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.addButtonLayout)).EndInit();
@@ -227,7 +235,7 @@
     private DevExpress.XtraLayout.LayoutControlGroup root;
     private DevExpress.XtraGrid.GridControl tableGrid;
     private DevExpress.XtraGrid.Views.Grid.GridView tableView;
-    private DevExpress.XtraEditors.LookUpEdit groupSelect;
+    private DevExpress.XtraEditors.LookUpEdit select;
     private DevExpress.XtraEditors.SimpleButton addButton;
     private DevExpress.XtraEditors.SimpleButton editButton;
     private DevExpress.XtraEditors.SimpleButton disableButton;

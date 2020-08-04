@@ -47,7 +47,7 @@
       this.layout.Margin = new System.Windows.Forms.Padding(2);
       this.layout.Name = "layout";
       this.layout.Root = this.root;
-      this.layout.Size = new System.Drawing.Size(450, 84);
+      this.layout.Size = new System.Drawing.Size(450, 86);
       this.layout.TabIndex = 1;
       this.layout.Text = "layoutControl1";
       // 
@@ -55,7 +55,7 @@
       // 
       this.activeButton.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
       this.activeButton.Appearance.Options.UseBackColor = true;
-      this.activeButton.Location = new System.Drawing.Point(14, 44);
+      this.activeButton.Location = new System.Drawing.Point(14, 46);
       this.activeButton.Name = "activeButton";
       this.activeButton.Padding = new System.Windows.Forms.Padding(2);
       this.activeButton.Size = new System.Drawing.Size(422, 26);
@@ -74,8 +74,9 @@
       this.keyInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
       this.keyInput.Properties.Mask.EditMask = "d";
       this.keyInput.Properties.MaxLength = 36;
+      this.keyInput.Properties.Padding = new System.Windows.Forms.Padding(1);
       this.keyInput.Properties.PasswordChar = 'o';
-      this.keyInput.Size = new System.Drawing.Size(341, 22);
+      this.keyInput.Size = new System.Drawing.Size(341, 24);
       this.keyInput.StyleController = this.layout;
       this.keyInput.TabIndex = 4;
       // 
@@ -87,7 +88,7 @@
             this.keyInputLayout,
             this.activeButtonLayout});
       this.root.Name = "Root";
-      this.root.Size = new System.Drawing.Size(450, 84);
+      this.root.Size = new System.Drawing.Size(450, 86);
       this.root.TextVisible = false;
       // 
       // keyInputLayout
@@ -95,7 +96,7 @@
       this.keyInputLayout.Control = this.keyInput;
       this.keyInputLayout.Location = new System.Drawing.Point(0, 0);
       this.keyInputLayout.Name = "keyInputLayout";
-      this.keyInputLayout.Size = new System.Drawing.Size(430, 30);
+      this.keyInputLayout.Size = new System.Drawing.Size(430, 32);
       this.keyInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.keyInputLayout.Text = "Khoá kích hoạt";
       this.keyInputLayout.TextSize = new System.Drawing.Size(78, 15);
@@ -103,7 +104,7 @@
       // activeButtonLayout
       // 
       this.activeButtonLayout.Control = this.activeButton;
-      this.activeButtonLayout.Location = new System.Drawing.Point(0, 30);
+      this.activeButtonLayout.Location = new System.Drawing.Point(0, 32);
       this.activeButtonLayout.Name = "activeButtonLayout";
       this.activeButtonLayout.Size = new System.Drawing.Size(430, 34);
       this.activeButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -114,10 +115,11 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(450, 84);
+      this.ClientSize = new System.Drawing.Size(450, 86);
       this.Controls.Add(this.layout);
       this.Name = "LicenseKeyForm";
       this.Text = "Kích hoạt bản quyền";
+      this.Load += new System.EventHandler(this.LicenseKeyForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.keyInput.Properties)).EndInit();

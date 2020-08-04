@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using PMSX.Utility.View;
+using PMSX.Utility.View.Form;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
@@ -7,10 +9,16 @@ namespace PMSX.App.View.Form {
       InitializeComponent();
     }
 
+    private void LicenseKeyForm_Load(object sender, System.EventArgs e) {
+      DisplayUtility.Instance.Set(this, true);
+    }
+
     private void ActiveButton_Click(object sender, System.EventArgs e) {
-      Config.Instance.AddLicenseKey(keyInput.Text);
-      DialogResult = DialogResult.OK;
-      Close();
+      OverlayUtility.Instance.StartProcess(this, () => {
+        Config.Instance.AddLicenseKey(keyInput.Text);
+        DialogResult = DialogResult.OK;
+        Close();
+      });
     }
   }
 }

@@ -122,11 +122,8 @@
     <Compile Include="App\Authentication.cs" />
     <Compile Include="App\Controller\GroupController.cs" />
     <Compile Include="App\Controller\PermissionController.cs" />
-    <Compile Include="App\Controller\RoleController.cs" />
     <Compile Include="App\Controller\SessionController.cs" />
     <Compile Include="App\Controller\StaffController.cs" />
-    <Compile Include="App\Database.cs" />
-    <Compile Include="App\Loading.cs" />
     <Compile Include="App\Model\Biopsy.cs" />
     <Compile Include="App\Model\DiagnosyType1.cs" />
     <Compile Include="App\Model\Group.cs" />
@@ -136,7 +133,6 @@
     <Compile Include="App\Model\MicroGroup.cs" />
     <Compile Include="App\Model\Patient.cs" />
     <Compile Include="App\Model\Permission.cs" />
-    <Compile Include="App\Model\Role.cs" />
     <Compile Include="App\Model\Session.cs" />
     <Compile Include="App\Model\Staff.cs" />
     <Compile Include="App\Config.cs" />
@@ -158,12 +154,25 @@
     <Compile Include="App\View\Control\TableWithGroupControl.Designer.cs">
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\View\Control\Table\PermissionTable.cs" />
     <Compile Include="App\View\Control\Table\StaffTable.cs" />
+    <Compile Include="App\View\Form\Add\AddPermissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Add\AddPermissionForm.Designer.cs">
+      <DependentUpon>AddPermissionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\View\Form\Add\AddStaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="App\View\Form\Add\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditPermissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditPermissionForm.Designer.cs">
+      <DependentUpon>EditPermissionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App\View\Form\Edit\EditStaffForm.cs">
       <SubType>Form</SubType>
@@ -208,8 +217,8 @@
       <DependentUpon>LoadingSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Exception\DatabaseException.cs" />
-    <Compile Include="Exception\SettingException.cs" />
-    <Compile Include="Exception\AppException.cs" />
+    <Compile Include="Exception\ConfigException.cs" />
+    <Compile Include="Exception\SystemException.cs" />
     <Compile Include="Pattern\Base\ExceptionBase.cs" />
     <Compile Include="Pattern\Base\IFactoryBase.cs" />
     <Compile Include="Pattern\Base\ModelBase.cs" />
@@ -219,11 +228,13 @@
     <Compile Include="Pattern\Factory\RibbonFormFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DatabaseUtility.cs" />
     <Compile Include="Utility\StringUtility.cs" />
     <Compile Include="Utility\View\AlertUtility.cs" />
-    <Compile Include="Utility\View\Control\GridUtility.cs" />
-    <Compile Include="Utility\View\Control\OverlayUtility.cs" />
-    <Compile Include="Utility\View\Form\DisplayUtility.cs" />
+    <Compile Include="Utility\View\DisplayUtility.cs" />
+    <Compile Include="Utility\View\GridUtility.cs" />
+    <Compile Include="Utility\View\LoadingUtility.cs" />
+    <Compile Include="Utility\View\OverlayUtility.cs" />
     <EmbeddedResource Include="App\View\Control\BrandControl.resx">
       <DependentUpon>BrandControl.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -234,8 +245,14 @@
     <EmbeddedResource Include="App\View\Control\TableWithGroupControl.resx">
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Add\AddPermissionForm.resx">
+      <DependentUpon>AddPermissionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Add\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Edit\EditPermissionForm.resx">
+      <DependentUpon>EditPermissionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Edit\EditStaffForm.resx">
       <DependentUpon>EditStaffForm.cs</DependentUpon>

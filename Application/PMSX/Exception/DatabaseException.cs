@@ -7,31 +7,14 @@ namespace PMSX.Exception {
       ErrorExecute
     }
 
-    private ExceptionBase errorConnection;
-    private ExceptionBase errorExecute;
-
     private DatabaseException() { }
 
-    private ExceptionBase Create(Type type, string message) {
-      return new ExceptionBase(nameof(DatabaseException), typeof(Type), (int)type, message);
+    public ExceptionBase ErrorConnection(System.Exception exception = null) {
+      return new ExceptionBase(nameof(DatabaseException), typeof(Type), (int)Type.ErrorConnection, "Lỗi kết nối cơ sở dữ liệu", exception);
     }
 
-    public ExceptionBase ErrorConnection {
-      get {
-        if (errorConnection == null) {
-          errorConnection = Create(Type.ErrorConnection, "Lỗi kết nối cơ sở dữ liệu");
-        }
-        return errorConnection;
-      }
-    }
-
-    public ExceptionBase ErrorExecute {
-      get {
-        if (errorExecute == null) {
-          errorExecute = Create(Type.ErrorExecute, "Lỗi truy vấn cơ sở dữ liệu");
-        }
-        return errorExecute;
-      }
+    public ExceptionBase ErrorExecute(System.Exception exception = null) {
+      return new ExceptionBase(nameof(DatabaseException), typeof(Type), (int)Type.ErrorExecute, "Lỗi truy vấn cơ sở dữ liệu", exception);
     }
   }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 namespace PMSX.Utility {
-  class StringUtility : SingletonBase<StringUtility> {
+  internal class StringUtility : SingletonBase<StringUtility> {
     private readonly Random random;
     private readonly string characters;
 
