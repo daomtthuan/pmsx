@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using PMSX.App;
 using PMSX.Pattern.Base;
 using System.Windows.Forms;
 
@@ -7,10 +8,13 @@ namespace PMSX.Pattern.Factory {
     private ControlFactory() { }
 
     public Control Create() {
-      WindowsFormsSettings.LoadApplicationSettings();
-      return new Control() {
+      Control control = new Control() {
         Dock = DockStyle.Fill
       };
+
+      Config.Instance.SetupTheme();
+
+      return control;
     }
   }
 }

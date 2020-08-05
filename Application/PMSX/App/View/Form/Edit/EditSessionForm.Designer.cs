@@ -25,15 +25,15 @@
     private void InitializeComponent() {
       this.layout = new DevExpress.XtraLayout.LayoutControl();
       this.dateSelect = new DevExpress.XtraEditors.DateEdit();
-      this.doctorSelect = new DevExpress.XtraEditors.LookUpEdit();
-      this.technicianSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.doctorPermissionSelect = new DevExpress.XtraEditors.LookUpEdit();
+      this.technicianPermissionSelect = new DevExpress.XtraEditors.LookUpEdit();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.editButton = new DevExpress.XtraEditors.SimpleButton();
       this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
       this.root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.dateSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.doctorSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.technicianSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.doctorPermissionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.technicianPermissionSelectLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.separator = new DevExpress.XtraLayout.SimpleSeparator();
       this.editButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -42,14 +42,14 @@
       this.layout.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dateSelect.Properties.CalendarTimeProperties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dateSelect.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.doctorSelect.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doctorPermissionSelect.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.technicianPermissionSelect.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dateSelectLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.doctorSelectLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doctorPermissionSelectLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.technicianPermissionSelectLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.separator)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.editButtonLayout)).BeginInit();
@@ -60,8 +60,8 @@
       // 
       this.layout.AllowCustomization = false;
       this.layout.Controls.Add(this.dateSelect);
-      this.layout.Controls.Add(this.doctorSelect);
-      this.layout.Controls.Add(this.technicianSelect);
+      this.layout.Controls.Add(this.doctorPermissionSelect);
+      this.layout.Controls.Add(this.technicianPermissionSelect);
       this.layout.Controls.Add(this.commentInput);
       this.layout.Controls.Add(this.editButton);
       this.layout.Controls.Add(this.stateRadio);
@@ -88,27 +88,27 @@
       this.dateSelect.StyleController = this.layout;
       this.dateSelect.TabIndex = 4;
       // 
-      // doctorSelect
+      // doctorPermissionSelect
       // 
-      this.doctorSelect.Location = new System.Drawing.Point(86, 44);
-      this.doctorSelect.Name = "doctorSelect";
-      this.doctorSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.doctorPermissionSelect.Location = new System.Drawing.Point(86, 44);
+      this.doctorPermissionSelect.Name = "doctorPermissionSelect";
+      this.doctorPermissionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.doctorSelect.Properties.NullText = "";
-      this.doctorSelect.Size = new System.Drawing.Size(350, 22);
-      this.doctorSelect.StyleController = this.layout;
-      this.doctorSelect.TabIndex = 5;
+      this.doctorPermissionSelect.Properties.NullText = "";
+      this.doctorPermissionSelect.Size = new System.Drawing.Size(350, 22);
+      this.doctorPermissionSelect.StyleController = this.layout;
+      this.doctorPermissionSelect.TabIndex = 5;
       // 
-      // technicianSelect
+      // technicianPermissionSelect
       // 
-      this.technicianSelect.Location = new System.Drawing.Point(86, 74);
-      this.technicianSelect.Name = "technicianSelect";
-      this.technicianSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.technicianPermissionSelect.Location = new System.Drawing.Point(86, 74);
+      this.technicianPermissionSelect.Name = "technicianPermissionSelect";
+      this.technicianPermissionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.technicianSelect.Properties.NullText = "";
-      this.technicianSelect.Size = new System.Drawing.Size(350, 22);
-      this.technicianSelect.StyleController = this.layout;
-      this.technicianSelect.TabIndex = 6;
+      this.technicianPermissionSelect.Properties.NullText = "";
+      this.technicianPermissionSelect.Size = new System.Drawing.Size(350, 22);
+      this.technicianPermissionSelect.StyleController = this.layout;
+      this.technicianPermissionSelect.TabIndex = 6;
       // 
       // commentInput
       // 
@@ -130,6 +130,7 @@
       this.editButton.StyleController = this.layout;
       this.editButton.TabIndex = 8;
       this.editButton.Text = "Chỉnh sửa";
+      this.editButton.Click += new System.EventHandler(this.EditButton_Click);
       // 
       // stateRadio
       // 
@@ -152,8 +153,8 @@
       this.root.GroupBordersVisible = false;
       this.root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.dateSelectLayout,
-            this.doctorSelectLayout,
-            this.technicianSelectLayout,
+            this.doctorPermissionSelectLayout,
+            this.technicianPermissionSelectLayout,
             this.commentInputLayout,
             this.separator,
             this.editButtonLayout,
@@ -172,25 +173,25 @@
       this.dateSelectLayout.Text = "Ngày";
       this.dateSelectLayout.TextSize = new System.Drawing.Size(69, 15);
       // 
-      // doctorSelectLayout
+      // doctorPermissionSelectLayout
       // 
-      this.doctorSelectLayout.Control = this.doctorSelect;
-      this.doctorSelectLayout.Location = new System.Drawing.Point(0, 30);
-      this.doctorSelectLayout.Name = "doctorSelectLayout";
-      this.doctorSelectLayout.Size = new System.Drawing.Size(430, 30);
-      this.doctorSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-      this.doctorSelectLayout.Text = "Bác sĩ";
-      this.doctorSelectLayout.TextSize = new System.Drawing.Size(69, 15);
+      this.doctorPermissionSelectLayout.Control = this.doctorPermissionSelect;
+      this.doctorPermissionSelectLayout.Location = new System.Drawing.Point(0, 30);
+      this.doctorPermissionSelectLayout.Name = "doctorPermissionSelectLayout";
+      this.doctorPermissionSelectLayout.Size = new System.Drawing.Size(430, 30);
+      this.doctorPermissionSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.doctorPermissionSelectLayout.Text = "Bác sĩ";
+      this.doctorPermissionSelectLayout.TextSize = new System.Drawing.Size(69, 15);
       // 
-      // technicianSelectLayout
+      // technicianPermissionSelectLayout
       // 
-      this.technicianSelectLayout.Control = this.technicianSelect;
-      this.technicianSelectLayout.Location = new System.Drawing.Point(0, 60);
-      this.technicianSelectLayout.Name = "technicianSelectLayout";
-      this.technicianSelectLayout.Size = new System.Drawing.Size(430, 30);
-      this.technicianSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-      this.technicianSelectLayout.Text = "Kỹ thuật viên";
-      this.technicianSelectLayout.TextSize = new System.Drawing.Size(69, 15);
+      this.technicianPermissionSelectLayout.Control = this.technicianPermissionSelect;
+      this.technicianPermissionSelectLayout.Location = new System.Drawing.Point(0, 60);
+      this.technicianPermissionSelectLayout.Name = "technicianPermissionSelectLayout";
+      this.technicianPermissionSelectLayout.Size = new System.Drawing.Size(430, 30);
+      this.technicianPermissionSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.technicianPermissionSelectLayout.Text = "Kỹ thuật viên";
+      this.technicianPermissionSelectLayout.TextSize = new System.Drawing.Size(69, 15);
       // 
       // commentInputLayout
       // 
@@ -251,14 +252,14 @@
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dateSelect.Properties.CalendarTimeProperties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dateSelect.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.doctorSelect.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doctorPermissionSelect.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.technicianPermissionSelect.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dateSelectLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.doctorSelectLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.technicianSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.doctorPermissionSelectLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.technicianPermissionSelectLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.separator)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.editButtonLayout)).EndInit();
@@ -271,14 +272,14 @@
 
     private DevExpress.XtraLayout.LayoutControl layout;
     private DevExpress.XtraEditors.DateEdit dateSelect;
-    private DevExpress.XtraEditors.LookUpEdit doctorSelect;
-    private DevExpress.XtraEditors.LookUpEdit technicianSelect;
+    private DevExpress.XtraEditors.LookUpEdit doctorPermissionSelect;
+    private DevExpress.XtraEditors.LookUpEdit technicianPermissionSelect;
     private DevExpress.XtraEditors.MemoEdit commentInput;
     private DevExpress.XtraEditors.SimpleButton editButton;
     private DevExpress.XtraLayout.LayoutControlGroup root;
     private DevExpress.XtraLayout.LayoutControlItem dateSelectLayout;
-    private DevExpress.XtraLayout.LayoutControlItem doctorSelectLayout;
-    private DevExpress.XtraLayout.LayoutControlItem technicianSelectLayout;
+    private DevExpress.XtraLayout.LayoutControlItem doctorPermissionSelectLayout;
+    private DevExpress.XtraLayout.LayoutControlItem technicianPermissionSelectLayout;
     private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
     private DevExpress.XtraLayout.SimpleSeparator separator;
     private DevExpress.XtraLayout.LayoutControlItem editButtonLayout;

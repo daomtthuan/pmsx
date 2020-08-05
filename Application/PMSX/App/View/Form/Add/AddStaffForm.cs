@@ -7,7 +7,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Add {
-  public partial class AddStaffForm : XtraForm {
+  internal partial class AddStaffForm : XtraForm {
     public AddStaffForm() {
       InitializeComponent();
     }
@@ -27,11 +27,11 @@ namespace PMSX.App.View.Form.Add {
 
         if (StaffController.Instance.Add(username, password, name, comment) < 0) {
           Application.Exit();
-          return;
-        };
-
-        DialogResult = DialogResult.OK;
-        Close();
+          DialogResult = DialogResult.No;
+        } else {
+          DialogResult = DialogResult.OK;
+          Close();
+        }
       });
     }
   }

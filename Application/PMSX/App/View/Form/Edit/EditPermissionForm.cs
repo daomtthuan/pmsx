@@ -7,7 +7,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Edit {
-  public partial class EditPermissionForm : XtraForm {
+  internal partial class EditPermissionForm : XtraForm {
     public EditPermissionForm() {
       InitializeComponent();
     }
@@ -31,11 +31,11 @@ namespace PMSX.App.View.Form.Edit {
 
         if (PermissionController.Instance.Edit(((Permission)Tag).Id, state, comment) < 0) {
           Application.Exit();
-          return;
+          DialogResult = DialogResult.No;
+        } else {
+          DialogResult = DialogResult.OK;
+          Close();
         }
-
-        DialogResult = DialogResult.OK;
-        Close();
       });
     }
   }

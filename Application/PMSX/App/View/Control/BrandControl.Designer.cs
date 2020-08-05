@@ -85,7 +85,7 @@
       // 
       this.labelNameApp.AllowHotTrack = false;
       this.labelNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Noto Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelNameApp.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+      this.labelNameApp.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
       this.labelNameApp.AppearanceItemCaption.Options.UseFont = true;
       this.labelNameApp.AppearanceItemCaption.Options.UseForeColor = true;
       this.labelNameApp.AppearanceItemCaption.Options.UseTextOptions = true;
@@ -102,7 +102,7 @@
       // 
       this.labelSubNameApp.AllowHotTrack = false;
       this.labelSubNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelSubNameApp.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+      this.labelSubNameApp.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
       this.labelSubNameApp.AppearanceItemCaption.Options.UseFont = true;
       this.labelSubNameApp.AppearanceItemCaption.Options.UseForeColor = true;
       this.labelSubNameApp.AppearanceItemCaption.Options.UseTextOptions = true;

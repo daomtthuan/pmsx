@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Pathology management system")]
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
-[assembly: AssemblyVersion("1.5.0")]
+[assembly: AssemblyVersion("1.5.1")]
 #else
 [assembly: AssemblyConfiguration("Release")]
-[assembly: AssemblyVersion("1.5.0.*")]
+[assembly: AssemblyVersion("1.5.1.*")]
 #endif
-[assembly: AssemblyFileVersion("1.5.0")]
+[assembly: AssemblyFileVersion("1.5.1")]
 [assembly: AssemblyCompany("Daomtthuan")]
 [assembly: AssemblyProduct("PMSX")]
 [assembly: AssemblyCopyright("Copyright © 2020 Daomtthuan")]

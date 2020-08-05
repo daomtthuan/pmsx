@@ -1,16 +1,18 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Reflection;
 
 namespace PMSX.App.View {
-  public partial class LoadingSplashScreen : DevExpress.XtraSplashScreen.SplashScreen {
+  internal partial class LoadingSplashScreen : DevExpress.XtraSplashScreen.SplashScreen {
     internal enum SplashScreenCommand {
       UpdateStatus
     }
 
     public LoadingSplashScreen() {
       InitializeComponent();
-      WindowsFormsSettings.LoadApplicationSettings();
+    }
+
+    private void LoadingSplashScreen_Load(object sender, EventArgs e) {
+      Config.Instance.SetupTheme();
 
       string year = DateTime.Now.Year == 2020 ? "2020" : $"2020 - {DateTime.Now.Year}";
       copyrightLabel.Text = $"Bản quyền © {year} Daomtthuan";

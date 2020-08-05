@@ -107,44 +107,44 @@ namespace PMSX.App.Controller {
         new MySqlParameter("@createStaffId", Authentication.Instance.Staff.Id));
     }
 
-    public int Edit(long id, string name, int state, string comment) {
-      string query = @"
-        update table_staff
-        set
-          staff_name = @name,
-          staff_state = @state,
-          staff_comment = @comment,
-          staff_updateStaffId = @updateStaffId,
-          staff_updateDateTime = now()
-        where staff_id = @id";
-
-      return DatabaseUtility.Instance.ExecuteNonQuery(query,
-        new MySqlParameter("@id", id),
-        new MySqlParameter("@name", name),
-        new MySqlParameter("@state", state),
-        comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
-        new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
-    }
-
     public int Edit(long id, string password, string name, int state, string comment) {
-      string query = @"
-        update table_staff
-        set
-          staff_password = @password,
-          staff_name = @name,
-          staff_state = @state,
-          staff_comment = @comment,
-          staff_updateStaffId = @updateStaffId,
-          staff_updateDateTime = now()
-        where staff_id = @id";
+      if (password == "") {
+        string query = @"
+          update table_staff
+          set
+            staff_name = @name,
+            staff_state = @state,
+            staff_comment = @comment,
+            staff_updateStaffId = @updateStaffId,
+            staff_updateDateTime = now()
+          where staff_id = @id";
 
-      return DatabaseUtility.Instance.ExecuteNonQuery(query,
-        new MySqlParameter("@id", id),
-        new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
-        new MySqlParameter("@name", name),
-        new MySqlParameter("@state", state),
-        comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
-        new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+        return DatabaseUtility.Instance.ExecuteNonQuery(query,
+          new MySqlParameter("@id", id),
+          new MySqlParameter("@name", name),
+          new MySqlParameter("@state", state),
+          comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
+          new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+      } else {
+        string query = @"
+          update table_staff
+          set
+            staff_password = @password,
+            staff_name = @name,
+            staff_state = @state,
+            staff_comment = @comment,
+            staff_updateStaffId = @updateStaffId,
+            staff_updateDateTime = now()
+          where staff_id = @id";
+
+        return DatabaseUtility.Instance.ExecuteNonQuery(query,
+          new MySqlParameter("@id", id),
+          new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
+          new MySqlParameter("@name", name),
+          new MySqlParameter("@state", state),
+          comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
+          new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+      }
     }
 
     public int Disable(long id) {

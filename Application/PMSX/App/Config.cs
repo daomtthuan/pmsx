@@ -1,4 +1,7 @@
-﻿using PMSX.Exception;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.XtraEditors;
+using PMSX.Exception;
 using PMSX.Pattern.Base;
 using PMSX.Utility.View;
 using System;
@@ -47,20 +50,41 @@ namespace PMSX.App {
       }
     }
 
-    public void AddLicenseKey(string key) {
-      Properties.Settings.Default.LicenseKey = key;
-      Properties.Settings.Default.Save();
+    public void SetupTheme() {
+      Skin skin = CommonSkins.GetSkin(UserLookAndFeel.Default);
+      skin.SvgPalettes[Skin.DefaultSkinPaletteName].SetCustomPalette(skin.CustomSvgPalettes[Config.Instance.Theme]);
+      LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
+      WindowsFormsSettings.LoadApplicationSettings();
     }
 
     public bool Activated {
       get {
-        string key = Properties.Settings.Default.LicenseKey;
-        if (BCrypt.Net.BCrypt.Verify("daomtthuan", key)) {
+        if (BCrypt.Net.BCrypt.Verify("daomtthuan", LicenseKey)) {
           license.Active = true;
           license.Expire = DateTime.Now;
         }
 
         return license.Active;
+      }
+    }
+
+    public string LicenseKey {
+      private get => Properties.Settings.Default.LicenseKey;
+      set {
+        Properties.Settings.Default.LicenseKey = value;
+        Properties.Settings.Default.Save();
+      }
+    }
+
+    public string Theme {
+      get => Properties.Settings.Default.Theme;
+      set {
+        Properties.Settings.Default.Theme = value;
+        Properties.Settings.Default.Save();
+
+        Skin skin = CommonSkins.GetSkin(UserLookAndFeel.Default);
+        skin.SvgPalettes[Skin.DefaultSkinPaletteName].SetCustomPalette(skin.CustomSvgPalettes[value]);
+        LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
       }
     }
 

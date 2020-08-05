@@ -24,57 +24,44 @@
     /// </summary>
     private void InitializeComponent() {
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-      this.backstage = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-      this.accountLabel = new DevExpress.XtraBars.BarHeaderItem();
       this.profileButton = new DevExpress.XtraBars.BarButtonItem();
       this.passwordButton = new DevExpress.XtraBars.BarButtonItem();
       this.statusLabel = new DevExpress.XtraBars.BarStaticItem();
+      this.themeSelect = new DevExpress.XtraBars.BarSubItem();
+      this.lightThemeButton = new DevExpress.XtraBars.BarButtonItem();
+      this.darkThemeButton = new DevExpress.XtraBars.BarButtonItem();
       this.homePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.settingPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.systemGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+      this.layout = new DevExpress.XtraEditors.PanelControl();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.backstage)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layout)).BeginInit();
       this.SuspendLayout();
       // 
       // ribbon
       // 
-      this.ribbon.ApplicationButtonDropDownControl = this.backstage;
-      this.ribbon.CaptionBarItemLinks.Add(this.accountLabel);
       this.ribbon.ExpandCollapseItem.Id = 0;
       this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.accountLabel,
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
             this.profileButton,
             this.passwordButton,
-            this.statusLabel});
+            this.statusLabel,
+            this.themeSelect,
+            this.lightThemeButton,
+            this.darkThemeButton});
       this.ribbon.Location = new System.Drawing.Point(0, 0);
       this.ribbon.Margin = new System.Windows.Forms.Padding(2);
-      this.ribbon.MaxItemId = 12;
+      this.ribbon.MaxItemId = 28;
       this.ribbon.Name = "ribbon";
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homePage,
             this.settingPage});
+      this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
       this.ribbon.Size = new System.Drawing.Size(1280, 170);
       this.ribbon.StatusBar = this.statusBar;
-      // 
-      // backstage
-      // 
-      this.backstage.Location = new System.Drawing.Point(42, 192);
-      this.backstage.Name = "backstage";
-      this.backstage.OwnerControl = this.ribbon;
-      this.backstage.Size = new System.Drawing.Size(485, 270);
-      this.backstage.TabIndex = 2;
-      this.backstage.VisibleInDesignTime = true;
-      // 
-      // accountLabel
-      // 
-      this.accountLabel.Id = 11;
-      this.accountLabel.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-      this.accountLabel.ImageOptions.SvgImage = global::PMSX.Properties.Resources.User;
-      this.accountLabel.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-      this.accountLabel.Name = "accountLabel";
       // 
       // profileButton
       // 
@@ -116,6 +103,31 @@
       this.statusLabel.Id = 4;
       this.statusLabel.Name = "statusLabel";
       // 
+      // themeSelect
+      // 
+      this.themeSelect.Caption = "Giao diện";
+      this.themeSelect.Id = 25;
+      this.themeSelect.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+      this.themeSelect.ImageOptions.SvgImage = global::PMSX.Properties.Resources.Paint;
+      this.themeSelect.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.lightThemeButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.darkThemeButton)});
+      this.themeSelect.Name = "themeSelect";
+      // 
+      // lightThemeButton
+      // 
+      this.lightThemeButton.Caption = "Nền sáng";
+      this.lightThemeButton.Id = 26;
+      this.lightThemeButton.Name = "lightThemeButton";
+      this.lightThemeButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.LightThemeButton_ItemClick);
+      // 
+      // darkThemeButton
+      // 
+      this.darkThemeButton.Caption = "Nền tối";
+      this.darkThemeButton.Id = 27;
+      this.darkThemeButton.Name = "darkThemeButton";
+      this.darkThemeButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DarkThemeButton_ItemClick);
+      // 
       // homePage
       // 
       this.homePage.Name = "homePage";
@@ -124,7 +136,8 @@
       // settingPage
       // 
       this.settingPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.accountGroup});
+            this.accountGroup,
+            this.systemGroup});
       this.settingPage.Name = "settingPage";
       this.settingPage.Text = "Cài đặt";
       // 
@@ -135,6 +148,12 @@
       this.accountGroup.Name = "accountGroup";
       this.accountGroup.Text = "Tài khoản";
       // 
+      // systemGroup
+      // 
+      this.systemGroup.ItemLinks.Add(this.themeSelect);
+      this.systemGroup.Name = "systemGroup";
+      this.systemGroup.Text = "Hệ thống";
+      // 
       // statusBar
       // 
       this.statusBar.ItemLinks.Add(this.statusLabel);
@@ -143,13 +162,22 @@
       this.statusBar.Ribbon = this.ribbon;
       this.statusBar.Size = new System.Drawing.Size(1280, 26);
       // 
+      // layout
+      // 
+      this.layout.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+      this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.layout.Location = new System.Drawing.Point(0, 170);
+      this.layout.Name = "layout";
+      this.layout.Size = new System.Drawing.Size(1280, 524);
+      this.layout.TabIndex = 2;
+      // 
       // MainRibbonForm
       // 
       this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1280, 720);
-      this.Controls.Add(this.backstage);
+      this.Controls.Add(this.layout);
       this.Controls.Add(this.statusBar);
       this.Controls.Add(this.ribbon);
       this.Margin = new System.Windows.Forms.Padding(2);
@@ -160,7 +188,7 @@
       this.Text = "PMSX";
       this.Load += new System.EventHandler(this.MainRibbonForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.backstage)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -170,13 +198,16 @@
 
     private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
     private DevExpress.XtraBars.Ribbon.RibbonStatusBar statusBar;
-    private DevExpress.XtraBars.Ribbon.BackstageViewControl backstage;
     private DevExpress.XtraBars.BarButtonItem profileButton;
     private DevExpress.XtraBars.Ribbon.RibbonPage settingPage;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
     private DevExpress.XtraBars.BarButtonItem passwordButton;
-    private DevExpress.XtraBars.BarHeaderItem accountLabel;
     private DevExpress.XtraBars.BarStaticItem statusLabel;
     private DevExpress.XtraBars.Ribbon.RibbonPage homePage;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup systemGroup;
+    private DevExpress.XtraBars.BarSubItem themeSelect;
+    private DevExpress.XtraBars.BarButtonItem lightThemeButton;
+    private DevExpress.XtraBars.BarButtonItem darkThemeButton;
+    private DevExpress.XtraEditors.PanelControl layout;
   }
 }

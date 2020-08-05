@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using PMSX.App;
 using PMSX.Pattern.Base;
 using PMSX.Utility.View.Form;
 using System;
@@ -9,7 +10,6 @@ namespace PMSX.Pattern.Factory {
     private FormFactory() { }
 
     public Form Create() {
-      WindowsFormsSettings.LoadApplicationSettings();
       Form form = new Form() {
         Icon = Properties.Resources.Icon,
         StartPosition = FormStartPosition.CenterScreen,
@@ -17,11 +17,12 @@ namespace PMSX.Pattern.Factory {
         MaximizeBox = false,
         DialogResult = DialogResult.Cancel
       };
+      DisplayUtility.Instance.Set(form, false);
+      Config.Instance.SetupTheme();
 
       SimpleButton closeButton = new SimpleButton();
       closeButton.Click += new EventHandler((sender, e) => form.Close());
       form.CancelButton = closeButton;
-      DisplayUtility.Instance.Set(form, false);
 
       return form;
     }

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using PMSX.App;
 using PMSX.Pattern.Base;
 using PMSX.Utility.View.Form;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace PMSX.Pattern.Factory {
         DialogResult = DialogResult.None
       };
       DisplayUtility.Instance.Set(ribbonForm, false);
+      Config.Instance.SetupTheme();
 
       return ribbonForm;
     }

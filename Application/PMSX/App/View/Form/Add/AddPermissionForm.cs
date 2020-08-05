@@ -4,16 +4,17 @@ using PMSX.App.Model;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Add {
-  public partial class AddPermissionForm : XtraForm {
+  internal partial class AddPermissionForm : XtraForm {
     public AddPermissionForm() {
       InitializeComponent();
     }
 
     private void AddPermissionForm_Load(object sender, EventArgs e) {
-      System.Collections.Generic.List<Staff> staffs = StaffController.Instance.GetByNoRoleName(Tag.ToString());
+      List<Staff> staffs = StaffController.Instance.GetByNoRoleName(Tag.ToString());
       if (staffs == null) {
         Application.Exit();
         return;
@@ -30,11 +31,11 @@ namespace PMSX.App.View.Form.Add {
 
         if (PermissionController.Instance.Add(staffId, roleId, comment) < 0) {
           Application.Exit();
-          return;
+          DialogResult = DialogResult.No;
+        } else {
+          DialogResult = DialogResult.OK;
+          Close();
         }
-
-        DialogResult = DialogResult.OK;
-        Close();
       });
     }
   }

@@ -11,7 +11,11 @@ namespace PMSX.Utility.View {
     }
 
     public DialogResult ShowError(ExceptionBase exception) {
+#if DEBUG
+      throw exception.InnerException;
+#else
       return ShowError(exception.AlertMessage);
+#endif
     }
 
     public DialogResult ShowWarning(string message) {

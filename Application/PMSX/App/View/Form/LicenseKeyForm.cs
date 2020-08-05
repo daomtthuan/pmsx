@@ -4,7 +4,7 @@ using PMSX.Utility.View.Form;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
-  public partial class LicenseKeyForm : XtraForm {
+  internal partial class LicenseKeyForm : XtraForm {
     public LicenseKeyForm() {
       InitializeComponent();
     }
@@ -15,7 +15,7 @@ namespace PMSX.App.View.Form {
 
     private void ActiveButton_Click(object sender, System.EventArgs e) {
       OverlayUtility.Instance.StartProcess(this, () => {
-        Config.Instance.AddLicenseKey(keyInput.Text);
+        Config.Instance.LicenseKey = keyInput.Text;
         DialogResult = DialogResult.OK;
         Close();
       });

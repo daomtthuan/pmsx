@@ -312,7 +312,7 @@ create view view_session as (
    join table_staff as technician on session_technicianId = technician.staff_id
    join table_staff as createStaff on session_createStaffId = createStaff.staff_id
    left outer join table_staff as updateStaff on session_updateStaffId = updateStaff.staff_id
- order by session_id desc
+ order by session_date desc
 );
 
 create view view_group as (

@@ -155,6 +155,7 @@
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </Compile>
     <Compile Include="App\View\Control\Table\PermissionTable.cs" />
+    <Compile Include="App\View\Control\Table\SessionTable.cs" />
     <Compile Include="App\View\Control\Table\StaffTable.cs" />
     <Compile Include="App\View\Form\Add\AddPermissionForm.cs">
       <SubType>Form</SubType>
@@ -348,6 +349,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pattern\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\Button\Account.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon\Button\Paint.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

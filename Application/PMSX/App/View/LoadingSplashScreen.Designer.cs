@@ -170,6 +170,7 @@
       this.Name = "LoadingSplashScreen";
       this.Padding = new System.Windows.Forms.Padding(1);
       this.Text = "SplashScreen1";
+      this.Load += new System.EventHandler(this.LoadingSplashScreen_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();

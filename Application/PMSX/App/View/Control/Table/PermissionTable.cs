@@ -7,6 +7,7 @@ using PMSX.App.View.Form.Edit;
 using PMSX.Pattern.Base;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Control.Table {
@@ -19,7 +20,7 @@ namespace PMSX.App.View.Control.Table {
     }
 
     protected override void EventSelectChanged(GridControl grid, GridView view, object selected) {
-      System.Collections.Generic.List<Model.Permission> permissions = PermissionController.Instance.GetByRoleName(selected.ToString());
+      List<Model.Permission> permissions = PermissionController.Instance.GetByRoleName(selected.ToString());
       if (permissions == null) {
         Application.Exit();
         return;

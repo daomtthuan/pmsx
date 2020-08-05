@@ -29,14 +29,14 @@ namespace PMSX.Properties {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public Resources() {
+        internal Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PMSX.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace PMSX.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,17 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Bed {
+        internal static DevExpress.Utils.Svg.SvgImage Account {
+            get {
+                object obj = ResourceManager.GetObject("Account", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Bed {
             get {
                 object obj = ResourceManager.GetObject("Bed", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -73,7 +83,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Biopsy {
+        internal static DevExpress.Utils.Svg.SvgImage Biopsy {
             get {
                 object obj = ResourceManager.GetObject("Biopsy", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -83,7 +93,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Calendar {
+        internal static DevExpress.Utils.Svg.SvgImage Calendar {
             get {
                 object obj = ResourceManager.GetObject("Calendar", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -93,7 +103,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage CollectBiopsy {
+        internal static DevExpress.Utils.Svg.SvgImage CollectBiopsy {
             get {
                 object obj = ResourceManager.GetObject("CollectBiopsy", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -103,7 +113,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Diagnose {
+        internal static DevExpress.Utils.Svg.SvgImage Diagnose {
             get {
                 object obj = ResourceManager.GetObject("Diagnose", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -113,7 +123,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon Icon {
+        internal static System.Drawing.Icon Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -123,7 +133,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Key {
+        internal static DevExpress.Utils.Svg.SvgImage Key {
             get {
                 object obj = ResourceManager.GetObject("Key", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -133,7 +143,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo {
+        internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +153,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Macro {
+        internal static DevExpress.Utils.Svg.SvgImage Macro {
             get {
                 object obj = ResourceManager.GetObject("Macro", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -153,7 +163,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage MacroGroup {
+        internal static DevExpress.Utils.Svg.SvgImage MacroGroup {
             get {
                 object obj = ResourceManager.GetObject("MacroGroup", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -163,7 +173,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Micro {
+        internal static DevExpress.Utils.Svg.SvgImage Micro {
             get {
                 object obj = ResourceManager.GetObject("Micro", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -173,7 +183,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage MicroGroup {
+        internal static DevExpress.Utils.Svg.SvgImage MicroGroup {
             get {
                 object obj = ResourceManager.GetObject("MicroGroup", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -183,7 +193,17 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Password {
+        internal static DevExpress.Utils.Svg.SvgImage Paint {
+            get {
+                object obj = ResourceManager.GetObject("Paint", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage Password {
             get {
                 object obj = ResourceManager.GetObject("Password", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -193,7 +213,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage Profile {
+        internal static DevExpress.Utils.Svg.SvgImage Profile {
             get {
                 object obj = ResourceManager.GetObject("Profile", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
@@ -203,7 +223,7 @@ namespace PMSX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
-        public static DevExpress.Utils.Svg.SvgImage User {
+        internal static DevExpress.Utils.Svg.SvgImage User {
             get {
                 object obj = ResourceManager.GetObject("User", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));

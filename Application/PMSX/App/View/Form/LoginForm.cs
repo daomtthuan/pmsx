@@ -5,10 +5,11 @@ using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
-  public partial class LoginForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class LoginForm : DevExpress.XtraEditors.XtraForm {
     public LoginForm() {
       InitializeComponent();
     }
@@ -17,7 +18,7 @@ namespace PMSX.App.View.Form {
       usernameInput.Text = "daomtthuan";
       passwordInput.Text = "1";
 
-      System.Collections.Generic.List<Session> sessions = SessionController.Instance.Get(1);
+      List<Session> sessions = SessionController.Instance.Get(1);
       if (sessions == null) {
         Application.Exit();
         return;
@@ -25,7 +26,7 @@ namespace PMSX.App.View.Form {
       GridUtility.Instance.LoadData(sessionSelect, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName" }, "Id", "Date");
       DisplayUtility.Instance.Set(this, true);
 
-      //LoginButton_Click(sender, e);
+      LoginButton_Click(sender, e);
     }
 
     private bool IsLogin() {
@@ -73,8 +74,13 @@ namespace PMSX.App.View.Form {
           AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm phiên làm việc");
         } else {
           DisplayUtility.Instance.Set(this, false);
-          if (FormFactory<AddSessionForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
-            System.Collections.Generic.List<Session> sessions = SessionController.Instance.Get(1);
+          DialogResult result = FormFactory<AddSessionForm>.Instance.Create().ShowDialog();
+          if (result == DialogResult.No) {
+            return;
+          }
+
+          if (result == DialogResult.OK) {
+            List<Session> sessions = SessionController.Instance.Get(1);
             if (sessions == null) {
               Application.Exit();
               return;

@@ -1,4 +1,5 @@
-﻿using PMSX.App;
+﻿using DevExpress.UserSkins;
+using PMSX.App;
 using PMSX.App.View.Form;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
@@ -16,8 +17,10 @@ namespace PMSX {
       await LoadingUtility.Instance.Show("Chuẩn bị thiết lập...");
 
       await LoadingUtility.Instance.UpdateStatus("Thiết lập giao diện...");
+      Config.Instance.SetupTheme();
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      BonusSkins.Register();
 
       await LoadingUtility.Instance.UpdateStatus("Thiết lập ngôn ngữ...");
       CultureInfo culture = CultureInfo.CreateSpecificCulture("vi-VN");

@@ -13,16 +13,9 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
-  public partial class MainRibbonForm : RibbonForm {
-    private readonly PanelControl layout;
-
+  internal partial class MainRibbonForm : RibbonForm {
     public MainRibbonForm() {
       InitializeComponent();
-      layout = new PanelControl() {
-        Dock = DockStyle.Fill,
-        BorderStyle = BorderStyles.NoBorder
-      };
-      Controls.Add(layout);
     }
 
     private BarButtonItem CreaetButton<Control>(string caption, SvgImage image) where Control : XtraUserControl, new() {
@@ -41,13 +34,13 @@ namespace PMSX.App.View.Form {
       button.ItemAppearance.Disabled.TextOptions.WordWrap = WordWrap.NoWrap;
       button.ItemAppearance.Pressed.TextOptions.WordWrap = WordWrap.NoWrap;
       button.ItemClick += (sender, e) => {
-        OverlayUtility.Instance.StartProcess(this, statusLabel, () => {
+        OverlayUtility.Instance.StartProcess(this, () => {
           if (layout.Controls.Count > 0) {
             layout.Controls[0].Dispose();
             layout.Controls.Clear();
           }
           layout.Controls.Add(ControlFactory<Control>.Instance.Create());
-        });
+        }, statusLabel);
       };
       ribbon.Items.Add(button);
       return button;
@@ -79,8 +72,7 @@ namespace PMSX.App.View.Form {
       await LoadingUtility.Instance.Close("Sẳn sàng!");
 
       if (FormFactory<LoginForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
-        OverlayUtility.Instance.StartProcess(this, statusLabel, () => {
-          accountLabel.Caption = $"Tài khoản: {Authentication.Instance.Staff.Username}";
+        OverlayUtility.Instance.StartProcess(this, () => {
           if (Authentication.Instance.HasOneRole(Authentication.Role.Admin, Authentication.Role.Doctor, Authentication.Role.Technician)) {
             ribbon.PageCategories.AddRange(new[] {
               CreateCategory("Quản lý",
@@ -88,14 +80,35 @@ namespace PMSX.App.View.Form {
                 CreateGroup("Tài khoản",
                   CreaetButton<StaffTable>("Nhân viên", Resources.User),
                   CreaetButton<PermissionTable>("Phân quyền", Resources.Key)),
-                CreateGroup("Công việc")))
+                CreateGroup("Công việc",
+                  CreaetButton<SessionTable>("Phiên làm việc", Resources.Calendar))))
             });
           }
-        });
+        }, statusLabel, "Khởi tạo chức năng...");
         DisplayUtility.Instance.Set(this, true);
       } else {
         Application.Exit();
       }
+    }
+
+    private void LightThemeButton_ItemClick(object sender, ItemClickEventArgs e) {
+      if (Config.Instance.Theme == "Light") {
+        return;
+      }
+
+      OverlayUtility.Instance.StartProcess(this, () => {
+        Config.Instance.Theme = "Light";
+      }, statusLabel, "Thay đổi giao diện...");
+    }
+
+    private void DarkThemeButton_ItemClick(object sender, ItemClickEventArgs e) {
+      if (Config.Instance.Theme == "Dark") {
+        return;
+      }
+
+      OverlayUtility.Instance.StartProcess(this, () => {
+        Config.Instance.Theme = "Dark";
+      }, statusLabel, "Thay đổi giao diện...");
     }
   }
 }

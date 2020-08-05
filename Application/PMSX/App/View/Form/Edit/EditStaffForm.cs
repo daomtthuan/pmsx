@@ -8,7 +8,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Edit {
-  public partial class EditStaffForm : XtraForm {
+  internal partial class EditStaffForm : XtraForm {
     public EditStaffForm() {
       InitializeComponent();
     }
@@ -34,20 +34,13 @@ namespace PMSX.App.View.Form.Edit {
         int state = (int)stateRadio.EditValue;
         string comment = commentInput.Text;
 
-        if (password == "") {
-          if (StaffController.Instance.Edit(((Staff)Tag).Id, name, state, comment) < 0) {
-            Application.Exit();
-            return;
-          }
+        if (StaffController.Instance.Edit(((Staff)Tag).Id, password, name, state, comment) < 0) {
+          Application.Exit();
+          DialogResult = DialogResult.No;
         } else {
-          if (StaffController.Instance.Edit(((Staff)Tag).Id, password, name, state, comment) < 0) {
-            Application.Exit();
-            return;
-          }
+          DialogResult = DialogResult.OK;
+          Close();
         }
-
-        DialogResult = DialogResult.OK;
-        Close();
       });
     }
 

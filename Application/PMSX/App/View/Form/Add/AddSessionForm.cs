@@ -3,10 +3,11 @@ using PMSX.App.Model;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Add {
-  public partial class AddSessionForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class AddSessionForm : DevExpress.XtraEditors.XtraForm {
     public AddSessionForm() {
       InitializeComponent();
     }
@@ -14,14 +15,14 @@ namespace PMSX.App.View.Form.Add {
     private void AddSessionForm_Load(object sender, EventArgs e) {
       dateSelect.DateTime = DateTime.Now;
 
-      System.Collections.Generic.List<Permission> doctorPermissions = PermissionController.Instance.GetByRole(Authentication.Role.Doctor, 1);
+      List<Permission> doctorPermissions = PermissionController.Instance.GetByRole(Authentication.Role.Doctor, 1);
       if (doctorPermissions == null) {
         Application.Exit();
         return;
       }
       GridUtility.Instance.LoadData(doctorPermissionSelect, doctorPermissions, new[] { "StaffId", "StaffName" }, "StaffId", "StaffName");
 
-      System.Collections.Generic.List<Permission> technicianPermissions = PermissionController.Instance.GetByRole(Authentication.Role.Technician, 1);
+      List<Permission> technicianPermissions = PermissionController.Instance.GetByRole(Authentication.Role.Technician, 1);
       if (technicianPermissions == null) {
         Application.Exit();
         return;
@@ -38,13 +39,22 @@ namespace PMSX.App.View.Form.Add {
         Permission technicianPermission = (Permission)GridUtility.Instance.GetSelected(technicianPermissionSelect);
         string comment = commentInput.Text;
 
-        if (SessionController.Instance.Add(date, doctorPermission.StaffId, technicianPermission.StaffId, comment) < 0) {
+        List<Session> sessions = SessionController.Instance.GetByDate(date);
+        if (sessions == null) {
           Application.Exit();
+          DialogResult = DialogResult.No;
+        } else if (sessions.Count != 0) {
+          AlertUtility.Instance.ShowWarning("Phiên làm việc ngày này đã có");
           return;
         }
 
-        DialogResult = DialogResult.OK;
-        Close();
+        if (SessionController.Instance.Add(date, doctorPermission.StaffId, technicianPermission.StaffId, comment) < 0) {
+          Application.Exit();
+          DialogResult = DialogResult.No;
+        } else {
+          DialogResult = DialogResult.OK;
+          Close();
+        }
       });
     }
   }

@@ -12,34 +12,34 @@ using System.Windows.Forms;
 
 namespace PMSX.App.View.Control.Table {
   [System.ComponentModel.DesignerCategory("")]
-  internal class StaffTable : TableControl {
-    public StaffTable() { }
+  internal class SessionTable : TableControl {
+    public SessionTable() { }
 
     protected override void EventLoad(GridControl grid, GridView view) {
-      List<Staff> staffs = StaffController.Instance.Get();
-      if (staffs == null) {
+      List<Session> sessions = SessionController.Instance.Get();
+      if (sessions == null) {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, staffs, new[] { "Id", "Username", "Name", "Comment", "State", "CreateStaffName", "CreateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName", "State", "CreateStaffName", "CreateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick() {
-      return FormFactory<AddStaffForm>.Instance.Create().ShowDialog();
+      return FormFactory<AddSessionForm>.Instance.Create().ShowDialog();
     }
 
     protected override DialogResult EventEditButtonClick(object modelSelected) {
-      EditStaffForm editForm = FormFactory<EditStaffForm>.Instance.Create();
+      EditSessionForm editForm = FormFactory<EditSessionForm>.Instance.Create();
       editForm.Tag = modelSelected;
       return editForm.ShowDialog();
     }
 
     protected override bool EventDisableButtonClick(ModelBase modelSelected) {
-      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá nhân viên này?") == DialogResult.No) {
+      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá phiên làm việc này?") == DialogResult.No) {
         return false;
       }
 
-      if (StaffController.Instance.Disable(modelSelected.Id) < 0) {
+      if (SessionController.Instance.Disable(modelSelected.Id) < 0) {
         Application.Exit();
         return false;
       }

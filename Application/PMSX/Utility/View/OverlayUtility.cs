@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.Skins;
+using DevExpress.XtraBars;
 using DevExpress.XtraSplashScreen;
 using PMSX.Pattern.Base;
 using System;
@@ -9,10 +10,11 @@ namespace PMSX.Utility.View {
   internal class OverlayUtility : SingletonBase<OverlayUtility> {
     private OverlayUtility() { }
 
-    public async void StartProcess(System.Windows.Forms.Control control, BarStaticItem statusLabel, Action process) {
+    public async void StartProcess(Control control, Action process, BarStaticItem statusLabel, string statusCaption = "Đảng tải dữ liệu...") {
       try {
-        statusLabel.Caption = "Đảng tải dữ liệu...";
-        using (IOverlaySplashScreenHandle handle = SplashScreenManager.ShowOverlayForm(control, false, false)) {
+        statusLabel.Caption = statusCaption;
+        Skin skin = CommonSkins.GetSkin(DevExpress.LookAndFeel.UserLookAndFeel.Default);
+        using (IOverlaySplashScreenHandle handle = SplashScreenManager.ShowOverlayForm(control, false, false, skin.SvgPalettes["DefaultSkinPalette"].Colors[0].Value)) {
           process.Invoke();
           await Task.Delay(500);
           handle.Close();
@@ -29,9 +31,10 @@ namespace PMSX.Utility.View {
       }
     }
 
-    public async void StartProcess(System.Windows.Forms.Control control, Action process) {
+    public async void StartProcess(Control control, Action process) {
       try {
-        using (IOverlaySplashScreenHandle handle = SplashScreenManager.ShowOverlayForm(control, false, false)) {
+        Skin skin = CommonSkins.GetSkin(DevExpress.LookAndFeel.UserLookAndFeel.Default);
+        using (IOverlaySplashScreenHandle handle = SplashScreenManager.ShowOverlayForm(control, false, false, skin.SvgPalettes["DefaultSkinPalette"].Colors[0].Value)) {
           process.Invoke();
           await Task.Delay(500);
           handle.Close();

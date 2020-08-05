@@ -78,9 +78,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.dateSelect.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.dateSelect.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew;
       this.dateSelect.Properties.Mask.UseMaskAsDisplayFormat = true;
-      this.dateSelect.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
       this.dateSelect.Size = new System.Drawing.Size(350, 22);
       this.dateSelect.StyleController = this.layout;
       this.dateSelect.TabIndex = 4;
