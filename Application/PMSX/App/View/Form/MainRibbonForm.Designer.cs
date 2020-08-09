@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainRibbonForm));
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.backstage = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
       this.aboutTab = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -154,6 +155,7 @@
       this.updateVersionButton.StyleController = this.aboutTabLayout;
       this.updateVersionButton.TabIndex = 5;
       this.updateVersionButton.Text = "Kiểm tra cập nhật";
+      this.updateVersionButton.Click += new System.EventHandler(this.UpdateVersionButton_Click);
       // 
       // licenseKeyButton
       // 
@@ -167,6 +169,7 @@
       this.licenseKeyButton.StyleController = this.aboutTabLayout;
       this.licenseKeyButton.TabIndex = 6;
       this.licenseKeyButton.Text = "Đổi khoá kích hoạt bản quyền";
+      this.licenseKeyButton.Click += new System.EventHandler(this.LicenseKeyButton_Click);
       // 
       // feedbackButton
       // 
@@ -180,6 +183,7 @@
       this.feedbackButton.StyleController = this.aboutTabLayout;
       this.feedbackButton.TabIndex = 7;
       this.feedbackButton.Text = "Ý kiến phản hồi";
+      this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click);
       // 
       // aboutTabRoot
       // 
@@ -285,7 +289,7 @@
       this.accountButton.Id = 2;
       this.accountButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.accountButton.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
-      this.accountButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.User;
+      this.accountButton.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accountButton.ImageOptions.SvgImage")));
       this.accountButton.ItemAppearance.Disabled.Options.UseTextOptions = true;
       this.accountButton.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
       this.accountButton.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -303,7 +307,7 @@
       this.passwordButton.Id = 3;
       this.passwordButton.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.passwordButton.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
-      this.passwordButton.ImageOptions.SvgImage = global::PMSX.Properties.Resources.Password;
+      this.passwordButton.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("passwordButton.ImageOptions.SvgImage")));
       this.passwordButton.ItemAppearance.Disabled.Options.UseTextOptions = true;
       this.passwordButton.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
       this.passwordButton.ItemAppearance.Hovered.Options.UseTextOptions = true;
@@ -327,7 +331,7 @@
       this.themeSelect.Id = 25;
       this.themeSelect.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
       this.themeSelect.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
-      this.themeSelect.ImageOptions.SvgImage = global::PMSX.Properties.Resources.Pallete;
+      this.themeSelect.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("themeSelect.ImageOptions.SvgImage")));
       this.themeSelect.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.lightThemeButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.darkThemeButton)});
@@ -391,7 +395,6 @@
       // 
       // MainRibbonForm
       // 
-      this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1280, 720);

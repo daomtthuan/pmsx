@@ -48,7 +48,7 @@ namespace PMSX.App {
         if (!BCrypt.Net.BCrypt.Verify(password, staffs[0].Password)) {
           return State.Failed;
         }
-      } catch(System.Exception exception) {
+      } catch (System.Exception exception) {
         AlertUtility.Instance.ShowError(SystemException.Instance.Decode(exception));
         return State.Error;
       }

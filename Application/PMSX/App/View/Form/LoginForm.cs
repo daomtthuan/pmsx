@@ -27,7 +27,7 @@ namespace PMSX.App.View.Form {
       GridUtility.Instance.LoadData(sessionSelect, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName" }, "Id", "Date");
       DisplayUtility.Instance.Set(this, true);
 
-      //LoginButton_Click(sender, e);
+      LoginButton_Click(sender, e);
     }
 
     private bool IsLogin() {

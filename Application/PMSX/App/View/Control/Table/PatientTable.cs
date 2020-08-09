@@ -3,7 +3,9 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using PMSX.App.Controller;
 using PMSX.App.Model;
+using PMSX.App.View.Form.Add;
 using PMSX.Pattern.Base;
+using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -34,15 +36,35 @@ namespace PMSX.App.View.Control.Table {
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {
-      throw new System.NotImplementedException();
+      if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
+        AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
+        return DialogResult.Cancel;
+      } else {
+        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
+        addForm.Tag = selected;
+        return addForm.ShowDialog();
+      }
     }
 
-    protected override DialogResult EventEditButtonClick(ModelBase modelSelected) {
-      throw new System.NotImplementedException();
+    protected override DialogResult EventEditButtonClick(object selected, ModelBase modelSelected) {
+      if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
+        AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
+        return DialogResult.Cancel;
+      } else {
+        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
+        addForm.Tag = new[] { selected, modelSelected };
+        return addForm.ShowDialog();
+      }
     }
 
-    protected override bool EventDisableButtonClick(ModelBase modelSelected) {
-      throw new System.NotImplementedException();
+    protected override bool EventDisableButtonClick(object selected, ModelBase modelSelected) {
+      if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
+        AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
+        return false;
+      } else {
+        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
+        return true;
+      }
     }
   }
 }

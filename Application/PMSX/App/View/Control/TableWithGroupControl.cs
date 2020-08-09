@@ -18,8 +18,8 @@ namespace PMSX.App.View.Control {
     protected abstract void EventLoad(LookUpEdit selectControl);
     protected abstract void EventSelectChanged(GridControl grid, GridView view, object selected);
     protected abstract DialogResult EventAddButtonClick(object selected);
-    protected abstract DialogResult EventEditButtonClick(ModelBase modelSelected);
-    protected abstract bool EventDisableButtonClick(ModelBase modelSelected);
+    protected abstract DialogResult EventEditButtonClick(object selected, ModelBase modelSelected);
+    protected abstract bool EventDisableButtonClick(object selected, ModelBase modelSelected);
 
     protected void TableWithGroupControl_Load(object sender, EventArgs e) {
       EventLoad(selectControl);
@@ -36,18 +36,26 @@ namespace PMSX.App.View.Control {
 
     protected void AddButton_Click(object sender, EventArgs e) {
       if (EventAddButtonClick(GridUtility.Instance.GetSelected(selectControl)) == DialogResult.OK) {
-        OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventSelectChanged(tableGrid, tableView, GridUtility.Instance.GetSelected(selectControl)));
+        OverlayUtility.Instance.StartProcess(Parent.Parent, () => {
+          var index = selectControl.ItemIndex;
+          EventLoad(selectControl);
+          if (index == selectControl.ItemIndex) {
+            EventSelectChanged(tableGrid, tableView, GridUtility.Instance.GetSelected(selectControl));
+          } else {
+            selectControl.ItemIndex = index;
+          }
+        });
       }
     }
 
     protected void EditButton_Click(object sender, EventArgs e) {
-      if (EventEditButtonClick(GridUtility.Instance.GetSelected(tableView)) == DialogResult.OK) {
+      if (EventEditButtonClick(GridUtility.Instance.GetSelected(selectControl), GridUtility.Instance.GetSelected(tableView)) == DialogResult.OK) {
         OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventSelectChanged(tableGrid, tableView, GridUtility.Instance.GetSelected(selectControl)));
       }
     }
 
     protected void DisableButton_Click(object sender, EventArgs e) {
-      if (EventDisableButtonClick(GridUtility.Instance.GetSelected(tableView))) {
+      if (EventDisableButtonClick(GridUtility.Instance.GetSelected(selectControl), GridUtility.Instance.GetSelected(tableView))) {
         OverlayUtility.Instance.StartProcess(Parent.Parent, () => EventSelectChanged(tableGrid, tableView, GridUtility.Instance.GetSelected(selectControl)));
       }
     }

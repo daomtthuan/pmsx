@@ -9,6 +9,7 @@ using PMSX.Properties;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -82,7 +83,8 @@ namespace PMSX.App.View.Form {
         $"Điện thoại: +84 939 908 568\r\n" +
         $"Facebook: facebook.com/dao.mt.thuan\r\n" +
         $"__________________________________________________\r\n\r\n" +
-        $"Thời hạn khoá kích hoạt bản quyền: {Config.Instance.LicenseExpiry.Date}\r\n\r\n";
+        $"Thời hạn khoá kích hoạt bản quyền:\r\n" +
+        $"{Config.Instance.LicenseExpiry.Date}\r\n\r\n";
 
       await LoadingUtility.Instance.Close("Sẳn sàng!");
 
@@ -163,6 +165,21 @@ namespace PMSX.App.View.Form {
 
     private void PasswordButton_ItemClick(object sender, ItemClickEventArgs e) {
       FormFactory<PasswordForm>.Instance.Create().ShowDialog();
+    }
+
+    private void LicenseKeyButton_Click(object sender, EventArgs e) {
+      if (FormFactory<LicenseKeyForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
+        AlertUtility.Instance.ShowInformation("Đổi thành công\r\nHệ thống sẽ khởi động lại");
+        Application.Restart();
+      }
+    }
+
+    private void UpdateVersionButton_Click(object sender, EventArgs e) {
+      AlertUtility.Instance.ShowInformation("Phiên bản hiện tại là phiên bản mới nhất");
+    }
+
+    private void feedbackButton_Click(object sender, EventArgs e) {
+      Process.Start("https://daomtthuan.com");
     }
   }
 }

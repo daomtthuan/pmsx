@@ -17,7 +17,8 @@ namespace PMSX.Pattern.Factory {
         StartPosition = FormStartPosition.CenterScreen,
         FormBorderStyle = FormBorderStyle.FixedSingle,
         MaximizeBox = false,
-        DialogResult = DialogResult.Cancel
+        DialogResult = DialogResult.Cancel,
+        FormBorderEffect = FormBorderEffect.Glow
       };
       DisplayUtility.Instance.Set(form, false);
       Config.Instance.SetupTheme();

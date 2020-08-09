@@ -63,6 +63,7 @@ namespace PMSX.Utility.View {
     }
 
     private void LoadData<Model>(LookUpEdit select, List<Model> data, string[] visibledColumns, string valueColumn, string displayColumn) where Model : ModelBase {
+      select.Properties.Columns.Clear();
       visibledColumns.ForEach(visibledColumn => {
         select.Properties.Columns.Add(new LookUpColumnInfo(visibledColumn, caption[visibledColumn]));
       });

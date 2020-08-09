@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using PMSX.App.Model;
-using PMSX.Exception;
 using PMSX.Pattern.Base;
 using PMSX.Utility;
 using PMSX.Utility.View;

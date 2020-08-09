@@ -1,7 +1,6 @@
 ﻿using DevExpress.UserSkins;
 using PMSX.App;
 using PMSX.App.View.Form;
-using PMSX.Exception;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
 using System.Globalization;
@@ -30,7 +29,7 @@ namespace PMSX {
       CultureInfo.DefaultThreadCurrentUICulture = culture;
 
       await LoadingUtility.Instance.UpdateStatus("Kiểm tra khoá kích hoạt bản quyền...");
-      var state = Config.Instance.CheckLicense();
+      Config.LicenseState state = Config.Instance.CheckLicense();
       if (state != Config.LicenseState.Accept) {
         await LoadingUtility.Instance.Close();
         if (FormFactory<LicenseKeyForm>.Instance.Create().ShowDialog() == DialogResult.OK) {

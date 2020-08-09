@@ -36,13 +36,13 @@ namespace PMSX.App.View.Control.Table {
       return addForm.ShowDialog();
     }
 
-    protected override DialogResult EventEditButtonClick(ModelBase modelSelected) {
+    protected override DialogResult EventEditButtonClick(object selected, ModelBase modelSelected) {
       EditPermissionForm editForm = FormFactory<EditPermissionForm>.Instance.Create();
       editForm.Tag = modelSelected;
       return editForm.ShowDialog();
     }
 
-    protected override bool EventDisableButtonClick(ModelBase modelSelected) {
+    protected override bool EventDisableButtonClick(object selected, ModelBase modelSelected) {
       if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá phân quyền của nhân viên này?") == DialogResult.No) {
         return false;
       }

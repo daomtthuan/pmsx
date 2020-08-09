@@ -42,11 +42,11 @@ namespace PMSX.App {
             Name = appSettings["DatabaseName"]
           };
         }
-      } catch (ConfigurationErrorsException e) {
-        AlertUtility.Instance.ShowError(ConfigException.Instance.ErrorReading(e));
+      } catch (ConfigurationErrorsException exception) {
+        AlertUtility.Instance.ShowError(ConfigException.Instance.ErrorReading(exception));
         Application.Exit();
-      } catch (System.Exception e) {
-        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Error(e));
+      } catch (System.Exception exception) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Error(exception));
         Application.Exit();
       }
     }

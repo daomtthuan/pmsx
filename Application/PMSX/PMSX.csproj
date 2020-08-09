@@ -266,6 +266,9 @@
     <EmbeddedResource Include="App\View\Control\TableWithGroupControl.resx">
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Add\AddPatientForm.resx">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Add\AddPermissionForm.resx">
       <DependentUpon>AddPermissionForm.cs</DependentUpon>
     </EmbeddedResource>

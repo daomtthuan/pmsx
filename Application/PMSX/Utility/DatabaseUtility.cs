@@ -38,13 +38,13 @@ namespace PMSX.Utility {
             }
           }
           connection.Close();
-        } catch (System.Exception e) {
+        } catch (System.Exception exception) {
           if (connection.State != ConnectionState.Closed) {
             connection.Close();
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorExecute(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Execute(exception));
             return null;
           } else {
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorConnection(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Connection(exception));
             return null;
           }
         }
@@ -67,13 +67,66 @@ namespace PMSX.Utility {
             row = command.ExecuteNonQuery();
           }
           connection.Close();
-        } catch (System.Exception e) {
+        } catch (System.Exception exception) {
           if (connection.State != ConnectionState.Closed) {
             connection.Close();
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorExecute(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Execute(exception));
             return -1;
           } else {
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorConnection(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Connection(exception));
+            return -1;
+          }
+        }
+      }
+      return row;
+    }
+
+    public int ExecuteTransactionNonQuery(string[] querys, MySqlParameter[][] parametersList) {
+      int row = 0;
+      using (MySqlConnection connection = new MySqlConnection(connectionString)) {
+        MySqlTransaction transaction;
+        try {
+          connection.Open();
+          using (transaction = connection.BeginTransaction()) {
+            using (MySqlCommand command = connection.CreateCommand()) {
+              command.Connection = connection;
+              command.Transaction = transaction;
+              try {
+                for (int index = 0; index < querys.Length; index++) {
+                  command.CommandText = querys[index];
+                  if (parametersList[index] != null) {
+                    foreach (MySqlParameter parameter in parametersList[index]) {
+                      command.Parameters.Add(parameter);
+                    }
+                  }
+                  row = command.ExecuteNonQuery();
+                }
+                transaction.Commit();
+              } catch (System.Exception exception) {
+                try {
+                  transaction.Rollback();
+                } catch (System.Exception rollbackException) {
+                  if (transaction.Connection != null) {
+                    connection.Close();
+                    AlertUtility.Instance.ShowError(DatabaseException.Instance.Rollback(rollbackException));
+                    return -1;
+                  }
+                }
+
+                connection.Close();
+                AlertUtility.Instance.ShowError(DatabaseException.Instance.Execute(exception));
+                return -1;
+              }
+            }
+          }
+          connection.Close();
+        } catch (System.Exception exception) {
+          if (connection.State != ConnectionState.Closed) {
+            connection.Close();
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Execute(exception));
+            return -1;
+          } else {
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Connection(exception));
             return -1;
           }
         }
@@ -96,13 +149,13 @@ namespace PMSX.Utility {
             result = command.ExecuteScalar();
           }
           connection.Close();
-        } catch (System.Exception e) {
+        } catch (System.Exception exception) {
           if (connection.State != ConnectionState.Closed) {
             connection.Close();
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorExecute(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Execute(exception));
             return null;
           } else {
-            AlertUtility.Instance.ShowError(DatabaseException.Instance.ErrorConnection(e));
+            AlertUtility.Instance.ShowError(DatabaseException.Instance.Connection(exception));
             return null;
           }
         }
