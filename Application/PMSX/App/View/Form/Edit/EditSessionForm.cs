@@ -1,5 +1,4 @@
-﻿using DevExpress.ClipboardSource.SpreadsheetML;
-using PMSX.App.Controller;
+﻿using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
@@ -13,7 +12,7 @@ namespace PMSX.App.View.Form.Edit {
       InitializeComponent();
     }
 
-    private void EditSessionForm_Load(object sender, System.EventArgs e) {
+    private void EditSessionForm_Load(object sender, EventArgs e) {
       List<Permission> doctorPermissions = PermissionController.Instance.GetByRole(Authentication.Role.Doctor, 1);
       if (doctorPermissions == null) {
         Application.Exit();
@@ -38,27 +37,45 @@ namespace PMSX.App.View.Form.Edit {
       DisplayUtility.Instance.Set(this, true);
     }
 
-    private void EditButton_Click(object sender, System.EventArgs e) {
+    private void EditButton_Click(object sender, EventArgs e) {
+      Session session = (Session)Tag;
+      DateTime date = dateSelect.DateTime;
+      object doctorPermission = GridUtility.Instance.GetSelected(doctorPermissionSelect);
+      object technicianPermission = GridUtility.Instance.GetSelected(technicianPermissionSelect);
+      string comment = commentInput.Text;
+      int state = (int)stateRadio.EditValue;
+
+      if (date == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn ngày");
+        return;
+      }
+
+      if (doctorPermission == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn bác sĩ");
+        return;
+      }
+
+      if (technicianPermission == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn kỹ thuật viên");
+        return;
+      }
+
+      List<Session> sessions = null;
       OverlayUtility.Instance.StartProcess(this, () => {
-        Session session = (Session)Tag;
-        DateTime date = dateSelect.DateTime;
-        Permission doctorPermission = (Permission)GridUtility.Instance.GetSelected(doctorPermissionSelect);
-        Permission technicianPermission = (Permission)GridUtility.Instance.GetSelected(technicianPermissionSelect);
-        int state = (int)stateRadio.EditValue;
-        string comment = commentInput.Text;
-
-        List<Session> sessions = SessionController.Instance.GetByDate(date);
-        if (sessions == null) {
-          Application.Exit();
-          DialogResult = DialogResult.No;
-        } else if (sessions.Count != 0) {
-          if (sessions[0].Id != session.Id) {
-            AlertUtility.Instance.ShowWarning("Phiên làm việc ngày này đã có");
-            return;
-          }
+        sessions = SessionController.Instance.GetByDate(date);
+      });
+      if (sessions == null) {
+        Application.Exit();
+        DialogResult = DialogResult.No;
+      } else if (sessions.Count != 0) {
+        if (sessions[0].Id != session.Id) {
+          AlertUtility.Instance.ShowWarning("Phiên làm việc ngày này đã có");
+          return;
         }
+      }
 
-        if (SessionController.Instance.Edit(session.Id, date, doctorPermission.StaffId, technicianPermission.StaffId, state, comment) < 0) {
+      OverlayUtility.Instance.StartProcess(this, () => {
+        if (SessionController.Instance.Edit(session.Id, date, ((Permission)doctorPermission).StaffId, ((Permission)technicianPermission).StaffId, state, comment) < 0) {
           Application.Exit();
           DialogResult = DialogResult.No;
         } else {

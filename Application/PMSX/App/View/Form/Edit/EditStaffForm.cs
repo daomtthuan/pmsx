@@ -24,16 +24,24 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      string password = passwordInput.Text;
+      string name = nameInput.Text;
+      int state = (int)stateRadio.EditValue;
+      string comment = commentInput.Text;
+
+      if (name.Length == 0) {
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên");
+        return;
+      } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Name, name)) {
+        AlertUtility.Instance.ShowWarning("Tên không hợp lệ");
+        return;
+      }
+
       if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa nhân viên này?") == DialogResult.No) {
         return;
       }
 
       OverlayUtility.Instance.StartProcess(this, () => {
-        string password = passwordInput.Text;
-        string name = nameInput.Text;
-        int state = (int)stateRadio.EditValue;
-        string comment = commentInput.Text;
-
         if (StaffController.Instance.Edit(((Staff)Tag).Id, password, name, state, comment) < 0) {
           Application.Exit();
           DialogResult = DialogResult.No;

@@ -24,8 +24,14 @@ namespace PMSX.App.View.Form.Add {
     }
 
     private void AddButton_Click(object sender, EventArgs e) {
+      object staff = GridUtility.Instance.GetSelected(staffSelect);
+      if (staff == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn nhân viên");
+        return;
+      }
+
       OverlayUtility.Instance.StartProcess(this, () => {
-        long staffId = ((Staff)GridUtility.Instance.GetSelected(staffSelect)).Id;
+        long staffId = ((Staff)staff).Id;
         int roleId = Array.IndexOf(Authentication.Instance.Roles, Tag.ToString()) + 1;
         string comment = commentInput.Text;
 

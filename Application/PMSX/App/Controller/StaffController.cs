@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using PMSX.App.Model;
+using PMSX.Exception;
 using PMSX.Pattern.Base;
 using PMSX.Utility;
+using PMSX.Utility.View;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,6 +22,30 @@ namespace PMSX.App.Controller {
 
       DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
         new MySqlParameter("@state", state));
+      if (data == null) {
+        return null;
+      }
+
+      List<Staff> staffs = new List<Staff>();
+      foreach (DataRow row in data.Rows) {
+        staffs.Add(new Staff(row));
+      }
+
+      return staffs;
+    }
+
+    public List<Staff> GetById(long id, int state = -1) {
+      string query = @"
+        select *
+        from view_staff
+        where
+          (@state = -1 or staff_state = @state) and
+          staff_id = @id
+      ";
+
+      DataTable data = DatabaseUtility.Instance.ExecuteReader(query,
+        new MySqlParameter("@state", state),
+        new MySqlParameter("@id", id));
       if (data == null) {
         return null;
       }
@@ -99,9 +125,16 @@ namespace PMSX.App.Controller {
           @createStaffId
         )";
 
+      try {
+        password = BCrypt.Net.BCrypt.HashPassword(password);
+      } catch (System.Exception exception) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Encode(exception));
+        return -1;
+      }
+
       return DatabaseUtility.Instance.ExecuteNonQuery(query,
         new MySqlParameter("@username", username),
-        new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
+        new MySqlParameter("@password", password),
         new MySqlParameter("@name", name),
         comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
         new MySqlParameter("@createStaffId", Authentication.Instance.Staff.Id));
@@ -137,14 +170,52 @@ namespace PMSX.App.Controller {
             staff_updateDateTime = now()
           where staff_id = @id";
 
+        try {
+          password = BCrypt.Net.BCrypt.HashPassword(password);
+        } catch (System.Exception exception) {
+          AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Encode(exception));
+          return -1;
+        }
+
         return DatabaseUtility.Instance.ExecuteNonQuery(query,
           new MySqlParameter("@id", id),
-          new MySqlParameter("@password", BCrypt.Net.BCrypt.HashPassword(password)),
+          new MySqlParameter("@password", password),
           new MySqlParameter("@name", name),
           new MySqlParameter("@state", state),
           comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
           new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
       }
+    }
+
+    public int Edit(string password) {
+      try {
+        if (!BCrypt.Net.BCrypt.Verify(password, Authentication.Instance.Staff.Password)) {
+          return 0;
+        }
+      } catch (System.Exception exception) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Decode(exception));
+        return -1;
+      }
+
+      string query = @"
+        update table_staff
+        set
+          staff_password = @password,
+          staff_updateStaffId = @updateStaffId,
+          staff_updateDateTime = now()
+        where staff_id = @id";
+
+      try {
+        password = BCrypt.Net.BCrypt.HashPassword(password);
+      } catch (System.Exception exception) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Encode(exception));
+        return -1;
+      }
+
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
+        new MySqlParameter("@id", Authentication.Instance.Staff.Id),
+        new MySqlParameter("@password", password),
+        new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
     }
 
     public int Disable(long id) {

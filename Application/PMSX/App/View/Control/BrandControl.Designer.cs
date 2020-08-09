@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Control {
-  partial class BrandControl {
+  internal partial class BrandControl {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
@@ -58,6 +58,7 @@
       this.pictureLogo.EditValue = global::PMSX.Properties.Resources.Logo;
       this.pictureLogo.Location = new System.Drawing.Point(2, 2);
       this.pictureLogo.Name = "pictureLogo";
+      this.pictureLogo.Properties.AllowFocused = false;
       this.pictureLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
       this.pictureLogo.Properties.Appearance.Options.UseBackColor = true;
       this.pictureLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -84,7 +85,7 @@
       // labelNameApp
       // 
       this.labelNameApp.AllowHotTrack = false;
-      this.labelNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Noto Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.labelNameApp.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
       this.labelNameApp.AppearanceItemCaption.Options.UseFont = true;
       this.labelNameApp.AppearanceItemCaption.Options.UseForeColor = true;
@@ -96,12 +97,12 @@
       this.labelNameApp.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
       this.labelNameApp.Size = new System.Drawing.Size(372, 37);
       this.labelNameApp.Text = "PMSX";
-      this.labelNameApp.TextSize = new System.Drawing.Size(322, 37);
+      this.labelNameApp.TextSize = new System.Drawing.Size(326, 37);
       // 
       // labelSubNameApp
       // 
       this.labelSubNameApp.AllowHotTrack = false;
-      this.labelSubNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelSubNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.labelSubNameApp.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(186)))), ((int)(((byte)(155)))));
       this.labelSubNameApp.AppearanceItemCaption.Options.UseFont = true;
       this.labelSubNameApp.AppearanceItemCaption.Options.UseForeColor = true;
@@ -112,12 +113,12 @@
       this.labelSubNameApp.Name = "labelSubNameApp";
       this.labelSubNameApp.Size = new System.Drawing.Size(372, 26);
       this.labelSubNameApp.Text = "Pathology Management System";
-      this.labelSubNameApp.TextSize = new System.Drawing.Size(322, 22);
+      this.labelSubNameApp.TextSize = new System.Drawing.Size(326, 22);
       // 
       // labelAltSubNameApp
       // 
       this.labelAltSubNameApp.AllowHotTrack = false;
-      this.labelAltSubNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelAltSubNameApp.AppearanceItemCaption.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.labelAltSubNameApp.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
       this.labelAltSubNameApp.AppearanceItemCaption.Options.UseFont = true;
       this.labelAltSubNameApp.AppearanceItemCaption.Options.UseForeColor = true;
@@ -128,7 +129,7 @@
       this.labelAltSubNameApp.Name = "labelAltSubNameApp";
       this.labelAltSubNameApp.Size = new System.Drawing.Size(372, 26);
       this.labelAltSubNameApp.Text = "Hệ Thống Quản Lý Kết Quả Giải Phẫu Bệnh";
-      this.labelAltSubNameApp.TextSize = new System.Drawing.Size(322, 22);
+      this.labelAltSubNameApp.TextSize = new System.Drawing.Size(326, 22);
       // 
       // pictureLogoLayout
       // 

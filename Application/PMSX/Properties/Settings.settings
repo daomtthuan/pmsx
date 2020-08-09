@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="LicenseKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">$2y$10$3pOhuyBW4Y7tcazSyFR7TevZmdaUZE1.j0wwQYRiiCQfdxFFAVgUC</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Theme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Light</Value>

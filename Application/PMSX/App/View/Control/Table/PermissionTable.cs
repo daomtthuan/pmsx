@@ -15,8 +15,10 @@ namespace PMSX.App.View.Control.Table {
   internal class PermissionTable : TableWithSelectControl {
     public PermissionTable() { }
 
-    protected override void EventLoad(LookUpEdit select) {
-      GridUtility.Instance.LoadData(select, Authentication.Instance.Roles);
+    protected override void EventLoad(LookUpEdit selectControl) {
+      Name = "PermissionTable";
+
+      GridUtility.Instance.LoadData(selectControl, Authentication.Instance.Roles);
     }
 
     protected override void EventSelectChanged(GridControl grid, GridView view, object selected) {
@@ -25,7 +27,7 @@ namespace PMSX.App.View.Control.Table {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, permissions, new[] { "StaffId", "StaffName", "Comment", "State", "CreateStaffName", "CreateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, permissions, new[] { "StaffId", "StaffName", "Comment", "State", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {

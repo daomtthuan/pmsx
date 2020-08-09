@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form {
-  partial class LicenseKeyForm {
+  internal partial class LicenseKeyForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -61,7 +61,7 @@
       this.activeButton.Size = new System.Drawing.Size(422, 26);
       this.activeButton.StyleController = this.layout;
       this.activeButton.TabIndex = 8;
-      this.activeButton.Text = "Thêm";
+      this.activeButton.Text = "Kích hoạt";
       this.activeButton.Click += new System.EventHandler(this.ActiveButton_Click);
       // 
       // keyInput
@@ -75,7 +75,7 @@
       this.keyInput.Properties.Mask.EditMask = "d";
       this.keyInput.Properties.MaxLength = 36;
       this.keyInput.Properties.Padding = new System.Windows.Forms.Padding(1);
-      this.keyInput.Properties.PasswordChar = 'o';
+      this.keyInput.Properties.PasswordChar = '-';
       this.keyInput.Size = new System.Drawing.Size(341, 24);
       this.keyInput.StyleController = this.layout;
       this.keyInput.TabIndex = 4;
@@ -113,6 +113,7 @@
       // 
       // LicenseKeyForm
       // 
+      this.AcceptButton = this.activeButton;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(450, 86);

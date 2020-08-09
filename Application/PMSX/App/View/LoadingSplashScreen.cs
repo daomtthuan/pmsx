@@ -9,11 +9,10 @@ namespace PMSX.App.View {
 
     public LoadingSplashScreen() {
       InitializeComponent();
+      Config.Instance.SetupTheme();
     }
 
     private void LoadingSplashScreen_Load(object sender, EventArgs e) {
-      Config.Instance.SetupTheme();
-
       string year = DateTime.Now.Year == 2020 ? "2020" : $"2020 - {DateTime.Now.Year}";
       copyrightLabel.Text = $"Bản quyền © {year} Daomtthuan";
       versionLabel.Text = $"Phiên bản {Assembly.GetExecutingAssembly().GetName().Version}";

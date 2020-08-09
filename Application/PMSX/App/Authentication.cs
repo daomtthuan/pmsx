@@ -1,6 +1,8 @@
 ﻿using PMSX.App.Controller;
 using PMSX.App.Model;
+using PMSX.Exception;
 using PMSX.Pattern.Base;
+using PMSX.Utility.View;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,8 +18,7 @@ namespace PMSX.App {
       LoggedIn,
       Disabled,
       Failed,
-      Error,
-      None
+      Error
     }
 
 
@@ -36,10 +37,6 @@ namespace PMSX.App {
     public Group Group { get; set; }
 
     public State Login(string username, string password) {
-      if (username.Length == 0 || password.Length == 0) {
-        return State.None;
-      }
-
       List<Staff> staffs = StaffController.Instance.GetByUsername(username);
       if (staffs == null) {
         return State.Error;
@@ -47,8 +44,13 @@ namespace PMSX.App {
         return State.Failed;
       }
 
-      if (!BCrypt.Net.BCrypt.Verify(password, staffs[0].Password)) {
-        return State.Failed;
+      try {
+        if (!BCrypt.Net.BCrypt.Verify(password, staffs[0].Password)) {
+          return State.Failed;
+        }
+      } catch(System.Exception exception) {
+        AlertUtility.Instance.ShowError(SystemException.Instance.Decode(exception));
+        return State.Error;
       }
 
       if (staffs[0].GetStateNumber() == 0) {

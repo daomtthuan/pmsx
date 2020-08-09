@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Control {
-  partial class TableControl {
+  internal abstract partial class TableControl {
     /// <summary> 
     /// Required designer variable.
     /// </summary>

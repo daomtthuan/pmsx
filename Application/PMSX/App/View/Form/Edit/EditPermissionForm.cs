@@ -21,14 +21,14 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      int state = (int)stateRadio.EditValue;
+      string comment = commentInput.Text;
+
       if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa phân quyền nhân viên này?") == DialogResult.No) {
         return;
       }
 
       OverlayUtility.Instance.StartProcess(this, () => {
-        int state = (int)stateRadio.EditValue;
-        string comment = commentInput.Text;
-
         if (PermissionController.Instance.Edit(((Permission)Tag).Id, state, comment) < 0) {
           Application.Exit();
           DialogResult = DialogResult.No;

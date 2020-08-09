@@ -3,6 +3,7 @@ using DevExpress.Skins;
 using DevExpress.XtraEditors;
 using PMSX.Exception;
 using PMSX.Pattern.Base;
+using PMSX.Properties;
 using PMSX.Utility.View;
 using System;
 using System.Configuration;
@@ -10,12 +11,7 @@ using System.Windows.Forms;
 
 namespace PMSX.App {
   internal class Config : SingletonBase<Config> {
-    private struct License {
-      public bool Active;
-      public DateTime Expire;
-    }
-
-    public struct DatabaseSetting {
+    internal struct DatabaseSetting {
       public string Host;
       public string Port;
       public string Username;
@@ -23,7 +19,13 @@ namespace PMSX.App {
       public string Name;
     }
 
-    private License license;
+    internal enum LicenseState : int {
+      Accept,
+      Outdated,
+      Invalid,
+      Ignore,
+      Error
+    }
 
     private Config() {
       try {
@@ -32,7 +34,6 @@ namespace PMSX.App {
           AlertUtility.Instance.ShowError(ConfigException.Instance.NotFound());
           Application.Exit();
         } else {
-          license = new License();
           Database = new DatabaseSetting() {
             Host = appSettings["DatabaseHost"],
             Port = appSettings["DatabasePort"],
@@ -51,36 +52,55 @@ namespace PMSX.App {
     }
 
     public void SetupTheme() {
-      Skin skin = CommonSkins.GetSkin(UserLookAndFeel.Default);
-      skin.SvgPalettes[Skin.DefaultSkinPaletteName].SetCustomPalette(skin.CustomSvgPalettes[Config.Instance.Theme]);
-      LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
       WindowsFormsSettings.LoadApplicationSettings();
+      Skin skin = CommonSkins.GetSkin(UserLookAndFeel.Default);
+      skin.SvgPalettes[Skin.DefaultSkinPaletteName].SetCustomPalette(skin.CustomSvgPalettes[Theme]);
+      LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
     }
 
-    public bool Activated {
-      get {
-        if (BCrypt.Net.BCrypt.Verify("daomtthuan", LicenseKey)) {
-          license.Active = true;
-          license.Expire = DateTime.Now;
+    public LicenseState CheckLicense(string key = "") {
+      try {
+        key = key == "" ? LicenseKey : BCrypt.Net.BCrypt.HashPassword(key);
+      } catch (System.Exception exception) {
+        AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Encode(exception));
+        return LicenseState.Error;
+      }
+
+      if (key == "") {
+        return LicenseState.Ignore;
+      } else {
+        try {
+          if (BCrypt.Net.BCrypt.Verify("daomtthuan", key)) {
+            if (key != LicenseKey) {
+              LicenseKey = key;
+            }
+            LicenseExpiry = DateTime.Now.AddDays(1);
+            return LicenseState.Accept;
+          } else {
+            return LicenseState.Ignore;
+          }
+        } catch (System.Exception exception) {
+          AlertUtility.Instance.ShowError(Exception.SystemException.Instance.Decode(exception));
+          return LicenseState.Error;
         }
-
-        return license.Active;
       }
     }
 
-    public string LicenseKey {
-      private get => Properties.Settings.Default.LicenseKey;
+    private string LicenseKey {
+      get => Settings.Default.LicenseKey;
       set {
-        Properties.Settings.Default.LicenseKey = value;
-        Properties.Settings.Default.Save();
+        Settings.Default.LicenseKey = value;
+        Settings.Default.Save();
       }
     }
+
+    public DateTime LicenseExpiry { get; set; }
 
     public string Theme {
-      get => Properties.Settings.Default.Theme;
+      get => Settings.Default.Theme;
       set {
-        Properties.Settings.Default.Theme = value;
-        Properties.Settings.Default.Save();
+        Settings.Default.Theme = value;
+        Settings.Default.Save();
 
         Skin skin = CommonSkins.GetSkin(UserLookAndFeel.Default);
         skin.SvgPalettes[Skin.DefaultSkinPaletteName].SetCustomPalette(skin.CustomSvgPalettes[value]);

@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Add {
-  partial class AddSessionForm {
+  internal partial class AddSessionForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>

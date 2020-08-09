@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Edit {
-  partial class EditSessionForm {
+  internal partial class EditSessionForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>

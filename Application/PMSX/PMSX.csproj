@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="App\Authentication.cs" />
     <Compile Include="App\Controller\GroupController.cs" />
+    <Compile Include="App\Controller\PatientController.cs" />
     <Compile Include="App\Controller\PermissionController.cs" />
     <Compile Include="App\Controller\SessionController.cs" />
     <Compile Include="App\Controller\StaffController.cs" />
@@ -156,7 +157,14 @@
     </Compile>
     <Compile Include="App\View\Control\Table\PermissionTable.cs" />
     <Compile Include="App\View\Control\Table\SessionTable.cs" />
+    <Compile Include="App\View\Control\Table\PatientTable.cs" />
     <Compile Include="App\View\Control\Table\StaffTable.cs" />
+    <Compile Include="App\View\Form\Add\AddPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Add\AddPatientForm.Designer.cs">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\View\Form\Add\AddPermissionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +219,18 @@
     <Compile Include="App\View\Form\MainRibbonForm.Designer.cs">
       <DependentUpon>MainRibbonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\View\Form\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\Form\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\View\LoadingSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +241,12 @@
     <Compile Include="Exception\ConfigException.cs" />
     <Compile Include="Exception\SystemException.cs" />
     <Compile Include="Pattern\Base\ExceptionBase.cs" />
-    <Compile Include="Pattern\Base\IFactoryBase.cs" />
     <Compile Include="Pattern\Base\ModelBase.cs" />
     <Compile Include="Pattern\Base\SingletonBase.cs" />
     <Compile Include="Pattern\Factory\ControlFactory.cs" />
     <Compile Include="Pattern\Factory\FormFactory.cs" />
     <Compile Include="Pattern\Factory\RibbonFormFactory.cs" />
+    <Compile Include="Pattern\Interface\IFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\DatabaseUtility.cs" />
@@ -276,6 +296,12 @@
     <EmbeddedResource Include="App\View\Form\MainRibbonForm.resx">
       <DependentUpon>MainRibbonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\View\LoadingSplashScreen.resx">
       <DependentUpon>LoadingSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,52 +335,52 @@
     <None Include="Resources\Image\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Bed.svg" />
+    <None Include="Resources\Button\Bed.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Biopsy.svg" />
+    <None Include="Resources\Button\IdCard.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Calendar.svg" />
+    <None Include="Resources\Button\Clock.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\CollectBiopsy.svg" />
+    <None Include="Resources\Button\FileInvoice.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Diagnose.svg" />
+    <None Include="Resources\Button\Key.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Key.svg" />
+    <None Include="Resources\Button\Microscope.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Macro.svg" />
+    <None Include="Resources\Button\User.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\MacroGroup.svg" />
+    <None Include="Resources\Button\UserConfig.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Micro.svg" />
+    <None Include="Resources\Button\Palette.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\MicroGroup.svg" />
+    <None Include="Resources\Button\Users.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\User.svg" />
+    <None Include="Resources\Button\Color.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Profile.svg" />
+    <None Include="Resources\Button\Password.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Password.svg" />
+    <None Include="Resources\Button\Calendar.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pattern\Interface\" />
+    <None Include="Resources\Button\Pallete.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Account.svg" />
+    <None Include="Resources\Button\Biopsy.svg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon\Button\Paint.svg" />
+    <None Include="Resources\Button\Diagnosy.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

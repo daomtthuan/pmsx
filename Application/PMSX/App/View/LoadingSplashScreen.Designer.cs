@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View {
-  partial class LoadingSplashScreen {
+  internal partial class LoadingSplashScreen {
     /// <summary>
     /// Required designer variable.
     /// </summary>

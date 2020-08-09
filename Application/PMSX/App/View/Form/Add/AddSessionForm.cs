@@ -33,22 +33,41 @@ namespace PMSX.App.View.Form.Add {
     }
 
     private void AddButton_Click(object sender, EventArgs e) {
+      DateTime date = dateSelect.DateTime;
+      object doctorPermission = GridUtility.Instance.GetSelected(doctorPermissionSelect);
+      object technicianPermission = GridUtility.Instance.GetSelected(technicianPermissionSelect);
+      string comment = commentInput.Text;
+
+      if (date == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn ngày");
+        return;
+      }
+
+      if (doctorPermission == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn bác sĩ");
+        return;
+      }
+
+      if (technicianPermission == null) {
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn kỹ thuật viên");
+        return;
+      }
+
+      List<Session> sessions = null;
       OverlayUtility.Instance.StartProcess(this, () => {
-        DateTime date = dateSelect.DateTime;
-        Permission doctorPermission = (Permission)GridUtility.Instance.GetSelected(doctorPermissionSelect);
-        Permission technicianPermission = (Permission)GridUtility.Instance.GetSelected(technicianPermissionSelect);
-        string comment = commentInput.Text;
+        sessions = SessionController.Instance.GetByDate(date);
+      });
+      if (sessions == null) {
+        Application.Exit();
+        DialogResult = DialogResult.No;
+        return;
+      } else if (sessions.Count != 0) {
+        AlertUtility.Instance.ShowWarning("Phiên làm việc ngày này đã có");
+        return;
+      }
 
-        List<Session> sessions = SessionController.Instance.GetByDate(date);
-        if (sessions == null) {
-          Application.Exit();
-          DialogResult = DialogResult.No;
-        } else if (sessions.Count != 0) {
-          AlertUtility.Instance.ShowWarning("Phiên làm việc ngày này đã có");
-          return;
-        }
-
-        if (SessionController.Instance.Add(date, doctorPermission.StaffId, technicianPermission.StaffId, comment) < 0) {
+      OverlayUtility.Instance.StartProcess(this, () => {
+        if (SessionController.Instance.Add(date, ((Permission)doctorPermission).StaffId, ((Permission)technicianPermission).StaffId, comment) < 0) {
           Application.Exit();
           DialogResult = DialogResult.No;
         } else {

@@ -3,13 +3,13 @@ using DevExpress.Utils.Svg;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using PMSX.App.View.Control.Table;
 using PMSX.Pattern.Factory;
 using PMSX.Properties;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
@@ -18,7 +18,7 @@ namespace PMSX.App.View.Form {
       InitializeComponent();
     }
 
-    private BarButtonItem CreaetButton<Control>(string caption, SvgImage image) where Control : XtraUserControl, new() {
+    private BarButtonItem CreateButton<Control>(string caption, SvgImage image) where Control : XtraUserControl, new() {
       BarButtonItem button = new BarButtonItem() {
         Caption = caption
       };
@@ -69,20 +69,50 @@ namespace PMSX.App.View.Form {
     }
 
     private async void MainRibbonForm_Load(object sender, EventArgs e) {
+      layout.Dock = DockStyle.Fill;
+
+      string year = DateTime.Now.Year == 2020 ? "2020" : $"2020 - {DateTime.Now.Year}";
+      aboutInformationLabel.Text =
+        $"Phiên bản {Assembly.GetExecutingAssembly().GetName().Version}\r\n" +
+        $"Bản quyền © {year} Daomtthuan\r\n" +
+        $"__________________________________________________\r\n\r\n" +
+        $"Thông tin Nhà phát triển:\r\n" +
+        $"Website: daomtthuan.com\r\n" +
+        $"Email: dao.mt.thuan@gmail.com\r\n" +
+        $"Điện thoại: +84 939 908 568\r\n" +
+        $"Facebook: facebook.com/dao.mt.thuan\r\n" +
+        $"__________________________________________________\r\n\r\n" +
+        $"Thời hạn khoá kích hoạt bản quyền: {Config.Instance.LicenseExpiry.Date}\r\n\r\n";
+
       await LoadingUtility.Instance.Close("Sẳn sàng!");
 
       if (FormFactory<LoginForm>.Instance.Create().ShowDialog() == DialogResult.OK) {
         OverlayUtility.Instance.StartProcess(this, () => {
           if (Authentication.Instance.HasOneRole(Authentication.Role.Admin, Authentication.Role.Doctor, Authentication.Role.Technician)) {
-            ribbon.PageCategories.AddRange(new[] {
-              CreateCategory("Quản lý",
+            RibbonPageCategory manageCategory = CreateCategory("Quản lý",
+              CreatePage("Xét nghiệm",
+                CreateGroup("Phòng khám",
+                  CreateButton<PatientTable>("Bệnh nhân", Resources.Bed),
+                  CreateButton<StaffTable>("Sinh thiết", Resources.Biopsy)),
+                CreateGroup("Chẩn đoán",
+                  CreateButton<StaffTable>("Loại 1", Resources.Diagnosy)),
+                CreateGroup("Giải phẫu bệnh",
+                  CreateButton<StaffTable>("Nhóm đại thể", Resources.Microscope),
+                  CreateButton<StaffTable>("Đại thể", Resources.Microscope),
+                  CreateButton<StaffTable>("Nhóm vi thể", Resources.Microscope),
+                  CreateButton<StaffTable>("Vi thể", Resources.Microscope))));
+
+            if (Authentication.Instance.HasRole(Authentication.Role.Admin)) {
+              manageCategory.Pages.Add(
                 CreatePage("Nhân sự",
-                CreateGroup("Tài khoản",
-                  CreaetButton<StaffTable>("Nhân viên", Resources.User),
-                  CreaetButton<PermissionTable>("Phân quyền", Resources.Key)),
-                CreateGroup("Công việc",
-                  CreaetButton<SessionTable>("Phiên làm việc", Resources.Calendar))))
-            });
+                  CreateGroup("Tài khoản",
+                    CreateButton<StaffTable>("Nhân viên", Resources.Users),
+                    CreateButton<PermissionTable>("Phân quyền", Resources.Key)),
+                  CreateGroup("Công việc",
+                    CreateButton<SessionTable>("Phiên làm việc", Resources.Calendar))));
+            }
+
+            ribbon.PageCategories.Add(manageCategory);
           }
         }, statusLabel, "Khởi tạo chức năng...");
         DisplayUtility.Instance.Set(this, true);
@@ -109,6 +139,30 @@ namespace PMSX.App.View.Form {
       OverlayUtility.Instance.StartProcess(this, () => {
         Config.Instance.Theme = "Dark";
       }, statusLabel, "Thay đổi giao diện...");
+    }
+
+    private void LogoutButton_ItemClick(object sender, BackstageViewItemEventArgs e) {
+      Application.Restart();
+    }
+
+    private void ExitButton_ItemClick(object sender, BackstageViewItemEventArgs e) {
+      Application.Exit();
+    }
+
+    private void AccountButton_ItemClick(object sender, ItemClickEventArgs e) {
+      if (FormFactory<AccountForm>.Instance.Create().ShowDialog() == DialogResult.OK && layout.Controls.Count > 0) {
+        if (layout.Controls[0].Name == "StaffTable") {
+          OverlayUtility.Instance.StartProcess(this, () => {
+            layout.Controls[0].Dispose();
+            layout.Controls.Clear();
+            layout.Controls.Add(ControlFactory<StaffTable>.Instance.Create());
+          }, statusLabel);
+        }
+      }
+    }
+
+    private void PasswordButton_ItemClick(object sender, ItemClickEventArgs e) {
+      FormFactory<PasswordForm>.Instance.Create().ShowDialog();
     }
   }
 }

@@ -16,12 +16,14 @@ namespace PMSX.App.View.Control.Table {
     public StaffTable() { }
 
     protected override void EventLoad(GridControl grid, GridView view) {
+      Name = "StaffTable";
+
       List<Staff> staffs = StaffController.Instance.Get();
       if (staffs == null) {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, staffs, new[] { "Id", "Username", "Name", "Comment", "State", "CreateStaffName", "CreateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, staffs, new[] { "Id", "Username", "Name", "Comment", "State", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick() {

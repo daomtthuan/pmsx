@@ -25,7 +25,7 @@ namespace PMSX.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("$2y$10$3pOhuyBW4Y7tcazSyFR7TevZmdaUZE1.j0wwQYRiiCQfdxFFAVgUC")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LicenseKey {
             get {
                 return ((string)(this["LicenseKey"]));

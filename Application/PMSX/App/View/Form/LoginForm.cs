@@ -2,6 +2,7 @@
 using PMSX.App.Model;
 using PMSX.App.View.Form.Add;
 using PMSX.Pattern.Factory;
+using PMSX.Utility;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
@@ -26,13 +27,29 @@ namespace PMSX.App.View.Form {
       GridUtility.Instance.LoadData(sessionSelect, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName" }, "Id", "Date");
       DisplayUtility.Instance.Set(this, true);
 
-      LoginButton_Click(sender, e);
+      //LoginButton_Click(sender, e);
     }
 
     private bool IsLogin() {
-      Authentication.State state = Authentication.State.None;
+      string username = usernameInput.Text;
+      string password = passwordInput.Text;
+
+      if (username.Length == 0) {
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên đăng nhập");
+        return false;
+      } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Username, username)) {
+        AlertUtility.Instance.ShowWarning("Tên đăng nhập không hợp lệ");
+        return false;
+      }
+
+      if (password.Length == 0) {
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập mật khẩu");
+        return false;
+      }
+
+      Authentication.State state = Authentication.State.Error;
       OverlayUtility.Instance.StartProcess(this, () => {
-        state = Authentication.Instance.Login(usernameInput.Text, passwordInput.Text);
+        state = Authentication.Instance.Login(username, password);
       });
 
       switch (state) {
@@ -47,9 +64,6 @@ namespace PMSX.App.View.Form {
         case Authentication.State.Error:
           Application.Exit();
           return false;
-        case Authentication.State.None:
-          AlertUtility.Instance.ShowWarning("Vui lòng điền tên đăng nhập và mật khẩu");
-          break;
       }
       return false;
     }

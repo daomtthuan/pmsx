@@ -16,12 +16,14 @@ namespace PMSX.App.View.Control.Table {
     public SessionTable() { }
 
     protected override void EventLoad(GridControl grid, GridView view) {
+      Name = "SessionTable";
+
       List<Session> sessions = SessionController.Instance.Get();
       if (sessions == null) {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName", "State", "CreateStaffName", "CreateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName", "State", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick() {

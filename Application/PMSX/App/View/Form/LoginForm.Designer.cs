@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form {
-  partial class LoginForm {
+  internal partial class LoginForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -85,20 +85,22 @@
       // 
       // usernameInput
       // 
-      this.usernameInput.Location = new System.Drawing.Point(96, 205);
+      this.usernameInput.Location = new System.Drawing.Point(95, 205);
       this.usernameInput.Name = "usernameInput";
+      this.usernameInput.Properties.MaxLength = 100;
       this.usernameInput.Properties.Padding = new System.Windows.Forms.Padding(1);
-      this.usernameInput.Size = new System.Drawing.Size(298, 24);
+      this.usernameInput.Size = new System.Drawing.Size(299, 24);
       this.usernameInput.StyleController = this.layout;
       this.usernameInput.TabIndex = 4;
       // 
       // passwordInput
       // 
-      this.passwordInput.Location = new System.Drawing.Point(96, 237);
+      this.passwordInput.Location = new System.Drawing.Point(95, 237);
       this.passwordInput.Name = "passwordInput";
+      this.passwordInput.Properties.MaxLength = 100;
       this.passwordInput.Properties.Padding = new System.Windows.Forms.Padding(1);
-      this.passwordInput.Properties.PasswordChar = 'o';
-      this.passwordInput.Size = new System.Drawing.Size(298, 24);
+      this.passwordInput.Properties.PasswordChar = '-';
+      this.passwordInput.Size = new System.Drawing.Size(299, 24);
       this.passwordInput.StyleController = this.layout;
       this.passwordInput.TabIndex = 5;
       // 
@@ -128,13 +130,13 @@
       // 
       // sessionSelect
       // 
-      this.sessionSelect.Location = new System.Drawing.Point(96, 274);
+      this.sessionSelect.Location = new System.Drawing.Point(95, 274);
       this.sessionSelect.Name = "sessionSelect";
       this.sessionSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
       this.sessionSelect.Properties.NullText = "";
       this.sessionSelect.Properties.Padding = new System.Windows.Forms.Padding(1);
-      this.sessionSelect.Size = new System.Drawing.Size(298, 24);
+      this.sessionSelect.Size = new System.Drawing.Size(299, 24);
       this.sessionSelect.StyleController = this.layout;
       this.sessionSelect.TabIndex = 6;
       // 
@@ -162,7 +164,7 @@
       this.usernameInputLayout.Size = new System.Drawing.Size(388, 32);
       this.usernameInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.usernameInputLayout.Text = "Tên đăng nhập";
-      this.usernameInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.usernameInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // passwordInputLayout
       // 
@@ -172,7 +174,7 @@
       this.passwordInputLayout.Size = new System.Drawing.Size(388, 32);
       this.passwordInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.passwordInputLayout.Text = "Mật khẩu";
-      this.passwordInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.passwordInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // separator
       // 
@@ -190,7 +192,7 @@
       this.sessionSelectLayout.Size = new System.Drawing.Size(388, 32);
       this.sessionSelectLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.sessionSelectLayout.Text = "Phiên làm việc";
-      this.sessionSelectLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.sessionSelectLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // loginButtonLayout
       // 

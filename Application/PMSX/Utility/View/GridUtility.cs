@@ -36,8 +36,12 @@ namespace PMSX.Utility.View {
         { "StaffName", "Tên nhân viên" },
         { "RoleId", "ID quyền" },
         { "RoleName", "Tên quyền" },
-        { "Year", "Năm" },
+        { "YearsOld", "Tuổi" },
         { "Total", "Tổng số" },
+        { "GroupId", "ID nhóm" },
+        { "Code", "Mã số" },
+        { "Address", "Địa chỉ" },
+        { "Year", "Năm" },
       };
     }
 

@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Add {
-  partial class AddPermissionForm {
+  internal partial class AddPermissionForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>

@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Edit {
-  partial class EditStaffForm {
+  internal partial class EditStaffForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -79,10 +79,10 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(96, 140);
+      this.commentInput.Location = new System.Drawing.Point(95, 140);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 1000;
-      this.commentInput.Size = new System.Drawing.Size(340, 132);
+      this.commentInput.Size = new System.Drawing.Size(341, 132);
       this.commentInput.StyleController = this.layout;
       this.commentInput.TabIndex = 7;
       // 
@@ -101,7 +101,7 @@
       // 
       // usernameInput
       // 
-      this.usernameInput.Location = new System.Drawing.Point(96, 14);
+      this.usernameInput.Location = new System.Drawing.Point(95, 14);
       this.usernameInput.Name = "usernameInput";
       this.usernameInput.Properties.DisplayFormat.FormatString = "d";
       this.usernameInput.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -109,30 +109,31 @@
       this.usernameInput.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
       this.usernameInput.Properties.MaxLength = 100;
       this.usernameInput.Properties.ReadOnly = true;
-      this.usernameInput.Size = new System.Drawing.Size(340, 22);
+      this.usernameInput.Size = new System.Drawing.Size(341, 22);
       this.usernameInput.StyleController = this.layout;
       this.usernameInput.TabIndex = 4;
       // 
       // passwordInput
       // 
-      this.passwordInput.Location = new System.Drawing.Point(96, 74);
+      this.passwordInput.Location = new System.Drawing.Point(95, 74);
       this.passwordInput.Name = "passwordInput";
       this.passwordInput.Properties.ReadOnly = true;
-      this.passwordInput.Size = new System.Drawing.Size(340, 22);
+      this.passwordInput.Size = new System.Drawing.Size(341, 22);
       this.passwordInput.StyleController = this.layout;
       this.passwordInput.TabIndex = 9;
       // 
       // nameInput
       // 
-      this.nameInput.Location = new System.Drawing.Point(96, 44);
+      this.nameInput.Location = new System.Drawing.Point(95, 44);
       this.nameInput.Name = "nameInput";
-      this.nameInput.Size = new System.Drawing.Size(340, 22);
+      this.nameInput.Properties.MaxLength = 500;
+      this.nameInput.Size = new System.Drawing.Size(341, 22);
       this.nameInput.StyleController = this.layout;
       this.nameInput.TabIndex = 5;
       // 
       // stateRadio
       // 
-      this.stateRadio.Location = new System.Drawing.Point(96, 104);
+      this.stateRadio.Location = new System.Drawing.Point(95, 104);
       this.stateRadio.Name = "stateRadio";
       this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
       this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
@@ -141,7 +142,7 @@
       this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt", true, null, "enabled"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá", true, null, "disabled")});
-      this.stateRadio.Size = new System.Drawing.Size(340, 23);
+      this.stateRadio.Size = new System.Drawing.Size(341, 23);
       this.stateRadio.StyleController = this.layout;
       this.stateRadio.TabIndex = 9;
       // 
@@ -181,7 +182,7 @@
       this.usernameInputLayout.Size = new System.Drawing.Size(430, 30);
       this.usernameInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.usernameInputLayout.Text = "Tên đăng nhập";
-      this.usernameInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.usernameInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // nameInputLayout
       // 
@@ -191,7 +192,7 @@
       this.nameInputLayout.Size = new System.Drawing.Size(430, 30);
       this.nameInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.nameInputLayout.Text = "Tên";
-      this.nameInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.nameInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // commentInputLayout
       // 
@@ -203,7 +204,7 @@
       this.commentInputLayout.Size = new System.Drawing.Size(430, 140);
       this.commentInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.commentInputLayout.Text = "Ghi chú";
-      this.commentInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.commentInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // separator
       // 
@@ -231,7 +232,7 @@
       this.passwordInputLayout.Size = new System.Drawing.Size(430, 30);
       this.passwordInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.passwordInputLayout.Text = "Mật khẩu";
-      this.passwordInputLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.passwordInputLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // stateRadioLayout
       // 
@@ -246,7 +247,7 @@
       this.stateRadioLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.stateRadioLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.stateRadioLayout.Text = "Trạng thái";
-      this.stateRadioLayout.TextSize = new System.Drawing.Size(79, 15);
+      this.stateRadioLayout.TextSize = new System.Drawing.Size(78, 15);
       // 
       // resetPasswordButtonLayout
       // 

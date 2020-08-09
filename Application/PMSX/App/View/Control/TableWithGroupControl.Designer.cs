@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Control {
-  partial class TableWithSelectControl {
+  internal abstract partial class TableWithSelectControl {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
@@ -26,7 +26,7 @@
       this.layout = new DevExpress.XtraLayout.LayoutControl();
       this.tableGrid = new DevExpress.XtraGrid.GridControl();
       this.tableView = new DevExpress.XtraGrid.Views.Grid.GridView();
-      this.select = new DevExpress.XtraEditors.LookUpEdit();
+      this.selectControl = new DevExpress.XtraEditors.LookUpEdit();
       this.addButton = new DevExpress.XtraEditors.SimpleButton();
       this.editButton = new DevExpress.XtraEditors.SimpleButton();
       this.disableButton = new DevExpress.XtraEditors.SimpleButton();
@@ -40,7 +40,7 @@
       this.layout.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tableGrid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.select.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.selectControl.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableGridLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.addButtonLayout)).BeginInit();
@@ -52,7 +52,7 @@
       // layout
       // 
       this.layout.Controls.Add(this.tableGrid);
-      this.layout.Controls.Add(this.select);
+      this.layout.Controls.Add(this.selectControl);
       this.layout.Controls.Add(this.addButton);
       this.layout.Controls.Add(this.editButton);
       this.layout.Controls.Add(this.disableButton);
@@ -83,16 +83,16 @@
       // 
       // select
       // 
-      this.select.Location = new System.Drawing.Point(49, 14);
-      this.select.Name = "select";
-      this.select.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.selectControl.Location = new System.Drawing.Point(49, 14);
+      this.selectControl.Name = "select";
+      this.selectControl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.select.Properties.NullText = "";
-      this.select.Properties.Padding = new System.Windows.Forms.Padding(1);
-      this.select.Size = new System.Drawing.Size(110, 24);
-      this.select.StyleController = this.layout;
-      this.select.TabIndex = 4;
-      this.select.EditValueChanged += new System.EventHandler(this.GroupSelect_EditValueChanged);
+      this.selectControl.Properties.NullText = "";
+      this.selectControl.Properties.Padding = new System.Windows.Forms.Padding(1);
+      this.selectControl.Size = new System.Drawing.Size(110, 24);
+      this.selectControl.StyleController = this.layout;
+      this.selectControl.TabIndex = 4;
+      this.selectControl.EditValueChanged += new System.EventHandler(this.GroupSelect_EditValueChanged);
       // 
       // addButton
       // 
@@ -170,7 +170,7 @@
       // 
       // groupSelectLayout
       // 
-      this.groupSelectLayout.Control = this.select;
+      this.groupSelectLayout.Control = this.selectControl;
       this.groupSelectLayout.Location = new System.Drawing.Point(0, 0);
       this.groupSelectLayout.MinSize = new System.Drawing.Size(93, 34);
       this.groupSelectLayout.Name = "groupSelectLayout";
@@ -218,7 +218,7 @@
       this.layout.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.tableGrid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableView)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.select.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.selectControl.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tableGridLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.addButtonLayout)).EndInit();
@@ -235,7 +235,7 @@
     private DevExpress.XtraLayout.LayoutControlGroup root;
     private DevExpress.XtraGrid.GridControl tableGrid;
     private DevExpress.XtraGrid.Views.Grid.GridView tableView;
-    private DevExpress.XtraEditors.LookUpEdit select;
+    private DevExpress.XtraEditors.LookUpEdit selectControl;
     private DevExpress.XtraEditors.SimpleButton addButton;
     private DevExpress.XtraEditors.SimpleButton editButton;
     private DevExpress.XtraEditors.SimpleButton disableButton;
