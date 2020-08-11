@@ -74,5 +74,42 @@ namespace PMSX.App.Controller {
 
       return DatabaseUtility.Instance.ExecuteTransactionNonQuery(new[] { query1, query2 }, new[] { parameters1, parameters2 });
     }
+
+    public int Edit(long id, string name, int year, string address, int state, string comment) {
+      string query = @"
+        update table_patient
+        set
+          patient_name = @name,
+          patient_year = @year,
+          patient_address = @address,
+          patient_state = @state,
+          patient_comment = @comment,
+          patient_updateStaffId = @updateStaffId,
+          patient_updateDateTime = now()
+        where patient_id = @id";
+
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
+          new MySqlParameter("@id", id),
+          new MySqlParameter("@name", name),
+          new MySqlParameter("@year", year),
+          new MySqlParameter("@address", address),
+          new MySqlParameter("@state", state),
+          comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
+          new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+    }
+
+    public int Disable(long id) {
+      string query = @"
+        update table_patient
+        set
+          patient_state = 0,
+          patient_updateStaffId = @updateStaffId,
+          patient_updateDateTime = now()
+        where patient_id = @id";
+
+      return DatabaseUtility.Instance.ExecuteNonQuery(query,
+        new MySqlParameter("@id", id),
+        new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+    }
   }
 }

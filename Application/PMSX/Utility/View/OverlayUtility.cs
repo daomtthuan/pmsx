@@ -1,5 +1,6 @@
 ﻿using DevExpress.Skins;
 using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using PMSX.Pattern.Base;
 using System;

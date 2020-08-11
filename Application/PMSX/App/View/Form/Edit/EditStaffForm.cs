@@ -30,10 +30,10 @@ namespace PMSX.App.View.Form.Edit {
       string comment = commentInput.Text;
 
       if (name.Length == 0) {
-        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên");
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên nhân viên");
         return;
       } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Name, name)) {
-        AlertUtility.Instance.ShowWarning("Tên không hợp lệ");
+        AlertUtility.Instance.ShowWarning("Tên nhân viên không hợp lệ");
         return;
       }
 

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DevExpress.XtraSplashScreen;
+using PMSX.Properties;
+using System;
 using System.Reflection;
 
 namespace PMSX.App.View {
-  internal partial class LoadingSplashScreen : DevExpress.XtraSplashScreen.SplashScreen {
+  internal partial class LoadingSplashScreen : SplashScreen {
     internal enum SplashScreenCommand {
       UpdateStatus
     }
@@ -10,6 +12,7 @@ namespace PMSX.App.View {
     public LoadingSplashScreen() {
       InitializeComponent();
       Config.Instance.SetupTheme();
+      Icon = Resources.Icon;
     }
 
     private void LoadingSplashScreen_Load(object sender, EventArgs e) {

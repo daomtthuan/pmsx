@@ -37,7 +37,7 @@ namespace PMSX.App.View.Control {
     protected void AddButton_Click(object sender, EventArgs e) {
       if (EventAddButtonClick(GridUtility.Instance.GetSelected(selectControl)) == DialogResult.OK) {
         OverlayUtility.Instance.StartProcess(Parent.Parent, () => {
-          var index = selectControl.ItemIndex;
+          int index = selectControl.ItemIndex;
           EventLoad(selectControl);
           if (index == selectControl.ItemIndex) {
             EventSelectChanged(tableGrid, tableView, GridUtility.Instance.GetSelected(selectControl));

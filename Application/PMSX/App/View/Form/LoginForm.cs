@@ -56,7 +56,7 @@ namespace PMSX.App.View.Form {
         case Authentication.State.LoggedIn:
           return true;
         case Authentication.State.Disabled:
-          AlertUtility.Instance.ShowWarning("Tài khoản đã bị vô hiệu hoá");
+          AlertUtility.Instance.ShowWarning("Tài khoản này đã bị vô hiệu hoá");
           break;
         case Authentication.State.Failed:
           AlertUtility.Instance.ShowWarning("Tên đăng nhập hoặc mật khẩu không đúng");

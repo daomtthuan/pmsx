@@ -31,7 +31,7 @@ namespace PMSX.App.View.Form {
       }
 
       if (newInput.Text != reInput.Text) {
-        AlertUtility.Instance.ShowWarning("Mật khẩu nhập lại không trùng khớp");
+        AlertUtility.Instance.ShowWarning("Mật khẩu mới nhập lại không trùng khớp");
         return;
       }
 

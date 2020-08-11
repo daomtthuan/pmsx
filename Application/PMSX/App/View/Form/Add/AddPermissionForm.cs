@@ -26,7 +26,7 @@ namespace PMSX.App.View.Form.Add {
     private void AddButton_Click(object sender, EventArgs e) {
       object staff = GridUtility.Instance.GetSelected(staffSelect);
       if (staff == null) {
-        AlertUtility.Instance.ShowWarning("Vui lòng chọn nhân viên");
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn nhân viên cần phân quyền");
         return;
       }
 

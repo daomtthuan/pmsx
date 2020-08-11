@@ -39,17 +39,17 @@ namespace PMSX.App.View.Form.Add {
       string comment = commentInput.Text;
 
       if (date == null) {
-        AlertUtility.Instance.ShowWarning("Vui lòng chọn ngày");
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn ngày phiên làm việc");
         return;
       }
 
       if (doctorPermission == null) {
-        AlertUtility.Instance.ShowWarning("Vui lòng chọn bác sĩ");
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn bác sĩ phiên làm việc");
         return;
       }
 
       if (technicianPermission == null) {
-        AlertUtility.Instance.ShowWarning("Vui lòng chọn kỹ thuật viên");
+        AlertUtility.Instance.ShowWarning("Vui lòng chọn kỹ thuật viên phiên làm việc");
         return;
       }
 

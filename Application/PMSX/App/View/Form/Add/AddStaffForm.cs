@@ -25,18 +25,18 @@ namespace PMSX.App.View.Form.Add {
       string comment = commentInput.Text;
 
       if (username.Length == 0) {
-        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên đăng nhập");
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên đăng nhập nhân viên");
         return;
       } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Username, username)) {
-        AlertUtility.Instance.ShowWarning("Tên đăng nhập không hợp lệ");
+        AlertUtility.Instance.ShowWarning("Tên đăng nhập nhân viên không hợp lệ");
         return;
       }
 
       if (name.Length == 0) {
-        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên");
+        AlertUtility.Instance.ShowWarning("Vui lòng nhập tên nhân viên");
         return;
       } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Name, name)) {
-        AlertUtility.Instance.ShowWarning("Tên không hợp lệ");
+        AlertUtility.Instance.ShowWarning("Tên nhân viên không hợp lệ");
         return;
       }
 

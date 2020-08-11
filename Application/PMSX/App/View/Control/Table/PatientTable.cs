@@ -4,6 +4,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.App.View.Form.Add;
+using PMSX.App.View.Form.Edit;
 using PMSX.Pattern.Base;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
@@ -32,7 +33,7 @@ namespace PMSX.App.View.Control.Table {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, patients, new[] { "Id", "Code", "Name", "YearsOld", "Address", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, patients, new[] { "Id", "Code", "Name", "YearsOld", "Address", "State", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {
@@ -51,9 +52,9 @@ namespace PMSX.App.View.Control.Table {
         AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
         return DialogResult.Cancel;
       } else {
-        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
-        addForm.Tag = new[] { selected, modelSelected };
-        return addForm.ShowDialog();
+        EditPatientForm editForm = FormFactory<EditPatientForm>.Instance.Create();
+        editForm.Tag = modelSelected;
+        return editForm.ShowDialog();
       }
     }
 
@@ -62,7 +63,14 @@ namespace PMSX.App.View.Control.Table {
         AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
         return false;
       } else {
-        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
+        if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá bệnh nhân này?") == DialogResult.No) {
+          return false;
+        }
+
+        if (PatientController.Instance.Disable(modelSelected.Id) < 0) {
+          Application.Exit();
+          return false;
+        }
         return true;
       }
     }

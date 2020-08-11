@@ -1,4 +1,5 @@
-﻿using PMSX.App.Controller;
+﻿using DevExpress.XtraEditors;
+using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.Utility;
 using PMSX.Utility.View;
@@ -6,27 +7,34 @@ using PMSX.Utility.View.Form;
 using System;
 using System.Windows.Forms;
 
-namespace PMSX.App.View.Form.Add {
-  public partial class AddPatientForm : DevExpress.XtraEditors.XtraForm {
-    public AddPatientForm() {
+namespace PMSX.App.View.Form.Edit {
+  public partial class EditPatientForm : XtraForm {
+    public EditPatientForm() {
       InitializeComponent();
     }
 
-    private void AddPatientForm_Load(object sender, EventArgs e) {
+    private void EditPatientForm_Load(object sender, EventArgs e) {
       int yearNow = DateTime.Now.Year;
       for (int year = yearNow; year >= yearNow - 150; year--) {
         yearSelect.Properties.Items.Add(year);
         yearsOldSelect.Properties.Items.Add(yearNow - year);
       }
 
+      Patient patient = (Patient)Tag;
+      nameInput.Text = patient.Name;
+      yearsOldSelect.EditValue = patient.YearsOld;
+      addressInput.Text = patient.Address;
+      stateRadio.EditValue = patient.GetStateNumber();
+      commentInput.Text = patient.Comment;
+
       DisplayUtility.Instance.Set(this, true);
     }
 
-    private void AddButton_Click(object sender, EventArgs e) {
-      Group group = (Group)Tag;
+    private void EditButton_Click(object sender, EventArgs e) {
       string name = nameInput.Text;
       object year = yearSelect.SelectedItem;
       string address = addressInput.Text;
+      int state = (int)stateRadio.EditValue;
       string comment = commentInput.Text;
 
       if (name.Length == 0) {
@@ -47,8 +55,12 @@ namespace PMSX.App.View.Form.Add {
         return;
       }
 
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa thông tin bệnh nhân này?") == DialogResult.No) {
+        return;
+      }
+
       OverlayUtility.Instance.StartProcess(this, () => {
-        if (PatientController.Instance.Add(group, name, (int)year, address, comment) < 0) {
+        if (PatientController.Instance.Edit(((Patient)Tag).Id, name, (int)year, address, state, comment) < 0) {
           Application.Exit();
           DialogResult = DialogResult.No;
         } else {

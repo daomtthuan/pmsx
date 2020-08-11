@@ -177,6 +177,12 @@
     <Compile Include="App\View\Form\Add\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\View\Form\Edit\EditPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditPatientForm.Designer.cs">
+      <DependentUpon>EditPatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\View\Form\Edit\EditPermissionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Add\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Edit\EditPatientForm.resx">
+      <DependentUpon>EditPatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Edit\EditPermissionForm.resx">
       <DependentUpon>EditPermissionForm.cs</DependentUpon>

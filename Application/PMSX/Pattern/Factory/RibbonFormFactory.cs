@@ -1,5 +1,4 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using PMSX.App;
 using PMSX.Pattern.Base;
 using PMSX.Pattern.Interface;
@@ -16,9 +15,7 @@ namespace PMSX.Pattern.Factory {
       RibbonForm ribbonForm = new RibbonForm() {
         Icon = Resources.Icon,
         StartPosition = FormStartPosition.CenterScreen,
-        DialogResult = DialogResult.None,
-        FormBorderEffect = FormBorderEffect.Glow,
-        AllowFormGlass = DefaultBoolean.True
+        DialogResult = DialogResult.None
       };
       DisplayUtility.Instance.Set(ribbonForm, false);
       Config.Instance.SetupTheme();

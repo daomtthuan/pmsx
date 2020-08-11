@@ -17,7 +17,7 @@ namespace PMSX.App.View.Form {
     private void ActiveButton_Click(object sender, EventArgs e) {
       string key = keyInput.Text;
       if (key.Length == 0) {
-        AlertUtility.Instance.ShowWarning("Vui nhập khoá kích hoạt bản quyền");
+        AlertUtility.Instance.ShowWarning("Vui nhập khoá kích hoạt bản quyền sản phẩm");
         return;
       }
 
@@ -31,13 +31,13 @@ namespace PMSX.App.View.Form {
           Close();
           break;
         case Config.LicenseState.Outdated:
-          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền đã hết hạn");
+          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền sản phẩm đã hết hạn");
           break;
         case Config.LicenseState.Invalid:
-          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền không hợp lệ");
+          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền sản phẩm không hợp lệ");
           break;
         case Config.LicenseState.Ignore:
-          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền này không được chấp nhật");
+          AlertUtility.Instance.ShowWarning("Khoá kích hoạt bản quyền sản phẩm này không được chấp nhật");
           break;
         case Config.LicenseState.Error:
           Application.Exit();
