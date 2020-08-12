@@ -89,13 +89,13 @@ namespace PMSX.App.Controller {
         where patient_id = @id";
 
       return DatabaseUtility.Instance.ExecuteNonQuery(query,
-          new MySqlParameter("@id", id),
-          new MySqlParameter("@name", name),
-          new MySqlParameter("@year", year),
-          new MySqlParameter("@address", address),
-          new MySqlParameter("@state", state),
-          comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
-          new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
+        new MySqlParameter("@id", id),
+        new MySqlParameter("@name", name),
+        new MySqlParameter("@year", year),
+        new MySqlParameter("@address", address),
+        new MySqlParameter("@state", state),
+        comment.Length > 0 ? new MySqlParameter("@comment", comment) : new MySqlParameter("@comment", DBNull.Value),
+        new MySqlParameter("@updateStaffId", Authentication.Instance.Staff.Id));
     }
 
     public int Disable(long id) {

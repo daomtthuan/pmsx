@@ -23,7 +23,7 @@ namespace PMSX.App.View.Control.Table {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, staffs, new[] { "Id", "Username", "Name", "Comment", "State", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, staffs, new[] { "Id", "Username", "Name", "Comment", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick() {

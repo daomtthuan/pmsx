@@ -99,9 +99,9 @@ namespace PMSX.App.View.Form {
                 CreateGroup("Chẩn đoán",
                   CreateButton<StaffTable>("Loại 1", Resources.Diagnosy)),
                 CreateGroup("Giải phẫu bệnh",
-                  CreateButton<StaffTable>("Nhóm đại thể", Resources.Microscope),
+                  CreateButton<MacroGroupTable>("Nhóm đại thể", Resources.Microscope),
                   CreateButton<StaffTable>("Đại thể", Resources.Microscope),
-                  CreateButton<StaffTable>("Nhóm vi thể", Resources.Microscope),
+                  CreateButton<MicroGroupTable>("Nhóm vi thể", Resources.Microscope),
                   CreateButton<StaffTable>("Vi thể", Resources.Microscope))));
 
             if (Authentication.Instance.HasRole(Authentication.Role.Admin)) {

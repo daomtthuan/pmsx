@@ -1,4 +1,5 @@
-﻿using PMSX.App.Controller;
+﻿using DevExpress.XtraEditors;
+using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.Utility;
 using PMSX.Utility.View;
@@ -7,7 +8,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Add {
-  public partial class AddPatientForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class AddPatientForm : XtraForm {
     public AddPatientForm() {
       InitializeComponent();
     }

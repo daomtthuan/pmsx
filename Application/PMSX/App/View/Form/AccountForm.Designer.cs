@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form {
-  partial class AccountForm {
+  internal partial class AccountForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>

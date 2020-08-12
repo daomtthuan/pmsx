@@ -121,6 +121,8 @@
   <ItemGroup>
     <Compile Include="App\Authentication.cs" />
     <Compile Include="App\Controller\GroupController.cs" />
+    <Compile Include="App\Controller\MacroGroupController.cs" />
+    <Compile Include="App\Controller\MicroGroupController.cs" />
     <Compile Include="App\Controller\PatientController.cs" />
     <Compile Include="App\Controller\PermissionController.cs" />
     <Compile Include="App\Controller\SessionController.cs" />
@@ -155,10 +157,24 @@
     <Compile Include="App\View\Control\TableWithGroupControl.Designer.cs">
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\View\Control\Table\MicroGroupTable.cs" />
+    <Compile Include="App\View\Control\Table\MacroGroupTable.cs" />
     <Compile Include="App\View\Control\Table\PermissionTable.cs" />
     <Compile Include="App\View\Control\Table\SessionTable.cs" />
     <Compile Include="App\View\Control\Table\PatientTable.cs" />
     <Compile Include="App\View\Control\Table\StaffTable.cs" />
+    <Compile Include="App\View\Form\Add\AddMacroGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Add\AddMacroGroupForm.Designer.cs">
+      <DependentUpon>AddMacroGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\Form\Add\AddMicroGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Add\AddMicroGroupForm.Designer.cs">
+      <DependentUpon>AddMicroGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\View\Form\Add\AddPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +192,18 @@
     </Compile>
     <Compile Include="App\View\Form\Add\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditMicroGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditMicroGroupForm.Designer.cs">
+      <DependentUpon>EditMicroGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditMacroGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\View\Form\Edit\EditMacroGroupForm.Designer.cs">
+      <DependentUpon>EditMacroGroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App\View\Form\Edit\EditPatientForm.cs">
       <SubType>Form</SubType>
@@ -272,6 +300,12 @@
     <EmbeddedResource Include="App\View\Control\TableWithGroupControl.resx">
       <DependentUpon>TableWithGroupControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Add\AddMacroGroupForm.resx">
+      <DependentUpon>AddMacroGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Add\AddMicroGroupForm.resx">
+      <DependentUpon>AddMicroGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Add\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Add\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Edit\EditMicroGroupForm.resx">
+      <DependentUpon>EditMicroGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\View\Form\Edit\EditMacroGroupForm.resx">
+      <DependentUpon>EditMacroGroupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\View\Form\Edit\EditPatientForm.resx">
       <DependentUpon>EditPatientForm.cs</DependentUpon>

@@ -8,7 +8,7 @@ using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Edit {
-  public partial class EditPatientForm : XtraForm {
+  internal partial class EditPatientForm : XtraForm {
     public EditPatientForm() {
       InitializeComponent();
     }

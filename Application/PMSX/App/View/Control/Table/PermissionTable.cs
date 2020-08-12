@@ -27,7 +27,7 @@ namespace PMSX.App.View.Control.Table {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, permissions, new[] { "StaffId", "StaffName", "Comment", "State", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, permissions, new[] { "StaffId", "StaffName", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {

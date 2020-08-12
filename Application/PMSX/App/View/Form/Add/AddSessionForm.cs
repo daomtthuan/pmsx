@@ -1,4 +1,5 @@
-﻿using PMSX.App.Controller;
+﻿using DevExpress.XtraEditors;
+using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form.Add {
-  internal partial class AddSessionForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class AddSessionForm : XtraForm {
     public AddSessionForm() {
       InitializeComponent();
     }

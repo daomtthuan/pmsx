@@ -1,4 +1,5 @@
-﻿using PMSX.App.Controller;
+﻿using DevExpress.XtraEditors;
+using PMSX.App.Controller;
 using PMSX.App.Model;
 using PMSX.App.View.Form.Add;
 using PMSX.Pattern.Factory;
@@ -10,7 +11,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
-  internal partial class LoginForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class LoginForm : XtraForm {
     public LoginForm() {
       InitializeComponent();
     }

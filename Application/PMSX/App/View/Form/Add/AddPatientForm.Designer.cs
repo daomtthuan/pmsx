@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Add {
-  partial class AddPatientForm {
+  internal partial class AddPatientForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>

@@ -33,46 +33,46 @@ namespace PMSX.App.View.Control.Table {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, patients, new[] { "Id", "Code", "Name", "YearsOld", "Address", "State", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, patients, new[] { "Id", "Code", "Name", "YearsOld", "Address", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {
       if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
         AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
         return DialogResult.Cancel;
-      } else {
-        AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
-        addForm.Tag = selected;
-        return addForm.ShowDialog();
       }
+
+      AddPatientForm addForm = FormFactory<AddPatientForm>.Instance.Create();
+      addForm.Tag = selected;
+      return addForm.ShowDialog();
     }
 
     protected override DialogResult EventEditButtonClick(object selected, ModelBase modelSelected) {
       if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
         AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
         return DialogResult.Cancel;
-      } else {
-        EditPatientForm editForm = FormFactory<EditPatientForm>.Instance.Create();
-        editForm.Tag = modelSelected;
-        return editForm.ShowDialog();
       }
+
+      EditPatientForm editForm = FormFactory<EditPatientForm>.Instance.Create();
+      editForm.Tag = modelSelected;
+      return editForm.ShowDialog();
     }
 
     protected override bool EventDisableButtonClick(object selected, ModelBase modelSelected) {
       if (((Group)selected).Id != Authentication.Instance.Group.Id && !Authentication.Instance.HasRole(Authentication.Role.Admin)) {
         AlertUtility.Instance.ShowWarning("Tài khoản không có quyền thêm bệnh nhân ở nhóm này");
         return false;
-      } else {
-        if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá bệnh nhân này?") == DialogResult.No) {
-          return false;
-        }
-
-        if (PatientController.Instance.Disable(modelSelected.Id) < 0) {
-          Application.Exit();
-          return false;
-        }
-        return true;
       }
+
+      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá bệnh nhân này?") == DialogResult.No) {
+        return false;
+      }
+
+      if (PatientController.Instance.Disable(modelSelected.Id) < 0) {
+        Application.Exit();
+        return false;
+      }
+      return true;
     }
   }
 }

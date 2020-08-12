@@ -7,41 +7,42 @@ using PMSX.App.View.Form.Edit;
 using PMSX.Pattern.Base;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Control.Table {
   [System.ComponentModel.DesignerCategory("")]
-  internal class SessionTable : TableControl {
-    public SessionTable() { }
+  internal class MicroGroupTable : TableControl {
+    public MicroGroupTable() { }
 
     protected override void EventLoad(GridControl grid, GridView view) {
-      Name = "SessionTable";
+      Name = "MicroGroupTable";
 
-      List<Session> sessions = SessionController.Instance.Get();
-      if (sessions == null) {
+      List<MicroGroup> microGroups = MicroGroupController.Instance.Get();
+      if (microGroups == null) {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, sessions, new[] { "Id", "Date", "DoctorName", "TechnicianName", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(grid, view, microGroups, new[] { "Id", "Code", "Name", "Comment", "State", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick() {
-      return FormFactory<AddSessionForm>.Instance.Create().ShowDialog();
+      return FormFactory<AddMicroGroupForm>.Instance.Create().ShowDialog();
     }
 
     protected override DialogResult EventEditButtonClick(object modelSelected) {
-      EditSessionForm editForm = FormFactory<EditSessionForm>.Instance.Create();
+      EditMicroGroupForm editForm = FormFactory<EditMicroGroupForm>.Instance.Create();
       editForm.Tag = modelSelected;
       return editForm.ShowDialog();
     }
 
     protected override bool EventDisableButtonClick(ModelBase modelSelected) {
-      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá phiên làm việc này?") == DialogResult.No) {
+      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá nhóm vi thể này này?") == DialogResult.No) {
         return false;
       }
 
-      if (SessionController.Instance.Disable(modelSelected.Id) < 0) {
+      if (MicroGroupController.Instance.Disable(modelSelected.Id) < 0) {
         Application.Exit();
         return false;
       }

@@ -1,11 +1,12 @@
-﻿using PMSX.App.Controller;
+﻿using DevExpress.XtraEditors;
+using PMSX.App.Controller;
 using PMSX.Utility.View;
 using PMSX.Utility.View.Form;
 using System;
 using System.Windows.Forms;
 
 namespace PMSX.App.View.Form {
-  public partial class PasswordForm : DevExpress.XtraEditors.XtraForm {
+  internal partial class PasswordForm : XtraForm {
     public PasswordForm() {
       InitializeComponent();
     }
