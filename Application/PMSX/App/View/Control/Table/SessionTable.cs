@@ -41,11 +41,14 @@ namespace PMSX.App.View.Control.Table {
         return false;
       }
 
-      if (SessionController.Instance.Disable(modelSelected.Id) < 0) {
-        Application.Exit();
-        return false;
-      }
-      return true;
+      bool isFalse = false;
+      OverlayUtility.Instance.StartProcess(this, () => {
+        isFalse = SessionController.Instance.Disable(modelSelected.Id) < 0;
+        if (isFalse) {
+          Application.Exit();
+        }
+      });
+      return isFalse;
     }
   }
 }

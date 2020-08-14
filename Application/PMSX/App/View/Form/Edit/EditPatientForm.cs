@@ -31,6 +31,10 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa thông tin bệnh nhân này?") == DialogResult.No) {
+        return;
+      }
+
       string name = nameInput.Text;
       object year = yearSelect.SelectedItem;
       string address = addressInput.Text;
@@ -52,10 +56,6 @@ namespace PMSX.App.View.Form.Edit {
 
       if (address.Length == 0) {
         AlertUtility.Instance.ShowWarning("Vui lòng nhập địa chỉ bệnh nhân");
-        return;
-      }
-
-      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa thông tin bệnh nhân này?") == DialogResult.No) {
         return;
       }
 

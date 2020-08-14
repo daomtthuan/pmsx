@@ -36,10 +36,8 @@ namespace PMSX.App.View.Form {
       button.ItemAppearance.Pressed.TextOptions.WordWrap = WordWrap.NoWrap;
       button.ItemClick += (sender, e) => {
         OverlayUtility.Instance.StartProcess(this, () => {
-          if (layout.Controls.Count > 0) {
-            layout.Controls[0].Dispose();
-            layout.Controls.Clear();
-          }
+          layout.Controls[0].Dispose();
+          layout.Controls.Clear();
           layout.Controls.Add(ControlFactory<Control>.Instance.Create());
         }, statusLabel);
       };
@@ -73,9 +71,10 @@ namespace PMSX.App.View.Form {
       layout.Dock = DockStyle.Fill;
 
       string year = DateTime.Now.Year == 2020 ? "2020" : $"2020 - {DateTime.Now.Year}";
-      aboutInformationLabel.Text =
+      aboutInformationLabel.Text = homeLabel.Text =
         $"Phiên bản {Assembly.GetExecutingAssembly().GetName().Version}\r\n" +
-        $"Bản quyền © {year} Daomtthuan\r\n" +
+        $"Bản quyền © {year} Daomtthuan\r\n";
+      aboutInformationLabel.Text +=
         $"__________________________________________________\r\n\r\n" +
         $"Thông tin Nhà phát triển:\r\n" +
         $"Website: daomtthuan.com\r\n" +
@@ -100,9 +99,9 @@ namespace PMSX.App.View.Form {
                   CreateButton<StaffTable>("Loại 1", Resources.Diagnosy)),
                 CreateGroup("Giải phẫu bệnh",
                   CreateButton<MacroGroupTable>("Nhóm đại thể", Resources.Microscope),
-                  CreateButton<StaffTable>("Đại thể", Resources.Microscope),
+                  CreateButton<MacroTable>("Đại thể", Resources.Microscope),
                   CreateButton<MicroGroupTable>("Nhóm vi thể", Resources.Microscope),
-                  CreateButton<StaffTable>("Vi thể", Resources.Microscope))));
+                  CreateButton<MicroTable>("Vi thể", Resources.Microscope))));
 
             if (Authentication.Instance.HasRole(Authentication.Role.Admin)) {
               manageCategory.Pages.Add(

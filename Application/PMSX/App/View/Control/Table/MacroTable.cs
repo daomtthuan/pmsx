@@ -2,8 +2,8 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using PMSX.App.Controller;
+using PMSX.App.Model;
 using PMSX.App.View.Form.Add;
-using PMSX.App.View.Form.Edit;
 using PMSX.Pattern.Base;
 using PMSX.Pattern.Factory;
 using PMSX.Utility.View;
@@ -12,44 +12,49 @@ using System.Windows.Forms;
 
 namespace PMSX.App.View.Control.Table {
   [System.ComponentModel.DesignerCategory("")]
-  internal class PermissionTable : TableWithSelectControl {
-    public PermissionTable() { }
+  internal class MacroTable : TableWithSelectControl {
+    public MacroTable() { }
 
     protected override void EventLoad(LookUpEdit selectControl) {
-      Name = "PermissionTable";
+      Name = "MacroTable";
 
-      GridUtility.Instance.LoadData(selectControl, Authentication.Instance.Roles);
-    }
-
-    protected override void EventSelectChanged(GridControl grid, GridView view, object selected) {
-      List<Model.Permission> permissions = PermissionController.Instance.GetByRoleName(selected.ToString());
-      if (permissions == null) {
+      List<MacroGroup> macroGroups = MacroGroupController.Instance.Get();
+      if (macroGroups == null) {
         Application.Exit();
         return;
       }
-      GridUtility.Instance.LoadData(grid, view, permissions, new[] { "StaffId", "StaffName", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
+      GridUtility.Instance.LoadData(selectControl, macroGroups, new[] { "Code", "Name" }, "Id", "Name");
+    }
+
+    protected override void EventSelectChanged(GridControl grid, GridView view, object selected) {
+      List<Macro> macros = MacroController.Instance.Get(((MacroGroup)selected).Id);
+      if (macros == null) {
+        Application.Exit();
+        return;
+      }
+      GridUtility.Instance.LoadData(grid, view, macros, new[] { "Id", "Code", "Description", "State", "Comment", "CreateDateTime", "UpdateDateTime" });
     }
 
     protected override DialogResult EventAddButtonClick(object selected) {
-      AddPermissionForm addForm = FormFactory<AddPermissionForm>.Instance.Create();
+      AddMacroForm addForm = FormFactory<AddMacroForm>.Instance.Create();
       addForm.Tag = selected;
       return addForm.ShowDialog();
     }
 
     protected override DialogResult EventEditButtonClick(object selected, ModelBase modelSelected) {
-      EditPermissionForm editForm = FormFactory<EditPermissionForm>.Instance.Create();
-      editForm.Tag = modelSelected;
-      return editForm.ShowDialog();
+      AddMacroForm addForm = FormFactory<AddMacroForm>.Instance.Create();
+      addForm.Tag = modelSelected;
+      return addForm.ShowDialog();
     }
 
     protected override bool EventDisableButtonClick(object selected, ModelBase modelSelected) {
-      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá phân quyền của nhân viên này?") == DialogResult.No) {
+      if (AlertUtility.Instance.ShowConfirm("Vô hiệu hoá đại thể này này?") == DialogResult.No) {
         return false;
       }
 
       bool isFalse = false;
       OverlayUtility.Instance.StartProcess(this, () => {
-        isFalse = PermissionController.Instance.Disable(modelSelected.Id) < 0;
+        isFalse = MacroController.Instance.Disable(modelSelected.Id) < 0;
         if (isFalse) {
           Application.Exit();
         }

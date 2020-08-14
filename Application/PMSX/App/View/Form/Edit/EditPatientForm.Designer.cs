@@ -80,10 +80,10 @@
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(69, 189);
+      this.commentInput.Location = new System.Drawing.Point(69, 190);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 1000;
-      this.commentInput.Size = new System.Drawing.Size(367, 83);
+      this.commentInput.Size = new System.Drawing.Size(367, 82);
       this.commentInput.StyleController = this.layout;
       this.commentInput.TabIndex = 7;
       // 
@@ -114,7 +114,7 @@
       this.addressInput.Location = new System.Drawing.Point(69, 74);
       this.addressInput.Name = "addressInput";
       this.addressInput.Properties.MaxLength = 1000;
-      this.addressInput.Size = new System.Drawing.Size(367, 71);
+      this.addressInput.Size = new System.Drawing.Size(367, 63);
       this.addressInput.StyleController = this.layout;
       this.addressInput.TabIndex = 7;
       // 
@@ -142,7 +142,7 @@
       // 
       // stateRadio
       // 
-      this.stateRadio.Location = new System.Drawing.Point(69, 153);
+      this.stateRadio.Location = new System.Drawing.Point(69, 145);
       this.stateRadio.Name = "stateRadio";
       this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
       this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
@@ -151,7 +151,7 @@
       this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt", true, null, "enabled"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá", true, null, "disabled")});
-      this.stateRadio.Size = new System.Drawing.Size(367, 23);
+      this.stateRadio.Size = new System.Drawing.Size(367, 32);
       this.stateRadio.StyleController = this.layout;
       this.stateRadio.TabIndex = 9;
       // 
@@ -187,9 +187,9 @@
       this.commentInputLayout.AppearanceItemCaption.Options.UseTextOptions = true;
       this.commentInputLayout.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 175);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 176);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(430, 91);
+      this.commentInputLayout.Size = new System.Drawing.Size(430, 90);
       this.commentInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextSize = new System.Drawing.Size(52, 15);
@@ -197,7 +197,7 @@
       // separator
       // 
       this.separator.AllowHotTrack = false;
-      this.separator.Location = new System.Drawing.Point(0, 170);
+      this.separator.Location = new System.Drawing.Point(0, 171);
       this.separator.Name = "separator";
       this.separator.Size = new System.Drawing.Size(430, 5);
       this.separator.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -240,7 +240,7 @@
       this.addressInputLayout.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
       this.addressInputLayout.Location = new System.Drawing.Point(0, 60);
       this.addressInputLayout.Name = "addressInputLayout";
-      this.addressInputLayout.Size = new System.Drawing.Size(430, 79);
+      this.addressInputLayout.Size = new System.Drawing.Size(430, 71);
       this.addressInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.addressInputLayout.Text = "Địa chỉ";
       this.addressInputLayout.TextSize = new System.Drawing.Size(52, 15);
@@ -250,11 +250,11 @@
       this.stateRadioLayout.Control = this.stateRadio;
       this.stateRadioLayout.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
       this.stateRadioLayout.CustomizationFormText = "Trạng thái";
-      this.stateRadioLayout.Location = new System.Drawing.Point(0, 139);
-      this.stateRadioLayout.MaxSize = new System.Drawing.Size(0, 31);
-      this.stateRadioLayout.MinSize = new System.Drawing.Size(125, 31);
+      this.stateRadioLayout.Location = new System.Drawing.Point(0, 131);
+      this.stateRadioLayout.MaxSize = new System.Drawing.Size(0, 40);
+      this.stateRadioLayout.MinSize = new System.Drawing.Size(113, 40);
       this.stateRadioLayout.Name = "stateRadioLayout";
-      this.stateRadioLayout.Size = new System.Drawing.Size(430, 31);
+      this.stateRadioLayout.Size = new System.Drawing.Size(430, 40);
       this.stateRadioLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
       this.stateRadioLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.stateRadioLayout.Text = "Trạng thái";

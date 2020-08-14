@@ -1,5 +1,5 @@
 ﻿namespace PMSX.App.View.Form.Edit {
-  internal partial class EditMacroGroupForm {
+  partial class EditMacroForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -24,56 +24,71 @@
     /// </summary>
     private void InitializeComponent() {
       this.layout = new DevExpress.XtraLayout.LayoutControl();
+      this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
       this.commentInput = new DevExpress.XtraEditors.MemoEdit();
       this.editButton = new DevExpress.XtraEditors.SimpleButton();
       this.codeInput = new DevExpress.XtraEditors.TextEdit();
-      this.nameInput = new DevExpress.XtraEditors.TextEdit();
-      this.stateRadio = new DevExpress.XtraEditors.RadioGroup();
+      this.descriptionInput = new DevExpress.XtraEditors.MemoEdit();
       this.root = new DevExpress.XtraLayout.LayoutControlGroup();
       this.codeInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.commentInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.separator = new DevExpress.XtraLayout.SimpleSeparator();
       this.editButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
-      this.nameInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
+      this.descriptionInputLayout = new DevExpress.XtraLayout.LayoutControlItem();
       this.stateRadioLayout = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layout)).BeginInit();
       this.layout.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInput.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.separator)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.editButtonLayout)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInputLayout)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).BeginInit();
       this.SuspendLayout();
       // 
       // layout
       // 
       this.layout.AllowCustomization = false;
+      this.layout.Controls.Add(this.stateRadio);
       this.layout.Controls.Add(this.commentInput);
       this.layout.Controls.Add(this.editButton);
       this.layout.Controls.Add(this.codeInput);
-      this.layout.Controls.Add(this.nameInput);
-      this.layout.Controls.Add(this.stateRadio);
+      this.layout.Controls.Add(this.descriptionInput);
       this.layout.Dock = System.Windows.Forms.DockStyle.Fill;
       this.layout.Location = new System.Drawing.Point(0, 0);
       this.layout.Margin = new System.Windows.Forms.Padding(2);
       this.layout.Name = "layout";
       this.layout.Root = this.root;
       this.layout.Size = new System.Drawing.Size(450, 320);
-      this.layout.TabIndex = 4;
+      this.layout.TabIndex = 5;
       this.layout.Text = "layoutControl1";
+      // 
+      // stateRadio
+      // 
+      this.stateRadio.Location = new System.Drawing.Point(69, 143);
+      this.stateRadio.Name = "stateRadio";
+      this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
+      this.stateRadio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+      this.stateRadio.Properties.Columns = 2;
+      this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt", true, null, "enabled"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá", true, null, "disabled")});
+      this.stateRadio.Size = new System.Drawing.Size(367, 32);
+      this.stateRadio.StyleController = this.layout;
+      this.stateRadio.TabIndex = 10;
       // 
       // commentInput
       // 
-      this.commentInput.Location = new System.Drawing.Point(69, 119);
+      this.commentInput.Location = new System.Drawing.Point(69, 188);
       this.commentInput.Name = "commentInput";
       this.commentInput.Properties.MaxLength = 1000;
-      this.commentInput.Size = new System.Drawing.Size(367, 153);
+      this.commentInput.Size = new System.Drawing.Size(367, 84);
       this.commentInput.StyleController = this.layout;
       this.commentInput.TabIndex = 7;
       // 
@@ -99,29 +114,14 @@
       this.codeInput.StyleController = this.layout;
       this.codeInput.TabIndex = 5;
       // 
-      // nameInput
+      // descriptionInput
       // 
-      this.nameInput.Location = new System.Drawing.Point(69, 44);
-      this.nameInput.Name = "nameInput";
-      this.nameInput.Properties.MaxLength = 100;
-      this.nameInput.Size = new System.Drawing.Size(367, 22);
-      this.nameInput.StyleController = this.layout;
-      this.nameInput.TabIndex = 9;
-      // 
-      // stateRadio
-      // 
-      this.stateRadio.Location = new System.Drawing.Point(69, 74);
-      this.stateRadio.Name = "stateRadio";
-      this.stateRadio.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-      this.stateRadio.Properties.Appearance.Options.UseBackColor = true;
-      this.stateRadio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-      this.stateRadio.Properties.Columns = 2;
-      this.stateRadio.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Kích hoạt", true, null, "enabled"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Vô hiệu hoá", true, null, "disabled")});
-      this.stateRadio.Size = new System.Drawing.Size(367, 32);
-      this.stateRadio.StyleController = this.layout;
-      this.stateRadio.TabIndex = 9;
+      this.descriptionInput.Location = new System.Drawing.Point(69, 44);
+      this.descriptionInput.Name = "descriptionInput";
+      this.descriptionInput.Properties.MaxLength = 100;
+      this.descriptionInput.Size = new System.Drawing.Size(367, 91);
+      this.descriptionInput.StyleController = this.layout;
+      this.descriptionInput.TabIndex = 9;
       // 
       // root
       // 
@@ -132,7 +132,7 @@
             this.commentInputLayout,
             this.separator,
             this.editButtonLayout,
-            this.nameInputLayout,
+            this.descriptionInputLayout,
             this.stateRadioLayout});
       this.root.Name = "Root";
       this.root.Size = new System.Drawing.Size(450, 320);
@@ -153,9 +153,9 @@
       this.commentInputLayout.AppearanceItemCaption.Options.UseTextOptions = true;
       this.commentInputLayout.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
       this.commentInputLayout.Control = this.commentInput;
-      this.commentInputLayout.Location = new System.Drawing.Point(0, 105);
+      this.commentInputLayout.Location = new System.Drawing.Point(0, 174);
       this.commentInputLayout.Name = "commentInputLayout";
-      this.commentInputLayout.Size = new System.Drawing.Size(430, 161);
+      this.commentInputLayout.Size = new System.Drawing.Size(430, 92);
       this.commentInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
       this.commentInputLayout.Text = "Ghi chú";
       this.commentInputLayout.TextSize = new System.Drawing.Size(52, 15);
@@ -163,7 +163,7 @@
       // separator
       // 
       this.separator.AllowHotTrack = false;
-      this.separator.Location = new System.Drawing.Point(0, 100);
+      this.separator.Location = new System.Drawing.Point(0, 169);
       this.separator.Name = "separator";
       this.separator.Size = new System.Drawing.Size(430, 5);
       this.separator.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -175,27 +175,26 @@
       this.editButtonLayout.Name = "editButtonLayout";
       this.editButtonLayout.Size = new System.Drawing.Size(430, 34);
       this.editButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.editButtonLayout.Text = "Chỉnh sủa";
       this.editButtonLayout.TextSize = new System.Drawing.Size(0, 0);
       this.editButtonLayout.TextVisible = false;
       // 
-      // nameInputLayout
+      // descriptionInputLayout
       // 
-      this.nameInputLayout.Control = this.nameInput;
-      this.nameInputLayout.Location = new System.Drawing.Point(0, 30);
-      this.nameInputLayout.Name = "nameInputLayout";
-      this.nameInputLayout.Size = new System.Drawing.Size(430, 30);
-      this.nameInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-      this.nameInputLayout.Text = "Tên";
-      this.nameInputLayout.TextSize = new System.Drawing.Size(52, 15);
+      this.descriptionInputLayout.Control = this.descriptionInput;
+      this.descriptionInputLayout.Location = new System.Drawing.Point(0, 30);
+      this.descriptionInputLayout.Name = "descriptionInputLayout";
+      this.descriptionInputLayout.Size = new System.Drawing.Size(430, 99);
+      this.descriptionInputLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.descriptionInputLayout.Text = "Mô tả";
+      this.descriptionInputLayout.TextSize = new System.Drawing.Size(52, 15);
       // 
       // stateRadioLayout
       // 
       this.stateRadioLayout.Control = this.stateRadio;
-      this.stateRadioLayout.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-      this.stateRadioLayout.CustomizationFormText = "Trạng thái";
-      this.stateRadioLayout.Location = new System.Drawing.Point(0, 60);
+      this.stateRadioLayout.Location = new System.Drawing.Point(0, 129);
       this.stateRadioLayout.MaxSize = new System.Drawing.Size(0, 40);
-      this.stateRadioLayout.MinSize = new System.Drawing.Size(113, 40);
+      this.stateRadioLayout.MinSize = new System.Drawing.Size(162, 40);
       this.stateRadioLayout.Name = "stateRadioLayout";
       this.stateRadioLayout.Size = new System.Drawing.Size(430, 40);
       this.stateRadioLayout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
@@ -203,27 +202,27 @@
       this.stateRadioLayout.Text = "Trạng thái";
       this.stateRadioLayout.TextSize = new System.Drawing.Size(52, 15);
       // 
-      // EditMacroGroupForm
+      // EditMacroForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(450, 320);
       this.Controls.Add(this.layout);
-      this.Name = "EditMacroGroupForm";
-      this.Text = "Chỉnh sửa nhóm đại thể";
-      this.Load += new System.EventHandler(this.EditMacroGroupForm_Load);
+      this.Name = "EditMacroForm";
+      this.Text = "Chỉnh sửa đại thể";
+      this.Load += new System.EventHandler(this.EditMacroForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
       this.layout.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInput.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInput.Properties)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.stateRadio.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInput.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.root)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.codeInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.commentInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.separator)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.editButtonLayout)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.nameInputLayout)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.descriptionInputLayout)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.stateRadioLayout)).EndInit();
       this.ResumeLayout(false);
 
@@ -235,13 +234,13 @@
     private DevExpress.XtraEditors.MemoEdit commentInput;
     private DevExpress.XtraEditors.SimpleButton editButton;
     private DevExpress.XtraEditors.TextEdit codeInput;
-    private DevExpress.XtraEditors.TextEdit nameInput;
+    private DevExpress.XtraEditors.MemoEdit descriptionInput;
     private DevExpress.XtraLayout.LayoutControlGroup root;
     private DevExpress.XtraLayout.LayoutControlItem codeInputLayout;
     private DevExpress.XtraLayout.LayoutControlItem commentInputLayout;
     private DevExpress.XtraLayout.SimpleSeparator separator;
     private DevExpress.XtraLayout.LayoutControlItem editButtonLayout;
-    private DevExpress.XtraLayout.LayoutControlItem nameInputLayout;
+    private DevExpress.XtraLayout.LayoutControlItem descriptionInputLayout;
     private DevExpress.XtraEditors.RadioGroup stateRadio;
     private DevExpress.XtraLayout.LayoutControlItem stateRadioLayout;
   }

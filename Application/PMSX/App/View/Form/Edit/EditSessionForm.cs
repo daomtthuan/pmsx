@@ -39,6 +39,10 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa phiên làm việc này?") == DialogResult.No) {
+        return;
+      }
+
       Session session = (Session)Tag;
       DateTime date = dateSelect.DateTime;
       object doctorPermission = GridUtility.Instance.GetSelected(doctorPermissionSelect);

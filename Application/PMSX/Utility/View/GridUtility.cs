@@ -42,6 +42,10 @@ namespace PMSX.Utility.View {
         { "Code", "Mã số" },
         { "Address", "Địa chỉ" },
         { "Year", "Năm" },
+        { "Description", "Mô tả" },
+        { "MacroGroupId", "ID nhóm đại thể" },
+        { "MicroGroupId", "ID nhóm vi thể" },
+        { "Conclusion", "Kết luận" },
       };
     }
 

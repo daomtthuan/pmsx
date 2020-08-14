@@ -7,7 +7,7 @@ namespace PMSX.App.Model {
       Code = row["micro_code"].ToString();
       Description = row["micro_description"].ToString();
       Conclusion = row["micro_conclusion"].ToString();
-      MicroGroupId = (long)row["micro_macroGroupId"];
+      MicroGroupId = (long)row["micro_microGroupId"];
     }
 
     public string Code { get; }

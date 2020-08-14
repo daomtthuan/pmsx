@@ -25,6 +25,10 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa nhóm vi thể này?") == DialogResult.No) {
+        return;
+      }
+
       long id = ((MicroGroup)Tag).Id;
       string code = codeInput.Text;
       string name = nameInput.Text;

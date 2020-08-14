@@ -24,6 +24,10 @@ namespace PMSX.App.View.Form.Edit {
     }
 
     private void EditButton_Click(object sender, EventArgs e) {
+      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa nhân viên này?") == DialogResult.No) {
+        return;
+      }
+
       string password = passwordInput.Text;
       string name = nameInput.Text;
       int state = (int)stateRadio.EditValue;
@@ -34,10 +38,6 @@ namespace PMSX.App.View.Form.Edit {
         return;
       } else if (!StringUtility.Instance.IsValid(StringUtility.Regex.Name, name)) {
         AlertUtility.Instance.ShowWarning("Tên nhân viên không hợp lệ");
-        return;
-      }
-
-      if (AlertUtility.Instance.ShowConfirm("Chỉnh sửa nhân viên này?") == DialogResult.No) {
         return;
       }
 

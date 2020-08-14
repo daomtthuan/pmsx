@@ -467,3 +467,31 @@ insert into table_microGroup(microGroup_code, microGroup_name, microGroup_create
 values ('RHM', 'Răng hàm mặt', 1);
 insert into table_microGroup(microGroup_code, microGroup_name, microGroup_createStaffId)
 values ('A', 'Amindan', 1);
+
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('D88', 'Bọc được cấu tạo bởi lớp biểu mô xung quanh, phía trong chứa nhiều chất sừng và tế bào viêm.', 1, 1);
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('D42', 'Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.', 1, 1);
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('D43B', 'Trên sinh thiết thấy bọc chứa chất sừng không có biểu mô lát.', 1, 1);
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('RHM01', 'Sinh thiết là mô liên kết sợi có các tuyến dãn rộng, lòng chứa dịch nhầy.', 2, 1);
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('RHM02', 'Trên nền mô đệm sợi- mạch máu có nhiều đại bào đa nhân và tế bào viêm.', 2, 1);
+insert into table_macro(macro_code, macro_description, macro_macroGroupId, macro_createStaffId)
+values ('A01', 'Sinh thiết là amidan có lớp thượng mô malpighi thoái hóa, có nơi bị viêm loét. Mô limphô bên dưới có phản ứng tăng sản, kèm các vùng viêm xơ hóa.', 3, 1);
+
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('D88', 'Bọc được cấu tạo bởi lớp biểu mô xung quanh, phía trong chứa nhiều chất sừng và tế bào viêm.', 'BỌC THƯỢNG BÌ', 1, 1);
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('D42', 'Trong lớp bì hiện diện các đám tuyến chuyển sản đỉnh tiết trưởng thành.', 'MÔ THỪA DẠNG U TUYẾN ĐỈNH TIẾT (APOCRINE HAMARTOMA), NỐT RUỒI ĐỈNH TIẾT (APOCRINE NEVUS)', 1, 1);
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('D43B', 'Trên sinh thiết thấy bọc chứa chất sừng không có biểu mô lát.', 'BỌC DẠNG BÌ (DERMOID CYST)', 1, 1);
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('RHM01', 'Sinh thiết là mô liên kết sợi có các tuyến dãn rộng, lòng chứa dịch nhầy.', 'BỌC NHẦY (MUCOCELE)', 2, 1);
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('RHM02', 'Trên nền mô đệm sợi- mạch máu có nhiều đại bào đa nhân và tế bào viêm.', 'U HẠT ĐẠI BÀO CỦA NƯỚU RĂNG (EPULIS)', 2, 1);
+insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
+values ('A01', 'Sinh thiết là amidan có lớp thượng mô malpighi thoái hóa, có nơi bị viêm loét. Mô limphô bên dưới có phản ứng tăng sản, kèm các vùng viêm xơ hóa.', 'VIÊM AMIDAN MẠN TÍNH.', 3, 1);
+
+select version() as version

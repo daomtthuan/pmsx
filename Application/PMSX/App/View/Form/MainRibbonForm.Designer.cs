@@ -48,12 +48,19 @@
       this.themeSelect = new DevExpress.XtraBars.BarSubItem();
       this.lightThemeButton = new DevExpress.XtraBars.BarButtonItem();
       this.darkThemeButton = new DevExpress.XtraBars.BarButtonItem();
-      this.homePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.settingPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.accountGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.systemGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
       this.layout = new DevExpress.XtraEditors.PanelControl();
+      this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+      this.homeBrand = new PMSX.App.View.Control.BrandControl();
+      this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+      this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+      this.homeLabel = new DevExpress.XtraLayout.SimpleLabelItem();
+      this.homePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+      this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+      this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.backstage)).BeginInit();
       this.backstage.SuspendLayout();
@@ -67,6 +74,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.layout)).BeginInit();
+      this.layout.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+      this.layoutControl1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.homeLabel)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
       this.SuspendLayout();
       // 
       // ribbon
@@ -351,11 +366,6 @@
       this.darkThemeButton.Name = "darkThemeButton";
       this.darkThemeButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DarkThemeButton_ItemClick);
       // 
-      // homePage
-      // 
-      this.homePage.Name = "homePage";
-      this.homePage.Text = "Trang chủ";
-      // 
       // settingPage
       // 
       this.settingPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -388,10 +398,95 @@
       // layout
       // 
       this.layout.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-      this.layout.Location = new System.Drawing.Point(904, 217);
+      this.layout.Controls.Add(this.layoutControl1);
+      this.layout.Location = new System.Drawing.Point(744, 216);
       this.layout.Name = "layout";
-      this.layout.Size = new System.Drawing.Size(364, 416);
+      this.layout.Size = new System.Drawing.Size(489, 416);
       this.layout.TabIndex = 2;
+      // 
+      // layoutControl1
+      // 
+      this.layoutControl1.Controls.Add(this.homeBrand);
+      this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+      this.layoutControl1.Name = "layoutControl1";
+      this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1172, 370, 650, 400);
+      this.layoutControl1.Root = this.layoutControlGroup1;
+      this.layoutControl1.Size = new System.Drawing.Size(489, 416);
+      this.layoutControl1.TabIndex = 3;
+      this.layoutControl1.Text = "layoutControl1";
+      // 
+      // homeBrand
+      // 
+      this.homeBrand.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.homeBrand.Appearance.Options.UseBackColor = true;
+      this.homeBrand.Location = new System.Drawing.Point(14, 84);
+      this.homeBrand.Margin = new System.Windows.Forms.Padding(2);
+      this.homeBrand.Name = "homeBrand";
+      this.homeBrand.Size = new System.Drawing.Size(461, 183);
+      this.homeBrand.TabIndex = 4;
+      this.homeBrand.TabStop = false;
+      // 
+      // layoutControlGroup1
+      // 
+      this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+      this.layoutControlGroup1.GroupBordersVisible = false;
+      this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.homeLabel,
+            this.emptySpaceItem1,
+            this.emptySpaceItem2});
+      this.layoutControlGroup1.Name = "Root";
+      this.layoutControlGroup1.Size = new System.Drawing.Size(489, 416);
+      this.layoutControlGroup1.TextVisible = false;
+      // 
+      // layoutControlItem3
+      // 
+      this.layoutControlItem3.Control = this.homeBrand;
+      this.layoutControlItem3.Location = new System.Drawing.Point(0, 70);
+      this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 191);
+      this.layoutControlItem3.MinSize = new System.Drawing.Size(334, 191);
+      this.layoutControlItem3.Name = "brandLayout";
+      this.layoutControlItem3.Size = new System.Drawing.Size(469, 191);
+      this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+      this.layoutControlItem3.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+      this.layoutControlItem3.TextVisible = false;
+      // 
+      // homeLabel
+      // 
+      this.homeLabel.AllowHotTrack = false;
+      this.homeLabel.AppearanceItemCaption.Options.UseTextOptions = true;
+      this.homeLabel.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+      this.homeLabel.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+      this.homeLabel.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Center;
+      this.homeLabel.ContentVertAlignment = DevExpress.Utils.VertAlignment.Top;
+      this.homeLabel.Location = new System.Drawing.Point(0, 261);
+      this.homeLabel.Name = "homeLabel";
+      this.homeLabel.Size = new System.Drawing.Size(469, 23);
+      this.homeLabel.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+      this.homeLabel.TextSize = new System.Drawing.Size(86, 15);
+      // 
+      // homePage
+      // 
+      this.homePage.Name = "homePage";
+      this.homePage.Text = "Trang chủ";
+      // 
+      // emptySpaceItem1
+      // 
+      this.emptySpaceItem1.AllowHotTrack = false;
+      this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+      this.emptySpaceItem1.Name = "emptySpaceItem1";
+      this.emptySpaceItem1.Size = new System.Drawing.Size(469, 70);
+      this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+      // 
+      // emptySpaceItem2
+      // 
+      this.emptySpaceItem2.AllowHotTrack = false;
+      this.emptySpaceItem2.Location = new System.Drawing.Point(0, 284);
+      this.emptySpaceItem2.Name = "emptySpaceItem2";
+      this.emptySpaceItem2.Size = new System.Drawing.Size(469, 112);
+      this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
       // 
       // MainRibbonForm
       // 
@@ -422,6 +517,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
+      this.layout.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+      this.layoutControl1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.homeLabel)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -436,7 +539,6 @@
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup accountGroup;
     private DevExpress.XtraBars.BarButtonItem passwordButton;
     private DevExpress.XtraBars.BarStaticItem statusLabel;
-    private DevExpress.XtraBars.Ribbon.RibbonPage homePage;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup systemGroup;
     private DevExpress.XtraBars.BarSubItem themeSelect;
     private DevExpress.XtraBars.BarButtonItem lightThemeButton;
@@ -459,5 +561,13 @@
     private DevExpress.XtraLayout.LayoutControlItem feedbackButtonLayout;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+    private DevExpress.XtraLayout.LayoutControl layoutControl1;
+    private Control.BrandControl homeBrand;
+    private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+    private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+    private DevExpress.XtraLayout.SimpleLabelItem homeLabel;
+    private DevExpress.XtraBars.Ribbon.RibbonPage homePage;
+    private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+    private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
   }
 }
