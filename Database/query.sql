@@ -493,5 +493,3 @@ insert into table_micro(micro_code, micro_description, micro_conclusion, micro_m
 values ('RHM02', 'Trên nền mô đệm sợi- mạch máu có nhiều đại bào đa nhân và tế bào viêm.', 'U HẠT ĐẠI BÀO CỦA NƯỚU RĂNG (EPULIS)', 2, 1);
 insert into table_micro(micro_code, micro_description, micro_conclusion, micro_microGroupId, micro_createStaffId)
 values ('A01', 'Sinh thiết là amidan có lớp thượng mô malpighi thoái hóa, có nơi bị viêm loét. Mô limphô bên dưới có phản ứng tăng sản, kèm các vùng viêm xơ hóa.', 'VIÊM AMIDAN MẠN TÍNH.', 3, 1);
-
-select version() as version
